@@ -9,8 +9,8 @@ services:
             SA_PASSWORD: 'oHbn4FDxBL1nmHjHqau1'
             
     # This requires a Windows container host system.
-    srv-iis:
-        image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+    srv-aspnet:
+        image: mcr.microsoft.com/dotnet/framework/aspnet:4.6.2
         restart: unless-stopped
         ports:
             - 8080:80
