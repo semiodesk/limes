@@ -2,17 +2,19 @@ version: "3"
 
 services:
     srv-sql:
-        image: mcr.microsoft.com/mssql/server:latest
+        image: mcr.microsoft.com/mssql/server:2019-latest
         restart: unless-stopped
         environment:
             ACCEPT_EULA: 'Y'
             SA_PASSWORD: 'oHbn4FDxBL1nmHjHqau1'
             
-    # This requires a Windows container host system.
-    srv-aspnet:
-        image: mcr.microsoft.com/dotnet/framework/aspnet:4.6.2
-        restart: unless-stopped
-        ports:
-            - 8080:80
-        depends_on:
-            - srv-sql
+    # srv-aspnet-profiles:
+    #     # This requires a Windows container host system.
+    #     image: mcr.microsoft.com/dotnet/framework/aspnet:4.6.2
+    #     depends_on:
+    #         - srv-sql
+    #     restart: unless-stopped
+    #     ports:
+    #         - 8080:80
+    #     volumes:
+    #         - ${pwd}/src/ProfilesRNS/Website/Binary/Profiles/:/app
