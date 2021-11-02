@@ -1,0 +1,3 @@
+# Ignore files that exceed the GitHub size limits.
+src/ProfilesRNS/Database/Data/*.xml
+src/ProfilesRNS/Database/Data/*.owl

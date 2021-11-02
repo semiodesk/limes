@@ -2,11 +2,14 @@ version: "3"
 
 services:
     srv-sql:
-        image: mcr.microsoft.com/mssql/server:2019-latest
+        image: semiodesk/mssql-fts:2019-ubuntu
         restart: unless-stopped
+        ports:
+            - 1433:1433
         environment:
             ACCEPT_EULA: 'Y'
             SA_PASSWORD: 'oHbn4FDxBL1nmHjHqau1'
+            MSSQL_AGENT_ENABLED: true
             
     # srv-aspnet-profiles:
     #     # This requires a Windows container host system.
