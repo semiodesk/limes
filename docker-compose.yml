@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+    srv-sql:
+        image: mcr.microsoft.com/mssql/server:latest
+        restart: unless-stopped
+        environment:
+            ACCEPT_EULA: 'Y'
+            SA_PASSWORD: 'oHbn4FDxBL1nmHjHqau1'
+            
+    # This requires a Windows container host system.
+    srv-iis:
+        image: mcr.microsoft.com/windows/servercore/iis:windowsservercore-ltsc2019
+        restart: unless-stopped
+        ports:
+            - 8080:80
+        depends_on:
+            - srv-sql

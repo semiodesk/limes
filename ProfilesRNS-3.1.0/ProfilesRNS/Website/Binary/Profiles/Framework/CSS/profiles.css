@@ -1,0 +1,1140 @@
+/********************************************/
+/* New Search button - edit the colours to match your branding*/
+/********************************************/
+/*Dont touch this container as it provides spacing on top of CSS search button*/
+.profiles .search-button-container 
+{ 
+	margin-top: 10px;
+}
+.profiles a.search-button 
+{
+	background-color: #B23F45;
+	color: #ffffff;
+	background-image: url(../images/search.png);
+	background-repeat: no-repeat;
+	background-position: 5% 50%;
+	background-size: 18px;
+	padding: 5px 15px 5px 28px;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 2px solid #b23f45;
+}
+.profiles a.search-button:hover 
+{
+	text-decoration: none;
+	box-shadow: 0 0 2px 2px #b23f45;
+}
+
+/*Replacing inline styles for the form headings in the main app*/
+.profiles .profilesPage .headings 
+{
+	font-size: 18px; 
+	color: #b23f45; 
+	font-weight: bold; 
+	margin-bottom: 3px;
+}
+
+
+header._ci_shared_asset.tool-page .inner .title-container h1 { 
+margin: 18px 0 6px 0; 
+} 
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+form {
+    padding: 0px;
+    margin: 0px;
+}
+
+header._ci_shared_asset.tool-page .inner .title-container h1 {
+    margin: 18px 0 6px 0 !important;
+}
+
+header._ci_shared_asset.tool-page .inner .title-container {
+    float:none !important;
+    min-width: 1140px;
+     margin-left: 255px !important; 
+}
+
+header._ci_shared_asset.tool-page .inner a.main-logo {
+    margin-right: 55px;
+}
+
+
+.title-container h1 {
+    text-align: left !important;
+    top: -10px !important;
+    position: relative !important;
+}
+
+.title-container h4 {
+    top: -10px !important;
+    xwidth: 400px !important;
+    position: relative !important;
+}
+
+.title-container {
+    opacity: 1 !important;
+
+}
+
+    .title-container:hover {
+        opacity: .6 !important;
+       -webkit-transition: all 1s ease-in;
+        -moz-transition: all 1s ease-in;
+        -o-transition: all 1s ease-in;
+        -ms-transition: all 1s ease-in;
+        transition: all 1s ease-in;
+    }
+
+    .title-container::after {
+        opacity: 1  !important;
+     
+    }
+
+.container {
+    text-align: left !important;
+}
+
+.clearfix {
+    text-align: left !important;
+}
+
+.SupportText {
+    font-size: 11px;
+    margin-top: 12px;
+    padding: 16px 0 0 0;
+    color: #333;
+    border-top: 1px solid #ccc;
+}
+
+div#ctsc-related-links {
+    width: 966px !important;
+}
+
+div#ctsc-spotlight-link {
+    padding: 5px 0 10px !important;
+}
+
+div.catalyst-content-container {
+    height: 50px !important;
+    border-bottom: none !important;
+}
+
+#catalyst-title-bar #catalyst-tagline {
+    border-right: 1px solid #ac1b30 !important;
+    color: #545454 !important;
+    font-size: 0.88em !important;
+    padding-right: 0 !important;
+    width: 166px !important;
+}
+
+tr#catalyst-page-title {
+    font-family: Georgia,Times,serif !important;
+    font-size: 1.6em !important;
+    padding-left: 13px !important;
+}
+
+div#catalyst-footer {
+    height: 200px !important;
+}
+
+
+.xcheckmark {
+    display: inline-block;
+    width: 5px;
+}
+
+.checkmark {
+    display: inline-block;
+}
+
+    .checkmark:after {
+        /*Add another block-level blank space*/
+        content: "";
+        display: block;
+        /*Make it a small rectangle so the border will create an L-shape*/
+        width: 5px;
+        height: 8px;
+        /*Add a white border on the bottom and left, creating that 'L' */
+        border: solid #000;
+        border-width: 0 2px 2px 0;
+        /*Rotate the L 45 degrees to turn it into a checkmark*/
+        transform: rotate(45deg);
+        left: -10px;
+        top: -3px;
+        position: relative;
+    }
+
+
+.imageUploaderField input {
+    width: 100% !important;
+}
+
+
+#rtnBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #ccc; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+    #rtnBtn:hover {
+        background-color: #555; /* Add a dark-grey background on hover */
+    }
+
+
+
+.tog {
+    text-decoration: none;
+}
+
+/********************************************/
+/* Customize this part                      */
+/********************************************/
+
+
+.PropertyGroup {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: #993333;
+    padding-bottom: 5px;
+    text-align: left;
+    cursor: pointer;
+    border: none !important;
+    outline: none;
+}
+
+.PropertyItemHeader {
+    font-family: Arial;
+    font-weight: bold;
+    font-size: 15px;
+    color: #993333;
+    padding: 5px;
+    text-align: left;
+    cursor: pointer;
+    background-color: #EEE;
+}
+
+    .PropertyItemHeader a {
+        color: #666 !important;
+        text-decoration: none !important;
+    }
+
+        .PropertyItemHeader a:hover {
+            color: #666 !important;
+            text-decoration: none !important;
+        }
+
+.PropertyGroup a:hover {
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+.PropertyGroupItem {
+    font-weight: normal;
+    color: #666;
+    font-size: 13px;
+    text-align: left;
+    border: 1px solid #ccc !important;
+}
+
+.PropertyGroupData {
+    margin: 10px;
+    text-align: left;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000;
+    border: none !important;
+}
+
+.institutionHeader {
+    background-color: #000;
+    text-align: center;
+    padding: 30px 0px 30px 0px;
+    border-bottom: 8px solid #B23F45;
+}
+
+
+#page-container {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+.network-delete-a {
+    cursor: pointer;
+    text-decoration: none;
+    padding-left: 20px;
+}
+
+/********************************************/
+/* Profiles Shell Layout                    */
+/********************************************/
+#ProfilesNotification {
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    background-color: #FF9;
+    text-align: center;
+    padding: 3px;
+}
+
+.profiles {
+    padding-top: 15px;
+    padding-bottom: 24px;
+    display: inline-block;
+    width: 968px;
+    max-width: 968px;
+    overflow-y: visible;
+    text-align: center;
+}
+
+    .profiles .profilesHeader {
+        width: 968px;
+        text-align: left;
+    }
+
+    .profiles .profilesPage {
+        width: 968px;
+        margin: 0 auto;
+        overflow-y: visible;
+        left: 0;
+        right: 0;
+        text-align: center;
+        display: table;
+        padding-top: 10px;
+    }
+
+.profilesLeftCol {
+    display: table-cell;
+    text-align: left;
+    max-width: 160px;
+    padding-right:10px;
+    padding-top: 30px;
+    vertical-align: top;
+}
+
+/********************************************/
+/* Profiles Shell Content                   */
+/********************************************/
+
+
+.profiles, .profiles td, .profiles th, .profiles textarea, .profiles select, .profiles h2, .profiles h3, .profiles h4, .profiles h5, .profiles h6, .profiles ul, .profiles ol {
+    font-family: arial, sans-serif;
+    font-size: 13px;
+}
+
+    .profiles ul, .profiles ol {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .profiles a {
+        color: #3366CC;
+        text-decoration: none;
+    }
+
+        .profiles a:hover {
+            text-decoration: underline;
+        }
+
+
+
+/********************************************/
+/* Profiles Content Main                    */
+/********************************************/
+
+.profilesMaxWidth {
+    max-width: 968px;
+}
+
+.profiles .profilesContentMain {
+    padding-bottom: 15px;
+    display: table-cell;
+}
+
+.MainRow {
+    display: table-row;
+}
+/* backLink */
+.profiles .profilesContentMain .backLink {
+    text-align: right;
+    white-space: nowrap;
+}
+
+    .profiles .profilesContentMain .backLink .backLinkIcon {
+        margin-right: 4px;
+        position: relative;
+        top: 1px;
+    }
+/* pageTitle */
+.pageTitle {
+    width: 100%;
+    display: table-cell;
+    margin-top: 16px;
+}
+
+.profiles .profilesContentMain .pageTitle {
+    text-align: left;
+}
+
+    .profiles .profilesContentMain .pageTitle h2 {
+        text-align: left;
+        color: #AC1B30;
+        font-size: 28px;
+        font-weight: normal;
+        margin: 0px !important;
+    }
+
+/* pageSubTitle */
+.profiles .profilesContentMain .pageSubTitle {
+    color: #666666;
+    font-weight: bold;
+    text-align: left;
+    float: left;
+    margin-top: 12px;
+}
+
+    .profiles .profilesContentMain .pageSubTitle h3 {
+        padding: 0px;
+        color: #666666;
+        font-weight: bold;
+        text-align: left;
+    }
+/* panelPage */
+.profiles .profilesContentMain .panelPage {
+    display: inline;
+}
+
+.profiles .profilesContentMain .pageDescription {
+    text-align: left;
+    padding-top: 16px;
+}
+
+
+.panelMain {
+    width: 100%;
+    clear: both;
+    margin-top:5px;
+}
+
+    .panelMain div {
+        text-align: left;
+    }
+
+    .panelMain table {
+        width: 100%;
+    }
+
+
+.profiles .profilesContentMain .tabInfoText {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px dotted #999;
+    text-align: left;
+}
+.profiles .profilesContentMain .keywordCategories td, .profiles .profilesContentMain .keywordCategories th {
+    font-size: 12px;
+    padding: 2px 5px;
+    text-align: left;
+    border: none;
+}
+
+/********************************************/
+/* Profiles Content Passive                 */
+/********************************************/
+
+.panelPassive {
+    text-align: left;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 8px;
+    margin-top: 32px;
+}
+
+.questionImage {
+    vertical-align: top;
+    border: none;
+    text-decoration: none;
+}
+
+.passiveArrow {
+    margin-right: 2px;
+    position: relative;
+    top: 1px;
+    border: 0;
+    padding-bottom: 3px;
+}
+
+.profilesContentPassive {
+    width: 166px;
+    height: 100%;
+    display: table-cell;
+    padding-left: 15px;
+    word-wrap: break-word;
+    overflow: auto;
+    vertical-align: top;
+}
+
+.profiles .profilesContentPassive .passiveSectionHead {
+    overflow: hidden;
+    font-weight: bold;
+    margin-top: 8px;
+    text-align: left;
+    padding-bottom: 5px;
+    color: #333;
+}
+
+    .profiles .profilesContentPassive .passiveSectionHead img {
+        position: relative;
+        top: 1px;
+        border: none;
+        padding-bottom: 3px;
+    }
+
+    .profiles .profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 11px;
+        color: #333;
+        margin: 4px 0 2px 0;
+        display: none;
+    }
+
+.profiles .profilesContentPassive .passiveSectionBody {
+    overflow: hidden;
+    text-align: left;
+}
+
+    .profiles .profilesContentPassive .passiveSectionBody ul {
+        list-style-type: none;
+        padding: 0px;
+    }
+
+    .profiles .profilesContentPassive .passiveSectionBody div {
+        padding-left: 1em;
+        text-indent: -1em;
+        text-align: left;
+        line-height: 14px;
+        xspadding-bottom: 12px;
+    }
+
+    .profiles .profilesContentPassive .passiveSectionBody li {
+        padding-left: 1em;
+        text-indent: -1em;
+        text-align: left;
+        line-height: 14px;
+        padding-bottom: 5px;
+    }
+
+.passiveHeader {
+    color: #b23f45;
+    font-weight: bold;
+    text-align: left;
+    padding-bottom: 2px;
+}
+
+.passiveHeaderInfo {
+    font-size: 11px;
+    text-align: left;
+    padding-bottom: 6px;
+}
+
+.passiveSectionBodyDetails {
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+}
+
+    .passiveSectionBodyDetails a {
+        font-size: 11px;
+    }
+
+.passiveSectionLine {
+    height: 1px;
+    overflow: hidden;
+    border-top: 1px solid #CCC;
+}
+
+
+
+
+/********************************************/
+/* Connection Summary                       */
+/********************************************/
+
+.connectionTableRow {
+    display: table-row;
+    border: 1px solid #999999;
+    padding: 10px;
+}
+
+.connectionContainer {
+    margin: 12px 0 4px 0;
+}
+
+.connectionContainerItem {
+    display: table-cell;
+    text-align: center !important;
+    vertical-align: middle;
+    width: 25%;
+}
+
+.connectionTable {
+    display: table;
+    width: 100%;
+    border: 1px solid #999999;
+    padding: 10px;
+    background-color: #eaf0f8;
+}
+
+.connectionItemSubText {
+    font-size: 11px;
+}
+
+
+.connectionLineToArrow {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+    .connectionLineToArrow hr {
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1px 0;
+        padding: 0;
+        width: 400px;
+    }
+
+.connectionContainerLeftArrow {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.connectionContainerRightArrow {
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.connectionSubDescription {
+    font-weight: normal;
+    font-size: 11px;
+    padding: 5px;
+    text-align: center !important;
+}
+
+/********************************************/
+/* Profile - Concept                        */
+/********************************************/
+.profileKwCondenseList ol, .profileKwCondenseList ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    left: -25px;
+    list-style-type: none;
+}
+
+.profileKwConcept {
+    display: none;
+}
+
+.publicationKwDesc {
+    margin-bottom: 5px;
+}
+
+.publicationKwMenuBox {
+    margin-bottom: 8px;
+}
+
+.profileKwMeshInfoDesc {
+    margin-bottom: 10px;
+}
+
+/********************************************/
+/*        Edit Page                         */
+/********************************************/
+
+.text-edit {
+    margin: 4px;
+}
+
+.oddRow {
+    background-color: #FFFFFF;
+    border: 1px solid #999999;
+}
+
+.evenRow {
+    background-color: #F0F4F6;
+    border: 1px solid #999999;
+}
+
+
+
+
+.padding {
+    padding-left: 6px;
+}
+
+.editFieldTopMargin {
+    margin-top: 4px;
+}
+
+.edittable {
+    text-align: left;
+    margin: 12px !important;
+}
+
+.colItemCnt, .colSecurity {
+    text-align: center;
+    width: 124px;
+}
+
+
+.topRow {
+    background-color: #EEEBE5;
+    font-weight: bold;
+    color: #333;
+    font-family: Arial;
+    font-size: 13px;
+    height: 26px;
+    padding-left: 6px;
+    width: 100%;
+}
+
+
+
+.firstCol {
+    padding-left: 6px;
+}
+
+
+
+.editSpacingBottom {
+    margin-bottom: 5px;
+}
+
+
+.edit360Margin5 {
+    margin: 5px;
+}
+
+.edit360Padding10 {
+    padding: 1px;
+}
+
+/*PubMed Styles*/
+
+.textBoxSmall {
+    width: 75px;
+}
+
+.textBoxDate {
+    vertical-align: top;
+    width: 75px;
+    margin-right: 3px;
+}
+
+.textBoxBig {
+    width: 250px;
+}
+
+.textBoxBigger {
+    width: 550px;
+}
+
+
+/********************************************/
+/* Link tabs								*/
+/********************************************/
+.anchor-tab {
+    margin: 10px 0 4px 0;
+    color: #666;
+}
+
+    .anchor-tab a.selected {
+        color: #333 !important;
+        font-weight: bold;
+        cursor: default;
+    }
+
+    .anchor-tab a.disabled {
+        color: silver !important;
+        cursor: default;
+    }
+
+        .anchor-tab a.selected:hover, .anchor-tab a.disabled:hover {
+            text-decoration: none;
+        }
+
+    .anchor-tab a {
+        color: #36C;
+        cursor: pointer;
+    }
+
+    .anchor-tab a.link-visualization {
+	color:#090;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    z-index: 1000;
+    float: left;
+    display: none;
+    min-width: 160px;
+    padding: 4px 0;
+    padding-left: 20px;
+    margin: 0px 10px 25px;
+    list-style: disc;
+    background-color: #ffffff;
+    border-color: #ccc;
+    border-color: rgba(0, 0, 0, 0.2);
+    border-style: solid;
+    border-width: 1px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+}
+
+
+
+.grantanchor-tab {
+    margin: 10px 0 4px 0;
+    color: #666;
+}
+
+    .grantanchor-tab a.selected {
+        color: #333 !important;
+        font-weight: bold;
+        cursor: default;
+    }
+
+    .grantanchor-tab a.disabled {
+        color: silver !important;
+        cursor: default;
+    }
+
+        .grantanchor-tab a.selected:hover, .grantanchor-tab a.disabled:hover {
+            text-decoration: none;
+        }
+
+    .grantanchor-tab a {
+        color: #36C;
+        cursor: pointer;
+    }
+
+#alignNetworkLeft {
+    padding-left: 10px;
+    text-align: left;
+    font-weight: normal;
+}
+
+#container {
+    display: table;
+}
+
+#row {
+    display: table-row;
+}
+
+#right {
+    display: table-cell;
+    text-align: left;
+}
+
+#middle {
+    display: table-cell;
+    text-align: center;
+}
+
+#left {
+    display: table-cell;
+    color: #777;
+    font-weight: bold;
+    padding: 2px 10px 0 0;
+    text-align: right;
+    vertical-align: top;
+    width: 80px;
+}
+
+.grow div {
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    height: 14px;
+    margin: 5px 1% 5px 1%;
+    float: left;
+    position: relative;
+    transition: height 0.5s;
+    -webkit-transition: height 0.5s;
+    text-align: center;
+    overflow: hidden;
+    font-size: 9px;
+    font-weight: lighter;
+}
+
+.grow:hover div {
+    height: 20px;
+}
+
+
+/********************************************/
+/* About                                    */
+/********************************************/
+
+.profiles .profilesContentMain .aboutText {
+    margin-bottom: 6px;
+}
+
+    .profiles .profilesContentMain .aboutText h2 {
+        margin: 0;
+        padding: 0;
+        font-size: 1.3em;
+        color: #4c7296;
+        font-weight: bold;
+    }
+
+    .profiles .profilesContentMain .aboutText h3 {
+        margin-bottom: 15px;
+        padding: 0;
+        font-size: 1.2em;
+        color: #746a42;
+        font-weight: bold;
+    }
+
+    .profiles .profilesContentMain .aboutText h4 {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+    }
+
+.aboutText p {
+    margin-top: 10px;
+}
+
+
+.pageBackLinkIcon {
+    padding-right: 6px;
+    margin-bottom: 3px;
+}
+
+.normalFont {
+    color: #000;
+    font-weight: normal;
+    vertical-align: bottom;
+    font-size: 13px;
+}
+
+
+
+.listTable table {
+    border: 1px solid #999999;
+}
+
+.listTable tr {
+    cursor: pointer;
+}
+
+.listTable th {
+    background-color: #f7f3ef;
+    color: #333;
+    cursor: default;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    padding-bottom: 1px;
+    border-left: 1px solid #999999;
+}
+
+    .listTable th a {
+        color: #333;
+        display: block;
+    }
+
+    .listTable th img {
+        margin-left: 3px;
+        margin-bottom: 2px;
+    }
+
+.listTable td {
+    padding: 4px;
+    text-align: left;
+    border-right: 1px solid #999999;
+    border-top: 1px solid #999999;
+    border-spacing: 0px;
+    border-collapse: collapse;
+}
+
+    .listTable td div {
+        overflow: hidden;
+    }
+
+.listTable .alignLeft {
+    text-align: left;
+}
+
+.listTable .alignCenter {
+    text-align: center;
+}
+
+
+.listTable .oddRow {
+    background-color: #ffffff;
+    border: 1px solid #999999;
+}
+
+.listTable .evenRow {
+    background-color: #f0f4f6;
+    border: 1px solid #999999;
+}
+
+.listTable .overRow {
+    background-color: #5a719c;
+    color: #fff;
+}
+
+.listTable .listTableLink {
+    color: #36c;
+}
+
+.listTable .overRow .listTableLink {
+    color: #fff;
+}
+
+.listTable .listTableLinkOver {
+    background-color: #36c;
+}
+
+/********************************************/
+/*        Edit Page                         */
+/********************************************/
+.editPage h2
+{
+	color: #AC1B30;
+	font-size: 13px;
+}
+.editPage table
+{
+	padding-left: 5px;
+}
+.oddRow td, .evenRow td
+{
+	border-color: #808080;
+}
+.oddRow
+{
+	background-color: #FFFFFF;
+}
+.evenRow
+{
+	background-color: #F0F4F6;
+}
+.padding
+{
+	padding-left: 6px;
+}
+
+.edittable
+{
+	border: solid 1px #ccc;
+}
+
+.edittable tr
+{
+	padding: 5px;
+}
+
+.colItemCnt, .colSecurity
+{
+	text-align: center;
+	width: 124px;
+}
+
+table tbody .height25
+{
+	height: 25px;
+}
+
+.editDisplayRow
+{
+	padding-top: 6px;
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-bottom: 6px;
+	border-bottom: solid 1px #ccc;
+}
+.editPageDiv
+{
+	border-left: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	border-top: solid 1px #ccc;
+}
+
+.editPage .topRow td
+{
+	background-color: #EEEBE5;
+	font-weight: bold;
+	color: #666;
+	font-size: 13px;
+	height: 24px;
+	padding-left: 6px;
+}
+.topRow
+{
+	background-color: #EEEBE5;
+	font-weight: bold;
+	color: #666;
+	font-size: 13px;
+	height: 24px;
+	padding-left: 6px;
+	width: 100%;
+}
+.EditMenuTopRow
+{
+	background-color: #EEEBE5;
+	color: #666;
+	font-size: 13px;
+	height: 24px;
+	padding-left: 6px;
+	width: 100%;
+}
+.editPage td
+{
+	height: 24px;
+}
+.firstCol
+{
+	padding-left: 6px;
+}
+
+
+.editPage tr
+{
+	height: 24px;
+}
