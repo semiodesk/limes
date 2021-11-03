@@ -13,12 +13,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER (PRESIDENT AND FELLOWS OF HARV
 */
 -- Step 1 Load base data files
 -- To run this script manually, replace the $(ProfilesRNSRootPath)\Data to the location that contains the various XML files (e.g. c:\)
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/InstallData.xml', @TableDestination = '[Framework.].[InstallData]', @DestinationColumn = 'DATA'
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/VIVO_1.4.owl', @TableDestination = '[Ontology.Import].owl', @DestinationColumn = 'DATA', @NameValue = 'VIVO_1.4'
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/PRNS_1.4.owl', @TableDestination = '[Ontology.Import].owl', @DestinationColumn = 'DATA', @NameValue = 'PRNS_1.4'
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/SemGroups.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'SemGroups.xml'
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/SemTypes.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'SemTypes.xml'
-EXEC [Framework.].[LoadXMLFile] @FilePath = '/var/opt/mssql/data/ProfilesRNS/MeSH.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'MeSH.xml'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\InstallData.xml', @TableDestination = '[Framework.].[InstallData]', @DestinationColumn = 'DATA'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\VIVO_1.4.owl', @TableDestination = '[Ontology.Import].owl', @DestinationColumn = 'DATA', @NameValue = 'VIVO_1.4'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\PRNS_1.4.owl', @TableDestination = '[Ontology.Import].owl', @DestinationColumn = 'DATA', @NameValue = 'PRNS_1.4'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\SemGroups.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'SemGroups.xml'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\SemTypes.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'SemTypes.xml'
+EXEC [Framework.].[LoadXMLFile] @FilePath = 'C:\Program Files\Microsoft SQL Server\MSSQL15.MSSQLSERVER\MSSQL\DATA\ProfilesRNS\MeSH.xml', @TableDestination = '[Profile.Data].[Concept.Mesh.File]', @DestinationColumn = 'DATA', @NameValue = 'MeSH.xml'
 EXEC [Framework.].[LoadInstallData]
 UPDATE [Framework.].[Parameter] SET Value = '$(ProfilesRNSBasePath)' WHERE ParameterID = 'basePath'
+UPDATE [Framework.].[Parameter] SET Value = '41bfbbab-0349-4463-b350-1eb26a349bec' WHERE ParameterID = 'RC4EncryptionKey'
 EXEC [Framework.].[RunJobGroup] @JobGroup = 1
