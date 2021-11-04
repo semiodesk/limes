@@ -6,3 +6,5 @@ obj
 .vs
 .suo
 *.user
+*.config
+debug.log

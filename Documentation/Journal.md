@@ -35,3 +35,13 @@
 - When testing the application DB user account, [make sure mixed auth is enabled for the SQL server](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?view=sql-server-ver15)
 - Important: Set the "basePath" value in [Framework.].[Parameter] to the actual __**base URI**__. In a development environment this is 'http://localhost:55956'. Otherwise the site won't work.
 - The parameter name is misleading as it suggests that this is only the path component of the base URI.
+
+### Tuesday, 4rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Investigating issue #6: Invalid default route when navigating to the site
+  - Solution: Set basePath in [Framework.].[Parameters] to a URL (i.e. http://localhost:55956) without trailing slash **and** clear all browser caches.
+- Investigating issue #7: Regular JavaScript 'unkown' alert windows
+  - Cause: The JavaScript code in the frontend calls the backend with invalid parameters in regular intervals
+  - An invalid parameter for 'referenceActivityId' caused the backend to return HTTP 500 Internal Server Error
+  - The result of the invalid request 'unknown' was displayed in a alert box very 30s
+  - Solution: Added sanity checks to the JavaScript code to not call the backend with invalid parameters

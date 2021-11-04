@@ -25,20 +25,24 @@
         var referenceActivityId = newActivities ? $(".act-id").first().text() : $(".act-id").last().text();
         // only set this the first time
         activitySize = activitySize || $(".act-id").length;
-        $.ajax({
-            type: "POST",
-            url: "<%=GetURLDomain()%>/Activity/Modules/ActivityHistory/ActivityDetails.aspx/GetActivities",
-            data: '{"referenceActivityId": "' + referenceActivityId + '", "count": "' + activitySize + '", "newActivities": "' + newActivities + '"}',
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            success: OnSuccess,
-            failure: function (response) {
-                alert(response.d);
-            },
-            error: function (response) {
-                alert(response.d);
-            }
-        });
+
+        // do not call the backend with invalid parameters
+        if (referenceActivityId && activitySize > 0) {
+            $.ajax({
+                type: "POST",
+                url: "<%=GetURLDomain()%>/Activity/Modules/ActivityHistory/ActivityDetails.aspx/GetActivities",
+                        data: '{"referenceActivityId": "' + referenceActivityId + '", "count": "' + activitySize + '", "newActivities": "' + newActivities + '"}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: OnSuccess,
+                        failure: function (response) {
+                            alert(response.d);
+                        },
+                        error: function (response) {
+                            alert(response.d);
+                        }
+                    });
+        }
     }
 
     function OnSuccess(response) {
