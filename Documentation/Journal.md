@@ -74,3 +74,6 @@
   - Production system:
     - https://www.profiles-wggc.uni-bonn.de/profiles/search/
     - SSL Certificate expired
+  - Importing the prodided production data using SSMS
+    - In the Import Data dialog does not work with the provided queries because the data is in UTF-8 encoding and some columns require LATIN-1
+    - Created SQL queries for importing the data
