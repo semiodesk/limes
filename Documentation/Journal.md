@@ -45,3 +45,32 @@
   - An invalid parameter for 'referenceActivityId' caused the backend to return HTTP 500 Internal Server Error
   - The result of the invalid request 'unknown' was displayed in a alert box very 30s
   - Solution: Added sanity checks to the JavaScript code to not call the backend with invalid parameters
+- Analyzing the source code structure and features
+- Manually added admin user through the database
+
+### Tuesday, 5th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Analyzing the structure of the source code
+- Meeting prepations
+- Project meeting with Antonella Succurro @ 11am
+  - Production environment specs
+    - Virtual machine in computing center of Bonn University
+    - Windows Server 2019
+    - Memory: 8GB
+    - Storage: 160GB
+  - Production environment access
+    - Endpoint and Credentials shared
+    - Access to the machine via RDP did not work
+    - Anotnella wants to investigate
+  - Access to the existing production data
+    - Antonella shared access to the GitLab account where the data is hosted
+  - Authentication mechanism for production
+    - Single administrator user; no other user profiles
+    - Investigate disabling the login from the web
+  - Google Maps API key
+    - Will be provided by Antonella
+  - Requirements specification for requested system modifications
+    - Will be topic of the next jour fix meeting on Nov 9th
+  - Production system:
+    - https://www.profiles-wggc.uni-bonn.de/profiles/search/
+    - SSL Certificate expired
