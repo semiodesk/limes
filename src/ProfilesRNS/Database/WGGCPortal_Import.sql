@@ -62,5 +62,20 @@ GO
 -- fix errors in the data
 UPDATE [Profile.Import].[PersonFilterFlag] SET personfilter = '';
 
+-- truncate the table first
+TRUNCATE TABLE [Profile.Data].[Publication.PubMed.DisambiguationAffiliation];
+GO
+ 
+-- import the file
+BULK INSERT [Profile.Data].[Publication.PubMed.DisambiguationAffiliation]
+FROM 'C:\...\keyphrases.txt'
+WITH
+(
+		CODEPAGE = '65001',
+		ROWTERMINATOR = '\n',
+		TABLOCK
+)
+GO
+
 -- Finally run the validation script
 EXEC [Profile.Import].ValidateProfilesImportTables

@@ -17,7 +17,7 @@
   - Copy files from Database\Data\* into db server directory /var/opt/mssql/data/ProfilesRNS/
 - Project kick-off meeting with Antonella Succurro
 
-### Tuesday, 3rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Wednesday, 3rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Switching from Docker-based SQL Server 2019 to locally installed Developer Edition
   - Reason: The system requires the use of _Integration Services_ which are not available in the Docker images
@@ -36,7 +36,7 @@
 - Important: Set the "basePath" value in [Framework.].[Parameter] to the actual __**base URI**__. In a development environment this is 'http://localhost:55956'. Otherwise the site won't work.
 - The parameter name is misleading as it suggests that this is only the path component of the base URI.
 
-### Tuesday, 4rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Thursday, 4rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Investigating issue #6: Invalid default route when navigating to the site
   - Solution: Set basePath in [Framework.].[Parameters] to a URL (i.e. http://localhost:55956) without trailing slash **and** clear all browser caches.
@@ -48,7 +48,7 @@
 - Analyzing the source code structure and features
 - Manually added admin user through the database
 
-### Tuesday, 5th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Friday, 5th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Analyzing the structure of the source code
 - Meeting prepations
@@ -74,6 +74,16 @@
   - Production system:
     - https://www.profiles-wggc.uni-bonn.de/profiles/search/
     - SSL Certificate expired
-  - Importing the prodided production data using SSMS
-    - In the Import Data dialog does not work with the provided queries because the data is in UTF-8 encoding and some columns require LATIN-1
-    - Created SQL queries for importing the data
+- Importing the prodided production data using SSMS
+  - In the Import Data dialog does not work with the provided queries because the data is in UTF-8 encoding and some columns require LATIN-1
+  - Created SQL queries for importing the data
+
+### Monday, 8th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Investigate why the <code>PubMedDisambiguation_GetPubs</code> job that loads the publications for the persons in the database is failing with a HTTP status code of <code>-2</code>
+  - Researching and debugging almost took a whole day without success..
+  - Feedback from Nicholas Brown suggested to remove the <code>ProfilesRNS_CallPRNSWebservice.dtsx</code> package from SSIS and re-install using SSDT.
+  - Installing the same package using the <code>Import_SSIS_packages.bat</code> script resolved the issue.
+  - Nicholas suggested, however, to prefer installing using SSDT because other methods seem to fail often with SQL Server updates.
+  - Useful article about installing SSDT extensions for VS 2019: https://www.mssqltips.com/sqlservertip/6481/install-sql-server-integration-services-in-visual-studio-2019/
+
