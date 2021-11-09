@@ -87,3 +87,24 @@
   - Nicholas suggested, however, to prefer installing using SSDT because other methods seem to fail often with SQL Server updates.
   - Useful article about installing SSDT extensions for VS 2019: https://www.mssqltips.com/sqlservertip/6481/install-sql-server-integration-services-in-visual-studio-2019/
 
+### Tuesday, 9th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Investigate why the <code>PubMedDisambiguation_GetPubsMEDXML</code> job that loads the publications does not retrieve any results
+- Jour Fix meeting with Antonella Succorro @ 11am
+  - Project Status
+    I am currently having issues with loading the publication data. The SQL scripts that load publications from the Harvard site do not work reliably. I want to set up a call with Nick to resolve this issue as soon as possible.
+  - Visual Adaptations
+    We discussed that the appearance of the site should be based on the colors from this site: https://ngs-kn.de/ . We talked about the four logos of the partner organizations to be put in the header of the site. I will create an initial proposal for the adapted site layout and we will discuss it in the meeting.
+  - Data Adaptations
+    1. Remove the faculty drop down from the search form and replace it with a list of the partner organizations. This can either be achieved by introducing a new ontology term or by utilizing the group feature of the software. I will this discuss this with Nick.
+    1. Adapt the data loading so that the ORCID ids of persons are processed and displayed on the site.
+    1. Adapt the data presentation so that the address information can be hidden for some persons who do not approve the publication of their data on the site.
+
+  - Next steps:
+    - I will set up a call with Nick and discuss the data loading issues.
+    - I will fill out the application form to get access to the production machine via VPN.
+    - Antonella and Miriam want to provide the Logos and a prototype for the site footer.
+    - Antonella wants to take care of the outdated SSL certificate #9 and the Google Maps API #4 key.
+- 
+
+
