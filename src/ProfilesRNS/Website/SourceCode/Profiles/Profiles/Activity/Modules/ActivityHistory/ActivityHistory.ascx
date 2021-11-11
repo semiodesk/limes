@@ -127,16 +127,16 @@ Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
               <div class="act-image">
                 <asp:HyperLink runat="server" ID="linkThumbnail"></asp:HyperLink>
               </div>
-              <div class="act-userdate">
-                <div class="act-user">
+              <div>
+                <div class="act-msg">
                   <asp:HyperLink runat="server" ID="linkProfileURL"></asp:HyperLink>
+                  <asp:Literal runat="server" ID="litMessage"></asp:Literal>
                 </div>
-                <div class="date">
-                  <asp:Literal runat="server" ID="litDate"></asp:Literal>
+                <div class="act-userdate">
+                  <div class="date">
+                    <asp:Literal runat="server" ID="litDate"></asp:Literal>
+                  </div>
                 </div>
-              </div>
-              <div class="act-msg">
-                <asp:Literal runat="server" ID="litMessage"></asp:Literal>
               </div>
             </div>
             <div class="act-id" style="display: none">
@@ -148,13 +148,13 @@ Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
     </asp:Repeater>
   </asp:Panel>
 </section>
-<asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx"
-  ><img src="../Framework/Images/icon_squareArrow.gif" /> See more Activities</asp:HyperLink
->
+<asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx">
+  <i class="fa fa-chevron-right"></i> See more activities
+</asp:HyperLink>
 <div id="divStatus" style="display: none">
   <div class="loader">
     <span>
-      <img alt="Loading..." id="loader" src="<%=GetURLDomain()%>/Edit/Images/loader.gif" width="400" height="213"
-    /></span>
+      <img alt="Loading..." id="loader" src="<%=GetURLDomain()%>/Edit/Images/loader.gif" width="400" height="213" />
+    </span>
   </div>
 </div>

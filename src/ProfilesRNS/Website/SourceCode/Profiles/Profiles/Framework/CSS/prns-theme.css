@@ -135,7 +135,6 @@
 }
 
 #prns-content-right .prns-network-header h2 {
-  color: #ac1b30;
   margin-bottom: 12px;
   position: relative;
 }
@@ -145,16 +144,12 @@
 }
 
 .prns-explore-btn {
-  font: bold 14px Arial !important;
+  background-color: #66CE1E;
   text-decoration: none;
-  text-align: center !important;
-  background-color: #090 !important;
-  color: #fff !important;
-  padding: 8px !important;
-  width: 85px !important;
-  margin-top: 7px !important;
-  display: block;
-  margin-bottom: 12px;
+  border-radius: 3px;
+  color: white;
+  padding: .5em;
+  display: inline-block;
 }
 
 /****************** profile page  ******************/

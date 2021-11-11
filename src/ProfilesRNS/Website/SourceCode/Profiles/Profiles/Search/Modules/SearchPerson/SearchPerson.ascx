@@ -149,7 +149,7 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
               </div>
             </td>
           </tr>
-          <tr runat="server" id="trDepartment">
+          <!-- <tr runat="server" id="trDepartment">
             <th>Department</th>
             <td colspan="2">
               <asp:Literal runat="server" ID="litDepartment"></asp:Literal>
@@ -162,9 +162,9 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
                 />
               </div>
             </td>
-          </tr>
+          </tr> -->
           <tr runat="server" id="trDivision">
-            <th>Division</th>
+            <th>Competence Center</th>
             <td colspan="2">
               <asp:Literal runat="server" ID="litDivision"></asp:Literal>
               <div class="fw-normal">
@@ -172,7 +172,7 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
               </div>
             </td>
           </tr>
-          <tr runat="server" id="trFacultyType">
+          <!-- <tr runat="server" id="trFacultyType">
             <th>Faculty Type</th>
             <td colspan="2">
               <div>
@@ -185,8 +185,8 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
               <asp:HiddenField ID="hidList" runat="server" />
               <asp:HiddenField ID="hidURIs" runat="server" />
             </td>
-          </tr>
-          <tr runat="server" id="trOtherOptions">
+          </tr> -->
+          <!-- <tr runat="server" id="trOtherOptions">
             <th style="vertical-align: top">Other Options</th>
             <td colspan="2">
               <select
@@ -207,7 +207,7 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
                 </tr>
               </table>
             </td>
-          </tr>
+          </tr> -->
           <tr>
             <td></td>
             <td colspan="2">

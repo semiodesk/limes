@@ -2,16 +2,16 @@
 <asp:Repeater ID="passiveList" runat="server" OnItemDataBound="passiveList_OnItemDataBound">
     <HeaderTemplate>
         <div class="passiveSectionHead">
-            <div style="white-space: nowrap; display: inline">
-                <asp:Literal runat="server" ID="InfoCaption" />
-                <asp:Literal runat="server" ID="TotalCount"></asp:Literal>
-                <asp:HyperLink runat="server" ID="Info" CssClass="questionImage" ></asp:HyperLink>
-            </div>
+            <h4>         
+                <asp:HyperLink runat="server" ID="moreurl">
+                    <i class="fa fa-chevron-right"></i>
+                    <asp:Literal runat="server" ID="InfoCaption"></asp:Literal>
+                    <asp:Literal runat="server" ID="TotalCount"></asp:Literal>
+                </asp:HyperLink>
+            </h4>
             <asp:Literal runat="server" ID="divStart"></asp:Literal>
-                <asp:Literal runat="server" ID="Description"></asp:Literal>
             <asp:Literal runat="server" ID="divEnd"></asp:Literal>
         </div>
-
         <div class="passiveSectionBody">
             <ul>
     </HeaderTemplate>
@@ -22,8 +22,6 @@
     </ItemTemplate>
     <FooterTemplate>
         </ul>
-            </div>         
-             <asp:HyperLink runat="server" ID="moreurl" Text="Explore" CssClass="prns-explore-btn"></asp:HyperLink>
-        <div class="passiveSectionLine">_</div>
+        </div>
     </FooterTemplate>
 </asp:Repeater>

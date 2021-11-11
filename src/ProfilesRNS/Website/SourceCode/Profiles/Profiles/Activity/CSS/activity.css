@@ -31,12 +31,9 @@ section {
   min-height: 48px;
 }
 
-.act-heading {
-  font-weight: 600;
-}
-
-.act-user {
-  line-height: 15px;
+.act-body {
+  display: flex;
+  flex-direction: row;
 }
 
 .act-userdate .date {
@@ -46,15 +43,12 @@ section {
 }
 
 .act-image {
-  float: left;
-  height: 45px;
-  padding-right: 5px;
-  overflow-y: hidden;
-}
-
-.act-msg {
-  clear: left;
-  padding-top: 6px;
+  display: block;
+  min-width: 45px;
+  min-height: 45px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 5px 10px;
 }
 
 .panelMain .activities {
@@ -63,20 +57,6 @@ section {
 
 .panelMain .act-heading {
   display: none;
-}
-
-.panelMain .act-userdate {
-  float: left;
-  width: 160px;
-  padding-right: 10px;
-}
-
-.panelMain .act-msg {
-  clear: none;
-  float: left;
-  width: 360px;
-  padding: 0;
-  margin-top: -2px;
 }
 
 .act-heading-live-updates {

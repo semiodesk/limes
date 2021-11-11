@@ -127,6 +127,7 @@
     <Content Include="Framework\Images\arrowLeft.png" />
     <Content Include="Framework\Images\arrowRight.png" />
     <Content Include="Framework\Images\blackMagnifyGlass.png" />
+    <Content Include="Framework\Images\ccu.png" />
     <Content Include="Framework\Images\listen.jpg" />
     <Content Include="Framework\Images\orcid_16x16%281%29.gif" />
     <Content Include="Framework\Images\Orcid_Logo_rgb.png" />
@@ -324,6 +325,7 @@
     <Content Include="Profile\Modules\NetworkRadial\JavaScript\sliders.js" />
     <Content Include="Profile\Modules\NetworkRadial\JavaScript\viz.js" />
     <Content Include="Profile\Modules\NetworkRadial\JavaScript\watchdog.js" />
+    <Content Include="Profile\Modules\PassiveList\Images\explore.svg" />
     <Content Include="Profile\Modules\PassiveList\Images\info.png" />
     <Content Include="Profile\XSLT\ContributingRole.xslt">
       <SubType>Designer</SubType>
@@ -1893,8 +1895,8 @@
     <Content Include="Login\PresentationXML\LoginFormPresentation.xml" />
     <Content Include="Profile\Modules\PassiveHeader\PassiveHeader.ascx" />
     <Content Include="Profile\Modules\CustomViewAuthorInAuthorship\CustomViewAuthorInAuthorship.ascx" />
-    <Content Include="Profile\Modules\PropertyList\images\minusSign.gif" />
-    <Content Include="Profile\Modules\PropertyList\images\plusSign.gif" />
+    <Content Include="Profile\Modules\PropertyList\images\minus-sign.svg" />
+    <Content Include="Profile\Modules\PropertyList\images\plus-sign.svg" />
     <Content Include="Profile\Modules\PropertyList\PropertyList.ascx" />
     <Content Include="Framework\Modules\MainMenu\MainMenu.ascx" />
     <Content Include="Framework\Modules\RDFLink\RDFLink.ascx" />

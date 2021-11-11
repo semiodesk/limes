@@ -5,6 +5,20 @@
     <!-- MAIN NAVIGATION MENU -->
     <nav>
         <ul class="prns-main">
+            <li class="main-nav search">
+                <div class="search-container">
+                    <i class="fa fa-search"></i>
+                    <input name="search" id="menu-search" placeholder="Search Profiles (people, publications, concepts, etc.)" type="text"/>
+                </div>
+            </li>
+            <li id="search-drop" class="main-nav search-drop">
+                <a href="#" class="ellipsis">
+                    <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="drop">
+                    <asp:Literal runat="server" ID="litSearchOptions"></asp:Literal>
+                </ul>
+            </li>
             <li class="main-nav">
                 <a href="<%=ResolveUrl("~/search")%>">Home</a>
             </li>
@@ -36,20 +50,6 @@
                 </ul>
             </li>--%>
             <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
-            <li class="main-nav search">
-                <div class="search-container">
-                    <i class="fa fa-search"></i>
-                    <input name="search" id="menu-search" placeholder="Search Profiles (people, publications, concepts, etc.)" type="text"/>
-                </div>
-            </li>
-            <li id="search-drop" class="main-nav">
-                <a href="#" class="ellipsis">
-                    <i class="fa fa-ellipsis-v"></i>
-                </a>
-                <ul class="drop">
-                    <asp:Literal runat="server" ID="litSearchOptions"></asp:Literal>
-                </ul>
-            </li>
         </ul>
         <!-- USER LOGIN MSG / USER FUNCTION MENU -->
         <div id="prns-usrnav" class="pub" class-help="class should be [pub|user]">

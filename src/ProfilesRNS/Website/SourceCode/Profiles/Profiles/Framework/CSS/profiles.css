@@ -3,17 +3,22 @@
 body {
   font-family: "Segoe UI", "Helvetica", sans-serif;
 }
+
 a {
   color: #36a4de;
 }
 
 h1,
 h2,
-h3,
+h3 {
+  font-family: "Mina", sans-serif;
+  color: #0071a1;
+}
+
 h4,
 h5 {
   font-family: "Mina", sans-serif;
-  color: #0071a1;
+  color: #183c55;
 }
 
 h4 {
@@ -38,6 +43,23 @@ a.search-button {
 a.search-button:hover {
   text-decoration: none;
   border-color: #e07000;
+}
+
+.header-container {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.header-container h1 a {
+  color: #0071a1;
+}
+
+.header-container h1 a span {
+  color: #66ce1e;
+}
+
+.header-container h1 a:hover {
+  text-decoration: none;
 }
 
 /*Replacing inline styles for the form headings in the main app*/
@@ -114,11 +136,10 @@ header._ci_shared_asset.tool-page .inner a.main-logo {
 }
 
 .SupportText {
-  font-size: 11px;
+  font-size: 12px;
+  color: #506380;
   margin-top: 12px;
   padding: 16px 0 0 0;
-  color: #333;
-  border-top: 1px solid #ccc;
 }
 
 div#ctsc-related-links {
@@ -209,54 +230,41 @@ div#catalyst-footer {
 /* Customize this part                      */
 /********************************************/
 
-.PropertyGroup {
-  font-family: Arial;
+.PropertyGroup,
+.PropertyItemHeader {
+  font-family: "Mina", "sans-serif";
   font-weight: bold;
-  font-size: 15px;
-  color: #993333;
-  padding-bottom: 5px;
-  text-align: left;
+  text-transform: capitalize;
   cursor: pointer;
-  border: none !important;
+  border: none;
+  color: #183c55;
+}
+
+.PropertyGroup {
+  font-size: 1.7em;
   outline: none;
 }
 
+.PropertyGroup img,
+.PropertyItemHeader img {
+  position: relative;
+  top: -2px;
+}
+
 .PropertyItemHeader {
-  font-family: Arial;
-  font-weight: bold;
-  font-size: 15px;
-  color: #993333;
-  padding: 5px;
-  text-align: left;
-  cursor: pointer;
-  background-color: #eee;
-}
-
-.PropertyItemHeader a {
-  color: #666 !important;
-  text-decoration: none !important;
-}
-
-.PropertyItemHeader a:hover {
-  color: #666 !important;
-  text-decoration: none !important;
-}
-
-.PropertyGroup a:hover {
-  color: #666 !important;
-  text-decoration: none !important;
+  font-size: 1.4em;
+  margin-left: 1em;
+  padding: 0.5em 0;
 }
 
 .PropertyGroupItem {
   font-weight: normal;
-  color: #666;
   font-size: 13px;
   text-align: left;
-  border: 1px solid #ccc !important;
 }
 
 .PropertyGroupData {
-  margin: 10px;
+  margin: 1em;
   text-align: left;
   font-size: 13px;
   font-weight: normal;
@@ -377,7 +385,6 @@ div#catalyst-footer {
 
 .profiles .profilesContentMain .pageTitle h2 {
   text-align: left;
-  color: #ac1b30;
   font-size: 28px;
   font-weight: normal;
   margin: 0px !important;
@@ -385,7 +392,7 @@ div#catalyst-footer {
 
 /* pageSubTitle */
 .profiles .profilesContentMain .pageSubTitle {
-  color: #666666;
+  color: #506380;
   font-weight: bold;
   text-align: left;
   float: left;
@@ -394,7 +401,7 @@ div#catalyst-footer {
 
 .profiles .profilesContentMain .pageSubTitle h3 {
   padding: 0px;
-  color: #666666;
+  color: #506380;
   font-weight: bold;
   text-align: left;
 }
@@ -459,7 +466,7 @@ div#catalyst-footer {
   vertical-align: top;
 }
 
-.profiles .profilesContentPassive .passiveSectionHead {
+.profilesContentPassive .passiveSectionHead {
   overflow: hidden;
   font-weight: bold;
   margin-top: 8px;
@@ -468,14 +475,18 @@ div#catalyst-footer {
   color: #333;
 }
 
-.profiles .profilesContentPassive .passiveSectionHead img {
+.profilesContentPassive .passiveSectionHead img {
   position: relative;
   top: 1px;
   border: none;
   padding-bottom: 3px;
 }
 
-.profiles .profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
+.profilesContentPassive .passiveSectionHead h4 a {
+  color: #183c55;
+}
+
+.profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
   font-weight: normal;
   font-size: 10px;
   line-height: 11px;
@@ -484,7 +495,7 @@ div#catalyst-footer {
   display: none;
 }
 
-.profiles .profilesContentPassive .passiveSectionBody {
+.profilesContentPassive .passiveSectionBody {
   overflow: hidden;
   text-align: left;
 }
@@ -494,15 +505,15 @@ div#catalyst-footer {
   padding: 0px;
 }
 
-.profiles .profilesContentPassive .passiveSectionBody div {
+.profilesContentPassive .passiveSectionBody div {
   padding-left: 1em;
   text-indent: -1em;
   text-align: left;
   line-height: 14px;
-  xspadding-bottom: 12px;
+  padding-bottom: 12px;
 }
 
-.profiles .profilesContentPassive .passiveSectionBody li {
+.profilesContentPassive .passiveSectionBody li {
   padding-left: 1em;
   text-indent: -1em;
   text-align: left;
@@ -723,7 +734,7 @@ div#catalyst-footer {
 /********************************************/
 .anchor-tab {
   margin: 10px 0 4px 0;
-  color: #666;
+  color: #506380;
 }
 
 .anchor-tab a.selected {
@@ -743,12 +754,7 @@ div#catalyst-footer {
 }
 
 .anchor-tab a {
-  color: #36c;
   cursor: pointer;
-}
-
-.anchor-tab a.link-visualization {
-  color: #090;
 }
 
 .ui-autocomplete {
@@ -783,7 +789,7 @@ div#catalyst-footer {
 
 .grantanchor-tab {
   margin: 10px 0 4px 0;
-  color: #666;
+  color: #506380;
 }
 
 .grantanchor-tab a.selected {
@@ -1042,7 +1048,7 @@ table tbody .height25 {
 .editPage .topRow td {
   background-color: #eeebe5;
   font-weight: bold;
-  color: #666;
+  color: #506380;
   font-size: 13px;
   height: 24px;
   padding-left: 6px;
@@ -1050,7 +1056,7 @@ table tbody .height25 {
 .topRow {
   background-color: #eeebe5;
   font-weight: bold;
-  color: #666;
+  color: #506380;
   font-size: 13px;
   height: 24px;
   padding-left: 6px;
@@ -1058,7 +1064,7 @@ table tbody .height25 {
 }
 .EditMenuTopRow {
   background-color: #eeebe5;
-  color: #666;
+  color: #506380;
   font-size: 13px;
   height: 24px;
   padding-left: 6px;
@@ -1084,21 +1090,26 @@ table tbody .height25 {
   padding: 3em;
 }
 
+.footer .logo-container {
+  position: relative;
+  left: -1.3em;
+  padding: 1em 0;
+}
+
 .footer .logo {
   height: 55px;
-  margin-top: 15px;
-  margin-right: 35px;
-  background-blend-mode: normal;
-  filter: grayscale(1);
+  margin: 1em;
 }
 
-.footer .logo:hover,
-.footer .logo:focus {
-  filter: grayscale(0);
-}
-
-.footer .links a {
-  padding: 0 1em;
+.footer a {
   color: #375d7a;
-  font-weight: 600;
+  padding: 0.5em;
+}
+
+.hint {
+  font-style: italic;
+  color: #666;
+  padding: 1em;
+  background-color: #eee;
+  border-radius: 3px;
 }

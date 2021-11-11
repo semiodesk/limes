@@ -116,3 +116,9 @@
   - Nicholas suggested to use Divisions for picking the centers
   - Nicholas promised to send me some SQL scripts that will correct the errors in my db caused by a configuration mistake
 
+### Thursday, 11th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Filled out application form for VPN account at Bonn University
+- Executed scripts provided by from Nicholas Brown to fix the invalid search result links
+- Adapting home page design to requirements provided by Antonella Succorro
+- Further developing and adapting page designs of content pages

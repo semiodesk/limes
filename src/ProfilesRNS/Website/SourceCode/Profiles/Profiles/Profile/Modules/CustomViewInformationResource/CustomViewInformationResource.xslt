@@ -4,7 +4,7 @@
   <xsl:template match="/">    
     <xsl:if test="rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://vivoweb.org/ontology/core#InformationResource']">
 		<xsl:variable name="plusImage">
-			<xsl:value-of select="$root"/><![CDATA[/Profile/Modules/PropertyList/images/minusSign.gif]]>			
+			<xsl:value-of select="$root"/><![CDATA[/Profile/Modules/PropertyList/images/minus-sign.svg]]>			
 		</xsl:variable>
       <xsl:for-each select="rdf:RDF/rdf:Description[rdf:type/@rdf:resource='http://vivoweb.org/ontology/core#InformationResource']">        
 

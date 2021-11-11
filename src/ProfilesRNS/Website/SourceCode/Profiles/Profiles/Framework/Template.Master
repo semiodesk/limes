@@ -84,10 +84,10 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         ga("send", "pageview");
         ga("b.send", "pageview");
       </script>
-      <div class="institutionHeader">
-        <div class="container">
-          <h1>NGS-CN <span>Profiles</span></h1>
-        </div>
+      <div class="container header-container">
+        <h1>
+          <a href="/">NGS Competence Network <span>Profiles</span></a>
+        </h1>
       </div>
       <div class="container py-2">
         <div class="profilesHeader" runat="server" id="divProfilesHeader">
@@ -122,16 +122,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
             Return to Top
           </button>
           <div id="profilesMainRow" class="row">
-            <div id="divContentLeft" class="col-md-3" runat="server">
-              <asp:ContentPlaceHolder ID="Contentleft" runat="server">
-                <asp:Repeater runat="server" ID="rptLeft" OnItemDataBound="DrawModule">
-                  <ItemTemplate>
-                    <asp:PlaceHolder ID="phLeft" runat="server"></asp:PlaceHolder>
-                  </ItemTemplate>
-                </asp:Repeater>
-              </asp:ContentPlaceHolder>
-            </div>
-            <div id="divProfilesContentMain" class="col-md-6" runat="server">
+            <div id="divProfilesContentMain" class="col-md-8" runat="server">
               <div id="divTopMainRow" style="width: 100%" runat="server">
                 <asp:Literal runat="server" ID="litPageTitle"></asp:Literal>
               </div>
@@ -157,12 +148,21 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
                 </asp:ContentPlaceHolder>
               </div>
             </div>
-            <div class="profilesContentPassive col-md-3">
-              <div class="panelPassive">
+            <div class="profilesContentPassive col-md-4">
+              <div>
                 <asp:ContentPlaceHolder ID="ContentPassive" runat="server">
                   <asp:Repeater runat="server" ID="rptPassive" OnItemDataBound="DrawModule">
                     <ItemTemplate>
                       <asp:PlaceHolder ID="phPassive" runat="server"></asp:PlaceHolder>
+                    </ItemTemplate>
+                  </asp:Repeater>
+                </asp:ContentPlaceHolder>
+              </div>
+              <div id="divContentLeft" runat="server">
+                <asp:ContentPlaceHolder ID="Contentleft" runat="server">
+                  <asp:Repeater runat="server" ID="rptLeft" OnItemDataBound="DrawModule">
+                    <ItemTemplate>
+                      <asp:PlaceHolder ID="phLeft" runat="server"></asp:PlaceHolder>
                     </ItemTemplate>
                   </asp:Repeater>
                 </asp:ContentPlaceHolder>
@@ -176,19 +176,21 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     </form>
     <div class="footer">
       <div class="container">
-        <div class="row">
-          <div class="col-md-9 copyright">
-            <p>© 2021 Next Generation Sequencing Competence Network (NGS-CN)</p>
+        <a href="#" target="_blank">Impressum</a> |
+        <a href="https://ngs-kn.de/privacy-policy/" target="_blank">Privacy Policy</a> |
+        <a href="https://ngs-kn.de/" target="_blank">© 2021 Next Generation Sequencing Competence Network (NGS-CN)</a>
 
-            <img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/CCGA-Logo2-page-0-768x439.jpg" />
-            <img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/DDC_Logo_new.png" />
-            <img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/NCCT_Logo_RGB-768x341.png" />
-            <img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/wggc-768x239.png" />
-          </div>
-          <div class="col-md-3 links">
-            <a href="">Imprint</a>
-            <a href="">Privacy</a>
-          </div>
+        <div class="logo-container">
+          <a href="" target="_blank"><img class="logo" src="/Framework/Images/ccu.png" /></a>
+          <a href="" target="_blank"
+            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/CCGA-Logo2-page-0-768x439.jpg"
+          /></a>
+          <a href="" target="_blank"
+            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/NCCT_Logo_RGB-768x341.png"
+          /></a>
+          <a href="" target="_blank"
+            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/wggc-768x239.png"
+          /></a>
         </div>
       </div>
     </div>

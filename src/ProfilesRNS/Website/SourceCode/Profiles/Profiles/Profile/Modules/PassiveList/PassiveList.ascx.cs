@@ -92,42 +92,46 @@ namespace Profiles.Profile.Modules.PassiveList
                 case ListItemType.Header:
                     Literal infocaption = (Literal)e.Item.FindControl("InfoCaption");
                     Literal TotalCount = (Literal)e.Item.FindControl("TotalCount");
-
                     Literal divstart = (Literal)e.Item.FindControl("divStart");
                     Literal divend = (Literal)e.Item.FindControl("divEnd");
                     Literal Description = (Literal)e.Item.FindControl("Description");
-                    HyperLink InfoIcon = (HyperLink)e.Item.FindControl("Info");
 
-                    divstart.Text = "<div id='" + pl.ID + "' class='passiveSectionHeadDescription' style='display: none;'>";
-                    Description.Text = "<div>" + pl.Description + "</div>";
-                    divend.Text = "</div>";
-                    InfoIcon.Attributes.Add("href", "#");
-                    InfoIcon.ImageUrl = Root.Domain + "/profile/modules/passivelist/Images/info.png";
                     if (pl.TotalCount != string.Empty)
                     {
                         TotalCount.Text = "(" + pl.TotalCount + ")";
                     }
+
                     infocaption.Text = pl.InfoCaption;
-                    break;
-                case ListItemType.Footer:
+                    
                     HyperLink moreurl = (HyperLink)e.Item.FindControl("moreurl");
-                    if (pl.MoreURL.Trim() != string.Empty)
+
+                    if(moreurl != null)
                     {
-                        moreurl.NavigateUrl = pl.MoreURL;
+                        moreurl.ToolTip = pl.Description;
+
+                        if (pl.MoreURL.Trim() != string.Empty)
+                        {
+                            moreurl.NavigateUrl = pl.MoreURL;
+                        }
+                        else
+                        {
+                            moreurl.Visible = false;
+                        }
                     }
-                    else
-                        moreurl.Visible = false;
                     break;
 
                 default:
                     itemList il = (itemList)e.Item.DataItem;
 
                     HyperLink itemurl = (HyperLink)e.Item.FindControl("itemUrl");
-                    itemurl.NavigateUrl = il.ItemURL;
-                    itemurl.Text = il.ItemURLText;
+
+                    if(itemurl != null)
+                    {
+                        itemurl.NavigateUrl = il.ItemURL;
+                        itemurl.Text = il.ItemURLText;
+                    }
 
                     break;
-
             }
         }
     }
