@@ -12,13 +12,13 @@
                 <a href='#'>About</a>
                 <ul class="drop">
                     <li>
-                        <a id="about" style="border-left: 1px solid  #999; border-right: 1px solid  #999; border-bottom: 1px solid #999; width: 200px !important" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">Overview</a>
+                        <a id="about" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">Overview</a>
                     </li>
                     <li>
-                        <a id="data" style="border-left: 1px solid  #999; border-right: 1px solid  #999; border-bottom: 1px solid #999; width: 200px !important" href="<%=ResolveUrl("~/about/default.aspx?tab=data")%>">Sharing Data</a>
+                        <a id="data" href="<%=ResolveUrl("~/about/default.aspx?tab=data")%>">Sharing Data</a>
                     </li>
                     <li>
-                        <a id="orcid" style="border-left: 1px solid  #999; border-right: 1px solid  #999; border-bottom: 1px solid #999; width: 200px !important" href="<%=ResolveUrl("~/about/default.aspx?tab=orcid")%>">ORCID</a>
+                        <a id="orcid" href="<%=ResolveUrl("~/about/default.aspx?tab=orcid")%>">ORCID</a>
                     </li>
                 </ul>
 
@@ -36,14 +36,17 @@
                 </ul>
             </li>--%>
             <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
-            <li class="search main-nav" style="width: 492px;">
-                <input name="search" id="menu-search" placeholder="Search Profiles (people, publications, concepts, etc.)" type="text" style="padding-left: 5px;" />
-                <img style="cursor: pointer" alt="search" id="img-mag-glass" src="<%=ResolveUrl("~/framework/images/blackMagnifyGlass.png")%>" />
+            <li class="main-nav search">
+                <div class="search-container">
+                    <i class="fa fa-search"></i>
+                    <input name="search" id="menu-search" placeholder="Search Profiles (people, publications, concepts, etc.)" type="text"/>
+                </div>
             </li>
-            <li id="search-drop" class="last main-nav" style="float: right !important; width: 25px;">
-                <a href="#" style="padding: 0px; padding-top: 9px; margin: 0px;">
-                    <img src="<%=ResolveUrl("~/framework/images/arrowDown.png") %>" /></a>
-                <ul class="drop" style="top: 39px; left: 835px;">
+            <li id="search-drop" class="main-nav">
+                <a href="#" class="ellipsis">
+                    <i class="fa fa-ellipsis-v"></i>
+                </a>
+                <ul class="drop">
                     <asp:Literal runat="server" ID="litSearchOptions"></asp:Literal>
                 </ul>
             </li>
@@ -91,7 +94,6 @@
 
 <asp:Literal runat="server" ID="litJs"></asp:Literal>
 <script type="text/javascript">
-
     $(function () {
         setNavigation();
     });
@@ -114,6 +116,7 @@
 
         return true;
     }
+
     $(document).ready(function () {
         $("#menu-search").on("keypress", function (e) {
             if (e.which == 13) {
@@ -128,13 +131,13 @@
             return true;
         });
     });
+
     function minisearch() {
         var keyword = $("#menu-search").val();
         var classuri = 'http://xmlns.com/foaf/0.1/Person';
         document.location.href = '<%=ResolveUrl("~/search/default.aspx")%>?searchtype=people&searchfor=' + keyword + '&classuri=' + classuri;
         return true;
     }
-
 </script>
 
 

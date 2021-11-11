@@ -1,10 +1,12 @@
 # Ignore files that exceed the GitHub size limits.
 src/ProfilesRNS/Database/Data/*.xml
 src/ProfilesRNS/Database/Data/*.owl
+src/ProfilesRNS/Website/Binary/*
 bin
 obj
 .vs
 .suo
 *.user
 *.config
+*.zip
 debug.log

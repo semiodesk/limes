@@ -103,8 +103,16 @@
   - Next steps:
     - I will set up a call with Nick and discuss the data loading issues.
     - I will fill out the application form to get access to the production machine via VPN.
-    - Antonella and Miriam want to provide the Logos and a prototype for the site footer.
-    - Antonella wants to take care of the outdated SSL certificate #9 and the Google Maps API #4 key.
-- 
+    - Antonella and Miriam want to provide the logos and a prototype for the site footer.
+    - Antonella wants to take care of the outdated SSL certificate [#9](https://github.com/semiodesk/limes/issues/9) and the Google Maps API [#4](https://github.com/semiodesk/limes/issues/4) key.
+- Fixing broken links on search results page [Github issue #15](https://github.com/semiodesk/limes/issues/15)
 
+### Wednesday, 10th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Arranged a call with Nicholas Brown today at 5pm
+- Did not manage to resolve the broken links issue yesterday, will talk about it with Nicholas
+- Adapting page design to use the NGS-CN color scheme and make use of Bootstrap
+- Call with Nicholas Brown @ 5pm
+  - Nicholas suggested to use Divisions for picking the centers
+  - Nicholas promised to send me some SQL scripts that will correct the errors in my db caused by a configuration mistake
 

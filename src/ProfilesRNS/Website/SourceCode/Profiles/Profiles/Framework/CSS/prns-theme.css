@@ -1,20 +1,16 @@
 @import url("prns-theme-menus-top.css");
 @import url("hms-catalyst.css");
 
-
 /****************** main content box  ******************/
-
 
 #prns-content .content-main,
 #prns-content-right {
-  float:left;
+  float: left;
 }
 
 #prns-content .content-main {
-  width: 100%;  
-  padding-top:20px;
+  width: 100%;
 }
-
 
 /****************** main content navigation tabs  ******************/
 
@@ -24,45 +20,54 @@
   padding: 0;
 }
 
-
 .content-main ul.tabmenu li {
   float: left;
   background: #ccc;
   height: 32px;
 }
 
-.content-main ul.tabmenu li:first-child { margin-left: 8px; }
-
+.content-main ul.tabmenu li:first-child {
+  margin-left: 8px;
+}
 
 .content-main ul.tabmenu li.tab {
   margin-right: 6px;
   padding: 10px 24px 14px;
-  border:1px solid #ccc;
-  border-bottom:none;
-  height:31px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  height: 31px;
   font-size: 14px;
-  line-height: 14px;  
+  line-height: 14px;
   background: #ededed; /* Old browsers */
   background: -moz-linear-gradient(top, #ededed 0%, #ffffff 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ededed 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ededed 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -webkit-linear-gradient(top, #ededed 0%, #ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ededed 0%,
+    #ffffff 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
-.content-main ul.tabmenu li.tab a           { color: #3366cc; position:relative;top:-2px;}
-.content-main ul.tabmenu li.tab.selected a  { color: #000; }
+.content-main ul.tabmenu li.tab a {
+  color: #3366cc;
+  position: relative;
+  top: -2px;
+}
+.content-main ul.tabmenu li.tab.selected a {
+  color: #000;
+}
 
 .content-main ul.tabmenu li.tab.selected {
   background: #fff !important;
   border-bottom: none !important;
-  height:32px;
-
+  height: 32px;
 }
 
 .content-main ul.tabmenu li.first {
   width: 8px;
   background: #fff;
-  border-bottom:1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .content-main ul.tabmenu li.last {
@@ -71,47 +76,43 @@
   float: none;
 }
 
-
-
 /******************  profile screen specific  ******************/
 
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-left {
-    float: left;
-    margin-bottom: 32px;
+  float: left;
+  margin-bottom: 32px;
 }
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-left > div {
-    clear: both;
+  clear: both;
 }
 
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-left .prns-title {
-    text-align: right;
-    vertical-align: top;
-    font-size: 12px;
-    font-weight: bold;
-    color: #777;
-    width: 100px;
-    float: left;
+  text-align: right;
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: bold;
+  color: #777;
+  width: 100px;
+  float: left;
 }
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-left .prns-text {
-    float: left;
-    margin-left: 16px;
-    vertical-align: top;
-    font-size: 12px;
+  float: left;
+  margin-left: 16px;
+  vertical-align: top;
+  font-size: 12px;
 }
 
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-right {
-    float: right;
-    margin-bottom: 32px;
+  float: right;
+  margin-bottom: 32px;
 }
 #prns-content.prns-screen-profile .content-main .prns-profile-head-list .prns-right img {
-    border: 1px solid #000;
+  border: 1px solid #000;
 }
 
 #prns-content.prns-screen-profile .content-main .prns-profile-sections {
-    clear: both;
+  clear: both;
 }
-
-
 
 /****************** main right content column (profiles) ******************/
 
@@ -127,11 +128,10 @@
   border-width: 0px 0px 1px 0px;
 }
 
-
 #prns-content-right .prns-network-header div {
   border: none;
   padding: 0px !important;
-  margin: 0px !important;  
+  margin: 0px !important;
 }
 
 #prns-content-right .prns-network-header h2 {
@@ -140,10 +140,11 @@
   position: relative;
 }
 
+#prns-content-right div h3 span {
+  font-weight: normal;
+}
 
-#prns-content-right div h3 span { font-weight: normal; }
-
- .prns-explore-btn {
+.prns-explore-btn {
   font: bold 14px Arial !important;
   text-decoration: none;
   text-align: center !important;
@@ -152,13 +153,11 @@
   padding: 8px !important;
   width: 85px !important;
   margin-top: 7px !important;
-  display:block;
-  margin-bottom:12px;
+  display: block;
+  margin-bottom: 12px;
 }
 
-
 /****************** profile page  ******************/
-
 
 #prns-search-result .prns-return {
   display: inline;
@@ -175,7 +174,6 @@
 #prns-search-result .prns-return a img {
   vertical-align: text-bottom;
 }
-
 
 #prns-search-result ul.prns-profile-sections {
   overflow: auto;
@@ -199,7 +197,7 @@
 }
 
 #prns-search-result ul.prns-main ul.prns-profile-sections li a {
-  height:32px;
+  height: 32px;
 }
 
 #prns-search-result ul.prns-profile-sections li div.prns-divider {
@@ -209,7 +207,6 @@
   margin-top: 6px;
   height: 22px;
 }
-
 
 .prns-profile-section {
   border-bottom: 1px solid #ccc;
@@ -224,14 +221,13 @@
   color: #ac1b30;
 }
 
-
 .prns-profile-section ul.prns-profile-awards {
   overflow: auto;
 }
 
-.prns-profile-section ul.prns-profile-awards li {  
+.prns-profile-section ul.prns-profile-awards li {
   list-style-type: none;
-  clear: both; 
+  clear: both;
 }
 
 .prns-profile-section ul.prns-profile-awards li div {
@@ -245,10 +241,6 @@
   padding-right: 20px;
 }
 
-
-
-
 #prns-content .content-main.prns-screen-profile #prns-content-right.prns-network-margin {
   margin-top: 24px;
 }
-

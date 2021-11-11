@@ -11,354 +11,329 @@
   
 */
 
-.search-row-details{
-   font-size:12px;
-   text-align:left;
-   margin-top:14px;
-}
-.pageTitle h2{ 
-    text-align: left;
-        color: #AC1B30;
-        font-size: 28px;
-        font-weight: normal;
-        margin: 0px !important;
-
-}
-.tabContainer h2{ 
-    text-align: left;
-        color: #AC1B30;
-        font-size: 28px;
-        font-weight: normal;
-        margin: 0px !important;
-
+.fw-normal * {
+  font-weight: normal !important;
 }
 
-.panelPassive {
-    background-color: #f7f7f7 !important;
-    border: 1px solid #ccc !important;
+.search-row-details {
+  font-size: 12px;
+  text-align: left;
+  margin-top: 14px;
 }
 
-
-.dropdownx{
-    padding-left:-15px !important;
+.pageTitle h2 {
+  text-align: left;
+  color: black;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0px !important;
 }
 
-
-#divSearchCriteria{width:160px;}
-.btn-default {    
-    font-size: 12px;
-    text-align:left;
-    margin-bottom:10px;
+.tabContainer h2 {
+  text-align: left;
+  color: black;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 0px !important;
 }
 
-    .btn-default .caret {
-        position: absolute !important;
-        top: calc(50% - 1px) !important;      
-        margin-right: calc(10% );
-        right:calc(-7%);
-    }
+.dropdownx {
+  padding-left: -15px !important;
+}
+
+#divSearchCriteria {
+  width: 160px;
+}
+.btn-default {
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.btn-default .caret {
+  position: absolute !important;
+  top: calc(50% - 1px) !important;
+  margin-right: calc(10%);
+  right: calc(-7%);
+}
 
 /********************************************/
 /* Proxy
 /********************************************/
-.center{
-    text-align:center;
-    margin:0px !important;
-    padding:0px !important;
-
+.center {
+  text-align: center;
+  margin: 0px !important;
+  padding: 0px !important;
 }
-.empty-cell{
-    padding:10px;
-    text-align:left;
-    border:none !important;
-
+.empty-cell {
+  padding: 10px;
+  text-align: left;
+  border: none !important;
 }
 .leftCol {
-    text-align:left;    
-    padding-left:6px;
-
+  text-align: left;
+  padding-left: 6px;
 }
 /********************************************/
 /* About                                    */
 /********************************************/
 .form-check-label {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .form-inline {
-    display: inline-flex;
+  display: inline-flex;
 }
 
 .form-control {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .profiles .profilesContentMain .searchSection h3 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    color: #746a42;
-    font-weight: bold;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2em;
+  color: #746a42;
+  font-weight: bold;
 }
 
 .profiles .profilesContentMain .searchResults UL {
-    list-style-type: none;
-    padding: 0px;
-    margin: 15px 0px 15px 15px;
+  list-style-type: none;
+  padding: 0px;
+  margin: 15px 0px 15px 15px;
 }
 
 .profiles .profilesContentMain .searchResults LI {
-    margin-bottom: 8px;
-    text-indent: -15px;
+  margin-bottom: 8px;
+  text-indent: -15px;
 }
 
 .searchResults table {
-    width: 820px;
-    border-collapse: collapse;
+  width: 820px;
+  border-collapse: collapse;
 }
 
-
 .SearchDetails {
-    text-align: left;
-    float: left;
-    overflow-wrap: break-word;
-    width: 170px !important;
-    position:absolute;
-    margin-top:18px;
-
+  text-align: left;
+  float: left;
+  overflow-wrap: break-word;
+  width: 170px !important;
+  position: absolute;
+  margin-top: 18px;
 }
 
 .InLineEverythingResults {
-    display: table-row inline !important;
+  display: table-row inline !important;
 }
 
 .Results-Options-Dropdown {
-    border-right: solid 1px gray;
-    border-bottom: solid 1px gray;
-    border-left: solid 1px silver;
-    padding-left: 3px;
-    margin-left: 195px;
-    width: 150px;
-    overflow: auto;
-    background-color: #ffffff;
-    z-index: 5;
-    position: absolute;
-    text-align: left;
+  border-right: solid 1px gray;
+  border-bottom: solid 1px gray;
+  border-left: solid 1px silver;
+  padding-left: 3px;
+  margin-left: 195px;
+  width: 150px;
+  overflow: auto;
+  background-color: #ffffff;
+  z-index: 5;
+  position: absolute;
+  text-align: left;
 }
-
 
 /********************************************/
 /* Search                                   */
 /********************************************/
 .line {
-    margin-left: 40px;
-    display:inline-block;
-    height: 20px; 
-    background-color:#EAF0F8;
-    color:#666;
-    margin-bottom: 10px;
-padding-left: 5px;
-padding-right: 5px;
+  margin-left: 40px;
+  display: inline-block;
+  height: 20px;
+  background-color: #eaf0f8;
+  color: #666;
+  margin-bottom: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .parent {
-    border-bottom:2px solid #dfdfdf;
-    width: 100%;
-    height:9px;
-    margin-bottom:16px;
-    margin-top:16px;
-
-
+  border-bottom: 2px solid #dfdfdf;
+  width: 100%;
+  height: 9px;
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
-h3{
-    font-size:28px !important;
-     color:#b23f45;
-     font-weight: bold;
-
+h3 {
+  font-size: 28px !important;
+  color: #b23f45;
+  font-weight: bold;
 }
 .divlabel {
-    display: table-cell;
-    vertical-align: middle !important;
-    text-align: right !important;
-    padding-right: 12px;
-    width: 120px;
+  display: table-cell;
+  vertical-align: middle !important;
+  text-align: right !important;
+  padding-right: 12px;
+  width: 120px;
 }
 
 .threehun-width {
-    width: 300px;
+  width: 300px;
 }
 .twofifty-width {
-    width: 250px;
+  width: 250px;
 }
 .searchForm {
-    margin: 8px 0px;
-    color: #666;
+  margin: 8px 0px;
+  color: #666;
 }
 
-    .searchForm .searchSection {
-        background-color: #EAF0F8;
-        border: 1px solid #CCC;
-        padding: 8px 24px 20px;
-        margin-bottom: 12px;
-    }
+.searchForm .searchSection {
+  background-color: #ddedf9;
+  padding: 1.5em;
+  margin-bottom: 12px;
+}
 
-    .searchForm table {
-        border-collapse: collapse;
-    }
+.searchForm table {
+  border-collapse: collapse;
+}
 
-    .searchForm th {
-        text-align: right;
-        font-size: 13px;
-        font-weight: bold;
-        color: #666;
-        width: 102px;
-        padding: 5px 10px 5px 0px;
-    }
+.searchForm th {
+  text-align: right;
+  font-weight: bold;
+  padding: .5em 1em;
+}
 
+.searchForm a {
+  text-decoration: none;
+  border: 0;
+}
 
-    .searchForm a {
-        text-decoration: none;
-        border: 0;
-    }
+.searchForm td {
+  font-weight: normal;
+  text-align: left;
+  padding: .5em 1em;
+}
 
-    .searchForm td {
-        font-size: 13px;
-        font-weight: normal;
-        padding: 2px;
-        margin-left: 24px;
-        text-align: left;        
-    }
-
-    .searchForm .fieldMain {
-        width: 255px;
-    }
-
-.fieldOptions {
-    padding-left: 10px;
+.searchForm .fieldMain {
+  width: 255px;
 }
 
 .input-padding {
-    margin-bottom: 9px !important;
-    padding-left:5px;
+  margin-bottom: 9px !important;
+  padding-left: 5px;
 }
 
 .fileOptions span {
-    font-weight: normal;
-    padding-right: 5px;
+  font-weight: normal;
+  padding-right: 5px;
 }
 
 .searchForm .inputText {
-    width: 250px;
+  width: 250px;
 }
 
 .searchForm select {
-    width: 250px;
+  width: 250px;
 }
 
 .searchForm .inputButton {
-    width: 70px;
-    margin: 0px 20px 0px 0px;
+  width: 70px;
+  margin: 0px 20px 0px 0px;
 }
 
 .searchForm .spacerRow {
-    height: 16px;
-    overflow: hidden;
+  height: 16px;
+  overflow: hidden;
 }
 
 .searchForm .spacerRowSmall {
-    height: 8px;
-    overflow: hidden;
-}
-
-.searchForm b {
-    color: #666;
+  height: 8px;
+  overflow: hidden;
 }
 
 .searchForm .submitTable {
-    background-color: #FFF;
+  background-color: #fff;
 }
 
 .listTablePagination {
-    background-color: #f7f3ef;
-    padding: 6px;
-    width: 100%;
-    border-bottom: 1px solid #999999;
-    border-left:1px solid #999999;
-    border-right:1px solid #999999;
-    border-collapse: collapse;
+  background-color: #f7f3ef;
+  padding: 6px;
+  width: 100%;
+  border-bottom: 1px solid #999999;
+  border-left: 1px solid #999999;
+  border-right: 1px solid #999999;
+  border-collapse: collapse;
 }
 
-    .listTablePagination table {
-        padding: 0px;
-        margin: 0px;
-    }
+.listTablePagination table {
+  padding: 0px;
+  margin: 0px;
+}
 
-    .listTablePagination td {
-        padding: 0px;
-        margin: 0px;
-        width: 200px;
-    }
+.listTablePagination td {
+  padding: 0px;
+  margin: 0px;
+  width: 200px;
+}
 
 .listTablePaginationMiddle {
-    width: 205px;
-    text-align: center;
+  width: 205px;
+  text-align: center;
 }
 
 .listTablePaginationPN {
-    display: block;
-    float: right;    
-    text-align: center;
-    padding: 2px 6px;
-    color: #999;
-    font-weight: bold;
-    font-size: 11px;
-    line-height: 15px;
+  display: block;
+  float: right;
+  text-align: center;
+  padding: 2px 6px;
+  color: #999;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 15px;
 }
 
 .listTablePagination a {
-    font-size: 11px;
-    line-height: 15px;
-    color: #3f4a9d;
+  font-size: 11px;
+  line-height: 15px;
+  color: #3f4a9d;
 }
 
 .listTablePaginationA img {
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 0px;
-    border-left-width: 0px;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
 }
 
 .listTablePaginationP img {
-    margin-right: 4px;
-    margin-bottom:2px;
+  margin-right: 4px;
+  margin-bottom: 2px;
 }
 
 .listTablePaginationN img {
-    margin-left: 4px;
-    margin-bottom:2px;
+  margin-left: 4px;
+  margin-bottom: 2px;
 }
 
 .listTablePaginationN {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .listTablePaginationFL {
-    display: block;
-    width: 19px;
-    height: 19px;
-    float: right;    
+  display: block;
+  width: 19px;
+  height: 19px;
+  float: right;
 }
 
-    .listTablePaginationFL img {
-        margin: 5px 6px;
-    }
+.listTablePaginationFL img {
+  margin: 5px 6px;
+}
 
 .listTablePaginationA {
-    border-color: #999;
+  border-color: #999;
 }
 
-.search-row-details{margin-bottom:2px;
-                    padding:0px; 
-                    margin-top:6px;
-
+.search-row-details {
+  margin-bottom: 2px;
+  padding: 0px;
+  margin-top: 6px;
 }
