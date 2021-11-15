@@ -43,8 +43,7 @@ namespace Profiles.Profile.Modules
 				sectionTitle.Attributes.Add("style", "display: none;");
 			}
 			else
-			{			
-				imgQuestion.ImageUrl = Root.Domain + "/Framework/Images/info.png";
+			{
 				lineItemLiteral.Text = html.ToString();
 			}
 		}

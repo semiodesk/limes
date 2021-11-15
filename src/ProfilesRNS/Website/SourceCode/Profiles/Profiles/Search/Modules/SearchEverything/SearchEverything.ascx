@@ -28,52 +28,22 @@ Inherits="Profiles.Search.Modules.SearchEverything.SearchEverything" %>
 <input type="hidden" id="classuri" name="classuri" value="" />
 <input type="hidden" id="searchtype" name="searchtype" value="everything" />
 <input type="hidden" id="txtSearchFor" name="txtSearchFor" value="" />
-<div class="content_container">
-  <div class="tabContainer" style="margin-top: 0px">
-    <div class="searchForm">
-      <table width="100%">
-        <tr>
-          <td colspan="3">
-            <%-- Replaced inline styles with class below --%>
-            <div class="headings">Find publications, research, concepts and more</div>
-          </td>
-        </tr>
-        <tr>
-          <td colspan="3">
-            <%-- Inline "margin-bottom:15px;" has been removed as it wasnt making a big enough improvement --%>
-            <div class="searchSection">
-              <table width="100%" class="searchForm" onkeypress="JavaScript:runScript(event);">
-                <tr>
-                  <th>Keywords</th>
-                  <td colspan="2" class="fieldOptions">
-                    <asp:TextBox
-                      EnableViewState="false"
-                      runat="server"
-                      ID="searchfor"
-                      CssClass="inputText"
-                      title="Keywords"
-                    />
-                  </td>
-                  <%-- Inline style="padding-right:50px" removed due to lacklustre effect on style --%>
-                  <td>
-                    <asp:CheckBox runat="server" ID="chkExactPhrase" text="&nbsp;Search for exact phrase" />
-                  </td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td colspan="2">
-                    <div class="search-button-container">
-                      <a href="JavaScript:submitEverythingSearch();" class="search-button">
-                        <i class="fa fa-search"></i> Search
-                      </a>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </div>
-          </td>
-        </tr>
-      </table>
+
+<div class="searchForm">
+  <h3>Find publications, research and more</h3>
+
+  <div class="searchSection" onkeypress="JavaScript:runScript(event);">
+    <div class="form-group pt-3">
+      <label for="searchfor">Keywords</label>
+      <div colspan="2" class="fieldOptions">
+        <asp:TextBox EnableViewState="false" runat="server" ID="searchfor" CssClass="inputText" title="Keywords" />
+        <p class="form-control-subline">
+          <asp:CheckBox runat="server" ID="chkExactPhrase" text="Search for exact phrase" />
+        </p>
+      </div>
+    </div>
+    <div class="form-group text-sm-right">
+      <a href="JavaScript:submitEverythingSearch();" class="search-button"> <i class="bi bi-search"></i> Search </a>
     </div>
   </div>
 </div>

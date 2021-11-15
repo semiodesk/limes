@@ -43,7 +43,6 @@ namespace Profiles.Profile.Modules
 			}
 			else
 			{
-				imgQuestion.ImageUrl = Root.Domain + "/Framework/Images/info.png";
 				lineItemLiteral.Text = html.ToString();
 			}			
 		}

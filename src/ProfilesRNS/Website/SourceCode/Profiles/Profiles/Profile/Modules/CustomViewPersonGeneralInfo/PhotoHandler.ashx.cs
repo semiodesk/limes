@@ -35,9 +35,11 @@ namespace Profiles.Profile.Modules.ProfileImage
 
         public void ProcessRequest(HttpContext context)
         {
+            string contentType = "image/jpeg";
+
             Utilities.DataIO data = new Profiles.Profile.Utilities.DataIO();
             // Set up the response settings
-            context.Response.ContentType = "image/jpeg";
+            context.Response.ContentType = contentType;
             context.Response.Cache.SetCacheability(HttpCacheability.NoCache);
             context.Response.BufferOutput = false;
 
@@ -80,7 +82,8 @@ namespace Profiles.Profile.Modules.ProfileImage
 
                     if (thumbnail && rawimage == null)
                     {
-                        rawimage = silhouetteImage;
+                        context.Response.StatusCode = 200;
+                        return;
                     }
                     if (rawimage != null)
                     {
@@ -96,7 +99,7 @@ namespace Profiles.Profile.Modules.ProfileImage
                     Stream stream = new System.IO.MemoryStream(image);
 
                     // Set up the response settings
-                    context.Response.ContentType = "image/jpeg";
+                    context.Response.ContentType = contentType;
                     context.Response.Cache.SetExpires(DateTime.Now.AddDays(7));
                     context.Response.Cache.SetCacheability(HttpCacheability.Public);
                     context.Response.Cache.SetValidUntilExpires(true);

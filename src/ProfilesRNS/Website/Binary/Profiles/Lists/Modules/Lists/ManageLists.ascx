@@ -195,7 +195,7 @@
         .h3 {
             color: #933;
             font-size: 15px;
-            font-weight: bold;
+            font-weight: 600;
             margin-top: 17px !important;
             margin-bottom: 17px !important;
         }

@@ -29,23 +29,23 @@
         <asp:Panel ID="pnlInsertEducationalTraining" runat="server" CssClass="EditPanel" Visible="false">
             <div style="display: inline-flex;">
                 <div>
-                    <div style="font-weight: bold;">Institution</div>
+                    <div style="font-weight: 600;">Institution</div>
                     <asp:TextBox ID="txtInstitution" runat="server" MaxLength="100" Width="190px" />
                 </div>
                 <div style="margin-left: 10px;">
-                    <div style="font-weight: bold;">Location</div>
+                    <div style="font-weight: 600;">Location</div>
                     <asp:TextBox ID="txtLocation" runat="server" MaxLength="100" Width="130px" />
                 </div>
                 <div style="margin-left: 10px;">
-                    <div style="font-weight: bold;">Degree (if applicable)</div>
+                    <div style="font-weight: 600;">Degree (if applicable)</div>
                     <asp:TextBox ID="txtEducationalTrainingDegree" runat="server" MaxLength="100" Width="55px" />
                 </div>
                 <div style="margin-left: 10px;">
-                    <div style="font-weight: bold;">Completion Date (MM/YYYY)</div>
+                    <div style="font-weight: 600;">Completion Date (MM/YYYY)</div>
                     <asp:TextBox ID="txtEndYear" runat="server" MaxLength="7" Width="80px" />
                 </div>
                 <div style="margin-left: 20px;">
-                    <div style="font-weight: bold;">Field Of Study</div>
+                    <div style="font-weight: 600;">Field Of Study</div>
                     <asp:TextBox ID="txtFieldOfStudy" runat="server" MaxLength="100" Width="175px" />
                 </div>
             </div>

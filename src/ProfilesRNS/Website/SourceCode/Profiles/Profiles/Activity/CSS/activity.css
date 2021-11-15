@@ -1,6 +1,6 @@
 /* Metrics & Activity Stream */
 section {
-  padding-bottom: 1.5em;
+  padding-bottom: 2em;
 }
 
 .panelActive {
@@ -12,10 +12,14 @@ section {
   padding: 0 0 2em 0;
 }
 
-.metrics td.literal {
-  padding-right: 0.5em;
-  text-align: right;
+.metrics tr.literals {
   font-weight: 600;
+  font-size: 1.3em;
+  color: #183c55;
+}
+
+.metrics tr.labels {
+  font-size: .9em;
 }
 
 .activities {
@@ -44,11 +48,13 @@ section {
 
 .act-image {
   display: block;
-  min-width: 45px;
-  min-height: 45px;
+  min-width: 32px;
+  height: 32px;
   overflow: hidden;
   border-radius: 50%;
   margin: 5px 10px;
+  background-image: url("/Profile/Images/person-default.svg");
+  background-size: contain;
 }
 
 .panelMain .activities {
@@ -60,6 +66,6 @@ section {
 }
 
 .act-heading-live-updates {
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 10px;
 }

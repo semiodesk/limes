@@ -1,24 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Statistics.ascx.cs"
 Inherits="Profiles.Activity.Modules.Statistics.Statistics" %>
 <section>
-  <h4 class="act-heading">Profiles Stats</h4>
+  <div class="sidepanel-header">
+    <h4 class="act-heading">Profiles Stats</h4>
+  </div>
   <table class="metrics">
-    <tr>
-      <td class="literal">
-        <asp:Literal runat="server" ID="publicationsCount" />
-      </td>
+    <tr class="literals">
+      <td><asp:Literal runat="server" ID="publicationsCount" /></td>
+      <td><asp:Literal runat="server" ID="totalProfilesCount" /></td>
+      <td><asp:Literal runat="server" ID="editedProfilesCount" /></td>
+    </tr>
+    <tr class="labels">
       <td>Publications</td>
-    </tr>
-    <tr>
-      <td class="literal">
-        <asp:Literal runat="server" ID="totalProfilesCount" />
-      </td>
       <td>Total Profiles</td>
-    </tr>
-    <tr>
-      <td class="literal">
-        <asp:Literal runat="server" ID="editedProfilesCount" />
-      </td>
       <td>Edited Profiles</td>
     </tr>
   </table>

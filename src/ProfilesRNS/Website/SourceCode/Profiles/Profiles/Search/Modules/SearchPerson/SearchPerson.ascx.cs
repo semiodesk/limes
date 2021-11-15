@@ -36,12 +36,9 @@ namespace Profiles.Search.Modules.SearchPerson
         public SearchPerson() { }
         public SearchPerson(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
         {
-            txtSearchFor.Attributes.Add("onkeypress", "JavaScript:runScript(event);");
             txtFname.Attributes.Add("onkeypress", "JavaScript:runScript(event);");
             txtLname.Attributes.Add("onkeypress", "JavaScript:runScript(event);");
             
-
-
             if (Request.QueryString["action"] == "modify")
             {
                 

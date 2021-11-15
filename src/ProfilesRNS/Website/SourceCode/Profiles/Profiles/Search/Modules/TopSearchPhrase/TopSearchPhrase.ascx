@@ -14,9 +14,11 @@ Inherits="Profiles.Search.Modules.TopSearchPhrase.TopSearchPhrase" %>
     }
   </script>
 
-  <h4 class="passiveSectionHead">
-    <asp:Literal runat="server" ID="litDescription"></asp:Literal>
-  </h4>
+  <div class="sidepanel-header">
+    <h4>
+      <asp:Literal runat="server" ID="litDescription"></asp:Literal>
+    </h4>
+  </div>
 
   <div class="passiveSectionBody">
     <asp:Literal runat="server" ID="litTopSearchPhrase"></asp:Literal>

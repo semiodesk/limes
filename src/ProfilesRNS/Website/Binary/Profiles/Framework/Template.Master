@@ -70,7 +70,7 @@
                         </ItemTemplate>
                     </asp:Repeater>
                 </asp:ContentPlaceHolder>
-                <div id="ProfilesNotification" visible="false" runat="server" style="margin-top: 8px; font-weight: bold;">
+                <div id="ProfilesNotification" visible="false" runat="server" style="margin-top: 8px; font-weight: 600;">
                     <asp:Literal runat="server" ID="litSystemNotice"></asp:Literal>
                 </div>
                 <div class="profilesPage">

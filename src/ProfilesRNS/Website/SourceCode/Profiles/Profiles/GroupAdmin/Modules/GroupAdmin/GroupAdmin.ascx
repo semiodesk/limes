@@ -56,7 +56,7 @@
                 <asp:TextBox ID="txtGroupName" runat="server" MaxLength="250" Width="320px" title="Group Name"></asp:TextBox>
             </div>
 
-            <div style="font-weight: bold;margin-left:8px;padding-top: 3px;">End Date (MM/DD/YYYY)  </div>
+            <div style="font-weight: 600;margin-left:8px;padding-top: 3px;">End Date (MM/DD/YYYY)  </div>
             <div style="margin-left:5px;">
                 <asp:TextBox ID="txtEndDate" runat="server" MaxLength="10" CssClass="textBoxDate"></asp:TextBox>
                 <asp:ImageButton ID="btnCalendar" runat="server" Width="15px" ImageUrl="~/Edit/Images/cal.png" AlternateText="Calendar picker" />

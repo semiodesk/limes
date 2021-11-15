@@ -13,159 +13,134 @@
   <xsl:param name="nodeid"/>
 
   <xsl:template match="/">
-    <div class="content_two_columns">
-      <table>
-        <tbody>
-          <tr>
-            <td class="firstColumn">
-              <div class="basicInfo">
-                <table>
-                  <tbody>
-                    <xsl:call-template name="Name"/>
-                  </tbody>
-                </table>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="vcard">
+      <xsl:call-template name="Name"/>
     </div>
   </xsl:template>
 
   <!--=============Template for displaying Name table============-->
   <xsl:template name="Name">
     <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/prns:personInPrimaryPosition/@rdf:resource]/prns:isPrimaryPosition !=''">
-      <tr>
-        <th>Title</th>
-        <td>
-          <span itemprop="jobTitle">
-            <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/prns:personInPrimaryPosition/@rdf:resource]/vivo:hrJobTitle "/>
-          </span>
-        </td>
-      </tr>
+      <div class="itemprop">
+        <label>Title</label>
+        <div itemprop="jobTitle">
+          <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/prns:personInPrimaryPosition/@rdf:resource]/vivo:hrJobTitle "/>
+        </div>
+      </div>
     </xsl:if>
     <xsl:variable name="uriOrganization" select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/prns:personInPrimaryPosition/@rdf:resource]/vivo:positionInOrganization/@rdf:resource"/>
     <xsl:if test="rdf:RDF/rdf:Description[@rdf:about=$uriOrganization]/rdfs:label !=''">
-      <tr>
-        <th>Institution</th>
-        <td>
-          <span itemprop="affiliation">
-            <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= $uriOrganization]/rdfs:label"/>
-          </span>
-        </td>
-      </tr>
+      <div class="itemprop">
+        <label>Institution</label>
+        <div itemprop="affiliation">
+          <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= $uriOrganization]/rdfs:label"/>
+        </div>
+      </div>
     </xsl:if>
     <xsl:variable name="uriDepartment" select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/prns:personInPrimaryPosition/@rdf:resource]/prns:positionInDepartment/@rdf:resource"/>
     <xsl:if test="rdf:RDF/rdf:Description[@rdf:about=$uriDepartment]/rdfs:label !=''">
-      <tr>
-        <th>Department</th>
-        <td>
+      <div class="itemprop">
+        <label>Department</label>
+        <div>
           <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about=$uriDepartment]/rdfs:label "/>
-        </td>
-      </tr>
+        </div>
+      </div>
     </xsl:if>
     <xsl:if test="rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource !=''">
-      <tr>
-        <th>Address</th>
-        <td>
-          <span itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
-            <span itemprop="streetAddress">
-              <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address1 !=''">
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address1 "/>
-                <br/>
-              </xsl:if>
-              <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address2 !=''">
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address2 "/>
-                <br/>
-              </xsl:if>
-              <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address3 !=''">
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address3 "/>
-                <br/>
-              </xsl:if>
-              <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressCity !=''">
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressCity"/>
-                <xsl:text> </xsl:text>
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressState"/>
-                <xsl:text> </xsl:text>
-                <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressPostalCode"/>
-                <br/>
-              </xsl:if>
-            </span>
+      <div class="itemprop">
+        <label>Address</label>
+        <div itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
+          <span itemprop="streetAddress">
+            <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address1 !=''">
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address1 "/>
+              <br/>
+            </xsl:if>
+            <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address2 !=''">
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address2 "/>
+              <br/>
+            </xsl:if>
+            <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address3 !=''">
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:address3 "/>
+              <br/>
+            </xsl:if>
+            <xsl:if test="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressCity !=''">
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressCity"/>
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressState"/>
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="rdf:RDF/rdf:Description[@rdf:about= /rdf:RDF[1]/rdf:Description[1]/vivo:mailingAddress/@rdf:resource]/vivo:addressPostalCode"/>
+              <br/>
+            </xsl:if>
           </span>
-        </td>
-      </tr>
+        </div>
+      </div>
     </xsl:if>
     <xsl:if test="rdf:RDF[1]/rdf:Description[1]/vivo:phoneNumber !=''">
-      <tr>
-        <th>Phone</th>
-        <td>
-          <span itemprop="telephone">
-            <xsl:value-of select="rdf:RDF[1]/rdf:Description[1]/vivo:phoneNumber"/>
-          </span>
-        </td>
-      </tr>
+      <div class="itemprop">
+        <label>Phone</label>
+        <div itemprop="telephone">
+          <xsl:value-of select="rdf:RDF[1]/rdf:Description[1]/vivo:phoneNumber"/>
+        </div>
+      </div>
     </xsl:if>
     <xsl:choose>
       <xsl:when test="rdf:RDF[1]/rdf:Description[1]/vivo:faxNumber !=''">
-        <tr>
-          <th>Fax</th>
-          <td>
+        <div class="itemprop">
+          <label>Fax</label>
+          <div>
             <xsl:value-of select="rdf:RDF[1]/rdf:Description[1]/vivo:faxNumber"/>
-          </td>
-        </tr>
+          </div>
+        </div>
       </xsl:when>
     </xsl:choose>
     <xsl:choose>
       <xsl:when test="$email!=''">
-        <tr>
-          <th>Email</th>
-          <td>
+        <div class="itemprop">
+          <label>Email</label>
+          <div>
             <img id="{$imgguid}" src="{$email}&amp;rnd={$imgguid}" alt=""></img>
             <!--<a href="{$emailAudio}&amp;rnd={$imgguid}">
               <img src="{$emailAudioImg}" alt="Listen to email address" />
             </a>-->
-          </td>
-        </tr>
+          </div>
+        </div>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
           <xsl:when test="rdf:RDF[1]/rdf:Description[1]/vivo:email !=''">
-            <tr>
-              <th>Email</th>
-              <td>
+            <div class="itemprop">
+              <label>Email</label>
+              <div>
                 <a href="mailto:{rdf:RDF[1]/rdf:Description[1]/vivo:email}" itemprop="email">
                   <xsl:value-of select="rdf:RDF[1]/rdf:Description[1]/vivo:email"/>
                 </a>
-              </td>
-            </tr>
+              </div>
+            </div>
           </xsl:when>
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
     <xsl:choose>
       <xsl:when test="$orcid!=''">
-        <tr>
-          <th>
+        <div class="itemprop">
+          <label>
             ORCID
-            <img id="{$orcidimageguid}" src="{$orcidimage}" alt="ORCID Icon" style="vertical-align:text-bottom"></img>
-          </th>
-          <td>
+            <img id="{$orcidimageguid}" src="{$orcidimage}" alt="ORCID Icon" style="vertical-align:text-bottom"/>
+          </label>
+          <div>
             <a href="{$orcidurl}" target="_blank">
               <xsl:value-of select="$orcid "/>
             </a>
             <xsl:text disable-output-escaping="yes">&#160;</xsl:text><a style="border: none;" href="{$orcidinfosite}" target='_blank'>
               <img style='border-style: none' src="{$root}/Framework/Images/info.png"  border='0' alt='Additional info'/>
             </a>
-          </td>
-        </tr>
+          </div>
+        </div>
       </xsl:when>
     </xsl:choose>
-    <tr>
-      <th>vCard</th>
-      <td>
-        <a href="{$root}/profile/modules/CustomViewPersonGeneralInfo/vcard.aspx?subject={$nodeid}" style="text-decoration:none;color:#000000;"
-           onmouseover="this.style.textDecoration='underline';this.style.color='#3366CC';"  onmouseout="this.style.textDecoration='none';this.style.color='#000000';">Download vCard</a>
-      </td>
-    </tr>
+
+    <a href="{$root}/profile/modules/CustomViewPersonGeneralInfo/vcard.aspx?subject={$nodeid}" class="mt-2">
+      Download vCard
+    </a>
   </xsl:template>
 </xsl:stylesheet>

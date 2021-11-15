@@ -8,28 +8,18 @@ namespace Profiles.Search.Modules.SearchEverything
 {
     public partial class SearchEverything : BaseModule
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        
         public SearchEverything() { }
         public SearchEverything(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
             : base(pagedata, moduleparams, pagenamespaces)
         {
-
             searchfor.Attributes.Add("onkeypress", "JavaScript:runScript(event);");
-
 
             if (Request.QueryString["action"] == "modify")
             {
                 this.ModifySearch();
             }
-
-        
         }
+
         private void ModifySearch()
         {
 
@@ -49,12 +39,10 @@ namespace Profiles.Search.Modules.SearchEverything
 
             request.LoadXml(data.DecryptRequest(searchrequest));
 
-
             if (request.SelectSingleNode("SearchOptions/MatchOptions/SearchString") != null)
             {
                 searchfor.Text = request.SelectSingleNode("SearchOptions/MatchOptions/SearchString").InnerText;
             }
-
 
             if (request.SelectSingleNode("SearchOptions/MatchOptions/SearchString/@ExactMatch") != null)
             {
@@ -68,7 +56,6 @@ namespace Profiles.Search.Modules.SearchEverything
                         break;
                 }
             }
-
         }
     }
 }

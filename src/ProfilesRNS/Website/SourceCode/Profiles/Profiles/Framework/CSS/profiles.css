@@ -8,33 +8,57 @@ a {
   color: #36a4de;
 }
 
+b {
+  font-weight: 600;
+}
+
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   font-family: "Mina", sans-serif;
   color: #0071a1;
 }
 
-h4,
-h5 {
-  font-family: "Mina", sans-serif;
-  color: #183c55;
+h3 {
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 1.2em;
+  font-size: 1.1rem;
+}
+
+label {
+  color: #183c55;
+  font-weight: 600;
+  margin-bottom: 0;
 }
 
 .text-right {
   text-align: right !important;
 }
 
+.sidepanel-header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1em;
+}
+
+.sidepanel-header a {
+  margin-left: 0.6em;
+  justify-self: flex-end;
+}
+
 /*Dont touch this container as it provides spacing on top of CSS search button*/
 a.search-button {
   display: inline-block;
   color: #ffffff;
-  padding: 0.5em 1.5em;
-  border-radius: 3px;
+  padding: 0.4em 1em;
+  border-radius: 6px;
   background-color: #ff8000;
   border-color: #ff8000;
   border-width: 2px;
@@ -62,14 +86,25 @@ a.search-button:hover {
   text-decoration: none;
 }
 
-/*Replacing inline styles for the form headings in the main app*/
-.profiles .profilesPage .headings {
-  font-size: 18px;
-  color: #36a4de;
-  font-weight: bold;
-  margin-bottom: 3px;
+.pageTitle {
+  text-align: center;
 }
 
+.panelMain table {
+  width: 100%;
+}
+
+@media (min-width: 567px) {
+  .pageTitle {
+    text-align: initial;
+  }
+
+  .float-sm-right {
+    float: right;
+  }
+}
+
+/*Replacing inline styles for the form headings in the main app*/
 header._ci_shared_asset.tool-page .inner .title-container h1 {
   margin: 18px 0 6px 0;
 }
@@ -205,21 +240,26 @@ div#catalyst-footer {
 
 #rtnBtn {
   display: none; /* Hidden by default */
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
   position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
+  bottom: 30px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 99; /* Make sure it does not overlap */
-  border: none; /* Remove borders */
-  outline: none; /* Remove outline */
-  background-color: #ccc; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 15px; /* Some padding */
-  border-radius: 10px; /* Rounded corners */
+  background-color: #0071a1; /* Set a background color */
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
+  -webkit-box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
+  -moz-box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
 }
 
 #rtnBtn:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #0092d1;
 }
 
 .tog {
@@ -233,7 +273,7 @@ div#catalyst-footer {
 .PropertyGroup,
 .PropertyItemHeader {
   font-family: "Mina", "sans-serif";
-  font-weight: bold;
+  font-weight: 600;
   text-transform: capitalize;
   cursor: pointer;
   border: none;
@@ -362,23 +402,11 @@ div#catalyst-footer {
 /********************************************/
 
 /* backLink */
-.profiles .profilesContentMain .backLink {
-  text-align: right;
-  white-space: nowrap;
+.backLink {
+  line-height: 2em;
 }
 
-.profiles .profilesContentMain .backLink .backLinkIcon {
-  margin-right: 4px;
-  position: relative;
-  top: 1px;
-}
 /* pageTitle */
-.pageTitle {
-  width: 100%;
-  margin-top: 16px;
-  color: black;
-}
-
 .profiles .profilesContentMain .pageTitle {
   text-align: left;
 }
@@ -393,7 +421,7 @@ div#catalyst-footer {
 /* pageSubTitle */
 .profiles .profilesContentMain .pageSubTitle {
   color: #506380;
-  font-weight: bold;
+  font-weight: 600;
   text-align: left;
   float: left;
   margin-top: 12px;
@@ -402,7 +430,7 @@ div#catalyst-footer {
 .profiles .profilesContentMain .pageSubTitle h3 {
   padding: 0px;
   color: #506380;
-  font-weight: bold;
+  font-weight: 600;
   text-align: left;
 }
 /* panelPage */
@@ -413,20 +441,6 @@ div#catalyst-footer {
 .profiles .profilesContentMain .pageDescription {
   text-align: left;
   padding-top: 16px;
-}
-
-.panelMain {
-  width: 100%;
-  clear: both;
-  margin-top: 5px;
-}
-
-.panelMain div {
-  text-align: left;
-}
-
-.panelMain table {
-  width: 100%;
 }
 
 .profiles .profilesContentMain .tabInfoText {
@@ -441,6 +455,10 @@ div#catalyst-footer {
   padding: 2px 5px;
   text-align: left;
   border: none;
+}
+
+.profilesPage {
+  min-height: 500px;
 }
 
 /********************************************/
@@ -466,13 +484,21 @@ div#catalyst-footer {
   vertical-align: top;
 }
 
+.profilesContentPassive h3 {
+  margin-bottom: 1em;
+}
+
+.profilesContentPassive h4,
+.profilesContentPassive h5 {
+  color: #183c55;
+}
+
 .profilesContentPassive .passiveSectionHead {
   overflow: hidden;
-  font-weight: bold;
+  font-weight: 600;
   margin-top: 8px;
   text-align: left;
   padding-bottom: 5px;
-  color: #333;
 }
 
 .profilesContentPassive .passiveSectionHead img {
@@ -482,15 +508,10 @@ div#catalyst-footer {
   padding-bottom: 3px;
 }
 
-.profilesContentPassive .passiveSectionHead h4 a {
-  color: #183c55;
-}
-
 .profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
   font-weight: normal;
   font-size: 10px;
   line-height: 11px;
-  color: #333;
   margin: 4px 0 2px 0;
   display: none;
 }
@@ -523,7 +544,7 @@ div#catalyst-footer {
 
 .passiveHeader {
   color: #36a4de;
-  font-weight: bold;
+  font-weight: 600;
   text-align: left;
   padding-bottom: 2px;
 }
@@ -684,7 +705,7 @@ div#catalyst-footer {
 
 .topRow {
   background-color: #eeebe5;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
   font-family: Arial;
   font-size: 13px;
@@ -739,7 +760,7 @@ div#catalyst-footer {
 
 .anchor-tab a.selected {
   color: #333 !important;
-  font-weight: bold;
+  font-weight: 600;
   cursor: default;
 }
 
@@ -794,7 +815,7 @@ div#catalyst-footer {
 
 .grantanchor-tab a.selected {
   color: #333 !important;
-  font-weight: bold;
+  font-weight: 600;
   cursor: default;
 }
 
@@ -840,7 +861,7 @@ div#catalyst-footer {
 #left {
   display: table-cell;
   color: #777;
-  font-weight: bold;
+  font-weight: 600;
   padding: 2px 10px 0 0;
   text-align: right;
   vertical-align: top;
@@ -879,7 +900,7 @@ div#catalyst-footer {
   padding: 0;
   font-size: 1.3em;
   color: #4c7296;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .profiles .profilesContentMain .aboutText h3 {
@@ -887,13 +908,13 @@ div#catalyst-footer {
   padding: 0;
   font-size: 1.2em;
   color: #746a42;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .profiles .profilesContentMain .aboutText h4 {
   margin: 0;
   padding: 0;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .aboutText p {
@@ -913,7 +934,7 @@ div#catalyst-footer {
 }
 
 .listTable table {
-  border: 1px solid #999999;
+  border: 1px solid #eee;
 }
 
 .listTable tr {
@@ -921,14 +942,12 @@ div#catalyst-footer {
 }
 
 .listTable th {
-  background-color: #f7f3ef;
-  color: #333;
   cursor: default;
-  font-weight: bold;
+  font-weight: 600;
   padding: 5px;
   text-align: center;
   padding-bottom: 1px;
-  border-left: 1px solid #999999;
+  border-left: 1px solid #eee;
 }
 
 .listTable th a {
@@ -944,8 +963,8 @@ div#catalyst-footer {
 .listTable td {
   padding: 4px;
   text-align: left;
-  border-right: 1px solid #999999;
-  border-top: 1px solid #999999;
+  border-right: 1px solid #eee;
+  border-top: 1px solid #eee;
   border-spacing: 0px;
   border-collapse: collapse;
 }
@@ -964,45 +983,21 @@ div#catalyst-footer {
 
 .listTable .oddRow {
   background-color: #ffffff;
-  border: 1px solid #999999;
+  border: 1px solid #eee;
 }
 
 .listTable .evenRow {
   background-color: #f0f4f6;
-  border: 1px solid #999999;
-}
-
-.listTable .overRow {
-  background-color: #5a719c;
-  color: #fff;
-}
-
-.listTable .listTableLink {
-  color: #36c;
-}
-
-.listTable .overRow .listTableLink {
-  color: #fff;
-}
-
-.listTable .listTableLinkOver {
-  background-color: #36c;
+  border: 1px solid #eee;
 }
 
 /********************************************/
 /*        Edit Page                         */
 /********************************************/
-.editPage h2 {
-  color: #ac1b30;
-  font-size: 13px;
-}
 .editPage table {
   padding-left: 5px;
 }
-.oddRow td,
-.evenRow td {
-  border-color: #808080;
-}
+
 .oddRow {
   background-color: #ffffff;
 }
@@ -1047,7 +1042,7 @@ table tbody .height25 {
 
 .editPage .topRow td {
   background-color: #eeebe5;
-  font-weight: bold;
+  font-weight: 600;
   color: #506380;
   font-size: 13px;
   height: 24px;
@@ -1055,7 +1050,7 @@ table tbody .height25 {
 }
 .topRow {
   background-color: #eeebe5;
-  font-weight: bold;
+  font-weight: 600;
   color: #506380;
   font-size: 13px;
   height: 24px;
@@ -1083,16 +1078,13 @@ table tbody .height25 {
 
 .footer {
   color: #375d7a;
-}
-
-.footer .container {
-  border-top: 1px solid #ccc;
-  padding: 3em;
+  border-top: 1px solid #eee;
+  padding: 2em 0;
+  font-size: 0.9em;
+  text-align: center;
 }
 
 .footer .logo-container {
-  position: relative;
-  left: -1.3em;
   padding: 1em 0;
 }
 
@@ -1111,5 +1103,30 @@ table tbody .height25 {
   color: #666;
   padding: 1em;
   background-color: #eee;
-  border-radius: 3px;
+  border-radius: 6px;
+}
+
+.profile-image {
+  display: block;
+  width: 128px;
+  min-width: 128px;
+  max-height: 128px;
+  height: 128px;
+  min-height: 128px;
+  max-height: 128px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 1em 1em 0;
+  background-image: url("/Profile/Images/person-default.svg");
+  background-size: contain;
+}
+
+.vcard .itemprop {
+  margin-bottom: 0.5em;
+}
+
+@media (min-width: 576px) {
+  .footer {
+    text-align: left;
+  }
 }

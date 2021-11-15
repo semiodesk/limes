@@ -145,7 +145,7 @@
             <img class="img-information-pubs" src="<%=ResolveUrl("~/edit/Images/icon_alert.gif") %>" alt=" " />
             Check the articles that are yours in the list below, and then click the Add Selected link at the bottom of the page.                        
             <div style="margin-top: 5px;">
-                <asp:Label ID="lblPubMedResultsHeader" runat="server" Text="" Style="font-weight: bold;" />
+                <asp:Label ID="lblPubMedResultsHeader" runat="server" Text="" Style="font-weight: 600;" />
             </div>
             <div class="actionbuttons">
                 <b>Select:</b>&nbsp;&nbsp; <a tabindex="0" style="cursor: pointer" onclick="javascript:checkall(); return false;" id="btnCheckAll">All</a> &nbsp;&nbsp;|&nbsp;&nbsp;

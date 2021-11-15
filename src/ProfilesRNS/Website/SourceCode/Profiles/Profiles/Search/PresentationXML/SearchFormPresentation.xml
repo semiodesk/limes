@@ -22,17 +22,15 @@
     <Panel Type="left">
       <Module ID="LatestUpdates">
         <ParamList>
-          <Param Name="Show">3</Param>
+          <Param Name="Show">5</Param>
           <Param Name="SeeMore">True</Param>
         </ParamList>
       </Module>
     </Panel>
-    <Panel Name="Find People" Alias="people" Type="main" TabType="Default" TabSort="0">
+    <Panel Alias="people" Type="main">
       <Module ID="SearchPerson">
-      </Module>    
-    </Panel>
-    <Panel Name="Find Everything" Alias="all" Type="main" TabType="Fixed" TabSort="1" >
-      <Module ID="SearchEverything" />        
+      </Module>
+      <Module ID="SearchEverything" />    
     </Panel>
     <Panel Type="passive" >
       <Module ID="TopSearchPhrase">

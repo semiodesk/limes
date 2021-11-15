@@ -54,10 +54,10 @@
     <div>
         <div id="divData">
             <div style="width: 100%; margin-top: 16px; font-size: 13px; line-height: 16px; border-bottom: 1px dotted #999; padding-bottom: 12px; margin-bottom: 6px;">
-                <span style="color: #C00; font-weight: bold;">Red markers</span> indicate the
+                <span style="color: #C00; font-weight: 600;">Red markers</span> indicate the
                 <asp:Literal ID="litRedMapType" runat="server" />.
             <asp:Label ID="lblPerson" runat="server"></asp:Label>
-                <span style="color: #00C; font-weight: bold;">Blue lines</span> connect people who
+                <span style="color: #00C; font-weight: 600;">Blue lines</span> connect people who
          have published papers together.
             </div>
 

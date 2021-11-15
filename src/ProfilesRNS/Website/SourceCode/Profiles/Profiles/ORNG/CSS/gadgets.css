@@ -52,7 +52,7 @@
 }
 
 .profiles .gadgets-gadget-title a, .profiles .gadgets-gadget-title a:hover {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
   color: #CA7C29 !important;
   outline: 0;
@@ -111,7 +111,7 @@
 .gadgets-gadget-hideshow {
   display: inline-block;
   width: 100px;
-  font-weight: bold;
+  font-weight: 600;
 /*  float: right;
   padding-right: 6px;
   text-align: center; */
@@ -121,7 +121,7 @@
 .gadgets-gadget-status {
   display: inline-block;
   width: 150px;
-  font-weight: bold;
+  font-weight: 600;
   padding-left: 200px;
 /*  float: right;
   padding-right: 6px;

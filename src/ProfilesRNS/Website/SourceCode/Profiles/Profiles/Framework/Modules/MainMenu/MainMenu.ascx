@@ -4,25 +4,19 @@
 <div id="prns-nav">
     <!-- MAIN NAVIGATION MENU -->
     <nav>
-        <ul class="prns-main">
-            <li class="main-nav search">
+        <ul class="prns-main primary">
+            <li class="main-nav">
+                <a href="<%=ResolveUrl("~/search")%>"><i class="bi bi-search"></i>></a>
+            </li>
+            <li class="main-nav item-search">
                 <div class="search-container">
-                    <i class="fa fa-search"></i>
-                    <input name="search" id="menu-search" placeholder="Search Profiles (people, publications, concepts, etc.)" type="text"/>
+                    <input name="search" id="menu-search" placeholder="Find people by name.." type="text"/>
                 </div>
             </li>
-            <li id="search-drop" class="main-nav search-drop">
-                <a href="#" class="ellipsis">
-                    <i class="fa fa-ellipsis-v"></i>
-                </a>
-                <ul class="drop">
-                    <asp:Literal runat="server" ID="litSearchOptions"></asp:Literal>
-                </ul>
-            </li>
-            <li class="main-nav">
-                <a href="<%=ResolveUrl("~/search")%>">Home</a>
-            </li>
-            <li class="main-nav">
+        </ul>
+        <ul class="prns-main secondary">
+            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
+            <li class="main-nav" style="margin-left: auto;">
                 <a href='#'>About</a>
                 <ul class="drop">
                     <li>
@@ -49,7 +43,6 @@
                     <asp:Literal runat="server" ID="litExportRDF"></asp:Literal>
                 </ul>
             </li>--%>
-            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
         </ul>
         <!-- USER LOGIN MSG / USER FUNCTION MENU -->
         <div id="prns-usrnav" class="pub" class-help="class should be [pub|user]">

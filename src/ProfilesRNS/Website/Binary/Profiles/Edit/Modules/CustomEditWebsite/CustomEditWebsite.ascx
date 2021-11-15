@@ -39,15 +39,15 @@
             </div>
             <div style="display: inline-flex;">
                 <div>
-                    <div style="font-weight: bold;">Title</div>
+                    <div style="font-weight: 600;">Title</div>
                     <asp:TextBox ID="txtTitle" runat="server" MaxLength="100" Width="220px" title="Title"></asp:TextBox>
                 </div>
                 <div style="padding-left: 10px">
-                    <div style="font-weight: bold;">URL</div>
+                    <div style="font-weight: 600;">URL</div>
                     <asp:TextBox ID="txtURL" runat="server" MaxLength="100" Width="220px" title="URL"></asp:TextBox>
                 </div>
                 <div style="padding-left: 10px">
-                    <asp:Literal ID="litPubDateLabel" runat="server"><div style="font-weight: bold;">Publication Date</div></asp:Literal>
+                    <asp:Literal ID="litPubDateLabel" runat="server"><div style="font-weight: 600;">Publication Date</div></asp:Literal>
                     <asp:TextBox ID="txtPubDate" runat="server" MaxLength="10" Width="75px" title="Publication Date"></asp:TextBox>
                 </div>
             </div>

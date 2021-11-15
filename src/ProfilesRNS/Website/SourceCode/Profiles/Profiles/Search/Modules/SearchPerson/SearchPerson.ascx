@@ -96,132 +96,85 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
 </script>
 
 <asp:HiddenField ID="hdnSearch" runat="server" Value="hdnSearch"></asp:HiddenField>
-<div class="content_container">
-  <div class="tabContainer">
-    <div class="searchForm" onkeypress="JavaScript:runScript(event);">
-      <div>Find people by keyword</div>
-      <section class="searchSection">
-        <div class="row">
-          <div class="col-md-3 text-right">
-            <label>Keywords</label>
-          </div>
-          <div class="col-md-9">
-            <asp:TextBox runat="server" ID="txtSearchFor" CssClass="inputText" title="Keywords"></asp:TextBox>
-            <div class="fw-normal">
-              <asp:CheckBox runat="server" ID="chkExactphrase" Text="&nbsp;Search for exact phrase" />
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-9 col-md-offset-3">
-            <div class="search-button-container" style="margin-top: 1em">
-              <a href="JavaScript:search();" class="search-button"> <i class="fa fa-search"></i> Search </a>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <div class="headings">Find people by name/organization</div>
-      <section class="searchSection" id="div1">
-        <table class="searchForm">
-          <tr>
-            <th>Last Name</th>
-            <td colspan="2">
-              <asp:TextBox runat="server" ID="txtLname" CssClass="inputText" title="Last Name"></asp:TextBox>
-            </td>
-          </tr>
-          <tr>
-            <th>First Name</th>
-            <td colspan="2">
-              <asp:TextBox runat="server" ID="txtFname" CssClass="inputText" title="First Name"></asp:TextBox>
-            </td>
-          </tr>
-          <tr runat="server" id="trInstitution">
-            <th>Institution</th>
-            <td colspan="2">
-              <asp:Literal runat="server" ID="litInstitution"></asp:Literal>
-              <div class="fw-normal">
-                <asp:CheckBox
-                  runat="server"
-                  ID="institutionallexcept"
-                  Text="&nbsp;All <b>except</b> the one selected"
-                />
-              </div>
-            </td>
-          </tr>
-          <!-- <tr runat="server" id="trDepartment">
-            <th>Department</th>
-            <td colspan="2">
-              <asp:Literal runat="server" ID="litDepartment"></asp:Literal>
-              <div class="fw-normal">
-                <asp:CheckBox
-                  runat="server"
-                  ID="departmentallexcept"
-                  label="except department"
-                  Text="&nbsp;All <b>except</b> the one selected"
-                />
-              </div>
-            </td>
-          </tr> -->
-          <tr runat="server" id="trDivision">
-            <th>Competence Center</th>
-            <td colspan="2">
-              <asp:Literal runat="server" ID="litDivision"></asp:Literal>
-              <div class="fw-normal">
-                <asp:CheckBox runat="server" ID="divisionallexcept" Text="&nbsp;All <b>except</b> the one selected" />
-              </div>
-            </td>
-          </tr>
-          <!-- <tr runat="server" id="trFacultyType">
-            <th>Faculty Type</th>
-            <td colspan="2">
-              <div>
-                <asp:PlaceHolder ID="phDDLCHK" runat="server"></asp:PlaceHolder>
-              </div>
-              <div>
-                <asp:PlaceHolder ID="phDDLList" runat="server"></asp:PlaceHolder>
-              </div>
-              <asp:Label ID="lblSelectedItem" runat="server"></asp:Label>
-              <asp:HiddenField ID="hidList" runat="server" />
-              <asp:HiddenField ID="hidURIs" runat="server" />
-            </td>
-          </tr> -->
-          <!-- <tr runat="server" id="trOtherOptions">
-            <th style="vertical-align: top">Other Options</th>
-            <td colspan="2">
-              <select
-                onmousedown="(function(e){ e.preventDefault(); })(event, this)"
-                id="selOtherOptions"
-                style="width: 249px; height: 20px"
-                title="other options"
-              >
-                <option value=""></option>
-              </select>
-              <table>
-                <tr>
-                  <td>
-                    <div id="divOtherOptions">
-                      <uc1:ComboTreeCheck ID="ctcFirst" runat="server" Width="255px" />
-                    </div>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr> -->
-          <tr>
-            <td></td>
-            <td colspan="2">
-              <div class="search-button-container">
-                <a href="JavaScript:search();" class="search-button"><i class="fa fa-search"></i> Search</a>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <asp:Literal runat="server" ID="litFacRankScript"></asp:Literal>
-      </section>
+<div class="searchForm" onkeypress="JavaScript:runScript(event);">
+  <h3>Find people</h3>
+  <section class="searchSection pt-3" id="div1">
+    <div class="row">
+      <div class="col-sm-6 form-group">
+        <label for="txtFname">First Name</label>
+        <asp:TextBox runat="server" ID="txtFname" CssClass="inputText" title="First Name"></asp:TextBox>
+      </div>
+      <div class="col-sm-6 form-group">
+        <label for="txtLname">Last Name</label>
+        <asp:TextBox runat="server" ID="txtLname" CssClass="inputText" title="Last Name"></asp:TextBox>
+      </div>
     </div>
-  </div>
+    <div runat="server" id="trInstitution" class="form-group">
+      <label for="litInstitution">Institution</label>
+      <asp:Literal runat="server" ID="litInstitution"></asp:Literal>
+      <p class="form-control-subline">
+        <asp:CheckBox runat="server" ID="institutionallexcept" Text="All <u>except</u> the one selected" />
+      </p>
+    </div>
+    <!-- <div runat="server" id="trDepartment" class="form-group">
+        <label for="litDepartment">Department</label>
+        <asp:Literal runat="server" ID="litDepartment"></asp:Literal>
+        <div class="fw-normal">
+          <asp:CheckBox
+            runat="server"
+            ID="departmentallexcept"
+            label="except department"
+            Text="&nbsp;All <b>except</b> the one selected"
+          />
+        </div>
+      </div> -->
+    <div runat="server" id="trDivision" class="form-group">
+      <label for="litDivision">Competence Center</label>
+      <asp:Literal runat="server" ID="litDivision"></asp:Literal>
+      <p class="form-control-subline">
+        <asp:CheckBox runat="server" ID="divisionallexcept" Text="All <u>except</u> the one selected" />
+      </p>
+    </div>
+    <!-- <div runat="server" id="trFacultyType" class="form-group">
+        <label>Faculty Type</label>
+        <div>
+          <asp:PlaceHolder ID="phDDLCHK" runat="server"></asp:PlaceHolder>
+        </div>
+        <div>
+          <asp:PlaceHolder ID="phDDLList" runat="server"></asp:PlaceHolder>
+        </div>
+        <asp:Label ID="lblSelectedItem" runat="server"></asp:Label>
+        <asp:HiddenField ID="hidList" runat="server" />
+        <asp:HiddenField ID="hidURIs" runat="server" />
+      </div> -->
+    <!-- <div runat="server" id="trOtherOptions" class="form-group">
+        <label style="vertical-align: top">Other Options</label>
+          <select
+            onmousedown="(function(e){ e.preventDefault(); })(event, this)"
+            id="selOtherOptions"
+            style="width: 249px; height: 20px"
+            title="other options"
+          >
+            <option value=""></option>
+          </select>
+          <table>
+            <tr>
+              <td>
+                <div id="divOtherOptions">
+                  <uc1:ComboTreeCheck ID="ctcFirst" runat="server" Width="255px" />
+                </div>
+              </td>
+            </tr>
+          </table>
+      </div> -->
+    <div class="form-group text-sm-right">
+      <a href="JavaScript:search();" class="search-button"> <i class="bi bi-search"></i> Search </a>
+    </div>
+    <asp:Literal runat="server" ID="litFacRankScript"></asp:Literal>
+  </section>
 </div>
+
 <script>
   $(document).ready(function () {
     $("[id*=ddlChkList]").css("width", "249px");

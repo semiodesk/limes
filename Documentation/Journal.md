@@ -109,7 +109,7 @@
 
 ### Wednesday, 10th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
-- Arranged a call with Nicholas Brown today at 5pm
+- Arranged a call with Nicholas Brown today @ 5pm
 - Did not manage to resolve the broken links issue yesterday, will talk about it with Nicholas
 - Adapting page design to use the NGS-CN color scheme and make use of Bootstrap
 - Call with Nicholas Brown @ 5pm
@@ -122,3 +122,11 @@
 - Executed scripts provided by from Nicholas Brown to fix the invalid search result links
 - Adapting home page design to requirements provided by Antonella Succorro
 - Further developing and adapting page designs of content pages
+
+### Friday, 12th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Project meeting with Antonella Succorro @ 10am
+- Discussed visual adaptations
+- Antonella mentioned that the new logos are available in the shared drive in Corel Draw format
+- Overall impression of design changes is good
+- Continuing to improve visual styles and responsive layout

@@ -279,7 +279,7 @@
 
 <%--<div style="position: absolute; z-index: 999;">--%>
 <div>
-    <div style="margin-top: 8px; font-weight: bold; color: #BD2F3C; border-bottom: none;
+    <div style="margin-top: 8px; font-weight: 600; color: #BD2F3C; border-bottom: none;
         width: 600px; height: 20px; text-align: center;">
         <div id="person_name">
             <b></b>

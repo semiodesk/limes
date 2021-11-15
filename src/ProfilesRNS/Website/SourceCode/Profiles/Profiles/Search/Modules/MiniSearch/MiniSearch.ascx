@@ -53,7 +53,7 @@
             <div class="activeSectionHead">
                 <table onkeypress="JavaScript:runScript(event);" width="100%" class='searchForm'>
                     <tr>
-                        <td style="color: #000000; font-weight: bold">
+                        <td style="color: #000000; font-weight: 600">
                             Keywords
                         </td>
                     </tr>
@@ -63,7 +63,7 @@
                         </td>
                     </tr>
                     <tr>
-                        <td style="color: #000000; font-weight: bold">
+                        <td style="color: #000000; font-weight: 600">
                             Last Name
                         </td>
                     </tr>
@@ -73,7 +73,7 @@
                         </td>
                     </tr>
                     <tr runat="server" id="trInstitution">
-                        <td style="color: #000000; font-weight: bold">
+                        <td style="color: #000000; font-weight: 600">
                             Institution
                         </td>
                     </tr>

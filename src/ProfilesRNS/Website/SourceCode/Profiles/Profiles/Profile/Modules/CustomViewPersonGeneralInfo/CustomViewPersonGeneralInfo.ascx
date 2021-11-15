@@ -1,16 +1,15 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CustomViewPersonGeneralInfo.ascx.cs"
     Inherits="Profiles.Profile.Modules.CustomViewPersonGeneralInfo.CustomViewPersonGeneralInfo" %>
-<table>
-    <tr>
-        <td>
-            <asp:Literal runat="server" ID="litPersonalInfo"></asp:Literal>
-        </td>
-        <td style="width:250px;padding-left:25px" align="right" valign="top">
-            <asp:Image itemprop="image" runat="server" ID="imgPhoto" />
-        </td>
-    </tr>
-</table>
+
+<div class="d-flex flex-column align-items-center flex-sm-row align-items-sm-start text-center text-sm-left mt-3">
+    <div class="profile-image">
+        <asp:Image itemprop="image" runat="server" ID="imgPhoto" />
+    </div>
+    <asp:Literal runat="server" ID="litPersonalInfo"></asp:Literal>
+</div>
+
 <div id="toc"><ul></ul><div style="clear:both;"></div></div>
+
 <!-- for testing ORNG gadgets -->
 <asp:Panel runat="server" ID="pnlSandboxGadgets" Visible="false">
     <div class= "PropertyGroup">Newly found "Sandbox" Gadgets</div>

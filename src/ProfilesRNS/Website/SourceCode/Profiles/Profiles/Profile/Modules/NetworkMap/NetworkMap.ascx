@@ -46,9 +46,9 @@
     <div id="divData">
 
         <div>
-            <span style="color: #C00; font-weight: bold;">Red markers</span> indicate <asp:Literal runat="server" ID="litCoauthorGroup" Text="the co-authors"></asp:Literal>.
+            <span style="color: #C00; font-weight: 600;">Red markers</span> indicate <asp:Literal runat="server" ID="litCoauthorGroup" Text="the co-authors"></asp:Literal>.
             <asp:Label ID="lblPerson" runat="server"></asp:Label><br />
-            <span style="color: #00C; font-weight: bold;">Blue lines</span> connect people who
+            <span style="color: #00C; font-weight: 600;">Blue lines</span> connect people who
             have published papers together.</div>
         <div style="background-color: #999; height: 1px; overflow: hidden;
             margin: 5px 0px;">

@@ -140,13 +140,12 @@ function UpadateAllCTC(controlID, expandUpdate) {
         } catch (e) { }
     }
 
-    if (l_HeaderText == "") {
-        $('#selOtherOptions')[0].children[0].innerHTML = "";
-    }
-    else {
-        $('#selOtherOptions')[0].children[0].innerHTML = l_HdnSelectText.value;
-    }
+    var optionsValue = l_HeaderText == "" ? "" : l_HdnSelectText.value;
+    var optionsSelect = $('#selOtherOptions')[0];
 
+    if(optionsSelect) {
+        optionsSelect.children[0].innerHTML = optionsValue;
+    }
 }
 
 

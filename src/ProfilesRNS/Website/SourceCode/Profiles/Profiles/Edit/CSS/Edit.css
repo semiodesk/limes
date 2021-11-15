@@ -91,11 +91,11 @@
 
 .pubHeader {
     margin-top: 20px;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .pubSubHeader {
-    font-weight: bold;
+    font-weight: 600;
     color: #666666;
 }
 
@@ -257,7 +257,7 @@
 
     .editPage .topRow td{
         background-color: #EEEBE5;
-        font-weight: bold;
+        font-weight: 600;
         color: #666;
         font-family: Arial;
         font-size: 13px;
@@ -266,7 +266,7 @@
     }
      .editPage .topRow th {
         background-color: #EEEBE5;
-        font-weight: bold;
+        font-weight: 600;
         color: #333;
         font-family: Arial;
         font-size: 13px;

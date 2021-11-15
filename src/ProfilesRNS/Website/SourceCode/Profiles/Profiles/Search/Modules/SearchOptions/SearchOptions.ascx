@@ -9,14 +9,13 @@
     }
 </script>
 <div id="divSearchCriteria">
-    <div class="passiveSectionHead">
-        <div style="white-space: nowrap; display: inline">
-            Search Options            
-        </div>
+    <div class="sidepanel-header">
+        <h4>Search Options</h4>
     </div>    
     <div class="passiveSectionBody">
-        <div style='margin-bottom:4px;margin-top:4px;'><asp:Literal runat="server" ID="litModifySearch"></asp:Literal></div>
-        <div style='padding-left: 1em;text-indent: -1em;'><asp:Literal runat="server" ID="litSearchOtherInstitutions"></asp:Literal></div>
-        <div class="passiveSectionLine"></div>              
+        <ul>
+            <li><asp:Literal runat="server" ID="litModifySearch"></asp:Literal></li>
+            <li><asp:Literal runat="server" ID="litSearchOtherInstitutions"></asp:Literal></li>
+        </ul> 
     </div>
 </div>

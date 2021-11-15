@@ -48,7 +48,7 @@
             </ItemTemplate>
         </asp:Repeater>
         <asp:Panel ID="pnlInsertProperty" runat="server"  CssClass="EditPanel"      Visible="false">
-            <div><span style="font-weight: bold;">End Date</span> (MM/DD/YYYY)</div>
+            <div><span style="font-weight: 600;">End Date</span> (MM/DD/YYYY)</div>
 
             <asp:TextBox ID="txtEndDate" runat="server" MaxLength="10" CssClass="textBoxDate"></asp:TextBox>
             <asp:ImageButton ID="btnCalendar" runat="server" Width="15px" ImageUrl="~/Edit/Images/cal.png" AlternateText="Calendar picker" />

@@ -6,7 +6,7 @@
     <div class="activeContainerTop"></div>
     <div class="activeContainerCenter">
         <div class="activeSection">
-            <div class="act-heading">Profiles Stats</div>
+            <h4 class="act-heading">Profiles Stats</h4>
             <div class="activeSectionBody">
                 <Statistics:Statistics runat="server" ID="Statistics" Visible="true" />  
                 <ActivityHistory:Activity runat="server" ID="ActivityHistory" Visible="true" />  

@@ -21,7 +21,7 @@
 			    The size of a circle is proportional to the number of publications that author has. The thickness of a line connecting two authors' names 
 			    is proportional to the number of publications that they share. Options for customizing this network view are listed below the graph.
 		    </div>
-		    <div style="margin-top: 8px; font-weight: bold; color: #BD2F3C; border-bottom: none;
+		    <div style="margin-top: 8px; font-weight: 600; color: #BD2F3C; border-bottom: none;
 			    width: 600px; height: 20px; text-align: center;">
 			    <div id="person_name">
 				    <b></b>
@@ -40,9 +40,9 @@
 	    <div>
 		    <div style="border-top: 1px dotted #999; font-size: 12px; line-height: 16px; padding-top: 12px;
 			    margin-top: 8px; text-align: left;">
-			    <span style="font-weight: bold; color: #666;">Click and drag</span> the name of any author to adjust the clusters. 
-			    <span style="font-weight: bold; color: #666;">Shift-click and drag</span> the name of any author to move them and pin it to a fixed location. Click again to unlock the position.
-			    <span style="font-weight: bold; color: #666;">Alt-click</span> a name to view that person's full profile. Please note that it 
+			    <span style="font-weight: 600; color: #666;">Click and drag</span> the name of any author to adjust the clusters. 
+			    <span style="font-weight: 600; color: #666;">Shift-click and drag</span> the name of any author to move them and pin it to a fixed location. Click again to unlock the position.
+			    <span style="font-weight: 600; color: #666;">Alt-click</span> a name to view that person's full profile. Please note that it 
 			    might take several minutes for the clusters in this graph to form, and each time you view the page the graph might look slightly different.	
 		    </div>
 	    </div>
@@ -53,7 +53,7 @@
 <div id="divDataText" style="display:none;margin-top:12px;margin-bottom:8px;">
 	<div style="width: 600px; font-size: 12px; line-height: 16px; border-bottom: 1px dotted #999;
 		padding-bottom: 12px; margin-bottom: 6px;">
-		This cluster graph shows the members of <span style="font-weight: bold; color: #666;">
+		This cluster graph shows the members of <span style="font-weight: 600; color: #666;">
 			<asp:Label ID="lblProfileName1" runat="server"></asp:Label></span>. 
 		The size of a circle is proportional to the number of publications that author has. The thickness of a line connecting two authors' names 
 		is proportional to the number of publications that they share. Options for customizing this network view are listed below the graph.

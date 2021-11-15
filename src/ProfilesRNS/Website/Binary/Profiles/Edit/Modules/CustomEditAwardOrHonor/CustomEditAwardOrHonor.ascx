@@ -32,16 +32,16 @@
             <div style="padding-top: 3px; margin-bottom: 10px;">For Award Year(s), enter both fields only if awarded for consecutive years.</div>
             <div style="display: inline-flex;">
                 <div>
-                    <div style="font-weight: bold;">Award Year(s)</div>
+                    <div style="font-weight: 600;">Award Year(s)</div>
                     <asp:TextBox ID="txtStartYear" runat="server" MaxLength="4" Width="60px" title="start year" CssClass="editFieldTopMargin"/>
                     &nbsp;<b>-</b>&nbsp;<asp:TextBox ID="txtEndYear" runat="server" MaxLength="4" Width="60px" title="end year" CssClass="editFieldTopMargin"/>
                 </div>
                 <div style="padding-left: 10px">
-                    <div style="font-weight: bold;">Name <span style="font-weight: normal;">(required)</span></div>
+                    <div style="font-weight: 600;">Name <span style="font-weight: normal;">(required)</span></div>
                     <asp:TextBox ID="txtAwardName" runat="server" MaxLength="100" Width="220px" title="award name" CssClass="editFieldTopMargin"/>
                 </div>
                 <div style="margin-left: 20px;">
-                    <div style="font-weight: bold;">Institution</div>
+                    <div style="font-weight: 600;">Institution</div>
                     <asp:TextBox ID="txtInstitution" runat="server" MaxLength="100" Width="220px" title="institution" CssClass="editFieldTopMargin"/>
                 </div>
             </div>

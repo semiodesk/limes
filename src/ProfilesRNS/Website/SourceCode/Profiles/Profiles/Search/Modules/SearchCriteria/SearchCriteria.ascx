@@ -11,16 +11,12 @@
     For details, see: LICENSE.txt 
 --%>
 <div id="divSearchCriteria">
-    <div class="passiveSectionHead">
-        <div style="white-space: nowrap; display: inline">
-            Search Criteria
-        </div>
+    <div class="sidepanel-header">
+        <h4>Search Criteria</h4>
     </div>    
     <div class="passiveSectionBody">        
         <ul>
             <asp:Literal runat="server" ID="litSearchCriteria"></asp:Literal>           
-        </ul>    <div class="passiveSectionLine">
-        </div>
-          <asp:Literal runat="server" ID="litWhyText"></asp:Literal>    
+        </ul>
     </div>
 </div>

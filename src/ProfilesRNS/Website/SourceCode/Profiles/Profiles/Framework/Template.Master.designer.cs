@@ -195,24 +195,6 @@ namespace Profiles.Framework
         protected global::System.Web.UI.WebControls.Repeater rptMain;
 
         /// <summary>
-        /// ContentPassive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPassive;
-
-        /// <summary>
-        /// rptPassive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptPassive;
-
-        /// <summary>
         /// divContentLeft control.
         /// </summary>
         /// <remarks>
@@ -238,6 +220,24 @@ namespace Profiles.Framework
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptLeft;
+
+        /// <summary>
+        /// ContentPassive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPassive;
+
+        /// <summary>
+        /// rptPassive control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptPassive;
 
         /// <summary>
         /// litJS control.

@@ -21,7 +21,7 @@ tr.website-table > td {
 
 .profiles .profilesContentMain .sectionHeader {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
   padding-top: 18px;
   padding-bottom: 0px;
@@ -31,7 +31,7 @@ tr.website-table > td {
 
 .profiles .profilesContentMain .sectionHeader2 {
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 600;
   color: #333;
   padding-top: 18px;
   padding-bottom: 0px;
@@ -66,7 +66,7 @@ tr.website-table > td {
   text-align: right;
   vertical-align: top;
   font-size: 12px;
-  font-weight: bold;
+  font-weight: 600;
   color: #777;
   padding: 2px 10px 0 0;
   width: 80px;
@@ -135,7 +135,7 @@ tr.website-table > td {
 
 .profiles .profilesContentMain .publications li .viewInLabel {
   color: #666;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 #publicationTimelineGraph {
@@ -162,7 +162,7 @@ tr.website-table > td {
 }
 
 .profiles .profilesContentMain .kwCloud2 a {
-  font-weight: bold;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -191,7 +191,7 @@ tr.website-table > td {
 }
 
 .profiles .profilesContentMain .keywordCategories .kwsg {
-  font-weight: bold;
+  font-weight: 600;
   padding: 0px 2px;
 }
 
@@ -266,7 +266,7 @@ tr.website-table > td {
 
 #meshInfo table td.label {
   padding: 2px 10px 0 0;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 12px;
   color: #777;
   width: 100px;

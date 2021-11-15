@@ -35,6 +35,6 @@
         </Columns>
     </asp:GridView>
 </asp:Panel>
-<div runat="server" id="divHidden" style='border: 1px solid #333; background-color: #FFD; text-align: left; font-weight: bold; padding: 5px; margin-top: 8px;'>
+<div runat="server" id="divHidden" style='border: 1px solid #333; background-color: #FFD; text-align: left; font-weight: 600; padding: 5px; margin-top: 8px;'>
     Note: This feature's visibility is currently set to Hidden and is not visible on your profile.
 </div>

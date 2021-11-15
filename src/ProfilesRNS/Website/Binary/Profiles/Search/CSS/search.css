@@ -98,7 +98,7 @@
     padding: 0;
     font-size: 1.2em;
     color: #746a42;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .profiles .profilesContentMain .searchResults UL {
@@ -173,7 +173,7 @@ padding-right: 5px;
 h3{
     font-size:28px !important;
      color:#b23f45;
-     font-weight: bold;
+     font-weight: 600;
 
 }
 .divlabel {
@@ -209,7 +209,7 @@ h3{
     .searchForm th {
         text-align: right;
         font-size: 13px;
-        font-weight: bold;
+        font-weight: 600;
         color: #666;
         width: 102px;
         padding: 5px 10px 5px 0px;
@@ -310,7 +310,7 @@ h3{
     text-align: center;
     padding: 2px 6px;
     color: #999;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 11px;
     line-height: 15px;
 }

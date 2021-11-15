@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
                                 <div style="padding: 10px 0px 5px 0px;">
-                                    <asp:Label ID="lblPubMedResultsHeader" runat="server" Text="" Style="font-weight: bold;"></asp:Label>
+                                    <asp:Label ID="lblPubMedResultsHeader" runat="server" Text="" Style="font-weight: 600;"></asp:Label>
                                 </div>
                                 <asp:Panel runat="server" ID="pnlAddAll">
                                     <div style="padding: 10px 0px 5px 5px; background-color: #E2E6E8;">

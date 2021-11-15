@@ -117,7 +117,12 @@ Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
   }
 </script>
 <section class="activities">
-  <h4 class="act-heading-live-updates">Recent Updates</h4>
+  <div class="sidepanel-header">
+    <h4 class="act-heading-live-updates">Recent Updates</h4>
+    <asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx">
+      More
+    </asp:HyperLink>
+  </div>
   <asp:Panel runat="server" ID="pnlActivities" CssClass="clsScroll">
     <asp:Repeater runat="server" ID="rptActivityHistory" OnItemDataBound="rptActivityHistory_OnItemDataBound">
       <ItemTemplate>
@@ -148,9 +153,6 @@ Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
     </asp:Repeater>
   </asp:Panel>
 </section>
-<asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx">
-  <i class="fa fa-chevron-right"></i> See more activities
-</asp:HyperLink>
 <div id="divStatus" style="display: none">
   <div class="loader">
     <span>

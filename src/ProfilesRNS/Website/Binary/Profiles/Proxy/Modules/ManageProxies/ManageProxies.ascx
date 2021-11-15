@@ -19,7 +19,7 @@ by your department or institution. You also have the option of designation your
 own proxies.    
         </div>
 
-        <div style="font-weight: bold; margin-top: 25px;">
+        <div style="font-weight: 600; margin-top: 25px;">
             Users who can edit your profile
         </div>
         <div style="margin-top: 8px;">
@@ -65,7 +65,7 @@ own proxies.
             </div>
             </div>
         </asp:Panel>
-        <div style="font-weight: bold; margin-top: 34px; margin-bottom: 8px;">Users who have given you permission to edit their profiles</div>
+        <div style="font-weight: 600; margin-top: 34px; margin-bottom: 8px;">Users who have given you permission to edit their profiles</div>
         <asp:GridView Width="100%" ID="gvWhoCanIEdit" EmptyDataText="<div style='margin-top:5px;margin-left:5px;margin-bottom:5px;'>None</div>" EmptyDataRowStyle-CssClass="empty-cell"  AutoGenerateColumns="false" 
             runat="server" OnRowDataBound="gvWhoCanIEdit_OnRowDataBound" CssClass="SearchResults">
             <RowStyle CssClass="oddRow " />
@@ -87,7 +87,7 @@ own proxies.
             </Columns>
         </asp:GridView>
 
-         <div style="font-weight: bold; margin-top: 34px; padding-bottom: 8px">Groups of users whose profiles you can edit</div>
+         <div style="font-weight: 600; margin-top: 34px; padding-bottom: 8px">Groups of users whose profiles you can edit</div>
                <div style="margin-bottom: 8px;">You can edit the profiles of any user belonging to any of the organizations listed below. The Visible column indicates whether users in an organization can see that you have permission to edit their profiles.</div>
                <div class="editPage">
                <asp:GridView Width="100%" ID="gvYouCanEdit" AutoGenerateColumns="false" 

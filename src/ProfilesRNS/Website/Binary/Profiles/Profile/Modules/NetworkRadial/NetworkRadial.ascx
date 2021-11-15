@@ -18,7 +18,7 @@
 
 
             This radial graph shows the co-authors (inner ring) and top co-authors of co-authors
-            (outer ring) of <span style="font-weight: bold; color: #666;">
+            (outer ring) of <span style="font-weight: 600; color: #666;">
                 <asp:Label ID="lblProfileName" runat="server"></asp:Label></span>. The size
             of the red circle around an author's name is proportional to the number of publications
             that he or she has. The thickness of a line connecting two authors' names is proportional
@@ -29,7 +29,7 @@
     <div style="width: 100%; font-size: 12px; line-height: 16px; border-bottom: 1px dotted #999; padding-bottom: 12px; margin-bottom: 6px;">
     </div>
     <div>
-        <div style="margin-top: 8px; font-weight: bold; color: #BD2F3C; border-bottom: none; height: 20px; text-align: center;">
+        <div style="margin-top: 8px; font-weight: 600; color: #BD2F3C; border-bottom: none; height: 20px; text-align: center;">
             <div id="graph_info">
                 <b></b>
             </div>
@@ -93,14 +93,14 @@
         </table>
         <div id="viz_instructions" style="border-top: 1px dotted #999; font-size: 12px; line-height: 16px; padding-top: 12px;
             margin-top: 8px; text-align: left;" >
-            Use the <span style="font-weight: bold; color: #666;">sliders</span> to 1) hide
+            Use the <span style="font-weight: 600; color: #666;">sliders</span> to 1) hide
             authors who have fewer than the selected minimum number of publications, 2) hide
             lines that represent fewer than the selected minimum number of co-publications,
             or 3) hide lines that represent co-publications that were written before the selected
-            year. <span style="font-weight: bold; color: #666;">Click</span> the name of any
-            author to re-center the graph on that person. <span style="font-weight: bold; color: #666;">
-                Ctrl-click</span> a name to view that person's network of co-authors. <span style="font-weight: bold;
-                    color: #666;">Alt-click</span> a name to view that person's full profile. <span style="font-weight: bold;
+            year. <span style="font-weight: 600; color: #666;">Click</span> the name of any
+            author to re-center the graph on that person. <span style="font-weight: 600; color: #666;">
+                Ctrl-click</span> a name to view that person's network of co-authors. <span style="font-weight: 600;
+                    color: #666;">Alt-click</span> a name to view that person's full profile. <span style="font-weight: 600;
                     color: #666;">Shift-click</span> a name to highlight the mutual co-authorships of that person's co-authors.
         </div>
         <br />
@@ -123,14 +123,14 @@
        <asp:HtmlIframe> <iframe id="iFrameFlashGraph" runat="server" width="610px" height="610px" frameborder="0" style="overflow:hidden;"></iframe></asp:HtmlIframe>
                 <div style="border-top: 1px dotted #999; font-size: 12px; line-height: 16px; padding-top: 12px;
             margin-top: 8px; text-align: left;">
-            Use the <span style="font-weight: bold; color: #666;">sliders</span> to 1) hide
+            Use the <span style="font-weight: 600; color: #666;">sliders</span> to 1) hide
             authors who have fewer than the selected minimum number of publications, 2) hide
             lines that represent fewer than the selected minimum number of co-publications,
             or 3) hide lines that represent co-publications that were written before the selected
-            year. <span style="font-weight: bold; color: #666;">Click</span> the name of any
-            author to re-center the graph on that person. <span style="font-weight: bold; color: #666;">
-                Ctrl-click</span> a name to view that person's network of co-authors. <span style="font-weight: bold;
-                    color: #666;">Alt-click</span> a name to view that person's full profile. <span style="font-weight: bold;
+            year. <span style="font-weight: 600; color: #666;">Click</span> the name of any
+            author to re-center the graph on that person. <span style="font-weight: 600; color: #666;">
+                Ctrl-click</span> a name to view that person's network of co-authors. <span style="font-weight: 600;
+                    color: #666;">Alt-click</span> a name to view that person's full profile. <span style="font-weight: 600;
                     color: #666;">Shift-click</span> a name to highlight the mutual co-authorships of that person's co-authors.
         <br /><br />
         To return to the HTML5 visulization, <a id="divReturnToHTML5" tabindex="0" class="jQueryLink">click here.</a>                    

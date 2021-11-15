@@ -241,7 +241,7 @@
 
         </script>
         
-        <div class="listTablePagination" style="float: left;">
+        <div class="listTablePagination">
           <table>
             <tbody>
               <tr>

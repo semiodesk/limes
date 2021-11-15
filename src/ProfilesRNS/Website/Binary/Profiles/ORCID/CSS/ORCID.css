@@ -19,11 +19,11 @@ using Alphabetize Style Rules
 	span.superscript { color: red; font-size: 80%; position: relative; top: -0.5em; }
 	span.uierror, td.uierror, th.uierror
     {
-        color: #FF0000; font-weight: bold;
+        color: #FF0000; font-weight: 600;
     }
 	span.uimessage
     {
-        color: #000080; font-weight: bold;
+        color: #000080; font-weight: 600;
     }
 	
 	table.footnotes { border: none; margin-top: 20px; }
@@ -36,7 +36,7 @@ using Alphabetize Style Rules
     table.data tr th, table.data thead tr th { background-color: #f4faff; border: solid thin #d6d6d6; padding: 0px 5px 0px 5px; text-align: left; vertical-align: bottom; }
     table.data tr th.center, table.data thead tr th.center { vertical-align: middle !important; }
     table.data tr.alt { background-color: #fbfbff; text-align: left; vertical-align: top; }
-    table.data tr.header { background-color: #f4faff; font-weight: bolder; text-align: left; vertical-align: bottom; }
+    table.data tr.header { background-color: #f4faff; font-weight: 600er; text-align: left; vertical-align: bottom; }
     table.data tr.item { text-align: left; vertical-align: top; }
     div.section { margin-right: 10px; }
     div.section div.header

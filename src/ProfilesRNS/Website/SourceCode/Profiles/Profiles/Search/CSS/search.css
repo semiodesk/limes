@@ -21,17 +21,8 @@
   margin-top: 14px;
 }
 
-.pageTitle h2 {
-  text-align: left;
-  color: black;
-  font-size: 28px;
-  font-weight: normal;
-  margin: 0px !important;
-}
-
 .tabContainer h2 {
   text-align: left;
-  color: black;
   font-size: 28px;
   font-weight: normal;
   margin: 0px !important;
@@ -41,9 +32,6 @@
   padding-left: -15px !important;
 }
 
-#divSearchCriteria {
-  width: 160px;
-}
 .btn-default {
   font-size: 12px;
   text-align: left;
@@ -93,8 +81,7 @@
   margin: 0;
   padding: 0;
   font-size: 1.2em;
-  color: #746a42;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .profiles .profilesContentMain .searchResults UL {
@@ -161,11 +148,14 @@
   margin-bottom: 16px;
   margin-top: 16px;
 }
-h3 {
-  font-size: 28px !important;
-  color: #b23f45;
-  font-weight: bold;
+
+h1 .bi,
+h2 .bi,
+h3 .bi {
+  margin-right: 0.4em;
+  color: #0071a1;
 }
+
 .divlabel {
   display: table-cell;
   vertical-align: middle !important;
@@ -180,25 +170,16 @@ h3 {
 .twofifty-width {
   width: 250px;
 }
+
+.searchSection {
+  padding-bottom: 0;
+}
+
 .searchForm {
-  margin: 8px 0px;
-  color: #666;
-}
-
-.searchForm .searchSection {
-  background-color: #ddedf9;
+  background-color: #e9f1f7;
+  border-radius: 6px;
   padding: 1.5em;
-  margin-bottom: 12px;
-}
-
-.searchForm table {
-  border-collapse: collapse;
-}
-
-.searchForm th {
-  text-align: right;
-  font-weight: bold;
-  padding: .5em 1em;
+  margin-bottom: 1em;
 }
 
 .searchForm a {
@@ -206,14 +187,23 @@ h3 {
   border: 0;
 }
 
-.searchForm td {
-  font-weight: normal;
-  text-align: left;
-  padding: .5em 1em;
+.searchForm .form-control-subline {
+  margin-top: 0.5em;
+  text-align: right;
 }
 
-.searchForm .fieldMain {
-  width: 255px;
+.searchForm .form-control-subline label {
+  font-weight: normal;
+  color: inherit;
+}
+
+.searchForm input[type="text"],
+.searchForm select {
+  width: 100% !important;
+}
+
+.searchForm input[type="checkbox"] {
+  margin-right: 0.5em;
 }
 
 .input-padding {
@@ -224,14 +214,6 @@ h3 {
 .fileOptions span {
   font-weight: normal;
   padding-right: 5px;
-}
-
-.searchForm .inputText {
-  width: 250px;
-}
-
-.searchForm select {
-  width: 250px;
 }
 
 .searchForm .inputButton {
@@ -254,13 +236,14 @@ h3 {
 }
 
 .listTablePagination {
-  background-color: #f7f3ef;
+  background-color: #efefef;
   padding: 6px;
   width: 100%;
-  border-bottom: 1px solid #999999;
-  border-left: 1px solid #999999;
-  border-right: 1px solid #999999;
+  border-bottom: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
   border-collapse: collapse;
+  margin: 0;
 }
 
 .listTablePagination table {
@@ -283,17 +266,6 @@ h3 {
   display: block;
   float: right;
   text-align: center;
-  padding: 2px 6px;
-  color: #999;
-  font-weight: bold;
-  font-size: 11px;
-  line-height: 15px;
-}
-
-.listTablePagination a {
-  font-size: 11px;
-  line-height: 15px;
-  color: #3f4a9d;
 }
 
 .listTablePaginationA img {

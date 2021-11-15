@@ -64,7 +64,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trInstitution;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trInstitution;
         
         /// <summary>
         /// litInstitution control.
@@ -91,7 +91,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDepartment;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trDepartment;
         
         /// <summary>
         /// litDepartment control.
@@ -118,7 +118,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDivision;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trDivision;
         
         /// <summary>
         /// litDivision control.
@@ -145,7 +145,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trFacultyType;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trFacultyType;
         
         /// <summary>
         /// phDDLCHK control.
@@ -199,7 +199,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTableRow trOtherOptions;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trOtherOptions;
         
         /// <summary>
         /// ctcFirst control.

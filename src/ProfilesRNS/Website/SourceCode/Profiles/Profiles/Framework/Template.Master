@@ -4,43 +4,17 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
 <html>
   <head id="Head1" runat="server">
     <title>Profiles RNS</title>
-    <meta charset="utf-8" />
+
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 
     <!-- Latest compiled and minified CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="/Framework/Assets/boostrap-4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/Framework/Assets/boostrap-icons-1.7/bootstrap-icons.css" />
 
-    <!-- Optional theme -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script
-      type="text/javascript"
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-      crossorigin="anonymous"
-    ></script>
+    <script type="text/javascript" src="/Framework/Assets/boostrap-4.0/js/jquery-3.3.1.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
-
-    <meta name="apple-mobile-web-app-title" content="Profiles RNS" />
-    <meta name="application-name" content="Profiles RNS" />
-    <meta name="msapplication-TileColor" content="#a41c2f" />
-    <meta name="theme-color" content="#a41c2f" />
   </head>
 
   <body runat="server">
@@ -108,19 +82,17 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
             </ItemTemplate>
           </asp:Repeater>
         </asp:ContentPlaceHolder>
-        <div id="ProfilesNotification" visible="false" runat="server" style="margin-top: 8px; font-weight: bold">
+        <div id="ProfilesNotification" visible="false" runat="server" style="margin-top: 8px; font-weight: 600">
           <asp:Literal runat="server" ID="litSystemNotice"></asp:Literal>
         </div>
         <div class="profilesPage">
-          <button
-            type="button"
-            style="color: #000000"
+          <a
             onclick="javascript:topFunction();"
             id="rtnBtn"
             title="Go to top"
           >
-            Return to Top
-          </button>
+            <i class="bi bi-arrow-up"></i>
+          </a>
           <div id="profilesMainRow" class="row">
             <div id="divProfilesContentMain" class="col-md-8" runat="server">
               <div id="divTopMainRow" style="width: 100%" runat="server">
@@ -149,20 +121,20 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
               </div>
             </div>
             <div class="profilesContentPassive col-md-4">
+              <div id="divContentLeft" runat="server" class="mb-3">
+                <asp:ContentPlaceHolder ID="Contentleft" runat="server">
+                  <asp:Repeater runat="server" ID="rptLeft" OnItemDataBound="DrawModule">
+                    <ItemTemplate>
+                      <asp:PlaceHolder ID="phLeft" runat="server"></asp:PlaceHolder>
+                    </ItemTemplate>
+                  </asp:Repeater>
+                </asp:ContentPlaceHolder>
+              </div>
               <div>
                 <asp:ContentPlaceHolder ID="ContentPassive" runat="server">
                   <asp:Repeater runat="server" ID="rptPassive" OnItemDataBound="DrawModule">
                     <ItemTemplate>
                       <asp:PlaceHolder ID="phPassive" runat="server"></asp:PlaceHolder>
-                    </ItemTemplate>
-                  </asp:Repeater>
-                </asp:ContentPlaceHolder>
-              </div>
-              <div id="divContentLeft" runat="server">
-                <asp:ContentPlaceHolder ID="Contentleft" runat="server">
-                  <asp:Repeater runat="server" ID="rptLeft" OnItemDataBound="DrawModule">
-                    <ItemTemplate>
-                      <asp:PlaceHolder ID="phLeft" runat="server"></asp:PlaceHolder>
                     </ItemTemplate>
                   </asp:Repeater>
                 </asp:ContentPlaceHolder>
@@ -174,26 +146,37 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       <%--Catalyst Footer--%>
       <div style="margin-top: 32px" id="catfooter"><%--<uc:CatalystAsset runat="server" AssetType="3" />--%></div>
     </form>
-    <div class="footer">
-      <div class="container">
-        <a href="#" target="_blank">Impressum</a> |
-        <a href="https://ngs-kn.de/privacy-policy/" target="_blank">Privacy Policy</a> |
-        <a href="https://ngs-kn.de/" target="_blank">© 2021 Next Generation Sequencing Competence Network (NGS-CN)</a>
+    <div class="container">
+      <div class="footer">
+        <span class="float-sm-right">
+          <b><a href="#" target="_blank">Impressum</a></b> |
+          <b><a href="https://ngs-kn.de/privacy-policy/" target="_blank" style="margin-right: 2em">Privacy</a></b>
+        </span>
 
-        <div class="logo-container">
-          <a href="" target="_blank"><img class="logo" src="/Framework/Images/ccu.png" /></a>
-          <a href="" target="_blank"
-            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/CCGA-Logo2-page-0-768x439.jpg"
-          /></a>
-          <a href="" target="_blank"
-            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/NCCT_Logo_RGB-768x341.png"
-          /></a>
-          <a href="" target="_blank"
-            ><img class="logo" src="https://ngs-kn.de/wp-content/uploads/2020/04/wggc-768x239.png"
-          /></a>
+        <a href="https://ngs-kn.de/" target="_blank" class="d-block d-md-inline">
+          © 2021 Next Generation Sequencing Competence Network (NGS-CN)
+        </a>
+
+        <div class="logo-container d-flex flex-column d-md-block mx-md-auto">
+          <a href="" target="_blank">
+            <img class="logo" src="/Framework/Assets/images/logo-ccga.png" />
+          </a>
+          <a href="" target="_blank">
+            <img class="logo" src="/Framework/Assets/images/logo-dresden-concept-gc.png" />
+          </a>
+          <a href="" target="_blank">
+            <img class="logo" src="/Framework/Assets/images/logo-ncct.png" />
+          </a>
+          <a href="" target="_blank">
+            <img class="logo" src="/Framework/Assets/images/logo-west-german-gc.png" />
+          </a>
         </div>
       </div>
     </div>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="/Framework/Assets/boostrap-4.0/js/bootstrap.bundle.min.js"></script>
+
     <script type="text/javascript">
       $(document).ready(function () {
         $("#page-container a").css("cursor", "pointer");
