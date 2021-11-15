@@ -9,20 +9,21 @@
   margin: 0 0 2em 0;
   padding: 0;
   overflow: hidden;
-  border-radius: 6px;
 }
 
 #prns-nav .prns-main.primary {
-  margin-bottom: .5em;
+  margin-bottom: 0;
+  border-radius: 6px 6px 0 0;
 }
 
 #prns-nav .prns-main.secondary {
-  background: #0071a1;
+  background: #183c55;
+  border-radius: 0 0 6px 6px;
 }
 
 #prns-nav .prns-main > li {
   height: 40px;
-  background: #0071a1;
+  background: #183c55;
 }
 
 #prns-nav .prns-main li {
@@ -206,11 +207,12 @@ li#search-drop a:hover,
 
   #prns-nav .prns-main.primary {
     min-width: fit-content;
-    margin-right: 4px;
     margin-bottom: 2em;
+    border-radius: 6px 0 0 6px;
   }
 
   #prns-nav .prns-main.secondary {
     width: 100%;
+    border-radius: 0 6px 6px 0;
   }
 }

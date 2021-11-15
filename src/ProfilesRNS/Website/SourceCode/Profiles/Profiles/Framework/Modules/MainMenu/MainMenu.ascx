@@ -38,7 +38,7 @@
                 <a href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Use Our Data</a>
                 <ul class="drop">
                     <li>
-                        <a id="useourdata" style="border-left: 1px solid  #383737; border-right: 1px solid  #383737; border-bottom: 1px solid #383737; width: 200px !important" href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Overview</a>
+                        <a id="useourdata" href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Overview</a>
                     </li>
                     <asp:Literal runat="server" ID="litExportRDF"></asp:Literal>
                 </ul>

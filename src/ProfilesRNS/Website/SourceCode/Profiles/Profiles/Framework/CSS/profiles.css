@@ -87,7 +87,7 @@ a.search-button:hover {
 }
 
 .pageTitle {
-  text-align: center;
+  text-align: left;
 }
 
 .panelMain table {
@@ -95,10 +95,6 @@ a.search-button:hover {
 }
 
 @media (min-width: 567px) {
-  .pageTitle {
-    text-align: initial;
-  }
-
   .float-sm-right {
     float: right;
   }
