@@ -160,7 +160,7 @@
   - Improving merging CSV files
   - Improving filtering CSV files
 
-### Friday, 18th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Friday, 19th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Finalized work on data transformation scripts (csv-clean.sh, csv-keyphrases.sh)
   - Adding command line argument parser and documentation to scripts
