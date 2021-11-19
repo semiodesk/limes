@@ -10,3 +10,6 @@ obj
 *.config
 *.zip
 debug.log
+input/*
+output/*
+tmp/*
