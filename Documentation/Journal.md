@@ -130,3 +130,40 @@
 - Antonella mentioned that the new logos are available in the shared drive in Corel Draw format
 - Overall impression of design changes is good
 - Continuing to improve visual styles and responsive layout
+
+### Monday, 15th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Integrated new logos in the footer
+- Finalizing visual adaptations and repsonsive layout
+  - Site now fully responsive
+  - Accessibility analysis with respect to Section 508 guidelines
+
+### Tuesday, 16th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Jour fix meeting with Antonella Succorro @ 10am
+  - Discussed state of VPN access for Sebastian
+  - Discussed visual adaptations
+  - Discussed data transformation and loading tasks
+- Started work on data transformation scripts
+
+### Wednesday, 17th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Working on data transformation scripts (csv-clean.sh, csv-convert.sh)
+  - Adding command line argument parser and documentation to scripts
+  - Improving cleaning CSV data
+  - Improving converting CSV data to ProfilesRNS
+
+### Thursday, 18th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Working on data transformation scripts (csv-merge.sh, csv-filter.sh)
+  - Adding command line argument parser and documentation to scripts
+  - Improving merging CSV files
+  - Improving filtering CSV files
+
+### Friday, 18th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Finalized work on data transformation scripts (csv-clean.sh, csv-keyphrases.sh)
+  - Adding command line argument parser and documentation to scripts
+  - Improved phone number cleansing in csv-clean
+  - Improved extraction of keyphrases
+- Sent preliminary data to Antonella Succorro for review
