@@ -9,24 +9,32 @@ python csv-clean.py \
     -i input/wggc2019_round1.csv \
     -o tmp/wggc2019_round1.clean.csv \
     -k confirm-or-change-email-address \
+    -p input/patches.txt \
+    -p input/emails.txt \
     2> tmp/wggc2019_round1.dups.csv
 
 python csv-clean.py \
     -i input/wggc2019_round2.csv \
     -o tmp/wggc2019_round2.clean.csv \
     -k confirm-or-change-email-address \
+    -p input/patches.txt \
+    -p input/emails.txt \
     2> tmp/wggc2019_round2.dups.csv
 
 python csv-clean.py \
     -i input/ngscn2021_full_form_20211117.csv \
     -o tmp/ngscn2021_full_form_20211117.clean.csv \
     -k confirm-or-change-email-address \
+    -p input/patches.txt \
+    -p input/emails.txt \
     2> tmp/ngscn2021_full_form_20211117.dups.csv
 
 python csv-clean.py \
     -i input/ngscn2021_reduced_form_20211117.csv \
     -o tmp/ngscn2021_reduced_form_20211117.clean.csv \
     -k confirm-or-change-email-address \
+    -p input/patches.txt \
+    -p input/emails.txt \
     2> tmp/ngscn2021_reduced_form_20211117.dups.csv
 
 # Merge the input data files..
@@ -76,8 +84,8 @@ python csv-merge.py \
 python csv-filter.py \
     -i tmp/ngscn2021.merge.1.csv \
     -o tmp/ngscn2021.csv \
-    -f input/remove_from_webportal.txt \
     -k confirm-or-change-email-address \
+    -f input/remove_from_webportal.txt \
     -e true \
     -v first-name: \
     -v last-name:

@@ -1,0 +1,20 @@
+# Remove leading and trailing whitespaces everywhere
+/^\s*//
+/\s*$//
+
+# Fix common misspellings
+/str\.?$/straße/
+/strasse/straße/
+/Str\.?$/Straße/
+/Strasse/Straße/
+/auewelstr/auwelsstr/
+/niversitaet/niversität/
+/nstitute of/nstitute for/
+/uesseldorf/üsseldorf/
+/uebingen/übingen/
+|street|/\s?[0-9]*$//
+|street|/uelpicher/ülpicher/
+|street|/Am botanischen Garten/Am Botanischen Garten/
+|street|/Am [bB]otanischer Garten/Am Botanischen Garten/
+|street|/Carl Troll Straße/Carl-Troll-Straße/
+|street|/Venusberg Campus/Venusberg-Campus/

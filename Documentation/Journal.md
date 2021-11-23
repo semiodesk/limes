@@ -1,7 +1,8 @@
 # Journal
 
 ## 2021
-### Tuesday, 2nd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Tuesday, 2nd November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Download ProfilesRNS from http://profiles.catalyst.harvard.edu/
 - Read installation manual
@@ -17,7 +18,8 @@
   - Copy files from Database\Data\* into db server directory /var/opt/mssql/data/ProfilesRNS/
 - Project kick-off meeting with Antonella Succurro
 
-### Wednesday, 3rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Wednesday, 3rd November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Switching from Docker-based SQL Server 2019 to locally installed Developer Edition
   - Reason: The system requires the use of _Integration Services_ which are not available in the Docker images
@@ -36,7 +38,8 @@
 - Important: Set the "basePath" value in [Framework.].[Parameter] to the actual __**base URI**__. In a development environment this is 'http://localhost:55956'. Otherwise the site won't work.
 - The parameter name is misleading as it suggests that this is only the path component of the base URI.
 
-### Thursday, 4rd November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Thursday, 4rd November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Investigating issue #6: Invalid default route when navigating to the site
   - Solution: Set basePath in [Framework.].[Parameters] to a URL (i.e. http://localhost:55956) without trailing slash **and** clear all browser caches.
@@ -48,7 +51,8 @@
 - Analyzing the source code structure and features
 - Manually added admin user through the database
 
-### Friday, 5th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Friday, 5th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Analyzing the structure of the source code
 - Meeting prepations
@@ -78,7 +82,8 @@
   - In the Import Data dialog does not work with the provided queries because the data is in UTF-8 encoding and some columns require LATIN-1
   - Created SQL queries for importing the data
 
-### Monday, 8th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Monday, 8th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Investigate why the <code>PubMedDisambiguation_GetPubs</code> job that loads the publications for the persons in the database is failing with a HTTP status code of <code>-2</code>
   - Researching and debugging almost took a whole day without success..
@@ -87,7 +92,8 @@
   - Nicholas suggested, however, to prefer installing using SSDT because other methods seem to fail often with SQL Server updates.
   - Useful article about installing SSDT extensions for VS 2019: https://www.mssqltips.com/sqlservertip/6481/install-sql-server-integration-services-in-visual-studio-2019/
 
-### Tuesday, 9th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Tuesday, 9th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Investigate why the <code>PubMedDisambiguation_GetPubsMEDXML</code> job that loads the publications does not retrieve any results
 - Jour Fix meeting with Antonella Succorro @ 11am
@@ -107,7 +113,8 @@
     - Antonella wants to take care of the outdated SSL certificate [#9](https://github.com/semiodesk/limes/issues/9) and the Google Maps API [#4](https://github.com/semiodesk/limes/issues/4) key.
 - Fixing broken links on search results page [Github issue #15](https://github.com/semiodesk/limes/issues/15)
 
-### Wednesday, 10th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Wednesday, 10th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Arranged a call with Nicholas Brown today @ 5pm
 - Did not manage to resolve the broken links issue yesterday, will talk about it with Nicholas
@@ -116,14 +123,16 @@
   - Nicholas suggested to use Divisions for picking the centers
   - Nicholas promised to send me some SQL scripts that will correct the errors in my db caused by a configuration mistake
 
-### Thursday, 11th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Thursday, 11th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Filled out application form for VPN account at Bonn University
 - Executed scripts provided by from Nicholas Brown to fix the invalid search result links
 - Adapting home page design to requirements provided by Antonella Succorro
 - Further developing and adapting page designs of content pages
 
-### Friday, 12th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Friday, 12th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Project meeting with Antonella Succorro @ 10am
 - Discussed visual adaptations
@@ -131,14 +140,16 @@
 - Overall impression of design changes is good
 - Continuing to improve visual styles and responsive layout
 
-### Monday, 15th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Monday, 15th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Integrated new logos in the footer
 - Finalizing visual adaptations and repsonsive layout
   - Site now fully responsive
   - Accessibility analysis with respect to Section 508 guidelines
 
-### Tuesday, 16th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Tuesday, 16th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Jour fix meeting with Antonella Succorro @ 10am
   - Discussed state of VPN access for Sebastian
@@ -146,24 +157,60 @@
   - Discussed data transformation and loading tasks
 - Started work on data transformation scripts
 
-### Wednesday, 17th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Wednesday, 17th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Working on data transformation scripts (csv-clean.sh, csv-convert.sh)
   - Adding command line argument parser and documentation to scripts
   - Improving cleaning CSV data
   - Improving converting CSV data to ProfilesRNS
 
-### Thursday, 18th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Thursday, 18th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Working on data transformation scripts (csv-merge.sh, csv-filter.sh)
   - Adding command line argument parser and documentation to scripts
   - Improving merging CSV files
   - Improving filtering CSV files
 
-### Friday, 19th November [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+### Friday, 19th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - Finalized work on data transformation scripts (csv-clean.sh, csv-keyphrases.sh)
   - Adding command line argument parser and documentation to scripts
   - Improved phone number cleansing in csv-clean
   - Improved extraction of keyphrases
 - Sent preliminary data to Antonella Succorro for review
+
+### Monday, 22th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Analyzing preliminary data for errors
+  - Wrong phone number for huettel@mpipz.mpg.de: Missing German prefix for Cologne
+  - Double entry for wolfram.kunz@ukbonn.de with different email addresses
+  - Three records are empty because they filled out a reduced form without a record in the original data
+  	- mnothnag@uni-koeln.de
+  	- holger.schwender@hhu.de
+  	- sherms@uni-bonn.de
+  - Inconnsitent spelling of street addresses 'Universitätsstr.', 'Universitaetsstraße', 'Universitätsstrasse'..
+  - City missing for many records where there is a ZIP code
+  - Some affiliation string are missing the %% quoting and will not be included in the key phrases
+  
+### Tuesday, 23th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Jour Fix meeting with Antonella Succorro @ 10am
+  - Discussed issues with the data
+   - Explained the refacored Python scripts
+   - Data looks good overall
+   - huettel@mpipz.mpg.de has a wrong email address. Another dataset exists for him.
+   - Antonella will check the other two records
+  - Discussed missing VPN access
+  - Discussed missing SSL key
+  - Discussed missing Google Maps key
+  - Discussed next steps and project timeline
+   - If everything goes well we could go live next week
+   - However, there will be no time for testing, error corrections or other issues
+   - Will use the extended period to get a polished and production ready service
+- Adding generic find/replace functionality to 'csv-clean.py'
+   
