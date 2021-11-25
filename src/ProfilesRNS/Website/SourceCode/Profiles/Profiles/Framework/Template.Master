@@ -158,16 +158,16 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         </a>
 
         <div class="logo-container d-flex flex-column d-md-block mx-md-auto">
-          <a href="" target="_blank">
+          <a href="https://www.ccga.uni-kiel.de" target="_blank">
             <img class="logo" src="/Framework/Assets/images/logo-ccga.png" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://genomecenter.tu-dresden.de/about-us" target="_blank">
             <img class="logo" src="/Framework/Assets/images/logo-dresden-concept-gc.png" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://portal.qbic.uni-tuebingen.de/portal/web/ncct/ncct_welcome" target="_blank">
             <img class="logo" src="/Framework/Assets/images/logo-ncct.png" />
           </a>
-          <a href="" target="_blank">
+          <a href="https://wggc.de/" target="_blank">
             <img class="logo" src="/Framework/Assets/images/logo-west-german-gc.png" />
           </a>
         </div>

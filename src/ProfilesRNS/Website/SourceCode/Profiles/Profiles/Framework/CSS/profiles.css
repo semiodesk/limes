@@ -59,8 +59,8 @@ a.search-button {
   color: #ffffff;
   padding: 0.4em 1em;
   border-radius: 6px;
-  background-color: #ff8000;
-  border-color: #ff8000;
+  background-color: #36a4de;
+  border-color: #36a4de;
   border-width: 2px;
 }
 
@@ -75,11 +75,11 @@ a.search-button:hover {
 }
 
 .header-container h1 a {
-  color: #0071a1;
+  color: #36a4de;
 }
 
 .header-container h1 a span {
-  color: #66ce1e;
+  color: #183c55;
 }
 
 .header-container h1 a:hover {
@@ -316,7 +316,7 @@ div#catalyst-footer {
 }
 
 .institutionHeader h1 span {
-  color: #66ce1e;
+  color: #36a4de;
 }
 
 #page-container {
