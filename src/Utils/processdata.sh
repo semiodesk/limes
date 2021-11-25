@@ -9,32 +9,27 @@ python csv-clean.py \
     -i input/wggc2019_round1.csv \
     -o tmp/wggc2019_round1.clean.csv \
     -k confirm-or-change-email-address \
-    -p input/patches.txt \
-    -p input/emails.txt \
+    -c profiles-rns \
     2> tmp/wggc2019_round1.dups.csv
 
 python csv-clean.py \
     -i input/wggc2019_round2.csv \
     -o tmp/wggc2019_round2.clean.csv \
     -k confirm-or-change-email-address \
-    -p input/patches.txt \
-    -p input/emails.txt \
+    -c profiles-rns \
     2> tmp/wggc2019_round2.dups.csv
 
 python csv-clean.py \
     -i input/ngscn2021_full_form_20211117.csv \
     -o tmp/ngscn2021_full_form_20211117.clean.csv \
     -k confirm-or-change-email-address \
-    -p input/patches.txt \
-    -p input/emails.txt \
+    -c profiles-rns \
     2> tmp/ngscn2021_full_form_20211117.dups.csv
 
 python csv-clean.py \
     -i input/ngscn2021_reduced_form_20211117.csv \
     -o tmp/ngscn2021_reduced_form_20211117.clean.csv \
     -k confirm-or-change-email-address \
-    -p input/patches.txt \
-    -p input/emails.txt \
     2> tmp/ngscn2021_reduced_form_20211117.dups.csv
 
 # Merge the input data files..
@@ -80,9 +75,15 @@ python csv-merge.py \
     -m specify-city:city \
     -m you-agree-to-publish-your-data-on-the-ngs-cn-profiles-web-portal-if-affiliated-with-wggc-also-on-the-wggc-profiles-web-portal:you-agree-to-our-terms-and-policy
 
+python csv-clean.py \
+    -i tmp/ngscn2021.merge.1.csv \
+    -o tmp/ngscn2021.clean.1.csv \
+    -k confirm-or-change-email-address \
+    -c profiles-rns
+
 # Apply filters..
 python csv-filter.py \
-    -i tmp/ngscn2021.merge.1.csv \
+    -i tmp/ngscn2021.clean.1.csv \
     -o tmp/ngscn2021.csv \
     -k confirm-or-change-email-address \
     -f input/remove_from_webportal.txt \

@@ -85,7 +85,7 @@ for rA in readerA:
             v1 = rA[getmapping(field)]
 
             # Only overwrite the existing column if there is a value in the mapped column.
-            if len(v0):
+            if len(v0) and len(v1) == 0:
                 rA[getmapping(field)] = v0
 
             del rA[field]

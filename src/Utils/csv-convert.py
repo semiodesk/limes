@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from lib.csv_core import CsvReader, fieldnames
-from lib.profiles import *
+from lib.profiles_converter import *
 from os import path
 from argparse import ArgumentParser
 

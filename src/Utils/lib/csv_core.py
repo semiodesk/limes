@@ -55,7 +55,3 @@ class CsvReader:
         return self.reader.fieldnames
 
     fieldnames = property(get_fieldnames)
-
-class CsvCleaner:
-    def clean(self, row):
-        return row
