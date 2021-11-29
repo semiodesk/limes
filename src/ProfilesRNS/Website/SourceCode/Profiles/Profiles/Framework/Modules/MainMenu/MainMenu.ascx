@@ -5,22 +5,27 @@
     <!-- MAIN NAVIGATION MENU -->
     <nav>
         <ul class="prns-main primary">
-            <li class="main-nav">
-                <a href="<%=ResolveUrl("~/search")%>"><i class="bi bi-search"></i>></a>
-            </li>
+            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
             <li class="main-nav item-search">
                 <div class="search-container">
-                    <input name="search" id="menu-search" placeholder="Find people by name.." type="text"/>
+                    <label class="d-none" for="menu-search">Search</label>
+                    <input name="search" id="menu-search" placeholder="Find people by name.." type="text" aria-label="Enter your search here."/>
                 </div>
             </li>
         </ul>
         <ul class="prns-main secondary">
-            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
+            <li class="main-nav">
+                <a href="<%=ResolveUrl("~/search")%>" title="Go to the search homepage." aria-label="Home">
+                    <i class="fa fa-home"></i><span class="d-none">Search</span>
+                </a>
+            </li>
             <li class="main-nav" style="margin-left: auto;">
-                <a href='#'>About</a>
-                <ul class="drop">
+                <a id="menu-help-toggle" class="menu-toggle" tabindex="0" title="Toggle the help menu." aria-label="Help">
+                    <i class="fa fa-question-circle"></i><span class="d-none">About</span>
+                </a>
+                <ul id="menu-help-drop" class="menu-drop align-right">
                     <li>
-                        <a id="about" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">Overview</a>
+                        <a href="<%=ResolveUrl("~/about/default.aspx?tab=faq")%>">Help</a>
                     </li>
                     <li>
                         <a id="data" href="<%=ResolveUrl("~/about/default.aspx?tab=data")%>">Sharing Data</a>
@@ -28,11 +33,10 @@
                     <li>
                         <a id="orcid" href="<%=ResolveUrl("~/about/default.aspx?tab=orcid")%>">ORCID</a>
                     </li>
+                    <li>
+                        <a id="about" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">About</a>
+                    </li>
                 </ul>
-
-            </li>
-            <li class="main-nav">
-                <a href="<%=ResolveUrl("~/about/default.aspx?tab=faq")%>">Help</a>
             </li>
             <%-- <li class="main-nav">
                 <a href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Use Our Data</a>
@@ -123,6 +127,40 @@
             minisearch();
             return true;
         });
+
+        $('#menu-help-drop').hide();
+
+        $('#menu-help-toggle').on('click', (e) => {
+            $('#menu-help-toggle').toggleClass('toggled');
+            $('#menu-help-drop').toggle();
+
+            e.stopPropagation()
+        })
+
+        $('#menu-help-toggle').on('keypress', (e) => {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            
+            if(keycode == '13') {
+                $('#menu-help-toggle').toggleClass('toggled');
+                $('#menu-help-drop').toggle();
+
+                e.stopPropagation()
+            }
+        })
+
+        $("body").on('click', (e) => {
+            $('.menu-toggle').removeClass('toggled');
+            $('.menu-drop').hide();
+        })
+
+        $(document).on('keydown', (e) => {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            
+            if(keycode == '27') {
+                $('.menu-toggle').removeClass('toggled');
+                $('.menu-drop').hide();
+            }
+        })
     });
 
     function minisearch() {

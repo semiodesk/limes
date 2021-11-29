@@ -102,19 +102,19 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
   <section class="searchSection pt-3" id="div1">
     <div class="row">
       <div class="col-sm-6 form-group">
-        <label for="txtFname">First Name</label>
+        <label for="ctl00_ContentMain_rptMain_ctl00_ctl00_txtFname">First Name</label>
         <asp:TextBox runat="server" ID="txtFname" CssClass="inputText" title="First Name"></asp:TextBox>
       </div>
       <div class="col-sm-6 form-group">
-        <label for="txtLname">Last Name</label>
+        <label for="ctl00_ContentMain_rptMain_ctl00_ctl00_txtLname">Last Name</label>
         <asp:TextBox runat="server" ID="txtLname" CssClass="inputText" title="Last Name"></asp:TextBox>
       </div>
     </div>
     <div runat="server" id="trInstitution" class="form-group">
-      <label for="litInstitution">Institution</label>
+      <label for="institution">Institution</label>
       <asp:Literal runat="server" ID="litInstitution"></asp:Literal>
       <p class="form-control-subline">
-        <asp:CheckBox runat="server" ID="institutionallexcept" Text="All <u>except</u> the one selected" />
+        <asp:CheckBox runat="server" ID="institutionallexcept" Text="All <i>except</i> the one selected" />
       </p>
     </div>
     <!-- <div runat="server" id="trDepartment" class="form-group">
@@ -130,10 +130,10 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
         </div>
       </div> -->
     <div runat="server" id="trDivision" class="form-group">
-      <label for="litDivision">Competence Center</label>
+      <label for="division">Competence Center</label>
       <asp:Literal runat="server" ID="litDivision"></asp:Literal>
       <p class="form-control-subline">
-        <asp:CheckBox runat="server" ID="divisionallexcept" Text="All <u>except</u> the one selected" />
+        <asp:CheckBox runat="server" ID="divisionallexcept" Text="All <i>except</i> the one selected" />
       </p>
     </div>
     <!-- <div runat="server" id="trFacultyType" class="form-group">
@@ -168,8 +168,10 @@ Src="ComboTreeCheck.ascx" TagName="ComboTreeCheck" TagPrefix="uc1" %>
             </tr>
           </table>
       </div> -->
-    <div class="form-group text-sm-right">
-      <a href="JavaScript:search();" class="search-button"> <i class="bi bi-search"></i> Search </a>
+    <div class="form-group text-right">
+      <button href="JavaScript:search();" class="search-button">
+        <i class="fa fa-search"></i> Search
+      </button>
     </div>
     <asp:Literal runat="server" ID="litFacRankScript"></asp:Literal>
   </section>

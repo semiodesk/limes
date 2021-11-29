@@ -372,7 +372,7 @@ namespace Profiles.Framework
                 else
                     url = PageBackLinkURL;
 
-                litBackLink.Text = "<a class='masterpage-backlink' href=\"" + url + "\"><i class='bi bi-arrow-left'></i> " + PageBackLinkName + "</a>";
+                litBackLink.Text = "<a class='masterpage-backlink' href=\"" + url + "\"><i class='fa fa-arrow-left'></i> " + PageBackLinkName + "</a>";
             }
             else
             {

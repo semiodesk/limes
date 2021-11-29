@@ -76,6 +76,7 @@ namespace Profiles.Activity.Modules.ActivityHistory
 
                 linkThumbnail.ImageUrl = activity.Profile.Thumbnail;
                 linkThumbnail.NavigateUrl = activity.Profile.URL;
+                linkThumbnail.Text = " ";
                 linkProfileURL.NavigateUrl = activity.Profile.URL;
                 linkProfileURL.Text = activity.Profile.Name;
 

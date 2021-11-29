@@ -104,7 +104,7 @@ header._ci_shared_asset.tool-page .inner a.main-logo {
 }
 
 .SupportText {
-    font-size: 11px;
+    font-size: 12px;
     margin-top: 12px;
     padding: 16px 0 0 0;
     color: #333;
@@ -135,7 +135,7 @@ div.catalyst-content-container {
 tr#catalyst-page-title {
     font-family: Georgia,Times,serif !important;
     font-size: 1.6em !important;
-    padding-left: 13px !important;
+    padding-left: 14px !important;
 }
 
 div#catalyst-footer {
@@ -246,7 +246,7 @@ div#catalyst-footer {
 .PropertyGroupItem {
     font-weight: normal;
     color: #666;
-    font-size: 13px;
+    font-size: 14px;
     text-align: left;
     border: 1px solid #ccc !important;
 }
@@ -254,7 +254,7 @@ div#catalyst-footer {
 .PropertyGroupData {
     margin: 10px;
     text-align: left;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
     color: #000;
     border: none !important;
@@ -334,7 +334,7 @@ div#catalyst-footer {
 
 .profiles, .profiles td, .profiles th, .profiles textarea, .profiles select, .profiles h2, .profiles h3, .profiles h4, .profiles h5, .profiles h6, .profiles ul, .profiles ol {
     font-family: arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
     .profiles ul, .profiles ol {
@@ -507,7 +507,7 @@ div#catalyst-footer {
 
     .profiles .profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
         font-weight: normal;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 11px;
         color: #333;
         margin: 4px 0 2px 0;
@@ -548,7 +548,7 @@ div#catalyst-footer {
 }
 
 .passiveHeaderInfo {
-    font-size: 11px;
+    font-size: 12px;
     text-align: left;
     padding-bottom: 6px;
 }
@@ -560,7 +560,7 @@ div#catalyst-footer {
 }
 
     .passiveSectionBodyDetails a {
-        font-size: 11px;
+        font-size: 12px;
     }
 
 .passiveSectionLine {
@@ -602,7 +602,7 @@ div#catalyst-footer {
 }
 
 .connectionItemSubText {
-    font-size: 11px;
+    font-size: 12px;
 }
 
 
@@ -635,7 +635,7 @@ div#catalyst-footer {
 
 .connectionSubDescription {
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
     padding: 5px;
     text-align: center !important;
 }
@@ -712,7 +712,7 @@ div#catalyst-footer {
     font-weight: 600;
     color: #333;
     font-family: Arial;
-    font-size: 13px;
+    font-size: 14px;
     height: 26px;
     padding-left: 6px;
     width: 100%;
@@ -947,7 +947,7 @@ div#catalyst-footer {
     color: #000;
     font-weight: normal;
     vertical-align: bottom;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 
@@ -1036,7 +1036,7 @@ div#catalyst-footer {
 .editPage h2
 {
 	color: #AC1B30;
-	font-size: 13px;
+	font-size: 14px;
 }
 .editPage table
 {
@@ -1101,7 +1101,7 @@ table tbody .height25
 	background-color: #EEEBE5;
 	font-weight: 600;
 	color: #666;
-	font-size: 13px;
+	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;
 }
@@ -1110,7 +1110,7 @@ table tbody .height25
 	background-color: #EEEBE5;
 	font-weight: 600;
 	color: #666;
-	font-size: 13px;
+	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;
 	width: 100%;
@@ -1119,7 +1119,7 @@ table tbody .height25
 {
 	background-color: #EEEBE5;
 	color: #666;
-	font-size: 13px;
+	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;
 	width: 100%;

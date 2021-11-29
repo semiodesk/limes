@@ -858,7 +858,7 @@
     </xsl:variable>
 
 
-    <input type="hidden" id="{$nodeURI}" value="&lt;div style='font-size:13px;font-weight:bold'&gt;{foaf:firstName} {foaf:lastName}&lt;/div&gt;{$titlelink}{$institutionlink}{$departmentlink}{$divisionlink}{$facranklink}"></input>
+    <input type="hidden" id="{$nodeURI}" value="&lt;div style='font-size:14px;font-weight:bold'&gt;{foaf:firstName} {foaf:lastName}&lt;/div&gt;{$titlelink}{$institutionlink}{$departmentlink}{$divisionlink}{$facranklink}"></input>
 
 
 
@@ -1033,7 +1033,7 @@
       </xsl:variable>
 
 
-      <input type="hidden" id="{$nodeURI}" value="&lt;div style='font-size:13px;font-weight:bold'&gt;{foaf:firstName} {foaf:lastName}&lt;/div&gt;{$titlelink}{$institutionlink}{$departmentlink}{$divisionlink}{$facranklink}"></input>
+      <input type="hidden" id="{$nodeURI}" value="&lt;div style='font-size:14px;font-weight:bold'&gt;{foaf:firstName} {foaf:lastName}&lt;/div&gt;{$titlelink}{$institutionlink}{$departmentlink}{$divisionlink}{$facranklink}"></input>
 
 
 

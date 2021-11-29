@@ -34,7 +34,7 @@ Inherits="Profiles.Search.Modules.SearchEverything.SearchEverything" %>
 
   <div class="searchSection" onkeypress="JavaScript:runScript(event);">
     <div class="form-group pt-3">
-      <label for="searchfor">Keywords</label>
+      <label for="ctl00_ContentMain_rptMain_ctl01_ctl00_searchfor">Keywords</label>
       <div colspan="2" class="fieldOptions">
         <asp:TextBox EnableViewState="false" runat="server" ID="searchfor" CssClass="inputText" title="Keywords" />
         <p class="form-control-subline">
@@ -42,8 +42,10 @@ Inherits="Profiles.Search.Modules.SearchEverything.SearchEverything" %>
         </p>
       </div>
     </div>
-    <div class="form-group text-sm-right">
-      <a href="JavaScript:submitEverythingSearch();" class="search-button"> <i class="bi bi-search"></i> Search </a>
+    <div class="form-group text-right">
+      <button href="JavaScript:submitEverythingSearch();" class="search-button">
+        <i class="fa fa-search"></i> Search
+      </button>
     </div>
   </div>
 </div>

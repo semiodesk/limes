@@ -18,7 +18,7 @@ g.radialVizNode text {
 	fill:#000;
 	font-weight:normal;
 	font-family:arial;
-	font-size: 11px;
+	font-size: 12px;
 	text-anchor:middle; 
 	cursor:pointer;
 }

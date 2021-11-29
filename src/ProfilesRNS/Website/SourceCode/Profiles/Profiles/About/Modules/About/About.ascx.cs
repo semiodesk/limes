@@ -41,14 +41,12 @@ namespace Profiles.About.Modules.About
             switch (tab)
             {
                 case "overview":
-                    
                     tabs += Tabs.DrawActiveTab("Overview");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
                     tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
                     tabs += Tabs.DrawDisabledTab("ORCID", Root.Domain + "/about/default.aspx?tab=orcid");
 
                     pnlOverview.Visible = true;
-
                     break;
 
                 case "faq":
@@ -60,7 +58,6 @@ namespace Profiles.About.Modules.About
                     pnlFAQ.Visible = true;
                     break;
 
-
                 case "data":
                     tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
@@ -69,6 +66,7 @@ namespace Profiles.About.Modules.About
 
                     pnlData.Visible = true;
                     break;
+
                 case "orcid":
                     tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
                     tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
@@ -78,7 +76,23 @@ namespace Profiles.About.Modules.About
                     pnlORCID.Visible = true;
                     break;
 
+                case "imprint":
+                    tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                    tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
+                    tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
+                    tabs += Tabs.DrawActiveTab("ORCID");
 
+                    pnlImprint.Visible = true;
+                    break;
+
+                case "privacy":
+                    tabs += Tabs.DrawDisabledTab("Overview", Root.Domain + "/about/default.aspx?tab=overview");
+                    tabs += Tabs.DrawDisabledTab("Frequently Asked Questions", Root.Domain + "/about/default.aspx?tab=faq");
+                    tabs += Tabs.DrawDisabledTab("Sharing Data", Root.Domain + "/about/default.aspx?tab=data");
+                    tabs += Tabs.DrawActiveTab("ORCID");
+
+                    pnlPrivacy.Visible = true;
+                    break;
             }
 
             //tabs += Tabs.DrawTabsEnd();

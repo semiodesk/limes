@@ -49,7 +49,7 @@
 }
 
     .pub-med-search-radio p {
-        font-size: 13px;
+        font-size: 14px;
         line-height: 20px;
     }
 
@@ -68,8 +68,8 @@
 }
 
     .pub-med-search-checkbox p {
-        font-size: 13px;
-        line-height: 13px;
+        font-size: 14px;
+        line-height: 14px;
     }
 
     .pub-med-search-checkbox input[type="checkbox"] {
@@ -201,7 +201,7 @@
     color: #333;
     font-weight: normal;
     font-family: Arial;
-    font-size: 13px;
+    font-size: 14px;
     height: 26px !important;
     padding-left: 6px;
     width: 100%;
@@ -245,7 +245,7 @@
 
     .editPage h2 {
         color: #AC1B30;
-        font-size: 13px;
+        font-size: 14px;
     }
     .editPage table {
         border:1px solid #999999;
@@ -260,7 +260,7 @@
         font-weight: 600;
         color: #666;
         font-family: Arial;
-        font-size: 13px;
+        font-size: 14px;
         height: 24px;
         padding-left: 6px;
     }
@@ -269,7 +269,7 @@
         font-weight: 600;
         color: #333;
         font-family: Arial;
-        font-size: 13px;
+        font-size: 14px;
         height: 24px;
         padding-left: 6px;
     }

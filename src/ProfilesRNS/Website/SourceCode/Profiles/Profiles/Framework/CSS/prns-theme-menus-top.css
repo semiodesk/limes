@@ -1,6 +1,6 @@
 #prns-nav nav {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
 }
 
 #prns-nav .prns-main {
@@ -11,23 +11,30 @@
   overflow: hidden;
 }
 
-#prns-nav .prns-main.primary {
-  margin-bottom: 0;
-  border-radius: 6px 6px 0 0;
+#prns-nav .prns-main.primary,
+#prns-nav .prns-main.secondary {
+  background: transparent;
+  font-weight: 600;
+  overflow: visible;
+  border-bottom: 2px solid #eee;
 }
 
 #prns-nav .prns-main.secondary {
-  background: #183c55;
-  border-radius: 0 0 6px 6px;
+  margin-bottom: 0;
 }
 
 #prns-nav .prns-main > li {
-  height: 40px;
-  background: #183c55;
+  height: 48px;
+  background: transparent;
+  position: relative;
 }
 
 #prns-nav .prns-main li {
   text-overflow: ellipsis;
+}
+
+#prns-nav .prns-main .badge {
+  font-size: 1em;
 }
 
 #prns-nav .prns-main .item-search {
@@ -35,74 +42,133 @@
 }
 
 #prns-nav .prns-main li a {
+  color: #183c55;
   display: block;
   align-items: center;
   text-decoration: none;
   font-size: 14px;
-  color: #fff;
-  height: 40px;
-  min-width: 40px;
-  line-height: 40px;
+  height: 48px;
+  min-width: 48px;
+  line-height: 48px;
   padding: 0 1em;
+  border: 2px solid transparent;
 }
 
-#prns-nav ul.prns-main li.landed a {
-  background-color: #36a4de;
+#prns-nav .prns-main.prns-main.primary:hover {
+  border: 2px solid #ccc;
 }
 
-#prns-nav ul.prns-main li a:hover {
-  background-color: #36a4de;
+#prns-nav .prns-main.prns-main.primary:focus-within {
+  border: 2px solid #36A4DE;
+  background-color: #fff;
+  color: #000;
+}
+
+#prns-nav .prns-main.prns-main.primary:focus-within .fa,
+#prns-nav .prns-main.prns-main.primary:hover .fa {
+  color: #36A4DE;
+}
+
+#prns-nav .prns-main.primary {
+  transition: all ease-in-out .2s;
+  background-color: #eee;
+  border: 2px solid #eee;
+  color: #666;
+}
+
+#prns-nav .prns-main > li a {
+  border: 2px solid transparent;
+  outline: none;
+}
+
+#prns-nav .prns-main > li a:focus {
+  border: 2px solid #36A4DE;
+}
+
+#prns-nav ul.prns-main li.landed > a {
+  border-bottom: 2px solid #0071ae;
+  color: #0071ae;
+}
+
+#prns-nav ul.prns-main > li a:hover {
+  border: 2px solid #36A4DE;
 }
 
 #prns-nav ul.prns-main li.icon {
   display: none;
 }
 
-#prns-nav ul.prns-main li:hover ul.drop,
-#prns-nav ul.prns-main li.selected ul.drop {
-  display: block;
+#prns-nav .prns-main.secondary .fa {
+  font-size: 20px;
 }
 
-#prns-nav ul.drop {
+#prns-nav ul.menu-drop {
   position: absolute;
-  display: none;
   text-align: left;
   z-index: 40000;
   list-style-type: none;
   padding: 0;
+  margin-top: -2px;
 }
 
-#prns-nav ul.drop li {
+#prns-nav ul.menu-drop.align-right {
+  right: 0;
+}
+
+#prns-nav ul.menu-drop li {
   float: none !important;
   position: relative;
 }
 
-#prns-nav ul.drop li a {
-  background: #36a4de;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 255px;
+#prns-nav ul.menu-drop li.landed > a {
+  background: #1d4866;
+  border-bottom: 0;
+  border-left: 2px solid #36A4DE;
+  color: white;
+  font-weight: 600;
 }
 
-#search-drop ul.drop li a {
-  background: #36a4de;
+#prns-nav ul.menu-drop li a {
+  background: #183c55;
+  color: white;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 134px;
+  padding: 0 1em;
+  border: 2px solid transparent;
+  font-weight: 400;
+}
+
+#prns-nav ul.menu-drop li a:hover,
+#prns-nav ul.menu-drop li a:focus {
+  background: #0071ae;
+}
+
+#prns-nav ul.menu-drop li a:focus {
+  outline: none;
+  border: 2px solid #36A4DE;
+}
+
+#prns-nav ul.menu-drop.align-right li a {
+  padding: 0 2em 0 1em;
+}
+
+#search-drop ul.menu-drop li a {
+  background: #183c55;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 li#search-drop a:hover,
-#search-drop ul.drop li:hover,
-#prns-nav ul.drop li a:hover {
-  background: #50afe2;
+#search-drop ul.menu-drop li:hover,
+#prns-nav ul.menu-drop li a:hover {
+  background: #0071ae;
   color: white;
 }
 
 .search-container {
-  background-color: #eee;
-  color: #222;
+  /* color: #222; */
   display: flex;
   flex-direction: row;
   justify-content: stretch;
@@ -115,15 +181,19 @@ li#search-drop a:hover,
 .search-container input {
   background-color: transparent;
   border: none;
-  margin: 3px;
+  margin-top: -3px;
   width: 100%;
   height: 100%;
-  padding-left: 10px;
+  outline: none;
 }
 
-.search-container .bi.bi-search {
-  padding: 0 0.4em 0 1em;
-  color: #757575;
+.search-container input:focus {
+  outline: none;
+}
+
+#prns-nav .prns-main .fa.fa-search {
+  color: #666;
+  font-size: 20px;
 }
 
 /****************** sub menu (logged on) ******************/
@@ -159,7 +229,7 @@ li#search-drop a:hover,
   height: 30px;
 }
 
-#prns-nav ul.usermenu ul.drop a {
+#prns-nav ul.usermenu ul.menu-drop a {
   display: inline-block;
   background: #dcdada !important;
   text-align: left;
@@ -172,15 +242,19 @@ li#search-drop a:hover,
   cursor: pointer;
 }
 
+.menu-toggle {
+  cursor: pointer;
+}
+
 #prns-nav ul.usermenu li:hover > a,
 #prns-nav ul.usermenu li.selected > a,
-#prns-nav ul.usermenu li ul.drop li:hover {
+#prns-nav ul.usermenu li ul.menu-drop li:hover {
   background: #7c7b7b !important;
   color: #fff !important;
 }
 
-#prns-nav ul.usermenu li:hover ul.drop,
-#prns-nav ul.usermenu li.selected ul.drop {
+#prns-nav ul.usermenu li:hover ul.menu-drop,
+#prns-nav ul.usermenu li.selected ul.menu-drop {
   display: block !important;
 }
 
@@ -207,12 +281,15 @@ li#search-drop a:hover,
 
   #prns-nav .prns-main.primary {
     min-width: fit-content;
-    margin-bottom: 2em;
-    border-radius: 6px 0 0 6px;
+  }
+
+  #prns-nav .prns-main.primary > li.landed a {
+    height: 52px;
   }
 
   #prns-nav .prns-main.secondary {
+    margin-left: 2px;
     width: 100%;
-    border-radius: 0 6px 6px 0;
+    margin-bottom: 2em;
   }
 }

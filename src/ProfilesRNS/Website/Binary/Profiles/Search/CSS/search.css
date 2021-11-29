@@ -208,7 +208,7 @@ h3{
 
     .searchForm th {
         text-align: right;
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 600;
         color: #666;
         width: 102px;
@@ -222,7 +222,7 @@ h3{
     }
 
     .searchForm td {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: normal;
         padding: 2px;
         margin-left: 24px;
@@ -311,12 +311,12 @@ h3{
     padding: 2px 6px;
     color: #999;
     font-weight: 600;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 15px;
 }
 
 .listTablePagination a {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 15px;
     color: #3f4a9d;
 }

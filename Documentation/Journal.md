@@ -214,3 +214,42 @@
    - Will use the extended period to get a polished and production ready service
 - Adding generic find/replace functionality to 'csv-clean.py'
    
+### Wednesday, 24th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Refactored text replacement from text file into Python script
+- Refining ETL process
+  - Adding additional cleansing steps
+- Fixing issues in the data: changed e-mail address for 1 person
+
+### Thursday, 25th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Implementing semantic data checks for phone numbers and addresses
+- Fixing issues in the data: wrong addresses and phone number prefixes
+- Integrating new data from Antonella Succorro
+
+### Friday, 26th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Loading data into dev instance
+- Added footer logo links and alt text
+- Improving site navigation and responisve layout
+- Improving accessibility
+- Added imprint and privacy policy text
+
+### Monday, 29th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Loading data into dev instance again
+  - Windows shut down my last attempt on Friday during the night because of an Update
+  - Process currently takes longer than 4 hours in the SNA.Coauthor.UpdateBetweeness job
+- Improving accessibility of the site
+  - Adding aria labels
+  - Fixed form label references
+  - Fixed small fontsizes
+  - Removed noscript elements
+  - Drop down menus are now opening on click instead of hover to make them usable on mobile phones and narrators
+  - Improved focus and active state stylesheets for links and buttons
+  - Improved taborder
+- Improved Imprint layout

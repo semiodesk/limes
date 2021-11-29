@@ -8,7 +8,7 @@
     <style type="text/css">
         body {
             font-family: arial, sans-serif;
-            font-size: 13px;
+            font-size: 14px;
         }
 
         div.slider div.handle {
@@ -53,7 +53,7 @@
     <asp:Literal ID="litGoogleCode" runat="server"></asp:Literal>
     <div>
         <div id="divData">
-            <div style="width: 100%; margin-top: 16px; font-size: 13px; line-height: 16px; border-bottom: 1px dotted #999; padding-bottom: 12px; margin-bottom: 6px;">
+            <div style="width: 100%; margin-top: 16px; font-size: 14px; line-height: 16px; border-bottom: 1px dotted #999; padding-bottom: 12px; margin-bottom: 6px;">
                 <span style="color: #C00; font-weight: 600;">Red markers</span> indicate the
                 <asp:Literal ID="litRedMapType" runat="server" />.
             <asp:Label ID="lblPerson" runat="server"></asp:Label>

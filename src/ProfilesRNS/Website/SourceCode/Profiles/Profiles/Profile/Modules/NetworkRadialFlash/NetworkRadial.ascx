@@ -296,7 +296,7 @@
 <%--<div style="padding: 0px; width: 600px; text-align: center; position: absolute; top: 770px; z-index: 999;">--%>
 <div>
     <table>
-        <tr style="font-size: 11px; font-family: arial, sans-serif;">
+        <tr style="font-size: 12px; font-family: arial, sans-serif;">
             <td style="text-align: left; line-height: 12px; padding-bottom: 10px; padding-top: 0px;">
                 Minimum number of publications
             </td>
@@ -333,7 +333,7 @@
                 </div>
             </td>
         </tr>
-        <tr style="line-height: 10px; text-align: right; color: #555; font-size: 10px; margin-top: 12px;
+        <tr style="line-height: 10px; text-align: right; color: #555; font-size: 12px; margin-top: 12px;
             padding-top: 0px; font-family: arial, sans-serif;">
             <td style="padding-right: 16px" id="lbl_pubs">
                 any number

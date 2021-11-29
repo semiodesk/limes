@@ -1,7 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Template.master.cs" Inherits="Profiles.Framework.Template"
 EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html lang="en">
   <head id="Head1" runat="server">
     <title>Profiles RNS</title>
 
@@ -11,6 +11,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/Framework/Assets/boostrap-4.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/Framework/Assets/boostrap-icons-1.7/bootstrap-icons.css" />
+    <link rel="stylesheet" href="/Framework/Assets/font-awesome-4.7/css/font-awesome.min.css" />
 
     <script type="text/javascript" src="/Framework/Assets/boostrap-4.0/js/jquery-3.3.1.min.js"></script>
 
@@ -18,7 +19,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
   </head>
 
   <body runat="server">
-    <!-- Google Tag Manager (noscript) -->
+    <!--
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PXSD37"
@@ -27,8 +28,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         style="display: none; visibility: hidden"
       ></iframe>
     </noscript>
-
-    <!-- End Google Tag Manager (noscript) -->
+    -->
     <form runat="server" id="form1" enctype="multipart/form-data" method="post">
       <asp:ToolkitScriptManager
         AsyncPostBackTimeout="3600"
@@ -39,6 +39,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         runat="server"
       />
 
+    <!--
       <script type="text/javascript">
         (function (i, s, o, g, r, a, m) {
           i["GoogleAnalyticsObject"] = r;
@@ -58,9 +59,10 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         ga("send", "pageview");
         ga("b.send", "pageview");
       </script>
+    -->
       <div class="container header-container">
         <h1>
-          <a href="/">NGS Competence Network <span>Profiles</span></a>
+          <a title="Next Generation Sequencing Competence Network Homepage" href="/">NGS Competence Network<span>: Profiles</span></a>
         </h1>
       </div>
       <div class="container py-2">
@@ -91,7 +93,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
             id="rtnBtn"
             title="Go to top"
           >
-            <i class="bi bi-arrow-up"></i>
+            <i class="fa fa-arrow-up"></i>
           </a>
           <div id="profilesMainRow" class="row">
             <div id="divProfilesContentMain" class="col-md-8" runat="server">
@@ -148,27 +150,29 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     </form>
     <div class="container">
       <div class="footer">
-        <span class="float-sm-right">
-          <b><a href="#" target="_blank">Impressum</a></b> |
-          <b><a href="https://ngs-kn.de/privacy-policy/" target="_blank" style="margin-right: 2em">Privacy</a></b>
-        </span>
+        <div class="d-flex flex-column align-items-center flex-md-row">
+          <div>
+            <b><a href="/about/default.aspx?tab=imprint">Impressum</a></b> |
+            <b><a href="/about/default.aspx?tab=privacy">Privacy</a></b>
+          </div>
 
-        <a href="https://ngs-kn.de/" target="_blank" class="d-block d-md-inline">
-          © 2021 Next Generation Sequencing Competence Network (NGS-CN)
-        </a>
+          <a href="https://ngs-kn.de/" target="_blank" class="ml-md-auto">
+            © 2021 Next Generation Sequencing Competence Network <span class="text-nowrap">(NGS-CN)</span>
+          </a>
+        </div>
 
-        <div class="logo-container d-flex flex-column d-md-block mx-md-auto">
+        <div class="logo-container d-flex flex-column flex-md-row justify-content-center align-items-center">
           <a href="https://www.ccga.uni-kiel.de" target="_blank">
-            <img class="logo" src="/Framework/Assets/images/logo-ccga.png" />
+            <img class="logo" src="/Framework/Assets/images/logo-ccga.png" alt="Competence Center for Genomic Analysis (CCGA) Kiel"/>
           </a>
           <a href="https://genomecenter.tu-dresden.de/about-us" target="_blank">
-            <img class="logo" src="/Framework/Assets/images/logo-dresden-concept-gc.png" />
+            <img class="logo" src="/Framework/Assets/images/logo-dresden-concept-gc.png" alt="Dresden Concept Genome Center" />
           </a>
           <a href="https://portal.qbic.uni-tuebingen.de/portal/web/ncct/ncct_welcome" target="_blank">
-            <img class="logo" src="/Framework/Assets/images/logo-ncct.png" />
+            <img class="logo" src="/Framework/Assets/images/logo-ncct.png" alt="NGS Competence Center Tübingen"/>
           </a>
           <a href="https://wggc.de/" target="_blank">
-            <img class="logo" src="/Framework/Assets/images/logo-west-german-gc.png" />
+            <img class="logo" src="/Framework/Assets/images/logo-west-german-gc.png" alt="West German Genome Center" />
           </a>
         </div>
       </div>

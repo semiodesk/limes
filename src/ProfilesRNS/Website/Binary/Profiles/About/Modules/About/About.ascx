@@ -76,8 +76,7 @@
                             <asp:Image runat="server" ID="imgVis" alt="visualization thumnails"/>
                         </div>
                     </p>
-                    <h3>
-                        Sharing Data</h3>
+                    <h2>Sharing Data</h2>
                     <p>
                         Profiles Research Networking Software is a Semantic Web application, which means
                         its content can be read and understood by other computer programs. This enables
@@ -93,9 +92,8 @@
         </table>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlFAQ" Visible="false">
-        <h3>
-            How do I edit my profile?
-        </h3>
+        <h2>Help</h2>
+        <h4>How do I edit my profile?</h4>
         <p>
             To edit your profile, click the Edit My Profile link on the sidebar. You might be
             prompted to login. The Edit Menu page lists all the types of content that can be
@@ -110,9 +108,9 @@
         <p>
             To view your profile as others see it, click the View My Profile link on the sidebar.
         </p>
-        <h3>
+        <h4>
             Why are there missing or incorrect publications in my profile?
-        </h3>
+        </h4>
         <p>
             Publications are added both automatically from PubMed and manually by faculty themselves.
             Unfortunately, there is no easy way to match articles in PubMed to the profiles
@@ -123,9 +121,9 @@
             lists. We encourage all faculty to login to the website and add any missing publications
             or remove incorrect ones.
         </p>
-        <h3>
+        <h4>
             Can I edit my concepts, co-authors, or list of similar people?
-        </h3>
+        </h4>
         <p>
             These are derived automatically from the PubMed articles listed with your profile.
             You cannot edit these directly, but you can improve these lists by keeping your
@@ -138,9 +136,9 @@
             this website will allow users to add custom concepts to their profiles, but these
             will be separate from the automatically derived terms.
         </p>
-        <h3>
+        <h4>
             Who created Profiles Research Networking Software?
-        </h3>
+        </h4>
         <p>
             This service is made possible by the Profiles Research Networking Software developed
             under the supervision of Griffin M Weber, MD, PhD, with support from Grant Number
@@ -150,8 +148,7 @@
         </p>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlData" Visible="false">
-        <h3>
-            Sharing Data (Export RDF)</h3>
+        <h2>Sharing Data (Export RDF)</h2>
         <p>
             Profiles Research Networking Software is a Semantic Web application, which means
             its content can be read and understood by other computer programs. This enables
@@ -213,8 +210,7 @@
         </p>
     </asp:Panel>
     <asp:Panel runat="server" ID="pnlORCID" Visible="false">
-        <h3>
-            What is ORCID?</h3>
+        <h2>What is ORCID?</h2>
         <p>
             Researchers and scholars face the ongoing challenge of distinguishing scholarly
             activities from those of others with similar names. They need to be able to easily

@@ -37,7 +37,6 @@ a.publication-filter .tooltiptext {
   background-color: black;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
   padding: 5px 10px;
 
   /* Position the tooltip */
@@ -89,7 +88,7 @@ a.publication-public-health {
 	background-image: url("PMC-citations.jpg");
 	display:inline-block;
 	text-decoration:none;
-	line-height:13px;
+	line-height:14px;
 }
 a.PMC-citations {
     cursor:pointer;

@@ -20,7 +20,7 @@ tr.website-table > td {
 /********************************************/
 
 .profiles .profilesContentMain .sectionHeader {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #333;
   padding-top: 18px;
@@ -30,7 +30,7 @@ tr.website-table > td {
 }
 
 .profiles .profilesContentMain .sectionHeader2 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   color: #333;
   padding-top: 18px;
@@ -226,7 +226,7 @@ tr.website-table > td {
   position: relative;
   margin-top: 29px;
   float: left;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 20px;
   width: 150px;
   white-space: nowrap;
@@ -244,7 +244,7 @@ tr.website-table > td {
 
 .mentor-current small {
   padding-left: 5px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .mentor-current p {
@@ -294,7 +294,7 @@ tr.website-table > td {
 }
 
 #meshInfo ul li span {
-  font-size: 13px;
+  font-size: 14px;
   margin-left: -6px; /* ie only */
 }
 

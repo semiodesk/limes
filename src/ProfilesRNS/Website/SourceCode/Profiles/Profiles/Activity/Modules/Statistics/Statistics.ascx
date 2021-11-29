@@ -4,16 +4,18 @@ Inherits="Profiles.Activity.Modules.Statistics.Statistics" %>
   <div class="sidepanel-header">
     <h4 class="act-heading">Profiles Stats</h4>
   </div>
-  <table class="metrics">
-    <tr class="literals">
-      <td><asp:Literal runat="server" ID="publicationsCount" /></td>
-      <td><asp:Literal runat="server" ID="totalProfilesCount" /></td>
-      <td><asp:Literal runat="server" ID="editedProfilesCount" /></td>
-    </tr>
-    <tr class="labels">
-      <td>Publications</td>
-      <td>Total Profiles</td>
-      <td>Edited Profiles</td>
-    </tr>
-  </table>
+  <div class="metrics flex-md-column flex-lg-row">
+    <div>
+      <div class="literal"><asp:Literal runat="server" ID="publicationsCount" /></div>
+      <div class="label">Publications</div>
+    </div>
+    <div>
+      <div class="literal"><asp:Literal runat="server" ID="totalProfilesCount" /></div>
+      <div class="label">Total Profiles</div>
+    </div>
+    <div>
+      <div class="literal"><asp:Literal runat="server" ID="editedProfilesCount" /></div>
+      <div class="label">Edited Profiles</div>
+    </div>
+  </div>
 </section>

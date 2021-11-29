@@ -10,15 +10,18 @@ section {
 .metrics {
   width: 100%;
   padding: 0 0 2em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.metrics tr.literals {
+.metrics .literal {
   font-weight: 600;
   font-size: 1.3em;
   color: #183c55;
 }
 
-.metrics tr.labels {
+.metrics .label {
   font-size: .9em;
 }
 
@@ -42,7 +45,7 @@ section {
 
 .act-userdate .date {
   color: #506380;
-  font-size: 11px;
+  font-size: 12px;
   overflow: hidden;
 }
 

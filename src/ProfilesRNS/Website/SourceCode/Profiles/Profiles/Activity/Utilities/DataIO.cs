@@ -354,7 +354,7 @@ namespace Profiles.Activity.Utilities
                     }
                 }
             }
-            return Convert.ToInt32(cnt);
+            return String.IsNullOrEmpty(cnt) ? 0 : Convert.ToInt32(cnt);
         }
 
         private SqlDataReader GetQueryOutputReader(string sql)

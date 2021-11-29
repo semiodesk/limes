@@ -45,7 +45,7 @@
     <%--<div style="padding: 0px; width: 600px; text-align: center; position: absolute; top: 770px; z-index: 999;">--%>
     <div style="margin-top: 15px">
         <table id="viz_sliders">
-            <tr style="font-size: 11px;">
+            <tr style="font-size: 12px;">
                 <td style="text-align: left; line-height: 12px; padding-bottom: 10px; padding-top: 0px; font-size:11px">
                     Minimum number of publications
                 </td>
@@ -82,12 +82,12 @@
                     </div>
                 </td>
             </tr>
-                <tr style="line-height: 10px; text-align: right; color: #555; font-size: 10px; margin-top: 12px; padding-top: 0px;">
-                    <td style="padding-right: 84px; font-size: 11px" id="lbl_pubs">any number
+                <tr style="line-height: 10px; text-align: right; color: #555; font-size: 12px; margin-top: 12px; padding-top: 0px;">
+                    <td style="padding-right: 84px; font-size: 12px" id="lbl_pubs">any number
                     </td>
-                    <td style="padding-right: 86px; font-size: 11px" id="lbl_copubs">any collaboration
+                    <td style="padding-right: 86px; font-size: 12px" id="lbl_copubs">any collaboration
                     </td>
-                    <td style="padding-right: 86px; font-size: 11px" id="lbl_recent">any year
+                    <td style="padding-right: 86px; font-size: 12px" id="lbl_recent">any year
                     </td>
                 </tr>
         </table>

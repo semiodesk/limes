@@ -5,7 +5,7 @@ body {
 }
 
 a {
-  color: #36a4de;
+  color: #0071ae;
 }
 
 b {
@@ -18,11 +18,16 @@ h3,
 h4,
 h5 {
   font-family: "Mina", sans-serif;
-  color: #0071a1;
+  color: #0071ae;
+}
+
+h1 {
+  font-size: 2.3rem;
+  line-height: 2.3rem;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
 }
 
 h4 {
@@ -54,28 +59,43 @@ label {
 }
 
 /*Dont touch this container as it provides spacing on top of CSS search button*/
-a.search-button {
+.searchForm .search-button {
+  transition: all ease-in-out 0.2s;
   display: inline-block;
   color: #ffffff;
-  padding: 0.4em 1em;
-  border-radius: 6px;
-  background-color: #36a4de;
-  border-color: #36a4de;
-  border-width: 2px;
+  padding: 0.6em 1em;
+  background-color: #0071ae;
+  border: 2px solid #0071ae;
+  line-height: 16px;
 }
 
-a.search-button:hover {
+.searchForm .search-button .fa {
+  font-size: 16px;
+  margin: 0 0.5em 0 0;
+}
+
+.searchForm .search-button:focus {
   text-decoration: none;
-  border-color: #e07000;
+  border: 2px solid #36a4de;
+}
+
+.searchForm .search-button:hover {
+  text-decoration: none;
+  border: 2px solid #36a4de;
+  background-color: #36a4de;
 }
 
 .header-container {
   padding-top: 1em;
-  padding-bottom: 1em;
+  padding-bottom: 0;
+}
+
+.header-container h1 {
+  overflow: hidden;
 }
 
 .header-container h1 a {
-  color: #36a4de;
+  color: #0071ae;
 }
 
 .header-container h1 a span {
@@ -197,7 +217,7 @@ div.catalyst-content-container {
 tr#catalyst-page-title {
   font-family: Georgia, Times, serif !important;
   font-size: 1.6em !important;
-  padding-left: 13px !important;
+  padding-left: 14px !important;
 }
 
 div#catalyst-footer {
@@ -249,9 +269,9 @@ div#catalyst-footer {
   color: white;
   cursor: pointer;
   border-radius: 50%;
-  box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
-  -webkit-box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
-  -moz-box-shadow: 5px 5px 9px -4px rgba(0,0,0,0.79);
+  box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
+  -webkit-box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
 }
 
 #rtnBtn:hover {
@@ -295,14 +315,14 @@ div#catalyst-footer {
 
 .PropertyGroupItem {
   font-weight: normal;
-  font-size: 13px;
+  font-size: 14px;
   text-align: left;
 }
 
 .PropertyGroupData {
   margin: 1em;
   text-align: left;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   color: #000;
   border: none !important;
@@ -316,7 +336,7 @@ div#catalyst-footer {
 }
 
 .institutionHeader h1 span {
-  color: #36a4de;
+  color: #0071ae;
 }
 
 #page-container {
@@ -375,7 +395,7 @@ div#catalyst-footer {
 .profiles ul,
 .profiles ol {
   font-family: arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .profiles ul,
@@ -484,6 +504,7 @@ div#catalyst-footer {
   margin-bottom: 1em;
 }
 
+.profilesContentPassive h3,
 .profilesContentPassive h4,
 .profilesContentPassive h5 {
   color: #183c55;
@@ -506,7 +527,7 @@ div#catalyst-footer {
 
 .profilesContentPassive .passiveSectionHead .passiveSectionHeadDescription {
   font-weight: normal;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 11px;
   margin: 4px 0 2px 0;
   display: none;
@@ -539,14 +560,14 @@ div#catalyst-footer {
 }
 
 .passiveHeader {
-  color: #36a4de;
+  color: #0071ae;
   font-weight: 600;
   text-align: left;
   padding-bottom: 2px;
 }
 
 .passiveHeaderInfo {
-  font-size: 11px;
+  font-size: 12px;
   text-align: left;
   padding-bottom: 6px;
 }
@@ -558,7 +579,7 @@ div#catalyst-footer {
 }
 
 .passiveSectionBodyDetails a {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .passiveSectionLine {
@@ -597,7 +618,7 @@ div#catalyst-footer {
 }
 
 .connectionItemSubText {
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .connectionLineToArrow {
@@ -629,7 +650,7 @@ div#catalyst-footer {
 
 .connectionSubDescription {
   font-weight: normal;
-  font-size: 11px;
+  font-size: 12px;
   padding: 5px;
   text-align: center !important;
 }
@@ -704,7 +725,7 @@ div#catalyst-footer {
   font-weight: 600;
   color: #333;
   font-family: Arial;
-  font-size: 13px;
+  font-size: 14px;
   height: 26px;
   padding-left: 6px;
   width: 100%;
@@ -926,7 +947,7 @@ div#catalyst-footer {
   color: #000;
   font-weight: normal;
   vertical-align: bottom;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .listTable table {
@@ -1040,7 +1061,7 @@ table tbody .height25 {
   background-color: #eeebe5;
   font-weight: 600;
   color: #506380;
-  font-size: 13px;
+  font-size: 14px;
   height: 24px;
   padding-left: 6px;
 }
@@ -1048,7 +1069,7 @@ table tbody .height25 {
   background-color: #eeebe5;
   font-weight: 600;
   color: #506380;
-  font-size: 13px;
+  font-size: 14px;
   height: 24px;
   padding-left: 6px;
   width: 100%;
@@ -1056,7 +1077,7 @@ table tbody .height25 {
 .EditMenuTopRow {
   background-color: #eeebe5;
   color: #506380;
-  font-size: 13px;
+  font-size: 14px;
   height: 24px;
   padding-left: 6px;
   width: 100%;
@@ -1081,7 +1102,10 @@ table tbody .height25 {
 }
 
 .footer .logo-container {
-  padding: 1em 0;
+  padding: 3em 0;
+  align-items: center;
+  justify-content: center;
+  clear: both;
 }
 
 .footer .logo {
@@ -1099,7 +1123,6 @@ table tbody .height25 {
   color: #666;
   padding: 1em;
   background-color: #eee;
-  border-radius: 6px;
 }
 
 .profile-image {
@@ -1124,5 +1147,21 @@ table tbody .height25 {
 @media (min-width: 576px) {
   .footer {
     text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    padding-bottom: 1em;
   }
 }

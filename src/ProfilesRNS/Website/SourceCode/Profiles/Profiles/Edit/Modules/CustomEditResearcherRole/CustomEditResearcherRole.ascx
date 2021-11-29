@@ -109,7 +109,7 @@
                 <Columns>
                     <asp:TemplateField ItemStyle-BorderStyle="None" ItemStyle-Width="20px">
                         <ItemTemplate>
-                            <img alt="" style="cursor: pointer; padding-bottom: 7px; padding-left: 13px;" src="<%=GetURLDomain()%>/framework/images/expand.gif" />
+                            <img alt="" style="cursor: pointer; padding-bottom: 7px; padding-left: 14px;" src="<%=GetURLDomain()%>/framework/images/expand.gif" />
                             <div class="grant-sub-row" style="display: none;">
                                 <asp:GridView EnableViewState="true" ShowHeader="false" ID="grdSubGrantSearchResults"
                                     runat="server" GridLines="None" DataKeyNames="FullFundingID"
