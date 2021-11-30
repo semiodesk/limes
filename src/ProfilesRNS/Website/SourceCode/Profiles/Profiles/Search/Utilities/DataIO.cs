@@ -35,7 +35,7 @@ namespace Profiles.Search.Utilities
         }
 
 
-        public XmlDocument SearchRequest(string searchstring, string exactphrase, string classgroupuri, string classuri, string limit, string offset)
+        public XmlDocument SearchRequest(string searchstring, bool exactphrase, string classgroupuri, string classuri, string limit, string offset)
         {
             System.Text.StringBuilder search = new System.Text.StringBuilder();
             XmlDocument searchxml = new XmlDocument();
@@ -59,10 +59,9 @@ namespace Profiles.Search.Utilities
             search.Append("<SearchOptions>");
             search.Append("<MatchOptions>");
 
-            if (searchstring != string.Empty && !(string.IsNullOrEmpty(exactphrase)))
+            if (searchstring != string.Empty)
             {
-
-                search.Append("<SearchString ExactMatch=\"" + exactphrase.ToLower() + "\">");
+                search.Append("<SearchString ExactMatch=\"" + exactphrase.ToString().ToLower() + "\">");
                 search.Append(this.EscapeXML(searchstring));
                 search.Append("</SearchString>");
             }
@@ -80,6 +79,7 @@ namespace Profiles.Search.Utilities
                 search.Append("</ClassURI>");
             }
             search.Append("</MatchOptions>");
+
             search.Append("<OutputOptions><Offset>");
             search.Append(offset.ToString());
             search.Append("</Offset><Limit>");
@@ -93,7 +93,7 @@ namespace Profiles.Search.Utilities
 
         }
 
-        public XmlDocument SearchRequest(string searchstring, string exactphrase, string fname, string lname,
+        public XmlDocument SearchRequest(string searchstring, bool exactphrase, string fname, string lname,
             string institution, string institutionallexcept, string department, string departmentallexcept,
             string division, string divisionallexcept,
             string classuri, string limit, string offset,
@@ -139,15 +139,13 @@ namespace Profiles.Search.Utilities
 
             search.Append("<SearchOptions>");
             search.Append("<MatchOptions>");
-            if (string.IsNullOrEmpty(exactphrase))
-               exactphrase = "false";
 
            // if (exactphrase.IsNullOrEmpty())
                // exactphrase = string.Empty;
 
-            if (searchstring != string.Empty && exactphrase != string.Empty)
+            if (searchstring != string.Empty)
             {
-                search.Append("<SearchString ExactMatch=\"" + exactphrase.ToLower() + "\">");
+                search.Append("<SearchString ExactMatch=\"" + exactphrase + "\">");
 
                 search.Append(searchstring);
                 search.Append("</SearchString>");
@@ -176,7 +174,7 @@ namespace Profiles.Search.Utilities
 
                 if (institution != string.Empty)
                 {
-                    if (institutionallexcept == "on")
+                    if (institutionallexcept == "true")
                         isexclude = "1";
 
                     search.Append("<SearchFilter IsExclude=\"" + isexclude + "\" Property=\"http://profiles.catalyst.harvard.edu/ontology/prns#personInPrimaryPosition\"  Property2=\"http://vivoweb.org/ontology/core#positionInOrganization\"  MatchType=\"Exact\">" + institution + "</SearchFilter>");
@@ -185,7 +183,7 @@ namespace Profiles.Search.Utilities
 
                 if (department != string.Empty)
                 {
-                    if (departmentallexcept == "on")
+                    if (departmentallexcept == "true")
                         isexclude = "1";
 
                     search.Append("<SearchFilter IsExclude=\"" + isexclude + "\"  Property=\"http://profiles.catalyst.harvard.edu/ontology/prns#personInPrimaryPosition\"  Property2=\"http://profiles.catalyst.harvard.edu/ontology/prns#positionInDepartment\"   MatchType=\"Exact\">" + department + "</SearchFilter>");
@@ -194,7 +192,7 @@ namespace Profiles.Search.Utilities
 
                 if (division != string.Empty)
                 {
-                    if (divisionallexcept == "on")
+                    if (divisionallexcept == "true")
                         isexclude = "1";
 
                     search.Append("<SearchFilter IsExclude=\"" + isexclude + "\"  Property=\"http://profiles.catalyst.harvard.edu/ontology/prns#personInPrimaryPosition\"  Property2=\"http://profiles.catalyst.harvard.edu/ontology/prns#positionInDivision\"   MatchType=\"Exact\">" + division + "</SearchFilter>");

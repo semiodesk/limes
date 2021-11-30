@@ -18,8 +18,8 @@
   <xsl:param name="classURIpassedin"/>
   <xsl:param name="total"/>
   <xsl:template match="/">
-    <div class="passiveSectionHead">
-      <xsl:text>Filter by Type</xsl:text>
+    <div class="sidepanel-header mt-3">
+      <h4><xsl:text>Filter by Type</xsl:text></h4>
     </div>
     <div class="passiveSectionBody" style="margin-top: 6px;">
       <xsl:variable name="allURL">
@@ -30,16 +30,10 @@
         <li>
           <xsl:choose>
             <xsl:when test="$classGrpURIpassedin=''">
-              <a href="{$allURL}" id="type" style="color:#888">
-				  <strong>
-					  <xsl:value-of select="'All'"/>
-				  </strong>
-              </a>
+              <a href="{$allURL}" id="type"><xsl:value-of select="'All'"/></a>
             </xsl:when>
             <xsl:otherwise>
-              <a href="{$allURL}"  id="type">
-                <xsl:value-of select="'All'"/>
-              </a>
+              <a href="{$allURL}" id="type"><xsl:value-of select="'All'"/></a>
             </xsl:otherwise>
           </xsl:choose>
           <xsl:text> (</xsl:text>
@@ -74,11 +68,6 @@
           </li>
         </ul>
       </xsl:for-each>
-
-    </div>
-    <div>
-      <div class="passiveSectionLine"></div>
-    </div>
-   
+    </div>   
   </xsl:template>
 </xsl:stylesheet>

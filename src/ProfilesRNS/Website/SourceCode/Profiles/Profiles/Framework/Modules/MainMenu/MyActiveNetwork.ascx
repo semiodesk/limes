@@ -2,9 +2,7 @@
     Inherits="Profiles.Framework.Modules.MainMenu.MyActiveNetwork" %>
 
 <script type="text/javascript">
-
     function toggleSelectionRepeater(obj) {
-        
         var check_text = $(obj).text();
         var subject = $("#<%=hdSubject.ClientID%>").val();
         var checked = false;
@@ -28,9 +26,10 @@
             }
         });
     }
+
     function OnSuccess(response) {/*debugger;alert(response.d);*/ }
 
-    $("#personismy").hover(function () {
+    $(".personismy").hover(function () {
         $("#personismy").parent().css("background-color", "#dcdada !important");
         $('#personismy').parent().siblings(':first-child').css("font-weight", "bold !important");
         $('#personismy').parent().siblings(':first-child').css("border-left", "1px solid #383737");
@@ -38,17 +37,17 @@
         $('#personismy').parent().siblings(':first-child').css("text-decoration", "none");
         $('#personismy').parent().siblings(':first-child').css("background-color", " #383737 !important");
     }); 
-
-   
 </script>
 
 <asp:HiddenField runat="server" ID="hdSubject" />
-<ul class="drop" style="xdisplay:block !important;">
+<ul class="menu-drop">
     <asp:Repeater ID="rptRelationshipTypes" runat="server" OnItemDataBound="rptRelationshipTypes_ItemBound">
         <HeaderTemplate>
-            <li><a id="personismy" href="#" style="border-left:1px solid #383737;border-right:1px solid #383737;">
-                <asp:Literal runat="server" ID="lblName"></asp:Literal>
-               </a></li>
+            <li>
+                <a class="personismy" href="#">
+                    <asp:Literal runat="server" ID="lblName"></asp:Literal>
+                </a>
+            </li>
         </HeaderTemplate>
         <ItemTemplate>
             <li style="height:25px !important">

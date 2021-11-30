@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyLists.ascx.cs" Inherits="Profiles.Framework.Modules.MainMenu.MyLists" %>
-<ul class="drop">
+<ul class="menu-drop">
     <li class="view-list-reports">
         <a href="<%=string.Format("{0}/lists/default.aspx",Profiles.Framework.Utilities.Root.Domain)%>">View my list and generate reports</a>
     </li>
@@ -16,8 +16,6 @@
 <asp:Literal runat="server" ID="litJS"></asp:Literal>
 <asp:Panel runat="server" Visible="false" ID="pnlPersonScript">
     <script type="text/javascript">
-
-
         function AddPerson(ownerid, listid, personid) {
             jQuery.ajax({
                 type: "POST",

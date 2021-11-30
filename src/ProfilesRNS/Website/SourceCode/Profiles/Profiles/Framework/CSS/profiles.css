@@ -26,6 +26,11 @@ h1 {
   line-height: 2.3rem;
 }
 
+h2 {
+  font-size: 1.8rem;
+  line-height: 1.8rem;
+}
+
 h3 {
   font-size: 1.55rem;
 }
@@ -67,6 +72,9 @@ label {
   background-color: #0071ae;
   border: 2px solid #0071ae;
   line-height: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  outline: none;
 }
 
 .searchForm .search-button .fa {
@@ -81,8 +89,14 @@ label {
 
 .searchForm .search-button:hover {
   text-decoration: none;
-  border: 2px solid #36a4de;
-  background-color: #36a4de;
+  border: 2px solid #ccc;
+}
+
+.searchForm .search-button[disabled] {
+  border: 2px solid #0071ae;
+  background: transparent;
+  color: #0071ae;
+  cursor: not-allowed;
 }
 
 .header-container {

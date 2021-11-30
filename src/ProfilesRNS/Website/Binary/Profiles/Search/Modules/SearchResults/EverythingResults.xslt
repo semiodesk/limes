@@ -76,7 +76,7 @@
         </div>
       
         <div class="listTable" style="margin-top:0px;float: left;z-index:1;">
-          <table id="tblSearchResults" class="SearchResults" style="width:775px;">
+          <table id="tblSearchResults" class="SearchResults">
             <tbody>
               <tr>
                 <th class="alignLeft">Match</th>

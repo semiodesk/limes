@@ -236,6 +236,7 @@
 - Added footer logo links and alt text
 - Improving site navigation and responisve layout
 - Improving accessibility
+  - Adapting color scheme to match AA standards for contrasts and color-blindness
 - Added imprint and privacy policy text
 
 ### Monday, 29th November
@@ -253,3 +254,23 @@
   - Improved focus and active state stylesheets for links and buttons
   - Improved taborder
 - Improved Imprint layout
+
+### Tuesday, 30th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Debugging issue #19: Broken advanced search for people and publications
+  - Form data does not get parsed correctly in the code-behind
+  - Reason is that there is only a single HTML form element
+    - Moving the search input masks to a single page broke the initializiation of this form.
+    - There is a **single** huge search parameter parsing function in the code behind for all of the search boxes. Bad practise.
+    - Checking if the order of the search boxes makes a difference..
+  - Refactored search forms into separate forms which directly submit their data to the corresponding search handler
+  - Added form validation and disabled state for the submit button
+  - Testing of the search functionality
+    - Find people by keyword (quicksearch)
+    - Find people by attributes
+    - Find publication by keyword
+  - Improved list pagination appearance, accessibility and handling
+  - Found bug in search results for everything:
+    - People cannot be navigated to.
+    - Bug also present in stable version.

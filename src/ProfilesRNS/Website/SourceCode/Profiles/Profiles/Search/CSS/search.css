@@ -1,4 +1,4 @@
-﻿/*  
+/*  
  
     Copyright (c) 2008-2012 by the President and Fellows of Harvard College. All rights reserved.  
     Profiles Research Networking Software was developed under the supervision of Griffin M Weber, MD, PhD.,
@@ -199,6 +199,8 @@ h3 .bi {
 .searchForm input[type="text"],
 .searchForm select {
   width: 100% !important;
+  height: 1.7em;
+  line-height: 1.7em;
 }
 
 .searchForm input[type="checkbox"] {
@@ -235,14 +237,29 @@ h3 .bi {
 }
 
 .listTablePagination {
-  background-color: #efefef;
-  padding: 6px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-  border-left: 1px solid #eee;
-  border-right: 1px solid #eee;
-  border-collapse: collapse;
-  margin: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listTablePagination label {
+  margin-right: 1em;
+}
+
+.listTablePagination a {
+  text-decoration: none;
+  border: 2px solid transparent;
+  outline: none;
+}
+
+.listTablePagination a:hover  {
+  border: 2px solid #ccc;
+}
+
+.listTablePagination a:focus  {
+  border: 2px solid #36A4DE;
 }
 
 .listTablePagination table {
@@ -262,26 +279,13 @@ h3 .bi {
 }
 
 .listTablePaginationPN {
-  display: block;
+  display: flex;
   float: right;
-  text-align: center;
-}
-
-.listTablePaginationA img {
-  border-top-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 0px;
-  border-left-width: 0px;
-}
-
-.listTablePaginationP img {
-  margin-right: 4px;
-  margin-bottom: 2px;
-}
-
-.listTablePaginationN img {
-  margin-left: 4px;
-  margin-bottom: 2px;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  line-height: 40px;
+  width: 40px;
 }
 
 .listTablePaginationN {
@@ -289,14 +293,16 @@ h3 .bi {
 }
 
 .listTablePaginationFL {
-  display: block;
-  width: 19px;
-  height: 19px;
+  display: flex;
+  width: 40px;
+  height: 40px;
   float: right;
+  align-items: center;
+  justify-content: center;
 }
 
 .listTablePaginationFL img {
-  margin: 5px 6px;
+  margin: 7px;
 }
 
 .listTablePaginationA {

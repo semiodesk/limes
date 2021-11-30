@@ -2,9 +2,7 @@
     Inherits="Profiles.Framework.Modules.MainMenu.MyActiveNetwork" %>
 
 <script type="text/javascript">
-
     function toggleSelectionRepeater(obj) {
-        
         var check_text = $(obj).text();
         var subject = $("#<%=hdSubject.ClientID%>").val();
         var checked = false;
@@ -43,12 +41,14 @@
 </script>
 
 <asp:HiddenField runat="server" ID="hdSubject" />
-<ul class="drop" style="xdisplay:block !important;">
+<ul class="menu-drop">
     <asp:Repeater ID="rptRelationshipTypes" runat="server" OnItemDataBound="rptRelationshipTypes_ItemBound">
         <HeaderTemplate>
-            <li><a id="personismy" href="#" style="border-left:1px solid #383737;border-right:1px solid #383737;">
-                <asp:Literal runat="server" ID="lblName"></asp:Literal>
-               </a></li>
+            <li>
+                <a id="personismy" href="#">
+                    <asp:Literal runat="server" ID="lblName"></asp:Literal>
+                </a>
+            </li>
         </HeaderTemplate>
         <ItemTemplate>
             <li style="height:25px !important">

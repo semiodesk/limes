@@ -129,7 +129,7 @@ namespace Profiles.Framework.Modules.MainMenu
             NetworkItem networkitem = (NetworkItem)e.Item.DataItem;
             Literal lbPerson = (Literal)e.Item.FindControl("lbPerson");
             if (this.first)
-                lbPerson.Text = "<li  style='height: 25px !important; border-top:1px solid #383737'><a style='border-left:1px solid #383737;border-right:1px solid #383737;padding-top:5px;'  href='" + networkitem.URI + "'>" + networkitem.Name + "</a></li>";
+                lbPerson.Text = "<li style='height: 25px !important; border-top:1px solid #383737'><a style='border-left:1px solid #383737;border-right:1px solid #383737;padding-top:5px;'  href='" + networkitem.URI + "'>" + networkitem.Name + "</a></li>";
             else
                 lbPerson.Text = "<li style='height: 25px !important;'><a style='height: 25px !important; border-left:1px solid #383737;border-right:1px solid #383737;padding-top:5px;'  href='" + networkitem.URI + "'>" + networkitem.Name + "</a></li>";
 

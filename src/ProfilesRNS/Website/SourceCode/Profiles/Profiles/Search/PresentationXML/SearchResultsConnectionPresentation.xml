@@ -20,7 +20,7 @@
       <Module ID="HTMLBlock">
         <ParamList>
           <Param ID="HTML">
-            <script type="text/javascript">  jQuery(window).on("load",function () {$(".pageDescription").css("padding-bottom","16px");$(".passiveSectionBody").find(".passiveSectionLine").remove();});</script>
+            <script type="text/javascript">  jQuery(window).on("load",function () {$(".pageDescription").css("padding-bottom","16px");});</script>
           </Param>
         </ParamList>
       </Module>

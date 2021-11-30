@@ -330,7 +330,7 @@ namespace Profiles.Framework
             // PageTitle
             buffer = GetStringFromPresentationXML("Presentation/PageTitle");
             if (buffer != String.Empty)
-                litPageTitle.Text = " <div class=\"pageTitle\"><h2 style='margin-bottom:0px;'>" + buffer + "</h2></div>";
+                litPageTitle.Text = "<h2 class=\"pageTitle\">" + buffer + "</h2>";
             else
             {
                 divTopMainRow.Visible = false;
@@ -341,7 +341,7 @@ namespace Profiles.Framework
             // PageSubTitle
             buffer = GetStringFromPresentationXML("Presentation/PageSubTitle");
             if (buffer != String.Empty)
-                litPageSubTitle.Text = "<div class=\"pageSubTitle\"><h2 style=\"margin-bottom:0px;margin-top:0px;font-weight:bold\">" + buffer + "</h2></div>";
+                litPageSubTitle.Text = "<h2 class=\"pageSubTitle\">" + buffer + "</h2>";
             else
             {
                 litPageSubTitle.Visible = false;

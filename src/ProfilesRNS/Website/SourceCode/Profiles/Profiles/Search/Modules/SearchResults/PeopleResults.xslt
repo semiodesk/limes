@@ -73,12 +73,10 @@
 
         <table>
           <tr>
-            <td style="width:33%;">              
-                  <div style="width:150px"></div>              
-            </td>
-            <td style="width:33%;">
-              <div style="float:right">
-                Sort&#160;<select id="selSort" title="Query Relevance" onchange="JavaScript:DropdownSort();">
+            <td>
+              <div>
+                <label for="selSort" class="d-block">Sort by</label>
+                <select name="selSort" id="selSort" title="Query Relevance" onchange="JavaScript:DropdownSort();">
                   <option value="">Query Relevance</option>
                   <xsl:choose>
                     <xsl:when test="$currentsort='name'">
@@ -98,8 +96,6 @@
                       <option value="name_asc">Name (Z-A)</option>
                     </xsl:otherwise>
                   </xsl:choose>
-
-
                   <xsl:if test="$institution='true'">
                     <xsl:choose>
                       <xsl:when test="$currentsort='institution'">
@@ -120,7 +116,6 @@
                       </xsl:otherwise>
                     </xsl:choose>
                   </xsl:if>
-
                   <xsl:if test="$department='true'">
                     <xsl:choose>
                       <xsl:when test="$currentsort='department'">
@@ -141,8 +136,6 @@
                       </xsl:otherwise>
                     </xsl:choose>
                   </xsl:if>
-
-
                   <xsl:if test="$facrank='true'">
                     <xsl:choose>
                       <xsl:when test="$currentsort='facrank'">
@@ -167,11 +160,11 @@
                 </select>
               </div>
             </td>
-            <td style="width:33%;">
-              <div style="float: right;">
+            <td>
+              <div>
                 <input type="hidden" id="hiddenToggle" value="off" />
-                Show&#160;
-                <select id="selColSelect" title="choose columns" style="width: 149px">
+                <label for="selColSelect" class="d-block">Show</label>
+                <select name="selColSelect" id="selColSelect" title="choose columns">
                   <option value="">(choose columns)</option>
                 </select>
                 <table>
@@ -211,7 +204,7 @@
 
           <tr>
             <td colspan="3">
-              <div class="listTable" style="margin-top:0px;">
+              <div class="listTable">
                 <table id="tblSearchResults" class="SearchResults">
                   <tbody>
                     <tr>
@@ -369,91 +362,91 @@
           </tr>
         </table>
 
-        <div class="listTablePagination" style="float: left; margin-left: 1px;">
-          <table>
-            <tbody>
-              <tr>
-                <td>
-                  Per Page&#160;<select id="ddlPerPage" title="Results per page" onchange="javascript:ChangePerPage()">
-                    <xsl:choose>
-                      <xsl:when test="$perpage='15'">
-                        <option value="15" selected="true">15</option>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <option value="15">15</option>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                    <xsl:choose>
-                      <xsl:when test="$perpage='25'">
-                        <option value="25" selected="true">25</option>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <option value="25">25</option>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                    <xsl:choose>
-                      <xsl:when test="$perpage='50'">
-                        <option value="50" selected="true">50</option>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <option value="50">50</option>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                    <xsl:choose>
-                      <xsl:when test="$perpage='100'">
-                        <option value="100" selected="true">100</option>
-                      </xsl:when>
-                      <xsl:otherwise>
-                        <option value="100">100</option>
-                      </xsl:otherwise>
-                    </xsl:choose>
-                  </select>
-                </td>
-                <td>
-                  &#160;&#160;Page&#160;<input size="1" type="textbox" value="{$page}" id="txtPageNumber" onchange="ChangePage()" onkeypress="JavaScript:changePage(event);" title="select page"/>&#160;of&#160;<xsl:value-of select="$totalpages"/>
-                </td>
-                <td>
+        <xsl:choose>
+          <xsl:when test="1&lt;$totalpages">
+            <div class="listTablePagination">
+              <div class="d-none d-sm-block">
+                <label for="ddlPerPage">Per page</label>
+                <select id="ddlPerPage" title="Results per page" onchange="javascript:ChangePerPage()">
                   <xsl:choose>
-                    <xsl:when test="$page&lt;$totalpages">
-                      <a href="JavaScript:GotoLastPage();" class="listTablePaginationFL listTablePaginationA">
-                        <img src="{$root}/framework/images/arrow_last.gif" border="0" alt="last"/>
-                      </a>
-                      <a href="javascript:GotoNextPage();" class="listTablePaginationPN listTablePaginationN listTablePaginationA">
-                        Next<img src="{$root}/framework/images/arrow_next.gif" border="0" alt="next"/>
-                      </a>
+                    <xsl:when test="$perpage='15'">
+                      <option value="15" selected="true">15</option>
                     </xsl:when>
                     <xsl:otherwise>
-                      <div class="listTablePaginationFL">
-                        <img src="{$root}/framework/images/arrow_last_d.gif" border="0" alt=""/>
-                      </div>
-                      <div class="listTablePaginationPN listTablePaginationN">
-                        Next<img src="{$root}/framework/images/arrow_next_d.gif" border="0" alt=""/>
-                      </div>
+                      <option value="15">15</option>
                     </xsl:otherwise>
                   </xsl:choose>
                   <xsl:choose>
-                    <xsl:when test="$page&gt;1">
-                      <a href="JavaScript:GotoPreviousPage();" class="listTablePaginationPN listTablePaginationP listTablePaginationA">
-                        <img src="{$root}/framework/images/arrow_prev.gif" border="0" alt="previous"/>Prev
-                      </a>
-                      <a href="JavaScript:GotoFirstPage();" class="listTablePaginationFL listTablePaginationA">
-                        <img src="{$root}/framework/images/arrow_first.gif" border="0" alt="first"/>
-                      </a>
+                    <xsl:when test="$perpage='25'">
+                      <option value="25" selected="true">25</option>
                     </xsl:when>
                     <xsl:otherwise>
-                      <div class="listTablePaginationPN listTablePaginationP">
-                        <img src="{$root}/framework/images/arrow_prev_d.gif" border="0" alt=""/>Prev
-                      </div>
-                      <div class="listTablePaginationFL">
-                        <img src="{$root}/framework/images/arrow_first_d.gif" border="0" alt=""/>
-                      </div>
+                      <option value="25">25</option>
                     </xsl:otherwise>
                   </xsl:choose>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  <xsl:choose>
+                    <xsl:when test="$perpage='50'">
+                      <option value="50" selected="true">50</option>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <option value="50">50</option>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                  <xsl:choose>
+                    <xsl:when test="$perpage='100'">
+                      <option value="100" selected="true">100</option>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <option value="100">100</option>
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </select>
+              </div>
+              <div>
+                <label for="txtPageNumber">Page</label>
+                <input size="1" type="textbox" value="{$page}" id="txtPageNumber" onchange="ChangePage()" onkeypress="JavaScript:changePage(event);" title="select page"/>&#160;of&#160;<xsl:value-of select="$totalpages"/>
+              </div>
+              <div>
+                <xsl:choose>
+                  <xsl:when test="$page&lt;$totalpages">
+                    <a href="JavaScript:GotoLastPage();" class="listTablePaginationFL listTablePaginationA" title="Go to last page">
+                      <span class="fa fa-angle-double-right"></span>
+                    </a>
+                    <a href="javascript:GotoNextPage();" class="listTablePaginationPN listTablePaginationN listTablePaginationA" title="Go to next page">
+                      <span class="fa fa-angle-right"></span>
+                    </a>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <div class="listTablePaginationFL">
+                      <span class="fa fa-angle-double-right"></span>
+                    </div>
+                    <div class="listTablePaginationPN listTablePaginationN">
+                      <span class="fa fa-angle-right"></span>
+                    </div>
+                  </xsl:otherwise>
+                </xsl:choose>
+                <xsl:choose>
+                  <xsl:when test="$page&gt;1">
+                    <a href="JavaScript:GotoPreviousPage();" class="listTablePaginationPN listTablePaginationP listTablePaginationA" title="Go to previous page">
+                      <span class="fa fa-angle-left"></span>
+                    </a>
+                    <a href="JavaScript:GotoFirstPage();" class="listTablePaginationFL listTablePaginationA" title="Go to first page">
+                      <span class="fa fa-angle-double-left"></span>
+                    </a>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <div class="listTablePaginationPN listTablePaginationP">
+                      <span class="fa fa-angle-left"></span>
+                    </div>
+                    <div class="listTablePaginationFL">
+                      <span class="fa fa-angle-double-left"></span>
+                    </div>
+                  </xsl:otherwise>
+                </xsl:choose>
+              </div>
+            </div>
+          </xsl:when>
+        </xsl:choose>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>No matching results.</xsl:text>
@@ -860,52 +853,35 @@
 
     <input type="hidden" id="{$nodeURI}" value="&lt;div style='font-size:14px;font-weight:bold'&gt;{foaf:firstName} {foaf:lastName}&lt;/div&gt;{$titlelink}{$institutionlink}{$departmentlink}{$divisionlink}{$facranklink}"></input>
 
-
-
-
     <td class="alignLeft" style="width:200px">
       <a class="listTableLink" href="{$nodeURI}">
-        <xsl:value-of select="prns:fullName"/>
+        <xsl:value-of select="foaf:lastName"/>, <xsl:value-of select="foaf:firstName"/>
       </a>
     </td>
-
     <xsl:if test="$institution='true'">
-
       <td class="alignLeft" style="width:250px">
         <xsl:value-of select ="$doc/rdf:Description[@rdf:about=$institutionlabel]"/>
       </td>
     </xsl:if>
-
     <xsl:if test="$department='true'">
       <td class="alignLeft" style="width:250px">
-
         <xsl:value-of select ="$doc/rdf:Description[@rdf:about=$doc/rdf:Description[@rdf:about=$positon]/prns:positionInDepartment/@rdf:resource]/rdfs:label"/>
-
       </td>
     </xsl:if>
-
-
     <xsl:if test="$facrank='true'">
       <td class="alignLeft" style="width:250px;">
         <xsl:choose>
           <xsl:when test ="$doc/rdf:Description[@rdf:about=$doc/rdf:Description[@rdf:about=$nodeURI]/prns:hasFacultyRank/@rdf:resource]/rdfs:label!=''">
-
             <xsl:value-of select ="$doc/rdf:Description[@rdf:about=$doc/rdf:Description[@rdf:about=$nodeURI]/prns:hasFacultyRank/@rdf:resource]/rdfs:label"/>
-
           </xsl:when>
           <xsl:otherwise>
             <center>
-
               --
-
             </center>
           </xsl:otherwise>
         </xsl:choose>
       </td>
     </xsl:if>
-
-
-
   </xsl:template>
 
   <xsl:template name="whyColumn">
@@ -973,7 +949,7 @@
 
 
     <td valign="middle" style="width:100px" >
-      <a class="listTableLink"  href="{$root}/search/default.aspx?searchtype=whypeople&amp;nodeuri={$nodeURI}&amp;searchfor={$searchfor}&amp;exactphrase={$exactphrase}&amp;perpage={$perpage}&amp;offset={$offset}&amp;page={$page}&amp;totalpages={$totalpages}&amp;searchrequest={$searchrequest}&amp;sortby={$sortby}&amp;sortdirection={$sortdirection}&amp;showcolumns={$showcolumns}">
+      <a class="listTableLink text-center" title="Click to see why an item matched the search." href="{$root}/search/default.aspx?searchtype=whypeople&amp;nodeuri={$nodeURI}&amp;searchfor={$searchfor}&amp;exactphrase={$exactphrase}&amp;perpage={$perpage}&amp;offset={$offset}&amp;page={$page}&amp;totalpages={$totalpages}&amp;searchrequest={$searchrequest}&amp;sortby={$sortby}&amp;sortdirection={$sortdirection}&amp;showcolumns={$showcolumns}">
         Why?
       </a>
 

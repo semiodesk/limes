@@ -75,7 +75,7 @@ namespace Profiles.Search.Modules.SearchResults
             string institutionallexcept = string.Empty;
             string departmentallexcept = string.Empty;
             string divisionallexcept = string.Empty;
-            string exactphrase = "false"; // UCSF default value to allow old Mini Search to work
+            bool exactphrase = false; // UCSF default value to allow old Mini Search to work
 
 
             string searchtype = "";
@@ -285,8 +285,12 @@ namespace Profiles.Search.Modules.SearchResults
 
             if (String.IsNullOrEmpty(Request.QueryString["exactphrase"])==false)
             {
-                exactphrase = Request.QueryString["exactphrase"];
+                string value = Request.QueryString["exactphrase"];
 
+                if (value == "on" || value == "true" || value == "1")
+                {
+                    exactphrase = true;
+                }
             }
 
 

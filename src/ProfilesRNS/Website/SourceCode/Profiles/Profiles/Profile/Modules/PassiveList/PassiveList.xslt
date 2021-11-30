@@ -37,7 +37,6 @@
         </a>
       </div>
     </xsl:if>
-    <div class="passiveSectionLine">_</div>
   </xsl:template> 
   
 </xsl:stylesheet>

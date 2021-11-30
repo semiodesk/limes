@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.Search.Modules.SearchPerson {
-    
-    
-    public partial class SearchPerson {
-        
+namespace Profiles.Search.Modules.SearchPerson
+{
+
+
+    public partial class SearchPerson
+    {
+
         /// <summary>
         /// hdnSearch control.
         /// </summary>
@@ -20,43 +22,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hdnSearch;
-        
-        /// <summary>
-        /// txtSearchFor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchFor;
-        
-        /// <summary>
-        /// chkExactphrase control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkExactphrase;
-        
-        /// <summary>
-        /// txtLname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtLname;
-        
-        /// <summary>
-        /// txtFname control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFname;
-        
+
         /// <summary>
         /// trInstitution control.
         /// </summary>
@@ -65,7 +31,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl trInstitution;
-        
+
         /// <summary>
         /// litInstitution control.
         /// </summary>
@@ -74,43 +40,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litInstitution;
-        
-        /// <summary>
-        /// institutionallexcept control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox institutionallexcept;
-        
-        /// <summary>
-        /// trDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trDepartment;
-        
-        /// <summary>
-        /// litDepartment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litDepartment;
-        
-        /// <summary>
-        /// departmentallexcept control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox departmentallexcept;
-        
+
         /// <summary>
         /// trDivision control.
         /// </summary>
@@ -119,7 +49,7 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl trDivision;
-        
+
         /// <summary>
         /// litDivision control.
         /// </summary>
@@ -128,95 +58,5 @@ namespace Profiles.Search.Modules.SearchPerson {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litDivision;
-        
-        /// <summary>
-        /// divisionallexcept control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox divisionallexcept;
-        
-        /// <summary>
-        /// trFacultyType control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trFacultyType;
-        
-        /// <summary>
-        /// phDDLCHK control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phDDLCHK;
-        
-        /// <summary>
-        /// phDDLList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder phDDLList;
-        
-        /// <summary>
-        /// lblSelectedItem control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSelectedItem;
-        
-        /// <summary>
-        /// hidList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidList;
-        
-        /// <summary>
-        /// hidURIs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField hidURIs;
-        
-        /// <summary>
-        /// trOtherOptions control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl trOtherOptions;
-        
-        /// <summary>
-        /// ctcFirst control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Profiles.Search.Modules.SearchPerson.ComboTreeCheck ctcFirst;
-        
-        /// <summary>
-        /// litFacRankScript control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal litFacRankScript;
     }
 }

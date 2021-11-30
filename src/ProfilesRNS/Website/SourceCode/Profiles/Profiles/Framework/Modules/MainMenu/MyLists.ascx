@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MyLists.ascx.cs" Inherits="Profiles.Framework.Modules.MainMenu.MyLists" %>
-<ul class="drop">
+<ul class="menu-drop">
     <li class="view-list-reports">
         <a href="<%=string.Format("{0}/lists/default.aspx",Profiles.Framework.Utilities.Root.Domain)%>">View my list and generate reports</a>
     </li>
@@ -16,8 +16,6 @@
 <asp:Literal runat="server" ID="litJS"></asp:Literal>
 <asp:Panel runat="server" Visible="false" ID="pnlPersonScript">
     <script type="text/javascript">
-
-
         function AddPerson(ownerid, listid, personid) {
             jQuery.ajax({
                 type: "POST",
@@ -42,7 +40,6 @@
             jQuery("#<%=hlAddToList.ClientID%>").attr("alt-text", text);
             jQuery("#<%=hlAddToList.ClientID%>").attr("alt-onclick", onclick);
         }
-
         function RemovePerson(listid, personid) {
             jQuery.ajax({
                 type: "POST",
@@ -68,12 +65,9 @@
             jQuery("#<%=hlAddToList.ClientID%>").attr("alt-onclick", onclick);
 
         }
-        
-
     </script>
 </asp:Panel>
 <script>
-        
         function ClearList(listid) {
             if (confirm('Are you sure you want to remove all people from your list?')) {
                 jQuery.ajax({
@@ -94,5 +88,4 @@
         function OnListCSuccess(response) {  //debugger; alert(response.d); 
             jQuery("#list-count").html('0');
       }
-    
 </script>

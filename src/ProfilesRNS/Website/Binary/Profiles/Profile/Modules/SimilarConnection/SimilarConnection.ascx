@@ -56,10 +56,10 @@
 					<div style="width:353px;"><%= concept.MeshTerm %></div>
 				</td>
 				<td onmouseover="doListTableCellOver(this);" onfocus="doListTableCellOver(this);" onmouseout="doListTableCellOut(this);" onblur="doListTableCellOut(this);" onclick="doListTableCellClick(this);doGoPersonMesh('<%= concept.Subject.ConceptConnectionURI %>');" onkeypress="if (event.keyCode == 13) doGoPersonMesh('<%= concept.Subject.ConceptConnectionURI %>');" tabindex="0">
-					<div style="width: 68px; color: rgb(51, 102, 204);" class="listTableLink"><%= String.Format("{0:0.000}", concept.Subject.KeywordWeight) %></div>
+					<div class="listTableLink"><%= String.Format("{0:0.000}", concept.Subject.KeywordWeight) %></div>
 				</td>
 				<td onmouseover="doListTableCellOver(this);" onfocus="doListTableCellOver(this);" onmouseout="doListTableCellOut(this);" onblur="doListTableCellOut(this);" onclick="doListTableCellClick(this);doGoPersonMesh('<%= concept.Object.ConceptConnectionURI %>');" onkeypress="if (event.keyCode == 13) doGoPersonMesh('<%= concept.Object.ConceptConnectionURI %>');" tabindex="0">
-					<div class='listTableLink' style="width: 68px; color: rgb(51, 102, 204); "><%= String.Format("{0:0.000}", concept.Object.KeywordWeight) %></div>
+					<div class='listTableLink'><%= String.Format("{0:0.000}", concept.Object.KeywordWeight) %></div>
 				</td>
 				<td><div style="width:68px;"><%= String.Format("{0:0.000}", concept.OverallWeight) %></div></td>
 			</tr>

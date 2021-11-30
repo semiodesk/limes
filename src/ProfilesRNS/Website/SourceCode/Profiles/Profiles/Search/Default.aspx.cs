@@ -27,9 +27,8 @@ namespace Profiles.Search
     {
         Profiles.Framework.Template masterpage;
 
-
-
         //public void Page_Load(object sender, EventArgs e)
+
         override protected void OnInit(EventArgs e)
         {
             masterpage = (Framework.Template)base.Master;
@@ -43,14 +42,12 @@ namespace Profiles.Search
 
             string tab = string.Empty;
 
-
             if (Request.QueryString["searchtype"] == null && Request.Form["searchtype"] == null && Session["DIRECTSEARCHTYPE"] != null)
                 this.SearchType = Session["DIRECTSEARCHTYPE"].ToString();
             else if (Request.QueryString["searchtype"] == null && Request.Form["searchtype"] != null && Session["DIRECTSEARCHTYPE"] == null)
                 this.SearchType = Request.Form["searchtype"];
             else if (Request.QueryString["searchtype"] != null && Request.Form["searchtype"] == null && Session["DIRECTSEARCHTYPE"] == null)
                 this.SearchType = Request.QueryString["searchtype"];
-
 
             if (Session["DIRECTSEARCHREQUEST"] != null)
             {
@@ -63,21 +60,19 @@ namespace Profiles.Search
 
                 Utilities.DataIO data = new Profiles.Search.Utilities.DataIO();
 
-                data.SearchRequest("", "", "", "", "", "", "", "", "", "", "", "15", "0", "", "", "", "", true, ref searchrequest);
+                data.SearchRequest("", false, "", "", "", "", "", "", "", "", "", "15", "0", "", "", "", "", true, ref searchrequest);
 
                 Response.Redirect(Root.Domain + "/search/default.aspx?searchtype=" + this.SearchType + "&searchrequest=" + searchrequest, true);
-
             }
 
             if (this.SearchType.IsNullOrEmpty())
             {
                 this.LoadPresentationXML("searchform");
+
                 if (Request.QueryString["tab"] != null)
                     masterpage.Tab = Request.QueryString["tab"];
                 else
                     masterpage.Tab = "";
-
-
 
                 masterpage.RDFData = null;
                 masterpage.RDFNamespaces = null;
@@ -95,12 +90,8 @@ namespace Profiles.Search
             }
 
             this.LoadAssets();
+
             masterpage.PresentationXML = this.PresentationXML;
-
-
-
-
-
         }
 
         public void LoadPresentationXML(string type)
@@ -126,7 +117,6 @@ namespace Profiles.Search
             this.PresentationXML = new XmlDocument();
             this.PresentationXML.LoadXml(presentationxml);
             Framework.Utilities.DebugLogging.Log(presentationxml);
-
         }
 
         private void LoadAssets()
@@ -169,7 +159,6 @@ namespace Profiles.Search
         //to process the presentation XML
         public void LoadRDFSearchResults()
         {
-           
             XmlDocument xml = new XmlDocument();
             Namespace rdfnamespaces = new Namespace();
             Utilities.DataIO data = new Utilities.DataIO();
@@ -193,10 +182,9 @@ namespace Profiles.Search
             string institutionallexcept = string.Empty;
             string departmentallexcept = string.Empty;
             string divisionallexcept = string.Empty;
-            string exactphrase = string.Empty;
+            bool exactphrase = false;
             string nodeuri = string.Empty;
             string nodeid = string.Empty;
-
 
             if (Request.QueryString["new"] == "true")
             {
@@ -289,8 +277,6 @@ namespace Profiles.Search
             if (Request.QueryString["sortdirection"].IsNullOrEmpty() == false)
                 sortdirection = Request.QueryString["sortdirection"];
 
-
-
             if (Request.QueryString["searchrequest"].IsNullOrEmpty() == false)
                 searchrequest = Request.QueryString["searchrequest"];
             else if (Session["searchrequest"] != null)
@@ -311,7 +297,14 @@ namespace Profiles.Search
                 divisionallexcept = Request.QueryString["divisionallexcept"];
 
             if (Request.QueryString["exactphrase"].IsNullOrEmpty() == false)
-                exactphrase = Request.QueryString["exactphrase"];
+            {
+                var value = Request.QueryString["exactphrase"];
+
+                if(value == "on" || value == "true" || value == "1")
+                {
+                    exactphrase = true;
+                }
+            }
 
             if (Request.QueryString["nodeuri"].IsNullOrEmpty() == false)
             {
@@ -338,6 +331,7 @@ namespace Profiles.Search
             }
 
             searchrequest = xml.OuterXml;
+
             Session["SearchRequest"] = searchrequest;
 
             if (nodeuri != string.Empty && nodeid != string.Empty)
@@ -348,12 +342,10 @@ namespace Profiles.Search
             Framework.Utilities.DebugLogging.Log(masterpage.RDFData.OuterXml);
             masterpage.RDFNamespaces = rdfnamespaces.LoadNamespaces(masterpage.RDFData);
             masterpage.SearchRequest = searchrequest;
-
         }
 
         public XmlDocument PresentationXML { get; set; }
 
-        public string SearchType { get; set; }        
-
+        public string SearchType { get; set; }
     }
 }

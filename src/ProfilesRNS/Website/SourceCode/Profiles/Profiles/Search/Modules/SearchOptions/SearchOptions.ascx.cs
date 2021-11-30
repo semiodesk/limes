@@ -45,7 +45,7 @@ namespace Profiles.Search.Modules.SearchOptions
                 tab = "all";
             }
 
-            litModifySearch.Text = "<a href=\"javascript:modify('" + Root.Domain + "','" + tab + "','" + base.MasterPage.SearchRequest + "');\">" + "Modify Search" + "</a>";
+            //litModifySearch.Text = "<a href=\"javascript:modify('" + Root.Domain + "','" + tab + "','" + base.MasterPage.SearchRequest + "');\">" + "Modify Search" + "</a>";
 
             if (Request.QueryString["searchfor"].IsNullOrEmpty())
                 searchfor = Request.Form["txtSearchFor"];

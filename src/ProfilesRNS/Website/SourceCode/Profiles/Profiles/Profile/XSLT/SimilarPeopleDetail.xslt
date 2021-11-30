@@ -121,7 +121,7 @@
                   
                 </td>
                 <td  onclick="doListTableCellClick(this);document.location = '{@rdf:about}';" onkeypress="if (event.keyCode == 13) document.location = '{@rdf:about}';" onmouseout="doListTableCellOut(this);" onmouseover="doListTableCellOver(this);" onblur="doListTableCellOut(this);" onfocus="doListTableCellOver(this);" tabindex="0">
-                  <div class="listTableLink" style="width: 38px; color: rgb(51, 102, 204);text-align:center;">Why?</div>
+                  <div class="listTableLink">Why?</div>
                 </td>
               </tr>
             </xsl:for-each>

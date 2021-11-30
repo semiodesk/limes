@@ -328,7 +328,7 @@
         </div>
 
         <h4 class="mt-4">Disclaimer:</h4>
-        <p>The NGS-CN Profiles webportal is powered by the free, open source Profiles Research Networking Software (RNS). It is used in numerous institutions around the world, including academic research centers, pharmaceutical companies, physician networks, and Federal agencies. If you would like to learn more about Profiles RNS or download the free source code, please visit the Profiles RNS website.</p>
+        <p>The NGS-CN Profiles webportal is powered by the free, open source Profiles Research Networking Software (RNS). It is used in numerous institutions around the world, including academic research centers, pharmaceutical companies, physician networks, and Federal agencies. If you would like to learn more about Profiles RNS or download the free source code, please visit the <a href="https://profiles.catalyst.harvard.edu/" target="_blank">Profiles RNS website</a>.</p>
         <p>The NGS-CN Profiles webportal was customized with the support of <a href="https://www.semiodesk.com" target="_blank">Semiodesk GmbH</a>.</p>
         <p>The development of the NGS-CN Profiles webportal is funded by the Deutsche Forschungsgemeinschaft (DFG) in the context of the Next Generation Sequencing initiative and led by the West German Genome Center (WGGC) NGS Competence Center.</p>
         © CCU 2021

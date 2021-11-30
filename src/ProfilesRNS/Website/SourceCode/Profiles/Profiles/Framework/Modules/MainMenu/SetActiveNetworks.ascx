@@ -31,7 +31,7 @@
 
 </script>
 <asp:HiddenField runat="server" ID="hdSubject" />
-<ul id="alignNetworkLeft" class="drop" style="width: 155px;">
+<ul id="alignNetworkLeft" class="menu-drop" style="width: 155px;">
     <asp:Repeater ID="rptRelationshipTypes" runat="server" OnItemDataBound="rptRelationshipTypes_ItemBound">
         <ItemTemplate>
             <li style="padding: 10px">

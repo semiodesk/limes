@@ -29,15 +29,15 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       ></iframe>
     </noscript>
     -->
-    <form runat="server" id="form1" enctype="multipart/form-data" method="post">
-      <asp:ToolkitScriptManager
+    <!--<form runat="server" id="form1" enctype="multipart/form-data" method="post">-->
+    <!-- <asp:ToolkitScriptManager
         AsyncPostBackTimeout="3600"
         EnablePartialRendering="true"
         CombineScripts="false"
         EnableViewState="true"
         ID="toolkitScriptMaster"
         runat="server"
-      />
+      />-->
 
     <!--
       <script type="text/javascript">
@@ -147,7 +147,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       </div>
       <%--Catalyst Footer--%>
       <div style="margin-top: 32px" id="catfooter"><%--<uc:CatalystAsset runat="server" AssetType="3" />--%></div>
-    </form>
+    <!--</form>-->
     <div class="container">
       <div class="footer">
         <div class="d-flex flex-column align-items-center flex-md-row">
@@ -187,10 +187,6 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         $(".title-container").css("cursor", "pointer");
         $(".title-container").hover(function () {
           $(".title-container").css("opacity", ".5");
-        });
-
-        $(".title-container").click(function () {
-          //  window.location.href = "https://staging.connects.catalyst.harvard.edu/profiles/search";
         });
 
         $(".questionImage").on("click", function (event) {

@@ -1,16 +1,19 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MainMenu.ascx.cs" Inherits="Profiles.Framework.Modules.MainMenu.MainMenu" %>
 <%@ Register TagName="History" TagPrefix="HistoryItem" Src="~/Framework/Modules/MainMenu/History.ascx" %>
 <%@ Register TagName="Lists" TagPrefix="MyLists" Src="~/Framework/Modules/MainMenu/MyLists.ascx" %>
+
 <div id="prns-nav">
     <!-- MAIN NAVIGATION MENU -->
     <nav>
         <ul class="prns-main primary">
-            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
             <li class="main-nav item-search">
-                <div class="search-container">
+                <form class="search-container" id="minisearch" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
+                    <i class="fa fa-search"></i>
                     <label class="d-none" for="menu-search">Search</label>
-                    <input name="search" id="menu-search" placeholder="Find people by name.." type="text" aria-label="Enter your search here."/>
-                </div>
+                    <input type="text" name="searchfor" placeholder="Find people by name.." aria-label="Enter your search here." required/>
+                    <input type="hidden" name="searchtype" value="people" />
+                    <input type="hidden" name="classuri" value="http://xmlns.com/foaf/0.1/Person" />
+                </form>
             </li>
         </ul>
         <ul class="prns-main secondary">
@@ -19,11 +22,12 @@
                     <i class="fa fa-home"></i><span class="d-none">Search</span>
                 </a>
             </li>
+            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
             <li class="main-nav" style="margin-left: auto;">
-                <a id="menu-help-toggle" class="menu-toggle" tabindex="0" title="Toggle the help menu." aria-label="Help">
+                <a class="menu-toggle" data-drop="help-menu-drop" tabindex="0" title="Toggle the help menu." aria-label="Activate to access help pages and other documentation.">
                     <i class="fa fa-question-circle"></i><span class="d-none">About</span>
                 </a>
-                <ul id="menu-help-drop" class="menu-drop align-right">
+                <ul id="help-menu-drop" class="menu-drop align-right">
                     <li>
                         <a href="<%=ResolveUrl("~/about/default.aspx?tab=faq")%>">Help</a>
                     </li>
@@ -40,7 +44,7 @@
             </li>
             <%-- <li class="main-nav">
                 <a href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Use Our Data</a>
-                <ul class="drop">
+                <ul class="menu-drop">
                     <li>
                         <a id="useourdata" href="<%=ResolveUrl("~/about/default.aspx?type=UseOurData")%>">Overview</a>
                     </li>
@@ -91,84 +95,65 @@
 
 <asp:Literal runat="server" ID="litJs"></asp:Literal>
 <script type="text/javascript">
-    $(function () {
-        setNavigation();
+$(function () {
+    setNavigation();
+});
+
+function setNavigation() {
+    var path = $(location).attr('href');
+    path = path.replace(/\/$/, "");
+    path = decodeURIComponent(path);
+
+    $(".prns-main li").each(function () {
+
+        var href = $(this).find("a").attr('href');
+        var urlParams = window.location.search;
+
+        if ((path + urlParams).indexOf(href) >= 0) {
+            $(this).addClass('landed');
+        }
     });
 
-    function setNavigation() {
-        var path = $(location).attr('href');
-        path = path.replace(/\/$/, "");
-        path = decodeURIComponent(path);
 
-        $(".prns-main li").each(function () {
+    return true;
+}
 
-            var href = $(this).find("a").attr('href');
-            var urlParams = window.location.search;
-
-            if ((path + urlParams).indexOf(href) >= 0) {
-                $(this).addClass('landed');
-            }
-        });
-
-
-        return true;
+$(document).ready(function () {
+    hideMenu = (e) => {
+        $('.menu-toggle').removeClass('toggled');
+        $('.menu-drop').hide();
     }
 
-    $(document).ready(function () {
-        $("#menu-search").on("keypress", function (e) {
-            if (e.which == 13) {
-                minisearch();
-                return false;
-            }
-            return true;
-        });
+    toggleMenu = (e) => {
+        var toggle = $(e.currentTarget);
+        var drop = $('#' + toggle.attr('data-drop'));
 
-        $("#img-mag-glass").on("click", function () {
-            minisearch();
-            return true;
-        });
-
-        $('#menu-help-drop').hide();
-
-        $('#menu-help-toggle').on('click', (e) => {
-            $('#menu-help-toggle').toggleClass('toggled');
-            $('#menu-help-drop').toggle();
+        if(drop) {
+            toggle.toggleClass('toggled');
+            drop.toggle();
 
             e.stopPropagation()
-        })
-
-        $('#menu-help-toggle').on('keypress', (e) => {
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            
-            if(keycode == '13') {
-                $('#menu-help-toggle').toggleClass('toggled');
-                $('#menu-help-drop').toggle();
-
-                e.stopPropagation()
-            }
-        })
-
-        $("body").on('click', (e) => {
-            $('.menu-toggle').removeClass('toggled');
-            $('.menu-drop').hide();
-        })
-
-        $(document).on('keydown', (e) => {
-            var keycode = (event.keyCode ? event.keyCode : event.which);
-            
-            if(keycode == '27') {
-                $('.menu-toggle').removeClass('toggled');
-                $('.menu-drop').hide();
-            }
-        })
-    });
-
-    function minisearch() {
-        var keyword = $("#menu-search").val();
-        var classuri = 'http://xmlns.com/foaf/0.1/Person';
-        document.location.href = '<%=ResolveUrl("~/search/default.aspx")%>?searchtype=people&searchfor=' + keyword + '&classuri=' + classuri;
-        return true;
+        }
     }
+
+    $('.menu-drop').hide();
+
+    $('.menu-toggle').on('click', (e) => toggleMenu(e));
+    $('.menu-toggle').on('keypress', (e) => {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+            
+        if(keycode == '13') {
+            toggleMenu(e);
+        }
+    })
+
+    $(document).on('click', (e) => hideMenu(e))
+    $(document).on('keydown', (e) => {
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+            
+        if(keycode == '27') {
+            hideMenu(e);
+        }
+    })
+});
 </script>
-
-

@@ -1,51 +1,53 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SearchEverything.ascx.cs"
 Inherits="Profiles.Search.Modules.SearchEverything.SearchEverything" %>
 
-<script type="text/javascript">
-  function submitEverythingSearch() {
-    if (document.getElementById("<%=searchfor.ClientID%>").value.length > 1) {
-      document.location =
-        "default.aspx?searchtype=everything&searchfor=" +
-        document.getElementById("<%=searchfor.ClientID%>").value +
-        "&exactphrase=" +
-        document.getElementById("<%=chkExactPhrase.ClientID%>").checked;
-    } else {
-      alert("Search is too broad");
-    }
-  }
-  function runScript(e) {
-    $(document).keypress(function (e) {
-      if (e.keyCode == 13) {
-        submitEverythingSearch();
-        return false;
-      }
-      return;
-    });
-  }
-</script>
-
-<input type="hidden" id="classgroupuri" name="classgroupuri" value="" />
-<input type="hidden" id="classuri" name="classuri" value="" />
-<input type="hidden" id="searchtype" name="searchtype" value="everything" />
-<input type="hidden" id="txtSearchFor" name="txtSearchFor" value="" />
-
-<div class="searchForm">
+<form id="everything-search-form" class="searchForm" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
   <h3>Find publications, research and more</h3>
 
-  <div class="searchSection" onkeypress="JavaScript:runScript(event);">
+  <input type="hidden" name="searchtype" value="everything" />
+  <input type="hidden" name="classgroupuri" value="" />
+  <input type="hidden" name="classuri" value="" />
+
+  <section class="searchSection">
     <div class="form-group pt-3">
-      <label for="ctl00_ContentMain_rptMain_ctl01_ctl00_searchfor">Keywords</label>
+      <label for="searchfor">Keywords</label>
       <div colspan="2" class="fieldOptions">
-        <asp:TextBox EnableViewState="false" runat="server" ID="searchfor" CssClass="inputText" title="Keywords" />
+        <input type="text" name="searchfor" id="searchfor" aria-label="Enter your search keywords here." maxlength="50" />
         <p class="form-control-subline">
-          <asp:CheckBox runat="server" ID="chkExactPhrase" text="Search for exact phrase" />
+          <input type="checkbox" name="exactphrase" id="exactphrase" aria-label="Enforce exact matching of the keywords." value="true"/>
+          <label for="exactphrase">Search for <i>exact</i> phrase</label>
         </p>
       </div>
     </div>
     <div class="form-group text-right">
-      <button href="JavaScript:submitEverythingSearch();" class="search-button">
+      <button type="submit" class="search-button" disabled>
         <i class="fa fa-search"></i> Search
       </button>
     </div>
-  </div>
-</div>
+  </section>
+  <script type="text/javascript">
+  $(document).ready(() => {
+    const form = $('#everything-search-form');
+    const submit = $('#everything-search-form .search-button');
+
+    const controls = {
+      searchfor: $('#searchfor'),
+    };
+
+    const validate = () => {
+      var invalid = true;
+
+      Object.keys(controls)
+        .map(c => ({ name: c, value: controls[c].val() }))
+        .map(c => ({ ...c, empty: !c.value || c.value.trim().length == 0 }))
+        .forEach(c => invalid &= c.empty);
+
+      submit.prop('disabled', invalid);
+    };
+
+    form.on('input', (e) => validate(e));
+
+    validate();
+  });
+  </script>
+</form>

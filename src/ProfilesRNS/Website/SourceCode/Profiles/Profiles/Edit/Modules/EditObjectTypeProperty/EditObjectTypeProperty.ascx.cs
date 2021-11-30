@@ -323,7 +323,7 @@ namespace Profiles.Edit.Modules.EditObjectTypeProperty
 
             searchuri = ddlPropertyList.SelectedValue;
 
-            searchresults = data.Search(data.SearchRequest(txtKeyword.Text.Trim(),"false", "", searchuri, "100", "0"), true);
+            searchresults = data.Search(data.SearchRequest(txtKeyword.Text.Trim(), false, "", searchuri, "100", "0"), true);
 
             foreach (XmlNode x in searchresults.SelectNodes("SearchResults/Network/Connection"))
             {

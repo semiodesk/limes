@@ -34,7 +34,11 @@
 }
 
 #prns-nav .prns-main .badge {
-  font-size: 1em;
+  font-size: .8em;
+  background: #0071ae;
+  color: white;
+  border-radius: 50%;
+  margin: 5px;
 }
 
 #prns-nav .prns-main .item-search {
@@ -43,7 +47,7 @@
 
 #prns-nav .prns-main li a {
   color: #183c55;
-  display: block;
+  display: flex;
   align-items: center;
   text-decoration: none;
   font-size: 14px;
@@ -91,7 +95,7 @@
 }
 
 #prns-nav ul.prns-main > li a:hover {
-  border: 2px solid #36A4DE;
+  border: 2px solid #ccc;
 }
 
 #prns-nav ul.prns-main li.icon {
@@ -103,6 +107,7 @@
 }
 
 #prns-nav ul.menu-drop {
+  display: none;
   position: absolute;
   text-align: left;
   z-index: 40000;
@@ -173,7 +178,7 @@ li#search-drop a:hover,
   flex-direction: row;
   justify-content: stretch;
   align-items: center;
-  padding: 0;
+  padding: 0 0 0 10px;
   width: 100%;
   height: 100%;
 }
@@ -194,6 +199,7 @@ li#search-drop a:hover,
 #prns-nav .prns-main .fa.fa-search {
   color: #666;
   font-size: 20px;
+  padding: 0 10px;
 }
 
 /****************** sub menu (logged on) ******************/
