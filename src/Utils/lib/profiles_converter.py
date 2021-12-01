@@ -1,10 +1,16 @@
 from . import csv_core
 import re
+import binascii
 
 def internalusername(row):
-    v = f"{row['first-name']}.{row['last-name']}"
+    v = row['confirm-or-change-email-address'].encode()
 
-    return v.lower().strip()
+    # This returns an unsinged 64-bit integer, however..
+    h = binascii.crc32(v)
+
+    # Profiles RNS expects a signed 32-bit integer if the internal username should be used as a primary key.
+    # See: https://mail.python.org/pipermail/python-3000/2008-March/012615.html
+    return h - ((h & 0x80000000) <<1)
 
 def displayname(row):
     v = f"{row['first-name']} {row['middle-name']} {row['last-name']}"
@@ -16,31 +22,37 @@ def addressstr(row):
 
     if len(row['street']): v += row['street']
     if len(row['number']): v += " " + row['number']
-    if len(row['city']): v += ", " + row['city']
     if len(row['zip-1']): v += ", " + row['zip-1']
+    if len(row['city']): v += " " + row['city']
+    if len(row['country']): v += ", " + row['country']
 
     return v.strip()
 
 def facultyrank(row):
-    if row['faculty-rank'] == 'Other' and row['specify-faculty-rank'] != '':
+    r = row['faculty-rank']
+    s = row['specify-faculty-rank']
+
+    if r and r.lower() == 'other' and s:
         return row['specify-faculty-rank']
     else:
         return row['faculty-rank']
 
+facultyrankmapping = {
+    'full professor': 0,
+    'assistant professor': 1,
+    'associate professor': 2,
+    'junior professor': 3,
+    'postdoc': 4,
+    'other': 5
+}
+
 def facultyrankorder(rank):
-    mapping = {
-        'Full Professor': 0,
-        'Assistant Professor': 1,
-        'Associate Professor': 2,
-        'Junior Professor': 3,
-        'Postdoc': 4,
-        'Other': 5
-    }
+    r = rank.lower()
 
-    if rank not in mapping.keys():
-        mapping[rank] = max(mapping.values())+1
+    if r not in facultyrankmapping.keys():
+        facultyrankmapping[r] = max(facultyrankmapping.values()) + 1
 
-    return mapping[rank]
+    return facultyrankmapping[r]
 
 class Person:
     def __init__(self):
@@ -82,13 +94,26 @@ class PersonWriter(csv_core.CsvWriter):
         p.Displayname = displayname(row)
         p.Suffix = row['suffix']
         p.Addressstring = addressstr(row)
+        p.addressline1 = p.Addressstring
         p.City = row['city']
         p.Zip = row['zip-1']
-        p.Building = row['building'] if row['building'] != '' else '-'
-        p.Room = row['room']
+        p.Building = row['building'] if len(row['building']) > 0 else ' '
+        p.Room = row['room'] if len(row['room']) > 0 else ' '
         p.Floor = row['floor']
         p.Phone = row['phone']
         p.Emailaddr = row['confirm-or-change-email-address']
+
+        hide = row['hide-contact-information'].strip().lower()
+
+        if hide == "true":
+            p.Addressstring = " "
+            p.addressline1 = " "
+            p.City = " "
+            p.Zip = " "
+            p.Building = " "
+            p.Room = " "
+            p.Floor = " "
+            p.Phone = " "
 
         super().write(csv_core.rowdict(p))
 
@@ -114,11 +139,20 @@ class PersonAffiliationWriter(csv_core.CsvWriter):
     def write(self, row):
         a = PersonAffiliation()
         a.internalusername = internalusername(row)
-        a.title = ' '.join(eval(row['title-1'])) if len(row['title-1']) else ''
         a.institutionname = row['affiliation'] if row['affiliation'] != 'other' else row['specify-affiliation']
+        a.institutionabbreviation = a.institutionname[:50]
         a.departmentname = row['department']+f', {row["institute"]}' if row["institute"] != '' else row['department']
+        a.divisionname = row['ngs-cc-affiliation']
         a.facultyrank = facultyrank(row)
-        a.facultyrankorder = facultyrankorder(a.facultyrankorder)
+        a.facultyrankorder = facultyrankorder(a.facultyrank)
+
+        titles = [t for t in eval(row['title-1']) if t]
+        titles.sort(reverse=True)
+
+        if len(titles) > 0:
+            a.title = ' '.join(titles)
+        else:
+            a.title = '-'
 
         super().write(csv_core.rowdict(a))
 

@@ -284,3 +284,6 @@
   - Also when fixing this bug the search bar on top of the page could serve the everything search results, rendering the search box belwo the people search unnecessary
   - Fixed the bug and the JavaScript style overrides which had a bad impact on CSS styling and accessibility
 - Fixed remaining accessiblity issues on frontpage
+- Fixed #20: Removing addresses from contacts that do not want their address to be published
+  - The address is not being written into the CSV export for ProfilesRNS
+  - This way we do not need to adapt any code and there is no chance of data leaks
