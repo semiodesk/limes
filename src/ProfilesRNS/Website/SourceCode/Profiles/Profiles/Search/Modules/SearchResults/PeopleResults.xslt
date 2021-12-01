@@ -675,15 +675,11 @@
       }
 
       function ShowDetails(nodeURI,obj){
-
-      doListTableRowOver(obj);
       document.getElementById('divItemDetails').innerHTML = document.getElementById(nodeURI).value;
 
       }
 
       function HideDetails(obj,ord){
-
-     doListTableRowOut(obj,ord);
      document.getElementById('divItemDetails').innerHTML = '';
       }
 

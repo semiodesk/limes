@@ -7,6 +7,7 @@
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
                 xmlns:vivo="http://vivoweb.org/ontology/core#"
+                xmlns:foaf="http://xmlns.com/foaf/0.1/"
                 exclude-result-prefixes="xsl fo xs fn prns rdf rdfs vivo">
   <xsl:output method="html"/>
   <xsl:param name="searchfor"/>
@@ -18,7 +19,7 @@
   <xsl:param name="classGrpURIpassedin"/>
   <xsl:param name="classURIpassedin"/>
   <xsl:param name="searchrequest"/>
-
+  
   <xsl:variable name="classGrpURI" select="rdf:RDF/rdf:Description/prns:matchesClassGroupsList/prns:matchesClassGroup/@rdf:resource"/>
   <xsl:variable name="classURI" select="rdf:RDF/rdf:Description/prns:matchesClassGroupsList/prns:matchesClassGroup/prns:matchesClass/@rdf:resource"/>
   <xsl:variable name="pageLink1">
@@ -74,7 +75,7 @@
             <input type="hidden" id="searchtype" name="searchtype" value="everything"/>
           </form>
         </div>
-      
+        
         <div class="listTable">
           <table id="tblSearchResults" class="SearchResults">
             <tbody>
@@ -89,23 +90,14 @@
                 <xsl:choose>
                   <xsl:when test="contains($classGrpURIpassedin,'ClassGroupPeople')">
                     <xsl:for-each select="/rdf:RDF/rdf:Description[@rdf:nodeID=$nodeID]">
-                      <xsl:variable name="nodeURI" select="rdf:object/@rdf:resource"/>
                       <tr>
                         <xsl:choose>
                           <xsl:when test="($position mod 2 = 1)">
                             <xsl:attribute name="class">oddRow</xsl:attribute>
-                            <xsl:attribute name="onmouseout">doListTableRowOut(this,1)</xsl:attribute>
-                            <xsl:attribute name="onmouseover">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="onblur">doListTableRowOut(this,1)</xsl:attribute>
-                            <xsl:attribute name="onfocus">doListTableRowOver(this)</xsl:attribute>
                             <xsl:attribute name="tabindex">0</xsl:attribute>
                           </xsl:when>
                           <xsl:otherwise>
                             <xsl:attribute name="class">evenRow</xsl:attribute>
-                            <xsl:attribute name="onmouseout">doListTableRowOut(this,0)</xsl:attribute>
-                            <xsl:attribute name="onmouseover">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="onblur">doListTableRowOut(this,0)</xsl:attribute>
-                            <xsl:attribute name="onfocus">doListTableRowOver(this)</xsl:attribute>
                             <xsl:attribute name="tabindex">0</xsl:attribute>
                           </xsl:otherwise>
                         </xsl:choose>
@@ -115,24 +107,13 @@
                   </xsl:when>
                   <xsl:otherwise>
                     <xsl:for-each select="/rdf:RDF/rdf:Description[@rdf:nodeID=$nodeID]">
-                      <xsl:variable name="nodeURI" select="rdf:object/@rdf:resource"/>
                       <tr>
                         <xsl:choose>
                           <xsl:when test="($position mod 2 = 1)">
                             <xsl:attribute name="class">oddRow</xsl:attribute>
-                            <xsl:attribute name="onmouseout">doListTableRowOut(this,1)</xsl:attribute>
-                            <xsl:attribute name="onmouseover">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="onblur">doListTableRowOut(this,1)</xsl:attribute>
-                            <xsl:attribute name="onfocus">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="tabindex">0</xsl:attribute>
                           </xsl:when>
                           <xsl:otherwise>
                             <xsl:attribute name="class">evenRow</xsl:attribute>
-                            <xsl:attribute name="onmouseout">doListTableRowOut(this,0)</xsl:attribute>
-                            <xsl:attribute name="onmouseover">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="onblur">doListTableRowOut(this,0)</xsl:attribute>
-                            <xsl:attribute name="onfocus">doListTableRowOver(this)</xsl:attribute>
-                            <xsl:attribute name="tabindex">0</xsl:attribute>
                           </xsl:otherwise>
                         </xsl:choose>
                         <xsl:call-template name="threeColumn"/>
@@ -144,7 +125,7 @@
             </tbody>
           </table>
         </div>
-
+        
         <input type="hidden" id="txtSearchFor" value="{$searchfor}"/>
         <input type="hidden" id="txtClassGroupURI">
           <xsl:attribute name="value">
@@ -162,8 +143,8 @@
         <input type="hidden" id="txtSearchRequest" name="txtSearchRequest" value="{$searchrequest}"/>
         <input type="hidden" id="txtExactPhrase" name="txtExactPhrase" value="{$exactphrase}"/>
         <script language="JavaScript">
-
-
+          
+          
           var perpage = 0;
           var root = "";
           var searchfor =  "";
@@ -173,11 +154,11 @@
           var totalpages = 0;
           var searchrequest = "";
           var exactphrase = "";
-
-
-
+          
+          
+          
           function GetPageData(){
-
+          
           perpage = document.getElementById("ddlPerPage").value;
           root = document.getElementById("txtRoot").value;
           searchfor = document.getElementById("txtSearchFor").value;
@@ -187,58 +168,58 @@
           totalpages = document.getElementById("txtTotalPages").value;
           searchrequest = document.getElementById("txtSearchRequest").value;
           exactphrase = document.getElementById("txtExactPhrase").value;
-
+          
           }
           function NavToPage(){
-
+          
           window.location = root + "/search/default.aspx?searchtype=everything" + "<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>searchfor=" + searchfor + "<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>exactphrase=" + exactphrase + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>classgroupuri=' + classgroupuri + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>classgroup=' + classgroup + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>perpage=' + perpage + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>page=' + page + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>totalpages=' + totalpages;
           }
-
+          
           function ChangePerPage(){
-
+          
           GetPageData();
           //always reset the starting page to 1 if the sort or per page count changes
           page = 1;
           NavToPage();
-
+          
           }
-
+          
           function ChangePage(){
           GetPageData();
           //its set from the dropdown list
           NavToPage();
           }
-
+          
           function GotoNextPage(){
-
+          
           GetPageData();
           page++;
           NavToPage();
           }
-
+          
           function GotoPreviousPage(){
           GetPageData();
           page--;
           NavToPage();
           }
-
+          
           function GotoFirstPage(){
           GetPageData();
           page = 1;
           NavToPage();
           }
-
+          
           function GotoLastPage(){
           GetPageData();
           page = totalpages;
           NavToPage();
           }
-
+          
           function WhyLink(uri){
           GetPageData();
           window.location = root + '/search/default.aspx?exactphrase=true<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>searchtype=whyeverything<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>nodeuri=' + uri + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>searchfor=' + searchfor + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>perpage=' + perpage + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>page=' + page + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>totalpages=' + totalpages + '<xsl:text disable-output-escaping="yes"><![CDATA[&]]></xsl:text>searchrequest=' + searchrequest;
           }
-
+          
         </script>
         
         <xsl:choose>
@@ -333,20 +314,28 @@
     </xsl:choose>
   </xsl:template>
   <xsl:template name="threeColumn">
-    <td  class="alignLeft">
-      <xsl:choose>
-        <xsl:when test="rdfs:label != ''">
-          <xsl:value-of select="rdfs:label"/>
-        </xsl:when>
-        <xsl:otherwise>
-          <a href="{rdf:object/@rdf:resource}">
-            <xsl:value-of select="rdf:object/@rdf:resource"/>
-          </a>
-        </xsl:otherwise>
-      </xsl:choose>
+    <xsl:variable name="objectURI" select="rdf:object/@rdf:resource"/>
+    <xsl:variable name="object" select="/rdf:RDF/rdf:Description[@rdf:about = $objectURI]"/>
+    <xsl:variable name="firstName" select="$object/foaf:firstName"/>
+    <xsl:variable name="lastName" select="$object/foaf:lastName"/>
+
+    <td class="alignLeft">
+      <a href="{$objectURI}">
+        <xsl:choose>
+          <xsl:when test="$firstName != ''">
+            <xsl:value-of select="$firstName"/>, <xsl:value-of select="$lastName"/>
+          </xsl:when>
+          <xsl:when test="rdfs:label != ''">
+            <xsl:value-of select="rdfs:label"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="$objectURI"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </a>
     </td>
     <td>
-      <a class="listTableLink text-center" href="{rdf:object/@rdf:resource}">
+      <a class="listTableLink text-center" href="{$objectURI}">
         <xsl:value-of select="vivo:overview"/>
       </a>
     </td>
@@ -360,8 +349,8 @@
 
 
 <!--<xsl:variable name="rawweight" select="prns:connectionWeight"/>
-<xsl:variable name="weight">
-  <xsl:value-of select="($rawweight * 1000) div 10"/>
-</xsl:variable>
-<xsl:value-of select="format-number($weight, '00.00')" />
-<xsl:text disable-output-escaping="yes"><![CDATA[%]]></xsl:text>-->
+     <xsl:variable name="weight">
+     <xsl:value-of select="($rawweight * 1000) div 10"/>
+     </xsl:variable>
+     <xsl:value-of select="format-number($weight, '00.00')" />
+     <xsl:text disable-output-escaping="yes"><![CDATA[%]]></xsl:text>-->

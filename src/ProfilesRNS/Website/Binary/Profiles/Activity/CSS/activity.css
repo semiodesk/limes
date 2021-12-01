@@ -47,6 +47,7 @@
   height: 45px;
   padding-right: 5px;
   overflow-y: hidden;
+  display: flex;
 }
 
 .act-msg {

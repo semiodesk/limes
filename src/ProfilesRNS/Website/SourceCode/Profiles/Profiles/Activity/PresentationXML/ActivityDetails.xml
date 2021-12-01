@@ -19,7 +19,7 @@
       <Module ID="ActivityHistory">
         <ParamList>
           <Param Name="Show">100</Param>
-          <Param Name="Scrolling">True</Param>
+          <Param Name="Scrolling">False</Param>
           <Param Name="SeeMore">False</Param>
         </ParamList>
       </Module>

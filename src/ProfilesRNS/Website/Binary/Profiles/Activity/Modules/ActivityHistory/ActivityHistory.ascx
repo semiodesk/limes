@@ -133,7 +133,6 @@
 <asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx"><img src="../Framework/Images/icon_squareArrow.gif" /> See more Activities</asp:HyperLink>
 <div id="divStatus" style="display: none">
     <div class="loader">
-        <span>
-            <img alt="Loading..." id="loader" src="<%=GetURLDomain()%>/Edit/Images/loader.gif" width="400" height="213" /></span>
+        <img alt="Loading..." id="loader" src="<%=GetURLDomain()%>/Edit/Images/loader.gif" width="400" height="213" />
     </div>
 </div>

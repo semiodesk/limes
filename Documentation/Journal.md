@@ -274,3 +274,13 @@
   - Found bug in search results for everything:
     - People cannot be navigated to.
     - Bug also present in stable version.
+
+### Wednesday, 30th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- My daughter opened the first door on the advent calendar
+- Fixed #22: Cannot navigate search result items on 'everything' search result page
+  - I did not want to fix this initially, however I figured that this bug also prevents people from navigating to publications, concepts etc.
+  - Also when fixing this bug the search bar on top of the page could serve the everything search results, rendering the search box belwo the people search unnecessary
+  - Fixed the bug and the JavaScript style overrides which had a bad impact on CSS styling and accessibility
+- Fixed remaining accessiblity issues on frontpage

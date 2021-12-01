@@ -21,6 +21,7 @@ namespace Profiles.Profile.Modules.ProfileImage
     public class PhotoHandler : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
         static byte[] silhouetteImage = null;
+
         static readonly string IMAGE_CACHE_PREFIX = "Image_";
 
         static PhotoHandler()
@@ -82,7 +83,13 @@ namespace Profiles.Profile.Modules.ProfileImage
 
                     if (thumbnail && rawimage == null)
                     {
-                        context.Response.StatusCode = 200;
+                        context.Response.ContentType = "image/png";
+                        context.Response.BufferOutput = false;
+                        context.Response.Cache.SetExpires(DateTime.Now.AddDays(7));
+                        context.Response.Cache.SetCacheability(HttpCacheability.Public);
+                        context.Response.Cache.SetValidUntilExpires(true);
+                        context.Response.AddHeader("Content-Length", silhouetteImage.Length.ToString());
+                        context.Response.OutputStream.Write(silhouetteImage, 0, silhouetteImage.Length);
                         return;
                     }
                     if (rawimage != null)

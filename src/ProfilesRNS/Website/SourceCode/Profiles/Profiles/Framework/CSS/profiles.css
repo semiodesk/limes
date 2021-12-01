@@ -6,6 +6,12 @@ body {
 
 a {
   color: #0071ae;
+  border: 2px solid transparent;
+}
+
+a:focus {
+  outline: none;
+  border: 2px solid #36a4de;
 }
 
 b {
@@ -28,7 +34,7 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  line-height: 1.8rem;
+  line-height: 2.2rem;
 }
 
 h3 {
@@ -110,6 +116,7 @@ label {
 
 .header-container h1 a {
   color: #0071ae;
+  padding: 0;
 }
 
 .header-container h1 a span {
@@ -322,14 +329,11 @@ div#catalyst-footer {
 }
 
 .PropertyItemHeader {
-  font-size: 1.4em;
-  margin-left: 1em;
-  padding: 0.5em 0;
+  font-size: 1.3em;
 }
 
 .PropertyGroupItem {
   font-weight: normal;
-  font-size: 14px;
   text-align: left;
 }
 
@@ -965,24 +969,22 @@ div#catalyst-footer {
 }
 
 .listTable table {
-  border: 1px solid #eee;
+  border: 2px solid #eee;
 }
 
-.listTable tr {
-  cursor: pointer;
+.listTable tr:hover td {
+  border: 2px solid #ccc;
 }
 
 .listTable th {
   cursor: default;
   font-weight: 600;
   padding: 5px;
-  text-align: center;
   padding-bottom: 1px;
-  border-left: 1px solid #eee;
+  border-left: 2px solid #eee;
 }
 
 .listTable th a {
-  color: #333;
   display: block;
 }
 
@@ -994,8 +996,8 @@ div#catalyst-footer {
 .listTable td {
   padding: 4px;
   text-align: left;
-  border-right: 1px solid #eee;
-  border-top: 1px solid #eee;
+  border-right: 2px solid #eee;
+  border-top: 2px solid #eee;
   border-spacing: 0px;
   border-collapse: collapse;
 }

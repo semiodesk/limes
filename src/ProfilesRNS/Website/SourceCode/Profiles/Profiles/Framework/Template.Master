@@ -30,14 +30,14 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     </noscript>
     -->
     <!--<form runat="server" id="form1" enctype="multipart/form-data" method="post">-->
-    <!-- <asp:ToolkitScriptManager
+    <!--<asp:ToolkitScriptManager
         AsyncPostBackTimeout="3600"
         EnablePartialRendering="true"
         CombineScripts="false"
         EnableViewState="true"
         ID="toolkitScriptMaster"
         runat="server"
-      />-->
+      />
 
     <!--
       <script type="text/javascript">
@@ -61,8 +61,11 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       </script>
     -->
       <div class="container header-container">
-        <h1>
-          <a title="Next Generation Sequencing Competence Network Homepage" href="/">NGS Competence Network<span>: Profiles</span></a>
+        <h1 class="d-none d-sm-block">
+          <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/">NGS Competence Network<span>: Profiles</span></a>
+        </h1>
+        <h1 class="d-block d-sm-none">
+          <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/">NGS-CN<span>: Profiles</span></a>
         </h1>
       </div>
       <div class="container py-2">

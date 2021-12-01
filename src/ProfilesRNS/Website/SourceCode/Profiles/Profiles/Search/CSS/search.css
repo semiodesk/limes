@@ -102,11 +102,7 @@
 
 .SearchDetails {
   text-align: left;
-  float: left;
   overflow-wrap: break-word;
-  width: 170px !important;
-  position: absolute;
-  margin-top: 18px;
 }
 
 .InLineEverythingResults {
