@@ -278,7 +278,7 @@
 ### Wednesday, 30th November
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
-- My daughter opened the first door on the advent calendar
+- My daughter opened the first door on the advent calendar.. what a happy day!
 - Fixed #22: Cannot navigate search result items on 'everything' search result page
   - I did not want to fix this initially, however I figured that this bug also prevents people from navigating to publications, concepts etc.
   - Also when fixing this bug the search bar on top of the page could serve the everything search results, rendering the search box belwo the people search unnecessary
@@ -287,3 +287,6 @@
 - Fixed #20: Removing addresses from contacts that do not want their address to be published
   - The address is not being written into the CSV export for ProfilesRNS
   - This way we do not need to adapt any code and there is no chance of data leaks
+- Fixed #9: Invalid SSL certificate on production machine
+  - Generating SSL cert using Letsencrypt
+  - Followed this guide: https://www.snel.com/support/how-to-install-lets-encrypt-with-iis-on-windows-server-2019/
