@@ -275,7 +275,7 @@
     - People cannot be navigated to.
     - Bug also present in stable version.
 
-### Wednesday, 30th November
+### Wednesday, 1st December
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 
 - My daughter opened the first door on the advent calendar.. what a happy day!
@@ -290,3 +290,50 @@
 - Fixed #9: Invalid SSL certificate on production machine
   - Generating SSL cert using Letsencrypt
   - Followed this guide: https://www.snel.com/support/how-to-install-lets-encrypt-with-iis-on-windows-server-2019/
+
+### Thursday, 2nd December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Preparing Go-Live of the website
+- Cleaning up webserver
+  - Installing Microsoft SSMS V18
+  - Installing GitHub and checking out current repository
+  - Setting up new website in IIS parallel to the old one so roll back is possible.
+- Installing new site
+  - Uploading new dataset
+  - Installing new instance of Profiles RNS
+  - Ingesting new data
+  - Process takes 6,5h to complete
+  - Website is broken, does not display data correctly
+  - Rolling back to old site
+  - Wrote email to Nicholas Brown to ask for help
+
+### Friday, 3rd December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+
+- Re-installing the site
+  - Re-Uploading the data
+  - Probably made a mistake with the installation SQL scripts
+  - VM memory low
+  - Data loading process takes about 7h
+  - Site is now operational
+  - Nicholas Brown confirmed this was the correct action to take
+
+### Monday, 6rd December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Did not work in the morning because of doctor appointment
+- Updated cookie section of Privacy Policy
+  - Mentioning Profiles RNS instead of Wordpress
+  - Added section about session cookies
+- Fixed #29: Missing competence center dropdown on frontpage
+- Fixed #24: JavaScript popup windows
+  - Writing errors to the dev console instead of an alert window
+- Fixed #27: Missing cookie consent banner
+  - Implemented custom banner based on https://www.jqueryscript.net/other/cookie-consent-banner-localstroage.html
+  - MIT License
+- Fixed #25: Added URL Redirect from profiles-wggc.uni-bonn.de to profiles-ngs-cn.uni-bonn.de
+- Fixed #28: Added HTTPS Upgrade to profiles-ngs-cn.uni-bonn.de in ISS Manager
+- Renewed SSL certificates and added profiles-ngs-cn.uni-bonn.de (without www. prefix)
+  - Used this tool: https://github.com/aloopkin/WinCertes
+  - Command: ```wincertes -e contact.ccu@uni-bonn.de -d www.profiles-ngs-cn.uni-bonn.de -d profiles-ngs-cn.uni-bonn.de -w=c:\inetpub\wwwroot\www.profiles-ngs-cn.uni-bonn.de -b "NGS-CN Profiles" -p```
+
