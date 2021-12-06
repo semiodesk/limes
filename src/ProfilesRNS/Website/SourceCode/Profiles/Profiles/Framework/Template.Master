@@ -15,6 +15,9 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
 
     <script type="text/javascript" src="/Framework/Assets/boostrap-4.0/js/jquery-3.3.1.min.js"></script>
 
+    <!-- GDPR Cookie Banner -->
+	  <link rel="stylesheet" href="/Framework/Assets/cookie-banner/cookie-banner.css">
+
     <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
   </head>
 
@@ -95,6 +98,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
             onclick="javascript:topFunction();"
             id="rtnBtn"
             title="Go to top"
+            tabindex="999"
           >
             <i class="fa fa-arrow-up"></i>
           </a>
@@ -181,6 +185,15 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       </div>
     </div>
 
+  <div class="cookie-banner text-center mb-0" role="alert">
+	  <span>
+      <i class="fa fa-info"></i> We use cookies to ensure you get the best experience on our website. <a href="/about/default.aspx?tab=privacy#cookies">Privacy Policy</a>
+    </span>
+
+	  <button type="button" class="btn btn-primary btn-sm" onclick="window.hideCookieBanner()">
+	    Accept
+	  </button>
+	</div>
     <!-- Latest compiled and minified JavaScript -->
     <script src="/Framework/Assets/boostrap-4.0/js/bootstrap.bundle.min.js"></script>
 
@@ -254,6 +267,10 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
         });
       });
     </script>
+
+    <!-- jQuery cookie banner. -->
+    <script async src="/Framework/Assets/cookie-banner/cookie-banner.js"></script>
+
     <%="<script type=\"text/javascript\">"%>
     <asp:Literal runat="server" ID="litJS"></asp:Literal>
     <%="< /script>"%>

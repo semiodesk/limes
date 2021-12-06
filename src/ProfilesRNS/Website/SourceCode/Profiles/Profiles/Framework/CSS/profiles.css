@@ -277,26 +277,27 @@ div#catalyst-footer {
 
 #rtnBtn {
   display: none; /* Hidden by default */
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
-  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
   text-align: center;
-  position: fixed; /* Fixed/sticky position */
-  bottom: 30px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  background-color: #0071a1; /* Set a background color */
+  position: fixed;
+  top: 0;
+  right: 15px;
+  z-index: 99;
+  background-color: #0071a1;
+  border: 2px solid #0071ae;
   color: white;
   cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
-  -webkit-box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
-  -moz-box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 0.79);
 }
 
 #rtnBtn:hover {
-  background-color: #0092d1;
+  border-color: #eee;
+}
+
+#rtnBtn:focus {
+  border-color: #36a4de;
 }
 
 .tog {
