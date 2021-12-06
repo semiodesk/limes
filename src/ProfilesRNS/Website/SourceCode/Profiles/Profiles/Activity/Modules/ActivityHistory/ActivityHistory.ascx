@@ -45,10 +45,10 @@ Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
         dataType: "json",
         success: OnSuccess,
         failure: function (response) {
-          alert(response.d);
+          console.error(response.d);
         },
         error: function (response) {
-          alert(response.d);
+          console.error(response.d);
         },
       });
     }
