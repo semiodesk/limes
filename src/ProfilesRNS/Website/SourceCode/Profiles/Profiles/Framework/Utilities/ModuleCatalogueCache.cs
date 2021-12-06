@@ -126,15 +126,20 @@ namespace Profiles.Framework.Utilities
         //***************************************************************************************************************************************
         public Module GetModule(string modulekey)
         {
-            List<Module> modules = (List<Module>)HttpRuntime.Cache["MODULES"];
             Module rtnmodule = null;
-            try
-            {
-            
-                rtnmodule = modules.Find(delegate(Module module) { return module.Key == modulekey; });
 
+            List<Module> modules = (List<Module>)HttpRuntime.Cache["MODULES"];
+
+            if (modules != null)
+            {
+                try
+                {
+
+                    rtnmodule = modules.Find(delegate (Module module) { return module.Key == modulekey; });
+
+                }
+                catch (Exception) { }
             }
-            catch (Exception) { }
 
             return rtnmodule;
         }
