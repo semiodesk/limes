@@ -24,30 +24,27 @@ namespace Profiles.Search.Modules.TopSearchPhrase
         }
         private void DrawProfilesModule()
         {
-
             System.Text.StringBuilder list = new StringBuilder();
             Utilities.DataIO data = new Profiles.Search.Utilities.DataIO();
             SqlDataReader reader = data.TopSearchPhrase(base.GetModuleParamString("TimePeriod"));
-
 
             litDescription.Text = base.GetModuleParamString("Description");
 
             list.Append("<ul>");
 
-            string classuri = "http://xmlns.com/foaf/0.1/Person";
-            string searchtype = string.Empty;
+            string classuri = string.Empty;
+            string searchtype = "everything";
 
-            if (base.MasterPage.Tab.ToLower() == "all")
-            {
-                classuri = string.Empty;
-                searchtype = "everything";
-            }
-            else
-            {
-                searchtype = "people";
-            }
-
-
+            // There are no tabs on our version of the site.
+            // if (base.MasterPage.Tab.ToLower() == "all")
+            // {
+            //     classuri = string.Empty;
+            //     searchtype = "everything";
+            // }
+            // else
+            // {
+            //     searchtype = "people";
+            // }
 
             while (reader.Read())
             {
@@ -55,12 +52,9 @@ namespace Profiles.Search.Modules.TopSearchPhrase
                 list.Append("<a href=\"JavaScript:searchThisPhrase('" + reader["phrase"].ToString() + "','" + classuri + "','" + searchtype + "')\">" + reader["phrase"] + "</a>");
                 list.Append("</li>");
             }
+
             list.Append("</ul>");
-
-
-
             litTopSearchPhrase.Text = list.ToString();
-
         }
 
         public string GetURLDomain()

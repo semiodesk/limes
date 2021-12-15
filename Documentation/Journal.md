@@ -319,7 +319,7 @@
   - Site is now operational
   - Nicholas Brown confirmed this was the correct action to take
 
-### Monday, 6rd December
+### Monday, 6th December
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 - Did not work in the morning because of doctor appointment
 - Updated cookie section of Privacy Policy
@@ -337,3 +337,56 @@
   - Used this tool: https://github.com/aloopkin/WinCertes
   - Command: ```wincertes -e contact.ccu@uni-bonn.de -d www.profiles-ngs-cn.uni-bonn.de -d profiles-ngs-cn.uni-bonn.de -w=c:\inetpub\wwwroot\www.profiles-ngs-cn.uni-bonn.de -b "NGS-CN Profiles" -p```
 
+### Tuesday, 7th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Started work on the ETL and site update process
+- After discussing the issue with Nicholas Brown I decided to develop an website data update tool
+  - Reason: The data update process is mostly manual using a sequence of SQL queries
+  - There is considerable room for error here which might render the site defective very easily
+  - To enable non-developers to safely execute the update procedure, the tool should validate the data and execute the SQL queries in the correct order
+- Since the server is a Windows machine and we're using SQL server, I decided to use .NET / C# as a programming language
+  - Has the best bindings to the SQL Server and integration into the OS
+
+### Wednesday, 8th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Continued work on Update Tool
+  - Working Prototype
+
+
+### Thursday, 9th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Jour Fix meeting with Antonella Succorro @ 11:30am
+  - Discussed Google Maps keys / Geocoding keys
+  - Did not manage to fix the Google Maps integration; postboned to following week
+  - Discussed Update tool
+  - Antonella said that the tools needs to be able to do partial updates
+    - She does not always want to upload the entire 60+ CSV sheet to do simple updates like changing typos
+    - Tool needs to be adapted to support this feature (load data from the server and merge it)
+  - We need to add an additional column so that records can be marked as deleted
+    - Tool will delete these records from the live instance
+  - I said that the tool should be able to do updates in a non-production db
+    - Meaning that it creates a new database and executes the database jobs on a database which is not served
+    - Primary for the reason that the site always serves a consistent dataset
+    - Secondary to have a backup / fallback strategy in case something goes wrong with the import
+
+### Friday, 10th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Adapting the tool to meet the new requirements
+- Partial update working
+- Need to support match the column headers from the import file to the column headers of the db
+  - These may be in the wrong oder and thus introduce errors
+  - Will do this on Monday
+- Will not implement the non-production db support as this turns out to be very complicated
+  - Working on the data requires DB jobs to be installed that have a hard-coded link to a db
+  - In order to execute these jobs on a temporary db I would have to install an manage the db jobs as well
+  - This is out of scope for the remaining time we have
+
+### Monday, 13th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Restarted the server in order to apply updates
+  - However, some update could not be installed
+  - Server needs to be updated by the IT department
+- Continuing work on the update tool
+  - Add support for deleting rows
+  - Added support for matching column order
+  - More testing and bugfixing

@@ -2,16 +2,12 @@
     Inherits="Profiles.Profile.Modules.CustomViewPersonSameDepartment.CustomViewPersonSameDepartment" %>
 <asp:Repeater ID='rptSameDepartment' runat="server" OnItemDataBound="SameDepartmentItemBound">
     <HeaderTemplate>
-        <div class="passiveSectionHead">
-            <div style="white-space: nowrap; display: inline">
-                Same Department <a href="JavaScript:toggleVisibility('sdDescript');">
-                    <asp:Image runat="server" ID="imgQuestion" AlternateText="Expand Description" />
-                </a>
-            </div>
-            <div id="sdDescript" class="passiveSectionHeadDescription" style="display: none;">
-				People who are also in this person's primary department.
-			</div>
-        </div>        
+        <div class="sidepanel-header">
+            <h4>         
+                Same Department
+            </h4>
+            <asp:HyperLink runat="server" ID="moreurl" Text="Explore" Title="People who are also in this person's primary department." CssClass="prns-explore-btn"></asp:HyperLink>
+        </div>
         <div class="passiveSectionBody">
             <ul>
     </HeaderTemplate>
@@ -21,6 +17,6 @@
     <FooterTemplate>
          </ul>   
         </div>
-        <asp:HyperLink runat="server" ID="moreurl" Text="Explore" CssClass="prns-explore-btn"></asp:HyperLink>
+        
     </FooterTemplate>
 </asp:Repeater>

@@ -28,9 +28,9 @@
       </Module>
     </Panel>
     <Panel Alias="people" Type="main">
-      <Module ID="SearchPerson">
-      </Module>
-      <Module ID="SearchEverything" />    
+		<Module ID="SearchEverything" />
+		<Module ID="SearchPerson">
+		</Module> 
     </Panel>
     <Panel Type="passive" >
       <Module ID="TopSearchPhrase">
