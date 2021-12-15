@@ -13,3 +13,13 @@ debug.log
 input/*
 output/*
 tmp/*
+src/ProfilesRNS/Website/SourceCode/Profiles/Profiles/Web.config
+src/ProfilesRNS/Database/PubMedDisambiguation_GetPubs.sql
+src/ProfilesRNS/Database/PubMedDisambiguation_GetPubMEDXML.sql
+src/ProfilesRNS/Database/ProfilesRNS_GeoCodeJob.sql
+src/ProfilesRNS/Database/ProfilesRNS_DataLoad_Part3.sql
+src/ProfilesRNS/Database/ProfilesRNS_DataLoad_Part1.sql
+src/ProfilesRNS/Database/ProfilesRNS_CreateSchema.sql
+src/ProfilesRNS/Database/ProfilesRNS_CreateDatabase.sql
+src/ProfilesRNS/Database/ProfilesRNS_CreateAccount.sql
+src/ProfilesRNS/Website/SourceCode/Profiles/UpgradeLog.htm
