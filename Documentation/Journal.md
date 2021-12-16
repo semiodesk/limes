@@ -352,7 +352,6 @@
 - Continued work on Update Tool
   - Working Prototype
 
-
 ### Thursday, 9th December
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 - Jour Fix meeting with Antonella Succorro @ 11:30am
@@ -390,3 +389,30 @@
   - Add support for deleting rows
   - Added support for matching column order
   - More testing and bugfixing
+
+### Tuesday, 14th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Testing and fixing bugs in the data update tool
+- No Jour Fix meeting today because Antonella was unavailable
+
+### Wednesday, 15th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Working on open issues in the GitHub repository
+- Fixed #34: Clicking on most viewed topcis always navigates to people search, even for papers
+- Fixed #32: Checking routine SQL jobs on the production server
+- Closed #11: There will be no login for people on the site
+- Fixed #26: Updated the data with the new data update tool
+- Worked on #4: Geocoding job not working
+  - Followed instructions in the install documentation
+  - Checked that the API key is the one for the Geocoding API and not Goolge Maps
+  - Checked the job creation script for typos or errors in the database or server name
+  - The activity journal always shows the job as not completed and without any records
+  - Contacted Nicholas Brown about the failing Google Geocoding job
+
+### Thursday, 16th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Writing documentation
+
+### Frida, 17th December
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- 
