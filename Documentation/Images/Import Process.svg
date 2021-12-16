@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="235.38112mm"
+   height="187.53891mm"
+   viewBox="0 0 235.38112 187.53891"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   sodipodi:docname="Import Process.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="true"
+     inkscape:zoom="0.74208053"
+     inkscape:cx="390.11939"
+     inkscape:cy="411.00661"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     fit-margin-top="10"
+     fit-margin-left="10"
+     fit-margin-right="10"
+     fit-margin-bottom="10"
+     lock-margins="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4027"
+       originx="-15.626108"
+       originy="-15.626107" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-15.626108,-15.626108)">
+    <path
+       id="path23729"
+       style="fill:#183c55;fill-opacity:1;stroke:#ffffff;stroke-width:1.66445;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 26.458333,149.5274 H 111.125 v 42.80539 H 26.458333 Z"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.085426"
+       y="172.86667"
+       id="text23733"><tspan
+         sodipodi:role="line"
+         id="tspan23731"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';fill:#ffffff;stroke-width:0.264583"
+         x="37.085426"
+         y="172.86667">Import</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.118572"
+       y="179.0136"
+       id="text23739"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#ffffff;stroke-width:0.264583"
+         x="37.118572"
+         y="179.0136"
+         id="tspan26713">Load new files into ProfilesRNS</tspan></text>
+    <path
+       id="path19967"
+       style="fill:#0071ae;fill-opacity:1;stroke:#ffffff;stroke-width:1.66445;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 26.458333,111.03651 H 111.125 v 42.80539 l -42.333334,9.26133 -42.333333,-9.26133 z"
+       sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.085426"
+       y="138.3385"
+       id="text19971"><tspan
+         sodipodi:role="line"
+         id="tspan19969"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';fill:#ffffff;stroke-width:0.264583"
+         x="37.085426"
+         y="138.3385">Convert</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.118572"
+       y="144.48543"
+       id="text19977"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#ffffff;stroke-width:0.264583"
+         x="37.118572"
+         y="144.48543"
+         id="tspan22463">Produce ProfilesRNS import files</tspan></text>
+    <path
+       id="path14251"
+       style="fill:#0071ae;fill-opacity:1;stroke:#ffffff;stroke-width:1.66445;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 26.458333,76.658842 H 111.125 v 42.805388 l -42.333334,9.26133 -42.333333,-9.26133 z"
+       sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.085426"
+       y="103.96088"
+       id="text14255"><tspan
+         sodipodi:role="line"
+         id="tspan14253"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';fill:#ffffff;stroke-width:0.264583"
+         x="37.085426"
+         y="103.96088">Merge</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.118572"
+       y="110.1078"
+       id="text14261"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#ffffff;stroke-width:0.264583"
+         x="37.118572"
+         y="110.1078"
+         id="tspan16981">Unite new with the existing data</tspan></text>
+    <path
+       id="path9579"
+       style="fill:#0071ae;fill-opacity:1;stroke:#ffffff;stroke-width:1.66445;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 26.458333,41.542979 H 111.125 V 84.348372 L 68.791666,93.609704 26.458333,84.348372 Z"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       id="rect4025"
+       style="fill:#e9f1f7;fill-opacity:1;stroke:#ffffff;stroke-width:1.66445;stroke-miterlimit:4;stroke-dasharray:none"
+       d="M 26.458333,26.458333 H 111.125 V 50.844715 L 68.791666,60.106047 26.458333,50.844715 Z"
+       sodipodi:nodetypes="cccccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+       x="37.085426"
+       y="38.584461"
+       id="text1655"><tspan
+         sodipodi:role="line"
+         id="tspan1653"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';stroke-width:0.264583"
+         x="37.085426"
+         y="38.584461">Web Form</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+       x="37.118572"
+       y="44.731377"
+       id="text1655-3"><tspan
+         sodipodi:role="line"
+         id="tspan1653-6"
+         style="font-size:4.23333px;stroke-width:0.264583"
+         x="37.118572"
+         y="44.731377">Produce CSV files</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.085426"
+       y="70.700729"
+       id="text10470"><tspan
+         sodipodi:role="line"
+         id="tspan10468"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';fill:#ffffff;stroke-width:0.264583"
+         x="37.085426"
+         y="70.700729">Clean</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#ffffff;stroke-width:0.264583"
+       x="37.118572"
+       y="76.847649"
+       id="text10474"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#ffffff;stroke-width:0.264583"
+         x="37.118572"
+         y="76.847649"
+         id="tspan13839">Fix formatting and semantic errors</tspan></text>
+    <path
+       style="fill:none;stroke:#0071ae;stroke-width:0.61699;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.61699, 1.23398;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 111.125,52.916666 h 68.79167"
+       id="path33429" />
+    <path
+       style="fill:none;stroke:#0071ae;stroke-width:0.61699;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.61699, 1.23398;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 111.125,153.26891 h 68.79167"
+       id="path33511" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1.15;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+       x="121.70833"
+       y="78.377495"
+       id="text39815"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
+         x="121.70833"
+         y="79.711983"
+         id="tspan71044">csv-clean.py,</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
+         x="121.70833"
+         y="89.459511"
+         id="tspan88022">csv-merge.py,</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.23333px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
+         x="121.70833"
+         y="94.333275"
+         id="tspan80546">csv-convert.py</tspan></text>
+    <path
+       style="fill:none;stroke:#0071ae;stroke-width:0.705556;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.705556, 1.41111;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 180.61663,52.916666 c 7.30818,-0.15951 1.70627,47.988834 13.22917,50.270834 -12.6915,1.3944 -3.78335,49.96387 -13.22917,50.27083"
+       id="path42686"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+       x="199.81766"
+       y="104.79385"
+       id="text48802"><tspan
+         sodipodi:role="line"
+         id="tspan48800"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:monospace;-inkscape-font-specification:monospace;stroke-width:0.264583"
+         x="199.81766"
+         y="104.79385">processdata.sh</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+       x="121.22386"
+       y="172.56706"
+       id="text50918"><tspan
+         sodipodi:role="line"
+         id="tspan50916"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+         x="121.22386"
+         y="174.36458">'<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold'"
+   id="tspan58336">ProfilesRNS Manager</tspan>'</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';stroke-width:0.264583"
+         x="121.22386"
+         y="180.53819"
+         id="tspan53942">Windows App on the server</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.93889px;line-height:1.25;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans';fill:#000000;stroke-width:0.264583"
+       x="121.74188"
+       y="70.700729"
+       id="text99344"><tspan
+         sodipodi:role="line"
+         id="tspan99342"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.93889px;font-family:'Droid Sans';-inkscape-font-specification:'Droid Sans Bold';fill:#000000;stroke-width:0.264583"
+         x="121.74188"
+         y="70.700729">Python Scripts</tspan></text>
+  </g>
+</svg>
