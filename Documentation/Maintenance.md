@@ -181,8 +181,40 @@ Extract keyphrases from the column 'keyphrases' and write them into the flat lis
 A script for the Bash command line defining the ETL pipeline that operates on the various NGS-CN datasets. Executing this script 
 
 ## Data Ingestion Tool
+The data produced by the <code>csv-convert.py</code> script can directly be imported into ProfilesRNS 3.1. However, this process involves executing several SQL queries directly on the database which is a error prone process, especially when done by inexperienced people. To avoid corrupting the production site we developed a dedicated graphical user interface to simplify this task.
 
-- Update data using the Profiles RNS Manager
+With our tool 'Profiles RNS Manager' an inexperienced person can perform an update of the Profiles RNS database without using SQL or other developer tools. The input to the tool is a folder that contains a specific set of files:
+
+- Person.csv
+- PersonAffiliation.csv
+- PersonFilterFlag.csv
+- Keyphrases.txt
+
+These files are produced by the <code>csv-convert.py</code> script and directly correspond to tables in the ProfilesRNS database. Please see the Profiles RNS Install Manual for details on this topic.
+
+> ℹ️ The tool also supports merging partial datasets with the production data for quick and easy updates or removals of individual records.
+
+### Import a Dataset
+To update the ProfilesRNS database follow these steps:
+
+1. Upload a ProfilesRNS dataset onto the server
+2. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
+3. Open the 'ProfilesRNS Manager' application
+4. Select the previously created folder
+5. If everything is good, press the 'Import' button
+
+**TODO**: Add screenshots
+
+### Selecting a Site
+When the tool is being started for the first time, one must select a site configuration file. This file contains the database connection details of the target site. To select a site, follow these steps:
+
+1. Press the menu button marked by three lines
+2. Select 'Change site..'
+3. Navigate to the webroot of your production website
+4. Select the file 'Web.config'
+5. Press 'OK'
+
+**TODO**: Add screenshots
 
 ## Changing Static Website Content
 - Open Visual Studio
