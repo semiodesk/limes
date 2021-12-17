@@ -2,41 +2,36 @@
 Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th December 2021
 
 ## Contents
-<!-- vscode-markdown-toc -->
-1. [Introduction](#Introduction)
-2. [Installation and Setup](#InstallationandSetup)
-	* 2.1. [Folders](#Folders)
-3. [Maintenance](#Maintenance)
-	* 3.1. [Rewnewing the SSL certificates](#RewnewingtheSSLcertificates)
-4. [Software Update](#SoftwareUpdate)
-5. [Data Update Process](#DataUpdateProcess)
-6. [Data Transformation Scripts](#DataTransformationScripts)
-	* 6.1. [csv-clean.py](#csv-clean.py)
-		* 6.1.1. [Example](#Example)
-		* 6.1.2. [Parameters](#Parameters)
-	* 6.2. [csv-merge.py](#csv-merge.py)
-		* 6.2.1. [Example](#Example-1)
-		* 6.2.2. [Parameters](#Parameters-1)
-	* 6.3. [csv-filter.py](#csv-filter.py)
-		* 6.3.1. [Example](#Example-1)
-		* 6.3.2. [Parameters](#Parameters-1)
-	* 6.4. [csv-convert.py](#csv-convert.py)
-		* 6.4.1. [Example](#Example-1)
-		* 6.4.2. [Parameters](#Parameters-1)
-	* 6.5. [csv-keyphrases.py](#csv-keyphrases.py)
-		* 6.5.1. [Example](#Example-1)
-		* 6.5.2. [Parameters](#Parameters-1)
-	* 6.6. [processdata.sh](#processdata.sh)
-7. [Data Ingestion Tool](#DataIngestionTool)
-	* 7.1. [Importing a Dataset](#ImportingaDataset)
-	* 7.2. [Selecting a Site](#SelectingaSite)
-8. [Changing Static Website Content](#ChangingStaticWebsiteContent)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
+- [Server Maintenance Manual 1.0](#server-maintenance-manual-10)
+	- [Contents](#contents)
+	- [1. <a name='Introduction'></a> Introduction](#1--introduction)
+	- [2. <a name='InstallationandSetup'></a> Installation and Setup](#2--installation-and-setup)
+		- [2.1. <a name='Folders'></a> Folders](#21--folders)
+	- [3. <a name='Maintenance'></a> Maintenance](#3--maintenance)
+		- [3.1. <a name='RewnewingtheSSLcertificates'></a> Rewnewing the SSL certificates](#31--rewnewing-the-ssl-certificates)
+	- [4. <a name='SoftwareUpdate'></a>Software Update](#4-software-update)
+	- [5. <a name='DataUpdateProcess'></a>Data Update Process](#5-data-update-process)
+	- [6. <a name='DataTransformationScripts'></a>Data Transformation Scripts](#6-data-transformation-scripts)
+		- [6.1. <a name='csv-clean.py'></a>csv-clean.py](#61-csv-cleanpy)
+			- [6.1.1. <a name='Example'></a>Example](#611-example)
+			- [6.1.2. <a name='Parameters'></a>Parameters](#612-parameters)
+		- [6.2. <a name='csv-merge.py'></a>csv-merge.py](#62-csv-mergepy)
+			- [6.2.1. <a name='Example-1'></a>Example](#621-example)
+			- [6.2.2. <a name='Parameters-1'></a>Parameters](#622-parameters)
+		- [6.3. <a name='csv-filter.py'></a>csv-filter.py](#63-csv-filterpy)
+			- [6.3.1. <a name='Example-1'></a>Example](#631-example)
+			- [6.3.2. <a name='Parameters-1'></a>Parameters](#632-parameters)
+		- [6.4. <a name='csv-convert.py'></a>csv-convert.py](#64-csv-convertpy)
+			- [6.4.1. <a name='Example-1'></a>Example](#641-example)
+			- [6.4.2. <a name='Parameters-1'></a>Parameters](#642-parameters)
+		- [6.5. <a name='csv-keyphrases.py'></a>csv-keyphrases.py](#65-csv-keyphrasespy)
+			- [6.5.1. <a name='Example-1'></a>Example](#651-example)
+			- [6.5.2. <a name='Parameters-1'></a>Parameters](#652-parameters)
+		- [6.6. <a name='processdata.sh'></a>processdata.sh](#66-processdatash)
+	- [7. <a name='DataIngestionTool'></a>Data Ingestion Tool](#7-data-ingestion-tool)
+		- [7.1. <a name='ImportingaDataset'></a>Importing a Dataset](#71-importing-a-dataset)
+		- [7.2. <a name='SelectingaSite'></a>Selecting a Site](#72-selecting-a-site)
+	- [8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content](#8-changing-static-website-content)
 
 ##  1. <a name='Introduction'></a> Introduction
 This server is running [Profiles RNS](https://profiles.catalyst.harvard.edu/) research networking software, originally developed by [Harvard Catalyst](http://catalyst.harvard.edu/). The software is written in Microsoft .NET and heavily depends on Microsoft SQL server as a database.
@@ -120,7 +115,7 @@ Profiles RNS dos not have a graphical userinterface for managing its data. There
 
 For these reasons updating the website data involves a [ETL process](https://www.ibm.com/topics/etl) based on [CSV files](https://en.wikipedia.org/wiki/Comma-separated_values). These files usually originate from a web form where participants can insert and update their data. In the process these files will be cleanded, transformed and loaded into the database for import. The following figure illustrates the update process:
 
-<img src="Images/Import Process.svg">
+<img src="Images/Import Process.svg"  width="600">
 
 ##  6. <a name='DataTransformationScripts'></a>Data Transformation Scripts
 There are five tools to handle specific tasks in the data transformation pipeline. The output of each tool can be the input of the next in order to produce a clean dataset. The tools are based on the original work of [Dr. Antonella Succorro](https://www.limes-institut-bonn.de/forschung/arbeitsgruppen/unit-2/abteilung-schultze/mitarbeiter/mitarbeiter/):
@@ -239,18 +234,28 @@ Once a user has selected a dataset, the table displays the number of records **a
 To update the ProfilesRNS database follow these steps:
 
 1. Upload a ProfilesRNS dataset onto the server
-1. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
-1. Open the 'ProfilesRNS Manager' application
-1. Select the previously created folder
-1. Make sure the 'Merge with exising data' option is checked
-1. If everything is good, press the 'Import' button
+2. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
+3. Open the 'ProfilesRNS Manager' application
+   
+<img src="Images/Screenshot%20PRNSM%201.png" width="600">
 
-> ℹ️ When merging a dataset results in no changes in the database, the tool disabled the Import button. This can happen when you try to delete a non-existing profile or the primary key could not be matched with an existing one.
+4. Select the previously created folder
+
+<img src="Images/Screenshot%20PRNSM%202.png" width="600">
+
+
+5. Make sure the 'Merge with exising data' option is checked
+
+<img src="Images/Screenshot%20PRNSM%203.png" width="600">
 
 > ⚠️ Unchecking the 'Merge with existing data' option will remove all exising profiles in the database. The imported data will effectively replace the entire dataset. Use this option with caution.
 
+> ℹ️ When merging a dataset results in no changes in the database, the tool disabled the Import button. This can happen when you try to delete a non-existing profile or the primary key could not be matched with an existing one.
 
-**TODO**: Add screenshots
+1. If everything is good, press the 'Import' button
+
+<img src="Images/Screenshot%20PRNSM%204.png" width="600">
+
 
 ###  7.2. <a name='SelectingaSite'></a>Selecting a Site
 When the tool is being started for the first time, one must select a site configuration file. This file contains the database connection details of the target site. To select a site, follow these steps:
@@ -260,8 +265,6 @@ When the tool is being started for the first time, one must select a site config
 3. Navigate to the webroot of your production website
 4. Select the file 'Web.config'
 5. Press 'OK'
-
-**TODO**: Add screenshots
 
 ##  8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content
 Static website content such as the 'Impressum', 'Privacy Policy' or the page footer are statically compiled. In order to change these contents one must change the content in the website source code, create a release build and publish it to the web root.
@@ -280,12 +283,19 @@ Here is a list of relevant files to change:
 To change the content of a static webpage, execute the following steps:
 
 1. Open the file <code>Website/SourceCode/Profiles/Profiles.sln</code> solution in Visual Studio
-1. Edit the source code file by locating it using the 'Solution Explorer' file tree
-1. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
-1. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
-1. After the solution was successfully built, open the 'Free FileSync' app
-1. Press the 'Compare' button to see the files that have been changed
-1. Press the 'Synchronize' button to copy the changed files to the production web root
-1. Changes should take effect immedtiately after this.
+2. Edit the source code file by locating it using the 'Solution Explorer' file tree
 
-**TODO**: Add screenshots
+<img src="Images/Screenshot%20VS%201.png" alt="Editing a file in Visual Studio">
+
+3. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
+4. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
+
+<img src="Images/Screenshot%20VS%202.png" alt="Editing a file in Visual Studio">
+
+5. After the solution was successfully built, open the 'Free FileSync' app
+6. Press the 'Compare' button to see the files that have been changed
+7. Press the 'Synchronize' button to copy the changed files to the production web root
+
+<img src="Images/Screenshot%20FFS.png" alt="Synchronizing directories in FreeFileSync">
+
+8. Changes should take effect immedtiately after this.

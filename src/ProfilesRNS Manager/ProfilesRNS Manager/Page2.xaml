@@ -1,0 +1,67 @@
+﻿<local:WizardPageFunction x:Class="ProfilesRNS_Manager.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProfilesRNS_Manager"
+      mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" x:Name="Page">
+
+    <DockPanel x:Name="LayoutRoot">
+        <local:SiteControl DockPanel.Dock="Top" CanChangeSite="False"></local:SiteControl>
+        <StackPanel DockPanel.Dock="Top" Margin="20">
+            <StackPanel.Resources>
+                <local:NullToVisibilityConveter x:Key="nullVisibility"/>
+                <local:BooleanToVisibilityConveter x:Key="boolVisibilityConverter"/>
+                <local:SqlTaskStateToImageSourceConverter x:Key="taskImageConverter"/>
+            </StackPanel.Resources>
+            <Image x:Name="HourglassImage" Visibility="Visible" Source="/Assets/hourglass.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <Image x:Name="ErrorImage" Visibility="Collapsed" Source="/Assets/x-circle.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <Image x:Name="CheckImage" Visibility="Collapsed" Source="/Assets/check-circle.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="StatusTextBlock" HorizontalAlignment="Center" FontSize="24" Margin="0,15,0,5">Updating..</TextBlock>
+            <TextBlock HorizontalAlignment="Center" Foreground="#666" Text="{Binding Path=ElapsedTime, ElementName=Page}"/>
+            <DataGrid Name="DataGrid"
+                      ItemsSource="{Binding Path=Db.Tasks}"
+                      IsReadOnly="True"
+                      Focusable="False"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      BorderBrush="Transparent"
+                      RowHeight="24"
+                      AutoGenerateColumns="False"
+                      AlternationCount="2"
+                      AlternatingRowBackground="WhiteSmoke"
+                      CanUserAddRows="False"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      MinHeight="150"
+                      Margin="0,5,0,0">
+                <DataGrid.Resources>
+                    <Style x:Key="RightAligned" TargetType="TextBlock">
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style x:Key="Stretched" TargetType="TextBlock">
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Height="24" Width="24" Source="{Binding State, Converter={StaticResource taskImageConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Task" Width="*" ElementStyle="{StaticResource Stretched}" Binding="{Binding DisplayName}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock Text="{Binding Path=ErrorMessage, ElementName=Page}" TextWrapping="Wrap"  Padding="5" Background="#FFEAA5"  Visibility="{Binding Path=ErrorMessage, ElementName=Page, Converter={StaticResource nullVisibility}}"/>
+        </StackPanel>
+        <Button DockPanel.Dock="Bottom" Name="OkButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Width="120" Click="OnOkButtonClick" IsEnabled="False">
+            OK
+        </Button>
+    </DockPanel>
+</local:WizardPageFunction>

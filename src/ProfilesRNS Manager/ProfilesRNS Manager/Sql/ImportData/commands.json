@@ -1,0 +1,34 @@
+{
+  "executeTasks": [
+    {
+      "required": true,
+      "displayName": "Loading persons..",
+      "commandFile": "LoadPerson.sql"
+    },
+    {
+      "required": true,
+      "displayName": "Loading person affiliations..",
+      "commandFile": "LoadPersonAffiliation.sql"
+    },
+    {
+      "required": true,
+      "displayName": "Loading filter flags..",
+      "commandFile": "LoadPersonFilter.sql"
+    },
+    {
+      "required": false,
+      "displayName": "Loading keyphrases..",
+      "commandFile": "LoadKeyphrases.sql"
+    },
+    {
+      "required": true,
+      "displayName": "Validating data..",
+      "commandFile": "Validate.sql"
+    },
+    {
+      "required": true,
+      "displayName": "Executing import..",
+      "commandFile": "Import.sql"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>ProfilesRNS_Manager</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Assets\app-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\arrow-small.png" />
+    <None Remove="Assets\check-circle-blue.png" />
+    <None Remove="Assets\check-circle-green.png" />
+    <None Remove="Assets\check-circle.png" />
+    <None Remove="Assets\check-small.png" />
+    <None Remove="Assets\check.png" />
+    <None Remove="Assets\folder-check.png" />
+    <None Remove="Assets\folder-x.png" />
+    <None Remove="Assets\folder.png" />
+    <None Remove="Assets\globe.png" />
+    <None Remove="Assets\grid.png" />
+    <None Remove="Assets\hourglass.png" />
+    <None Remove="Assets\menu.png" />
+    <None Remove="Assets\transparent.png" />
+    <None Remove="Assets\x-circle.png" />
+    <None Remove="Assets\x-small.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\app-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\arrow-small.png" />
+    <Resource Include="Assets\check-circle.png" />
+    <Resource Include="Assets\check-small.png" />
+    <Resource Include="Assets\folder-check.png" />
+    <Resource Include="Assets\folder-x.png" />
+    <Resource Include="Assets\folder.png" />
+    <Resource Include="Assets\globe.png" />
+    <Resource Include="Assets\hourglass.png" />
+    <Resource Include="Assets\menu.png" />
+    <Resource Include="Assets\transparent.png" />
+    <Resource Include="Assets\x-circle.png" />
+    <Resource Include="Assets\x-small.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Sql\ImportData\commands.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\Import.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\LoadKeyphrases.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\LoadPerson.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\LoadPersonAffiliation.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\LoadPersonFilter.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Sql\ImportData\Validate.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
