@@ -1,3 +1,7 @@
+# Server Maintenance Manual 1.0
+Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th December 2021
+
+## Contents
 <!-- vscode-markdown-toc -->
 * 1. [1. Introduction](#Introduction)
 * 2. [2. Installation and Setup](#InstallationandSetup)
@@ -32,8 +36,7 @@
 	numbering=true
 	autoSave=true
 	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc --># Server Maintenance Manual 1.0
-Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th December 2021
+<!-- /vscode-markdown-toc -->
 
 ##  1. <a name='Introduction'></a> Introduction
 This server is running [Profiles RNS](https://profiles.catalyst.harvard.edu/) research networking software, originally developed by [Harvard Catalyst](http://catalyst.harvard.edu/). The software is written in Microsoft .NET and heavily depends on Microsoft SQL server as a database.
