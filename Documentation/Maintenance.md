@@ -3,14 +3,14 @@ Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th 
 
 ## Contents
 <!-- vscode-markdown-toc -->
-* 1. [1. Introduction](#Introduction)
-* 2. [2. Installation and Setup](#InstallationandSetup)
-	* 2.1. [2.1 Folders](#Folders)
-* 3. [3. Maintenance](#Maintenance)
-	* 3.1. [3.1 Rewnewing the SSL certificates](#RewnewingtheSSLcertificates)
-* 4. [Software Update](#SoftwareUpdate)
-* 5. [Data Update Process](#DataUpdateProcess)
-* 6. [Data Transformation Scripts](#DataTransformationScripts)
+1. [Introduction](#Introduction)
+2. [Installation and Setup](#InstallationandSetup)
+	* 2.1. [Folders](#Folders)
+3. [Maintenance](#Maintenance)
+	* 3.1. [Rewnewing the SSL certificates](#RewnewingtheSSLcertificates)
+4. [Software Update](#SoftwareUpdate)
+5. [Data Update Process](#DataUpdateProcess)
+6. [Data Transformation Scripts](#DataTransformationScripts)
 	* 6.1. [csv-clean.py](#csv-clean.py)
 		* 6.1.1. [Example](#Example)
 		* 6.1.2. [Parameters](#Parameters)
@@ -27,10 +27,10 @@ Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th 
 		* 6.5.1. [Example](#Example-1)
 		* 6.5.2. [Parameters](#Parameters-1)
 	* 6.6. [processdata.sh](#processdata.sh)
-* 7. [Data Ingestion Tool](#DataIngestionTool)
+7. [Data Ingestion Tool](#DataIngestionTool)
 	* 7.1. [Importing a Dataset](#ImportingaDataset)
 	* 7.2. [Selecting a Site](#SelectingaSite)
-* 8. [Changing Static Website Content](#ChangingStaticWebsiteContent)
+8. [Changing Static Website Content](#ChangingStaticWebsiteContent)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
