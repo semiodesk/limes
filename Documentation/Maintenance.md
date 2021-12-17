@@ -3,34 +3,36 @@ Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th 
 
 ## Contents
 <!-- vscode-markdown-toc -->
-1. [Introduction](#Introduction)
-2. [Installation and Setup](#InstallationandSetup)
-	* 2.1. [Folders](#Folders)
-3. [Maintenance](#Maintenance)
-	* 3.1. [Rewnewing the SSL certificates](#RewnewingtheSSLcertificates)
-4. [Software Update](#SoftwareUpdate)
-5. [Data Update Process](#DataUpdateProcess)
-6. [Data Transformation Scripts](#DataTransformationScripts)
-	* 6.1. [csv-clean.py](#csv-clean.py)
-		* 6.1.1. [Example](#Example)
-		* 6.1.2. [Parameters](#Parameters)
-	* 6.2. [csv-merge.py](#csv-merge.py)
-		* 6.2.1. [Example](#Example-1)
-		* 6.2.2. [Parameters](#Parameters-1)
-	* 6.3. [csv-filter.py](#csv-filter.py)
-		* 6.3.1. [Example](#Example-1)
-		* 6.3.2. [Parameters](#Parameters-1)
-	* 6.4. [csv-convert.py](#csv-convert.py)
-		* 6.4.1. [Example](#Example-1)
-		* 6.4.2. [Parameters](#Parameters-1)
-	* 6.5. [csv-keyphrases.py](#csv-keyphrases.py)
-		* 6.5.1. [Example](#Example-1)
-		* 6.5.2. [Parameters](#Parameters-1)
-	* 6.6. [processdata.sh](#processdata.sh)
-7. [Data Ingestion Tool](#DataIngestionTool)
-	* 7.1. [Importing a Dataset](#ImportingaDataset)
-	* 7.2. [Selecting a Site](#SelectingaSite)
-8. [Changing Static Website Content](#ChangingStaticWebsiteContent)
+- [Server Maintenance Manual 1.0](#server-maintenance-manual-10)
+	- [Contents](#contents)
+	- [1. <a name='Introduction'></a> Introduction](#1--introduction)
+	- [2. <a name='InstallationandSetup'></a> Installation and Setup](#2--installation-and-setup)
+		- [2.1. <a name='Folders'></a> Folders](#21--folders)
+	- [3. <a name='Maintenance'></a> Maintenance](#3--maintenance)
+		- [3.1. <a name='RewnewingtheSSLcertificates'></a> Rewnewing the SSL certificates](#31--rewnewing-the-ssl-certificates)
+	- [4. <a name='SoftwareUpdate'></a>Software Update](#4-software-update)
+	- [5. <a name='DataUpdateProcess'></a>Data Update Process](#5-data-update-process)
+	- [6. <a name='DataTransformationScripts'></a>Data Transformation Scripts](#6-data-transformation-scripts)
+		- [6.1. <a name='csv-clean.py'></a>csv-clean.py](#61-csv-cleanpy)
+			- [6.1.1. <a name='Example'></a>Example](#611-example)
+			- [6.1.2. <a name='Parameters'></a>Parameters](#612-parameters)
+		- [6.2. <a name='csv-merge.py'></a>csv-merge.py](#62-csv-mergepy)
+			- [6.2.1. <a name='Example-1'></a>Example](#621-example)
+			- [6.2.2. <a name='Parameters-1'></a>Parameters](#622-parameters)
+		- [6.3. <a name='csv-filter.py'></a>csv-filter.py](#63-csv-filterpy)
+			- [6.3.1. <a name='Example-1'></a>Example](#631-example)
+			- [6.3.2. <a name='Parameters-1'></a>Parameters](#632-parameters)
+		- [6.4. <a name='csv-convert.py'></a>csv-convert.py](#64-csv-convertpy)
+			- [6.4.1. <a name='Example-1'></a>Example](#641-example)
+			- [6.4.2. <a name='Parameters-1'></a>Parameters](#642-parameters)
+		- [6.5. <a name='csv-keyphrases.py'></a>csv-keyphrases.py](#65-csv-keyphrasespy)
+			- [6.5.1. <a name='Example-1'></a>Example](#651-example)
+			- [6.5.2. <a name='Parameters-1'></a>Parameters](#652-parameters)
+		- [6.6. <a name='processdata.sh'></a>processdata.sh](#66-processdatash)
+	- [7. <a name='DataIngestionTool'></a>Data Ingestion Tool](#7-data-ingestion-tool)
+		- [7.1. <a name='ImportingaDataset'></a>Importing a Dataset](#71-importing-a-dataset)
+		- [7.2. <a name='SelectingaSite'></a>Selecting a Site](#72-selecting-a-site)
+	- [8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content](#8-changing-static-website-content)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -281,11 +283,12 @@ To change the content of a static webpage, execute the following steps:
 
 1. Open the file <code>Website/SourceCode/Profiles/Profiles.sln</code> solution in Visual Studio
 1. Edit the source code file by locating it using the 'Solution Explorer' file tree
+<img src="Images/Screenshot%20VS%201.png" alt="Editing a file in Visual Studio">
 1. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
 1. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
-1. After the solution was successfully built, open the 'Free FileSync' app
-1. Press the 'Compare' button to see the files that have been changed
-1. Press the 'Synchronize' button to copy the changed files to the production web root
+<img src="Images/Screenshot%20VS%202.png" alt="Editing a file in Visual Studio">
+2. After the solution was successfully built, open the 'Free FileSync' app
+3. Press the 'Compare' button to see the files that have been changed
+4. Press the 'Synchronize' button to copy the changed files to the production web root
+<img src="Images/Screenshot%20FFS.png" alt="Synchronizing directories in FreeFileSync">
 1. Changes should take effect immedtiately after this.
-
-**TODO**: Add screenshots
