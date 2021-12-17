@@ -2,7 +2,6 @@
 Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th December 2021
 
 ## Contents
-<!-- vscode-markdown-toc -->
 - [Server Maintenance Manual 1.0](#server-maintenance-manual-10)
 	- [Contents](#contents)
 	- [1. <a name='Introduction'></a> Introduction](#1--introduction)
@@ -33,12 +32,6 @@ Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th 
 		- [7.1. <a name='ImportingaDataset'></a>Importing a Dataset](#71-importing-a-dataset)
 		- [7.2. <a name='SelectingaSite'></a>Selecting a Site](#72-selecting-a-site)
 	- [8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content](#8-changing-static-website-content)
-
-<!-- vscode-markdown-toc-config
-	numbering=true
-	autoSave=true
-	/vscode-markdown-toc-config -->
-<!-- /vscode-markdown-toc -->
 
 ##  1. <a name='Introduction'></a> Introduction
 This server is running [Profiles RNS](https://profiles.catalyst.harvard.edu/) research networking software, originally developed by [Harvard Catalyst](http://catalyst.harvard.edu/). The software is written in Microsoft .NET and heavily depends on Microsoft SQL server as a database.
@@ -241,18 +234,28 @@ Once a user has selected a dataset, the table displays the number of records **a
 To update the ProfilesRNS database follow these steps:
 
 1. Upload a ProfilesRNS dataset onto the server
-1. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
-1. Open the 'ProfilesRNS Manager' application
-1. Select the previously created folder
-1. Make sure the 'Merge with exising data' option is checked
-1. If everything is good, press the 'Import' button
+2. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
+3. Open the 'ProfilesRNS Manager' application
+   
+<img src="Images/Screenshot%20PRNSM%201.png">
 
-> ℹ️ When merging a dataset results in no changes in the database, the tool disabled the Import button. This can happen when you try to delete a non-existing profile or the primary key could not be matched with an existing one.
+4. Select the previously created folder
+
+<img src="Images/Screenshot%20PRNSM%202.png">
+
+
+5. Make sure the 'Merge with exising data' option is checked
+
+<img src="Images/Screenshot%20PRNSM%203.png">
 
 > ⚠️ Unchecking the 'Merge with existing data' option will remove all exising profiles in the database. The imported data will effectively replace the entire dataset. Use this option with caution.
 
+> ℹ️ When merging a dataset results in no changes in the database, the tool disabled the Import button. This can happen when you try to delete a non-existing profile or the primary key could not be matched with an existing one.
 
-**TODO**: Add screenshots
+1. If everything is good, press the 'Import' button
+
+<img src="Images/Screenshot%20PRNSM%204.png">
+
 
 ###  7.2. <a name='SelectingaSite'></a>Selecting a Site
 When the tool is being started for the first time, one must select a site configuration file. This file contains the database connection details of the target site. To select a site, follow these steps:
@@ -262,8 +265,6 @@ When the tool is being started for the first time, one must select a site config
 3. Navigate to the webroot of your production website
 4. Select the file 'Web.config'
 5. Press 'OK'
-
-**TODO**: Add screenshots
 
 ##  8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content
 Static website content such as the 'Impressum', 'Privacy Policy' or the page footer are statically compiled. In order to change these contents one must change the content in the website source code, create a release build and publish it to the web root.
@@ -282,13 +283,19 @@ Here is a list of relevant files to change:
 To change the content of a static webpage, execute the following steps:
 
 1. Open the file <code>Website/SourceCode/Profiles/Profiles.sln</code> solution in Visual Studio
-1. Edit the source code file by locating it using the 'Solution Explorer' file tree
+2. Edit the source code file by locating it using the 'Solution Explorer' file tree
+
 <img src="Images/Screenshot%20VS%201.png" alt="Editing a file in Visual Studio">
-1. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
-1. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
+
+3. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
+4. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
+
 <img src="Images/Screenshot%20VS%202.png" alt="Editing a file in Visual Studio">
-2. After the solution was successfully built, open the 'Free FileSync' app
-3. Press the 'Compare' button to see the files that have been changed
-4. Press the 'Synchronize' button to copy the changed files to the production web root
+
+5. After the solution was successfully built, open the 'Free FileSync' app
+6. Press the 'Compare' button to see the files that have been changed
+7. Press the 'Synchronize' button to copy the changed files to the production web root
+
 <img src="Images/Screenshot%20FFS.png" alt="Synchronizing directories in FreeFileSync">
-1. Changes should take effect immedtiately after this.
+
+8. Changes should take effect immedtiately after this.
