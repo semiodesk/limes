@@ -192,16 +192,26 @@ With our tool 'Profiles RNS Manager' an inexperienced person can perform an upda
 
 These files are produced by the <code>csv-convert.py</code> script and directly correspond to tables in the ProfilesRNS database. Please see the Profiles RNS Install Manual for details on this topic.
 
-> ℹ️ The tool also supports merging partial datasets with the production data for quick and easy updates or removals of individual records.
+> ℹ️ The tool also supports merging partial datasets with the production data for quick and easy updates or removals of individual records. For this to work, it is important that the 'internalusername' of a record matches with the one in the database.
 
-### Import a Dataset
+### Importing a Dataset
+When the tool is started, it loads all records from the database and displays the statistics in the table. The 'Total' column in the table refers to the number of records **currently** in the database.
+
+Once a user has selected a dataset, the table displays the number of records **after** the new data was merged with the existing data. Then the number in the 'Total' column represents the new number of records in the database.
+
 To update the ProfilesRNS database follow these steps:
 
 1. Upload a ProfilesRNS dataset onto the server
-2. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
-3. Open the 'ProfilesRNS Manager' application
-4. Select the previously created folder
-5. If everything is good, press the 'Import' button
+1. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
+1. Open the 'ProfilesRNS Manager' application
+1. Select the previously created folder
+1. Make sure the 'Merge with exising data' option is checked
+1. If everything is good, press the 'Import' button
+
+> ℹ️ When merging a dataset results in no changes in the database, the tool disabled the Import button. This can happen when you try to delete a non-existing profile or the primary key could not be matched with an existing one.
+
+> ⚠️ Unchecking the 'Merge with existing data' option will remove all exising profiles in the database. The imported data will effectively replace the entire dataset. Use this option with caution.
+
 
 **TODO**: Add screenshots
 
@@ -217,7 +227,28 @@ When the tool is being started for the first time, one must select a site config
 **TODO**: Add screenshots
 
 ## Changing Static Website Content
-- Open Visual Studio
-- Edit .aspx page
-- Compile a release version
-- Use the tree sync software to publish
+Static website content such as the 'Impressum', 'Privacy Policy' or the page footer are statically compiled. In order to change these contents one must change the content in the website source code, create a release build and publish it to the web root.
+
+Here is a list of relevant files to change:
+
+|Content|File|Line|
+|--|--|--|
+|Impressum|<code>Website/SourceCode/Profiles/Profiles/About/Modules/About/About.ascx</code>|303|
+|Privacy Policy|<code>Website/SourceCode/Profiles/Profiles/About/Modules/About/About.ascx</code>|337|
+|Footer|<code>Website/SourceCode/Profiles/Profiles/Framework/Template.Master</code>|159|
+
+> ℹ️ The folders are relative to the root of an extracted ProfilesRNS 3.1 release download. In the project GitHub repository, this is located in the <code>C:\Users\Administrator\Documents\GitHub\limes</code> folder on the server.
+
+
+To change the content of a static webpage, execute the following steps:
+
+1. Open the file <code>Website/SourceCode/Profiles/Profiles.sln</code> solution in Visual Studio
+1. Edit the source code file by locating it using the 'Solution Explorer' file tree
+1. After changing the file, make sure to set the compiler to create a 'Release' build in the top toolbar
+1. Build the solution by pressing <code>F6</code> or by selecting the <code>Build -> Build Solution</code> option from the application menu
+1. After the solution was successfully built, open the 'Free FileSync' app
+1. Press the 'Compare' button to see the files that have been changed
+1. Press the 'Synchronize' button to copy the changed files to the production web root
+1. Changes should take effect immedtiately after this.
+
+**TODO**: Add screenshots
