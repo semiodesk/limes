@@ -1,0 +1,83 @@
+﻿<local:WizardPageFunction x:Class="ProfilesRNS_Manager.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProfilesRNS_Manager"
+      mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800" x:Name="Page" ShowsNavigationUI="False">
+    <local:WizardPageFunction.Resources>
+        <Style x:Key="ConditionalStyle" TargetType="StackPanel">
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=FolderTextBox, Path=Text}" Value="No folder selected.">
+                    <Setter Property="Background" Value="#FFEAA5" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <local:NullToVisibilityConveter x:Key="nullVisibility"/>
+        <local:InvertNullToVisibilityConveter x:Key="invertNullVisibility"/>
+        <local:BooleanToVisibilityConveter x:Key="boolVisibilityConverter"/>
+    </local:WizardPageFunction.Resources>
+    <DockPanel x:Name="LayoutRoot">
+        <local:SiteControl DockPanel.Dock="Top" SiteSelected="OnSiteSelected"></local:SiteControl>
+        <StackPanel DockPanel.Dock="Top" Margin="20,0,20,20">
+            <StackPanel.Resources>
+                <local:InvertBooleanConverter  x:Key="invertConverter"/>
+                <local:BooleanToVisibilityConveter  x:Key="visibilityConverter"/>
+            </StackPanel.Resources>
+            <Image x:Name="FolderImage" Visibility="Visible" Source="/Assets/folder.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <Image x:Name="FolderCheckImage" Visibility="Collapsed" Source="/Assets/folder-check.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <Image x:Name="FolderErrorImage" Visibility="Collapsed" Source="/Assets/folder-x.png" Width="80" Height="80" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="NoChangesMessage" Visibility="Collapsed" Foreground="#666" HorizontalAlignment="Center">No effective changes.</TextBlock>
+            <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0,10">Dataset</TextBlock>
+            <StackPanel Orientation="Horizontal" Style="{DynamicResource ConditionalStyle}">
+                <Button Name="SelectFolderButton" Click="SelectFolderClick" HorizontalAlignment="Left">Choose Folder</Button>
+                <TextBlock Name="FolderTextBox" VerticalAlignment="Center" Margin="5,0,0,0">No folder selected.</TextBlock>
+            </StackPanel>
+            <ProgressBar Name="ProgressBar" IsIndeterminate="True" Visibility="Hidden" Height="3"/>
+            <DataGrid Name="DataGrid"
+                      ItemsSource="{Binding Path=Db.TableInfos}"
+                      IsReadOnly="True"
+                      Focusable="False"
+                      HeadersVisibility="Column"
+                      GridLinesVisibility="None"
+                      BorderBrush="Transparent"
+                      RowHeight="24"
+                      AutoGenerateColumns="False"
+                      AlternationCount="2"
+                      AlternatingRowBackground="WhiteSmoke"
+                      CanUserAddRows="False"
+                      CanUserResizeColumns="False"
+                      CanUserResizeRows="False"
+                      MinHeight="150"
+                      Margin="0,5,0,0">
+                <DataGrid.Resources>
+                    <Style x:Key="RightAligned" TargetType="TextBlock">
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="HorizontalAlignment" Value="Right"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                    <Style x:Key="Stretched" TargetType="TextBlock">
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                        <Setter Property="VerticalAlignment" Value="Center"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Table" Width="*" ElementStyle="{StaticResource Stretched}" Binding="{Binding DisplayName}"/>
+                    <DataGridTextColumn Header="Create" ElementStyle="{StaticResource RightAligned}" Binding="{Binding CreateRowCount}"/>
+                    <DataGridTextColumn Header="Update" ElementStyle="{StaticResource RightAligned}" Binding="{Binding UpdateRowCount}"/>
+                    <DataGridTextColumn Header="Delete" ElementStyle="{StaticResource RightAligned}" Binding="{Binding DeleteRowCount}"/>
+                    <DataGridTextColumn Header="Total" ElementStyle="{StaticResource RightAligned}" Binding="{Binding TotalRowCount}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <TextBlock FontSize="14" FontWeight="SemiBold" Margin="0,10">Options</TextBlock>
+            <CheckBox Name="MergeDataBox" Click="OnMergeDataBoxClick" IsChecked="{Binding ImportMergeData}">Merge with existing data</CheckBox>
+        </StackPanel>
+
+        <TextBlock DockPanel.Dock="Bottom" Text="{Binding Path=ErrorMessage, ElementName=Page}" TextWrapping="Wrap"  Padding="5" Background="#FF8000" Foreground="White"  Visibility="{Binding ErrorMessage, ElementName=Page, Converter={StaticResource nullVisibility}}"/>
+
+        <Button DockPanel.Dock="Bottom" Name="ImportButton" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Width="120" Click="OnImportButtonClick">
+            Import
+        </Button>
+    </DockPanel>
+</local:WizardPageFunction>
