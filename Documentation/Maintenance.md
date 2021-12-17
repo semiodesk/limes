@@ -2,34 +2,36 @@
 Written by [Sebastian Faubel](mailto:sebastian@semiodesk.com) on Thursday, 16th December 2021
 
 ## Contents
-- [1. Introduction](#1--introduction)
-- [2. Installation and Setup](#2--installation-and-setup)
-	- [2.1. Folders](#21--folders)
-- [3. Maintenance](#3--maintenance)
-	- [3.1. Rewnewing the SSL certificates](#31--rewnewing-the-ssl-certificates)
-- [4. Software Update](#4-software-update)
-- [5. Data Update Process](#5-data-update-process)
-- [6. Data Transformation Scripts](#6-data-transformation-scripts)
-	- [6.1. csv-clean.py](#61-csv-cleanpy)
-		- [6.1.1. Example](#611-example)
-		- [6.1.2. Parameters](#612-parameters)
-	- [6.2. csv-merge.py](#62-csv-mergepy)
-		- [6.2.1. Example](#621-example)
-		- [6.2.2. Parameters](#622-parameters)
-	- [6.3. csv-filter.py](#63-csv-filterpy)
-		- [6.3.1. Example](#631-example)
-		- [6.3.2. Parameters](#632-parameters)
-	- [6.4. csv-convert.py](#64-csv-convertpy)
-		- [6.4.1. Example](#641-example)
-		- [6.4.2. Parameters](#642-parameters)
-	- [6.5. csv-keyphrases.py](#65-csv-keyphrasespy)
-		- [6.5.1. Example](#651-example)
-		- [6.5.2. Parameters](#652-parameters)
-	- [6.6. processdata.sh](#66-processdatash)
-- [7. Data Ingestion Tool](#7-data-ingestion-tool)
-	- [7.1. Importing a Dataset](#71-importing-a-dataset)
-	- [7.2. Selecting a Site](#72-selecting-a-site)
-- [8. Changing Static Website Content](#8-changing-static-website-content)
+- [Server Maintenance Manual 1.0](#server-maintenance-manual-10)
+	- [Contents](#contents)
+	- [1. <a name='Introduction'></a> Introduction](#1--introduction)
+	- [2. <a name='InstallationandSetup'></a> Installation and Setup](#2--installation-and-setup)
+		- [2.1. <a name='Folders'></a> Folders](#21--folders)
+	- [3. <a name='Maintenance'></a> Maintenance](#3--maintenance)
+		- [3.1. <a name='RewnewingtheSSLcertificates'></a> Rewnewing the SSL certificates](#31--rewnewing-the-ssl-certificates)
+	- [4. <a name='SoftwareUpdate'></a>Software Update](#4-software-update)
+	- [5. <a name='DataUpdateProcess'></a>Data Update Process](#5-data-update-process)
+	- [6. <a name='DataTransformationScripts'></a>Data Transformation Scripts](#6-data-transformation-scripts)
+		- [6.1. <a name='csv-clean.py'></a>csv-clean.py](#61-csv-cleanpy)
+			- [6.1.1. <a name='Example'></a>Example](#611-example)
+			- [6.1.2. <a name='Parameters'></a>Parameters](#612-parameters)
+		- [6.2. <a name='csv-merge.py'></a>csv-merge.py](#62-csv-mergepy)
+			- [6.2.1. <a name='Example-1'></a>Example](#621-example)
+			- [6.2.2. <a name='Parameters-1'></a>Parameters](#622-parameters)
+		- [6.3. <a name='csv-filter.py'></a>csv-filter.py](#63-csv-filterpy)
+			- [6.3.1. <a name='Example-1'></a>Example](#631-example)
+			- [6.3.2. <a name='Parameters-1'></a>Parameters](#632-parameters)
+		- [6.4. <a name='csv-convert.py'></a>csv-convert.py](#64-csv-convertpy)
+			- [6.4.1. <a name='Example-1'></a>Example](#641-example)
+			- [6.4.2. <a name='Parameters-1'></a>Parameters](#642-parameters)
+		- [6.5. <a name='csv-keyphrases.py'></a>csv-keyphrases.py](#65-csv-keyphrasespy)
+			- [6.5.1. <a name='Example-1'></a>Example](#651-example)
+			- [6.5.2. <a name='Parameters-1'></a>Parameters](#652-parameters)
+		- [6.6. <a name='processdata.sh'></a>processdata.sh](#66-processdatash)
+	- [7. <a name='DataIngestionTool'></a>Data Ingestion Tool](#7-data-ingestion-tool)
+		- [7.1. <a name='ImportingaDataset'></a>Importing a Dataset](#71-importing-a-dataset)
+		- [7.2. <a name='SelectingaSite'></a>Selecting a Site](#72-selecting-a-site)
+	- [8. <a name='ChangingStaticWebsiteContent'></a>Changing Static Website Content](#8-changing-static-website-content)
 
 ##  1. <a name='Introduction'></a> Introduction
 This server is running [Profiles RNS](https://profiles.catalyst.harvard.edu/) research networking software, originally developed by [Harvard Catalyst](http://catalyst.harvard.edu/). The software is written in Microsoft .NET and heavily depends on Microsoft SQL server as a database.
@@ -113,7 +115,7 @@ Profiles RNS dos not have a graphical userinterface for managing its data. There
 
 For these reasons updating the website data involves a [ETL process](https://www.ibm.com/topics/etl) based on [CSV files](https://en.wikipedia.org/wiki/Comma-separated_values). These files usually originate from a web form where participants can insert and update their data. In the process these files will be cleanded, transformed and loaded into the database for import. The following figure illustrates the update process:
 
-<img src="Images/Import Process.svg">
+<img src="Images/Import Process.svg"  width="600">
 
 ##  6. <a name='DataTransformationScripts'></a>Data Transformation Scripts
 There are five tools to handle specific tasks in the data transformation pipeline. The output of each tool can be the input of the next in order to produce a clean dataset. The tools are based on the original work of [Dr. Antonella Succorro](https://www.limes-institut-bonn.de/forschung/arbeitsgruppen/unit-2/abteilung-schultze/mitarbeiter/mitarbeiter/):
@@ -235,16 +237,16 @@ To update the ProfilesRNS database follow these steps:
 2. Put the dataset into a folder named 'YYYY-MM-DD' in the data folder descriped in [chapter 2.1](#2-1)
 3. Open the 'ProfilesRNS Manager' application
    
-<img src="Images/Screenshot%20PRNSM%201.png">
+<img src="Images/Screenshot%20PRNSM%201.png" width="600">
 
 4. Select the previously created folder
 
-<img src="Images/Screenshot%20PRNSM%202.png">
+<img src="Images/Screenshot%20PRNSM%202.png" width="600">
 
 
 5. Make sure the 'Merge with exising data' option is checked
 
-<img src="Images/Screenshot%20PRNSM%203.png">
+<img src="Images/Screenshot%20PRNSM%203.png" width="600">
 
 > ⚠️ Unchecking the 'Merge with existing data' option will remove all exising profiles in the database. The imported data will effectively replace the entire dataset. Use this option with caution.
 
@@ -252,7 +254,7 @@ To update the ProfilesRNS database follow these steps:
 
 1. If everything is good, press the 'Import' button
 
-<img src="Images/Screenshot%20PRNSM%204.png">
+<img src="Images/Screenshot%20PRNSM%204.png" width="600">
 
 
 ###  7.2. <a name='SelectingaSite'></a>Selecting a Site
