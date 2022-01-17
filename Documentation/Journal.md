@@ -412,7 +412,9 @@
 ### Thursday, 16th December
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 - Writing documentation
+- Trying to fix #4
 
-### Frida, 17th December
+### Friday, 17th December
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
-- 
+- Writing documentation
+- Added Profiles RNS Manager source code to repository
