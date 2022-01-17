@@ -70,11 +70,15 @@ namespace Profiles.Profile.Modules.CustomViewPersonSameDepartment
             if (litListItem != null)
                 litListItem.Text = "<li><a href='" + x.URI + "'>" + x.Name + "</a></li>";
 
-            //if (e.Item.ItemType == ListItemType.Footer)
-            //{
-            //    HyperLink moreurl = (HyperLink)e.Item.FindControl("moreurl");
-            //    moreurl.NavigateUrl = Root.Domain + "/search/default.aspx?searchtype=people&searchfor=&SearchRequest=" + this.SearchRequest;
-            //}
+            if (e.Item.ItemType == ListItemType.Header)
+            {
+                HyperLink moreurl = (HyperLink)e.Item.FindControl("moreurl");
+
+                if (moreurl != null)
+                {
+                    moreurl.NavigateUrl = Root.Domain + "/search/default.aspx?searchtype=people&searchfor=&SearchRequest=" + this.SearchRequest;
+                }
+            }
 
         }
 
