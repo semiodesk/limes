@@ -24,6 +24,8 @@
   - Notes
     - Many of the Microsoft [LogParser](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=24659) based solutions are not supported anymore.
     - LogParser itself has no UI.
+- Installed Matomo on the production web server with PHP and MariaDB.
+- Setup daily task to import the most recent web server log file into Matomo.
 
 #### Matomo (Best Option)
 <img src="https://m-img.org/spai/w_1696+q_lossless+ret_img+to_webp/https://static.matomo.org/wp-content/uploads/2022/03/Dasboard-01-01-2048x1264.png" width="500">
