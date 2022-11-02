@@ -30,8 +30,7 @@
 #### Matomo (Best Option)
 <img src="https://m-img.org/spai/w_1696+q_lossless+ret_img+to_webp/https://static.matomo.org/wp-content/uploads/2022/03/Dasboard-01-01-2048x1264.png" width="500">
 
-https://matomo.org/matomo-on-premise/?menu
-
+- https://matomo.org/matomo-on-premise/?menu
 - Not primarily a log file analyzer but a JS based statistics software.
   - But has log analytics support.
   - Log analytics included in all plans.
@@ -53,8 +52,7 @@ https://matomo.org/matomo-on-premise/?menu
 #### GoAccess (Alternative Option)
 <img src="https://goaccess.io/images/goaccess-bright.png?20220930205119" width="500">
 
-https://goaccess.io/
-
+- https://goaccess.io/
 - Report generator engine with HTML output.
 - GDPR compliant, no tracking JS required.
 - Sustainability:
@@ -72,8 +70,7 @@ https://goaccess.io/
 #### GrayLog (Alternative Option)
 <img src="https://www.graylog.org/wp-content/uploads/2022/08/Dashboard-p-500.jpeg?w=500" width="500">
 
-https://www.graylog.org
-
+- https://www.graylog.org
 - Log analyzer platform.
 - GDPR compliant, no tracking JS required.
 - Sustainability:
@@ -88,8 +85,7 @@ https://www.graylog.org
 #### ELK Stack (Alternative Option)
 <img src="https://www.tek-tools.com/wp-content/uploads/2020/05/elk-stack-iii.png.jpg" width="500">
 
-https://www.elastic.co/de/what-is/elk-stack
-
+- https://www.elastic.co/de/what-is/elk-stack
 - Very powerful, enterprise grade.
 - All components are open source.
 - However, not a good fit for on-premise installation.
@@ -100,35 +96,45 @@ https://www.elastic.co/de/what-is/elk-stack
 #### SmarterStats (No Option)
 <img src="https://www.smartertools.com/img/views/stats/log_analytics/analytics_understand_traffic.png"  width="500">
 
-https://www.smartertools.com/smarterstats/log-analysis
-
+- https://www.smartertools.com/smarterstats/log-analysis
 - No free plan available.
   
 #### ApacheViewer (No Option)
 <img src="https://www.apacheviewer.com/wp-content/uploads/2015/04/shotA-1024x692.png" width="500">
 
-https://www.apacheviewer.com/
-
+- https://www.apacheviewer.com/
 - No free plan available.
-- Cloud based.
 
 #### Sumo Logic (No Option)
 <img src="https://assets-www.sumologic.com/assets/refresh-images/screenshots/infrastructure-monitoring.jpg" width="500">
 
-https://www.sumologic.com/
-
+- https://www.sumologic.com/
 - No free plan available.
 
 #### Deep Log Analyzer (No Option)
 <img src="https://logicalread.com/wp-content/uploads/2021/02/image-2.png" width="500">
 
-https://logicalread.com/best-log-analyzer-tools-for-iis-web-servers/
-
+- https://logicalread.com/best-log-analyzer-tools-for-iis-web-servers/
 - No free plan available.
 
 #### SolarWinds Loggly (No Option)
 <img src="https://logicalread.com/wp-content/uploads/2021/02/image.png" width="500">
 
-https://www.loggly.com/
-
+- https://www.loggly.com/
 - No free plan available.
+
+### Wednesday, 2nd November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Fixed issues with Matomo on production machine
+  - Exclude sensitve folders from web access through IIS
+    - config, tmp, misc
+  - Fixed missing geo location and user agent info
+    - Command line arguments to match the IIS log file syntax
+    - Adjusted folder access rights to allow for write into tmp and misc
+    - Installed DB-IP geolocation database with city level precision
+  - Adjusted MySQL max_allowed_packet for better performance
+  - Adjusted regular import task to match new site
+- Notes
+  - We seem to be running out of memory with MySQL and SQL server running in paralell
+- Created SVG template for iterating on the new frontpage design
+
