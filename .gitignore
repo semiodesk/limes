@@ -9,10 +9,11 @@ obj
 *.user
 *.config
 *.zip
+*.pyc
 debug.log
-input/*
-output/*
-tmp/*
+src/Utils/input/*
+src/Utils/output/*
+src/Utils/tmp/*
 src/ProfilesRNS/Website/SourceCode/Profiles/Profiles/Web.config
 src/ProfilesRNS/Database/PubMedDisambiguation_GetPubs.sql
 src/ProfilesRNS/Database/PubMedDisambiguation_GetPubMEDXML.sql
