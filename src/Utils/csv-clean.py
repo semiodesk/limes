@@ -28,14 +28,20 @@ for row in reader:
     # Read the primary key value *after* the row was cleaned.
     id = row[args.key]
 
-    if id in rows.keys():            
+    # Instead of immediatly writing out the rows, we first process them all
+    # to detect duplicates.
+    if id in rows.keys():
         if id not in duplicates.keys():
             duplicates[id] = [rows[id]]
 
         duplicates[id].append(row)
-    else:
-        rows[id] = row
-        writer.write(row)
+
+    # Consider the last occurance of a row to be the most recent.
+    rows[id] = row
+
+# After we processed all the data we can write it to the output.
+for row in rows.values():
+    writer.write(row)
 
 # Write the duplicates to stderr so that they can be piped into a file.
 if len(duplicates):
