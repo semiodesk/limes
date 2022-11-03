@@ -138,3 +138,19 @@
   - We seem to be running out of memory with MySQL and SQL server running in paralell
 - Created SVG template for iterating on the new frontpage design
 
+### Thursday, 3nd November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Investigating Goals not working in Matomo
+- Investigating slow PHP speed on the server
+- Jour Fix meeting with Antonella Succurro at 10am
+  - Talked about issue #40
+    - Evaluated possible solutions
+    - Agreed to alter the no results page to show similar result if there are no results at all
+  - Talked about issue #39
+    - Will add the logo to the new design on top of the site
+  - Taked about issue #38
+    - Antonella will try to upload a consolidated dataset
+  - Antonella restarted the server to install important updates, fixing #31
+  - Talked about the feasability to implement type-ahead search suggestions
+    - Low priority
+    - Will try to see if the database is fast enough
