@@ -1,6 +1,7 @@
-from . import csv_core
+import os
 import re
 import binascii
+from .csv_core import CsvReader, CsvWriter, fieldnames, rowdict
 
 def internalusername(row):
     v = row['confirm-or-change-email-address'].encode()
@@ -81,7 +82,7 @@ class Person:
         self.Isactive = 1
         self.Isvisible = 1
 
-class PersonWriter(csv_core.CsvWriter):
+class PersonWriter(CsvWriter):
     def __init__(self, filepath, fieldnames):
         super().__init__(filepath, fieldnames, delimiter=';', quotechar='|')
 
@@ -115,7 +116,7 @@ class PersonWriter(csv_core.CsvWriter):
             p.Floor = " "
             p.Phone = " "
 
-        super().write(csv_core.rowdict(p))
+        super().write(rowdict(p))
 
 class PersonAffiliation:
     def __init__(self):
@@ -132,7 +133,7 @@ class PersonAffiliation:
         self.facultyrank = 0
         self.facultyrankorder = 0
 
-class PersonAffiliationWriter(csv_core.CsvWriter):
+class PersonAffiliationWriter(CsvWriter):
     def __init__(self, filepath, fieldnames):
         super().__init__(filepath, fieldnames, delimiter=';', quotechar='|')
 
@@ -154,14 +155,14 @@ class PersonAffiliationWriter(csv_core.CsvWriter):
         else:
             a.title = '-'
 
-        super().write(csv_core.rowdict(a))
+        super().write(rowdict(a))
 
 class PersonFilterFlag:
     def __init__(self):
         self.Internalusername = ""
         self.Personfilter = ""
 
-class PersonFilterFlagWriter(csv_core.CsvWriter):
+class PersonFilterFlagWriter(CsvWriter):
     def __init__(self, filepath, fieldnames):
         super().__init__(filepath, fieldnames, delimiter=';', quotechar='|')
 
@@ -169,4 +170,73 @@ class PersonFilterFlagWriter(csv_core.CsvWriter):
         f = PersonFilterFlag()
         f.Internalusername = internalusername(row)
 
-        super().write(csv_core.rowdict(f))
+        super().write(rowdict(f))
+
+class ProfilesConverter:
+    """
+    Converts a CSV file into a dataset suitable for importing into Profiles RNS.
+    """
+
+    def __init__(self, output_directory, key_column):
+        """
+        Create a new converter instance.
+        @param output_directory: Path to the output directory.
+        @param key_column: Name of the column in the CSV file used to uniquely identify records.
+        """
+        self.output_directory = output_directory
+        self.key_column = key_column
+
+    def __writedata(self, input_filename):
+        person_file = os.path.join(self.output_directory, 'Person.csv')
+        person_writer = PersonWriter(person_file, fieldnames(Person()))
+
+        affiliation_file = os.path.join(self.output_directory, 'PersonAffiliation.csv')
+        affiliation_writer = PersonAffiliationWriter(affiliation_file, fieldnames(PersonAffiliation()))
+
+        filter_file = os.path.join(self.output_directory, 'PersonFilterFlag.csv')
+        filter_writer = PersonFilterFlagWriter(filter_file, fieldnames(PersonFilterFlag()))
+
+        input_reader = CsvReader(input_filename)
+
+        for row in input_reader:
+            person_writer.write(row)
+            affiliation_writer.write(row)
+            filter_writer.write(row)
+
+    def __writekeyphrases(self, input_filename):
+        keyphrases_file = os.path.join(self.output_directory, 'keyphrases.txt')
+        
+        input_reader = CsvReader(input_filename)
+        output_writer = CsvWriter(keyphrases_file, fieldnames=['value'], writeheader=False)
+
+        keyphrases = set()
+
+        for row in input_reader:
+            value = row[self.key_column]
+
+            for match in re.finditer('%+(?P<phrase>.+?)%+', value):
+                phrase = match.group('phrase').strip().lower()
+                keyphrases.add(phrase)
+
+        keyphrases = list(keyphrases)
+        keyphrases.sort()
+
+        for phrase in keyphrases:
+            output_writer.write({"value": f"%{phrase}%"})
+
+    def execute(self, input_filename):
+        """
+        Execute the conversion process on a file and write the result to the specified output directory.
+        @param input_filename: Path to the input CSV file.
+        """
+        if not os.path.isfile(input_filename):
+            raise Exception(f"File not found: {input_filename}")
+
+        if self.output_directory is None:
+            self.output_directory = "."
+
+        if not os.path.isdir(self.output_directory):
+            raise Exception(f"Directory not found: {self.output_directory}")
+
+        self.__writedata(input_filename)
+        self.__writekeyphrases(input_filename)
