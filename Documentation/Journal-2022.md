@@ -154,3 +154,37 @@
   - Talked about the feasability to implement type-ahead search suggestions
     - Low priority
     - Will try to see if the database is fast enough
+
+### Friday, 4th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Working on the new frontpage designs
+- Investigating issue #38 where the import fails with unique key constraint errors
+  - The import fails even when 'Merge with existing data' is not activated
+  - Profiles RNS import routine does not seem to recompute the ```[Profile].[Data].[FacultyRank]``` table
+    - Therefore, newly imported data with same facultyrankorder values collide with existing ones
+    - Quick solution: Truncate the table before import
+  - Need to adapt the import application Profiles RNS Manager
+  - Discuss the issue on next Monday's Jour Fix meeting
+
+### Monday, 7th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Investigating why scheduled Matamo task does not run properly
+  - Reason: Task did not run properly because the batch script contained a relative command but was not executed in C:\inetpub\logs
+  - Added directory to task execution context
+- Investigating why ProfilesRNS does not run publications load task
+  - SQL ServerAgent is not running, probably because of server restart for updates
+  - Started publication import
+  - Publications were fetched but with publications after August 2022 missing
+- Jour Fix meeting with Antonella Succurro at 10am
+  - Discuss data import
+  - Discuss FacultyRank issue
+    - Not really used. Can be dropped.
+    - Agreed to alter the import program to clear the tables upon import. 
+  - Bug: Publications are missing July - November
+    - High importance, possiblity related to issue #36
+  - Antonella said that migration of batch script to Python would be nice but has low priority
+- Working on frontpage designs
+  - Sent two variatons to Antonella who picked variation A
+  - She said that the icons with the advanced search options need improvement
+  - Explored different icon variantes and sent two alternatives to Antonella
+- Working on issue #36

@@ -206,17 +206,31 @@ class ProfilesConverter:
     def __writekeyphrases(self, input_filename):
         keyphrases_file = os.path.join(self.output_directory, 'keyphrases.txt')
         
-        input_reader = CsvReader(input_filename)
+        keyphrases_reader = CsvReader(input_filename)
         output_writer = CsvWriter(keyphrases_file, fieldnames=['value'], writeheader=False)
 
         keyphrases = set()
 
-        for row in input_reader:
+        for row in keyphrases_reader:
             value = row[self.key_column]
 
             for match in re.finditer('%+(?P<phrase>.+?)%+', value):
                 phrase = match.group('phrase').strip().lower()
-                keyphrases.add(phrase)
+
+                if len(phrase) > 0:
+                    keyphrases.add(phrase)
+
+        person_file = os.path.join(self.output_directory, 'Person.csv')
+        person_reader = CsvReader(person_file, delimiter=';')
+
+        for row in person_reader:
+            email = row['Emailaddr']
+
+            if len(email) > 0:
+                host = email.split('@')[1]
+                
+                if len(host) > 0:
+                    keyphrases.add(host.strip())
 
         keyphrases = list(keyphrases)
         keyphrases.sort()

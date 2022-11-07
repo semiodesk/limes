@@ -10,6 +10,7 @@ obj
 *.config
 *.zip
 *.pyc
+.idea
 debug.log
 src/Utils/input/*
 src/Utils/output/*
