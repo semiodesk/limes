@@ -188,6 +188,15 @@
   - She said that the icons with the advanced search options need improvement
   - Explored different icon variantes and sent two alternatives to Antonella
 - Working on issue #36
+  - Most probably caused by empty %% keyphrase in keyphrases.txt at line 1
+  - This very likely caused the import to ignore all other keyphrases which leaves no seeds for publication retrieval
+
+### Tuesday, 8th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Working on issue #36
+  - Setting up SQL query to retrieve all profiles with no pulications
+  - Trying to improve keyphrases so that more publications can be found
+  - No success
 
 ### Wednesday, 9th November
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
@@ -298,6 +307,24 @@ WHERE
 {
   ?s a ?type;
   
+
+```
+SELECT
+	CONCAT('https://www.profiles-ngs-cn.uni-bonn.de/display/', t.[Subject]),
+	p.[FirstName],
+	p.[LastName],
+	p.[InstitutionName],
+	p.[DepartmentName],
+	p.[NumPublications]
+FROM
+	[profiles-ngs-cn].[RDF.].[Node] n
+JOIN
+	[profiles-ngs-cn].[RDF.].[Triple] t ON t.[Object]=n.[NodeID]
+JOIN
+	[profiles-ngs-cn].[Profile.Cache].[Person] p ON p.[EmailAddr]=n.[Value]
+ORDER BY
+	p.[NumPublications]
+```
   {
     ?s ?p0 <http://localhost:55956/profile/39927>;
     ?p1 <http://localhost:55956/profile/39926> ;
