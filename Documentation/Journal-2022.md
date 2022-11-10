@@ -188,3 +188,137 @@
   - She said that the icons with the advanced search options need improvement
   - Explored different icon variantes and sent two alternatives to Antonella
 - Working on issue #36
+
+### Wednesday, 9th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Working on issue #36
+  - Wrote e-mail to Nicholas Brown requesting help
+    - He replied that this is a bug in Harvard's disambiguation engine:
+    - It cannot cope with people having multiple affiliations
+    - He created a fix for that and proposed it for integration
+  - Resources with missing pulications in local development instance:
+    - http://localhost:55956/profile/278102
+    - http://localhost:55956/profile/39922
+    - http://localhost:55956/profile/278100
+    - http://localhost:55956/profile/39908
+    - http://localhost:55956/profile/39930
+    - http://localhost:55956/profile/39926
+    - http://localhost:55956/profile/39927
+  - Observations:
+    - All resources without publications have a Closeness value of 0
+ - Pages with errors:
+   - http://localhost:55956/profile/278065
+
+
+#### Queries
+##### Force update of publications
+```
+EXEC msdb.dbo.sp_start_job 'PubMedDisambiguation_GetPubs'
+GO
+
+EXEC msdb.dbo.sp_start_job 'PubMedDisambiguation_GetPubMEDXML'
+GO
+
+EXEC msdb.dbo.sp_start_job 'ProfilesRNS_GetBibliometrics'
+GO
+
+EXEC [Framework.].[RunJobGroup] @JobGroup = 7
+GO
+
+EXEC [Framework.].[RunJobGroup] @JobGroup = 3
+GO
+```
+
+##### All resources with num of pulications
+```
+SELECT
+	t.[Subject],
+	CONCAT('https://www.ProfilesRNS.uni-bonn.de/display/', t.[Subject]),
+	p.[FirstName],
+	p.[LastName],
+	CONCAT(SUBSTRING(p.[FirstName],0,2), SUBSTRING(p.[LastName],0,2)) AS Initials,
+	p.[InstitutionName],
+	p.[DepartmentName],
+	p.[NumPublications],
+	p.[Closeness]
+FROM
+	[ProfilesRNS].[RDF.].[Node] n
+JOIN
+	[ProfilesRNS].[RDF.].[Triple] t ON t.[Object]=n.[NodeID]
+JOIN
+	[ProfilesRNS].[Profile.Cache].[Person] p ON p.[EmailAddr]=n.[Value]
+WHERE
+	p.Closeness=0
+ORDER BY
+	p.InstitutionName, p.DepartmentName, p.NumPublications, p.Closeness
+```
+
+##### Describe resource
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?s ?p ?o
+WHERE
+{
+  ?s ?p ?o .
+  FILTER(?s = <http://localhost:55956/profile/39877>)
+}
+```
+
+##### All articles authored by "Beyer M"
+```
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX vivo: <http://vivoweb.org/ontology/core#>
+PREFIX prns: <http://profiles.catalyst.harvard.edu/ontology/prns#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?year ?title ?authors ?url
+WHERE
+{
+  ?url a bibo:Article ;
+    rdfs:label ?title;
+    prns:hasAuthorList ?authors;
+    prns:year ?year .
+    
+  FILTER(CONTAINS(?authors, "Beyer M"))
+}
+ORDER BY DESC(?year)
+LIMIT 100
+```
+
+##### Common relations between resources
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?s ?type
+WHERE
+{
+  ?s a ?type;
+  
+  {
+    ?s ?p0 <http://localhost:55956/profile/39927>;
+    ?p1 <http://localhost:55956/profile/39926> ;
+    ?p2 <http://localhost:55956/profile/278100> ;
+    ?p3 <http://localhost:55956/profile/39922> ;
+    ?p4 <http://localhost:55956/profile/39908> ;
+    ?p5 <http://localhost:55956/profile/39930> ;
+    ?p6 <http://localhost:55956/profile/278102> ;
+    ?p7 <http://localhost:55956/profile/39921> .
+  }
+  UNION
+  {
+  	<http://localhost:55956/profile/39927> ?p0 ?s.
+    <http://localhost:55956/profile/39926> ?p1 ?s.
+    <http://localhost:55956/profile/278100> ?p2 ?s.
+    <http://localhost:55956/profile/39922> ?p3 ?s.
+    <http://localhost:55956/profile/39908> ?p4 ?s.
+    <http://localhost:55956/profile/39930> ?p5 ?s.
+    <http://localhost:55956/profile/278102> ?p6 ?s.
+    <http://localhost:55956/profile/39921> ?p7 ?s.
+  }
+}
+```
+

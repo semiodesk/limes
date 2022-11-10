@@ -21,7 +21,11 @@ class CsvWriter:
 
     def __init__(self, filepath, fieldnames, encoding='utf-8-sig', newline='\n', delimiter=',', quotechar='"', writeheader=True):
         self.file = open(filepath, 'w', encoding=encoding, newline=newline)
-        self.writer = csv.DictWriter(self.file, fieldnames=fieldnames, delimiter=delimiter, quotechar=quotechar)
+
+        if quotechar is not None:
+            self.writer = csv.DictWriter(self.file, fieldnames=fieldnames, delimiter=delimiter, quotechar=quotechar)
+        else:
+            self.writer = csv.DictWriter(self.file, fieldnames=fieldnames, delimiter=delimiter, quoting=csv.QUOTE_NONE)
 
         if writeheader:
             self.writer.writeheader()

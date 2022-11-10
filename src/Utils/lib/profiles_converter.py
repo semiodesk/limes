@@ -207,7 +207,7 @@ class ProfilesConverter:
         keyphrases_file = os.path.join(self.output_directory, 'keyphrases.txt')
         
         keyphrases_reader = CsvReader(input_filename)
-        output_writer = CsvWriter(keyphrases_file, fieldnames=['value'], writeheader=False)
+        output_writer = CsvWriter(keyphrases_file, fieldnames=['value'], writeheader=False, quotechar=None)
 
         keyphrases = set()
 
@@ -232,11 +232,45 @@ class ProfilesConverter:
                 if len(host) > 0:
                     keyphrases.add(host.strip())
 
-        keyphrases = list(keyphrases)
+        keyphrases = self.__optimize(keyphrases)
         keyphrases.sort()
 
         for phrase in keyphrases:
+            print(phrase)
             output_writer.write({"value": f"%{phrase}%"})
+
+    def __optimize(self, keyphrases:set):
+        result = set()
+
+        for phrase in keyphrases:
+            # Replace whitespace with wildcard character.
+            p = phrase.replace(' ', '_')
+            # Remove the delimitar char from any values, if present.
+            p = p.replace(',', '')
+            p = p.replace('_for_', '%')
+            p = p.replace('_of_', '%')
+            p = p.replace('_&_', '%')
+            p = p.replace('&', '')
+            p = p.replace('-', '_')
+            # Normalize different spellings.
+            p = p.replace('ä', '_')
+            p = p.replace('ae', '_')
+            p = p.replace('ö', '_')
+            p = p.replace('oe', '_')
+            p = p.replace('ü', '_')
+            p = p.replace('ue', '_')
+            # Replace possible suffixes such as 'of' with wildcards.
+            p = p.replace('hospital_', 'hospital%')
+            p = p.replace('clinic_', 'clinic%')
+            p = p.replace('_university_', '_university%')
+
+            result.add(p)
+
+        return list(result)
+
+    def __areequal(self, phraseA, phraseB):
+        a = phraseA if len(phraseA) >= len(phraseB) else phraseB
+        b = phraseB if len(phraseA) >= len(phraseB) else phraseA
 
     def execute(self, input_filename):
         """
