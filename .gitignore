@@ -15,7 +15,7 @@ debug.log
 src/Utils/input/*
 src/Utils/output/*
 src/Utils/tmp/*
-src/ProfilesRNS/Website/SourceCode/Profiles/Profiles/Web.config
+src/ProfilesRNS/Website/SourceCode/Profiles/Profiles/*.config
 src/ProfilesRNS/Database/PubMedDisambiguation_GetPubs.sql
 src/ProfilesRNS/Database/PubMedDisambiguation_GetPubMEDXML.sql
 src/ProfilesRNS/Database/ProfilesRNS_GeoCodeJob.sql

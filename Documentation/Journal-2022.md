@@ -196,7 +196,11 @@
 - Working on issue #36
   - Setting up SQL query to retrieve all profiles with no pulications
   - Trying to improve keyphrases so that more publications can be found
-  - No success
+  - Trying to harmonize department and instituation names
+  - Setting up SPARQL endpoint in Fusike for graph analysis
+  - All articles with names of authors are present in the database
+  - Some co-authors are detected; trying to find differences.
+  - No success :(
 
 ### Wednesday, 9th November
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
@@ -349,3 +353,45 @@ ORDER BY
 }
 ```
 
+##### Export RDF Graph to N-Triples
+```
+SELECT CAST(CONCAT('<', s.[Value], '>') AS NVARCHAR(1000)),
+      CAST(CONCAT('<', p.[Value], '>') AS NVARCHAR(1000)),
+      CAST(
+        --- Some URI nodes are actually plain text nodes that start with a URI..
+        CASE WHEN o.[ObjectType] = 0 AND NOT o.[Value] LIKE '% %' THEN
+          CONCAT('<', o.[Value], '>')
+        ELSE
+          CONCAT('"', SUBSTRING(TRIM(REPLACE(REPLACE(REPLACE(o.[Value], CHAR(13), 'X'), CHAR(10), ' '),'"','')) ,0, 250), '"')
+        END
+        AS NVARCHAR(4000)
+	  ),
+	  '.'
+FROM [ProfilesRNS].[RDF.].[Triple]
+   JOIN [ProfilesRNS].[RDF.].[Node] s ON s.NodeID = [Subject]
+   JOIN [ProfilesRNS].[RDF.].[Node] p ON p.NodeID = [Predicate]
+   JOIN [ProfilesRNS].[RDF.].[Node] o ON o.NodeID = [Object]
+```
+
+After storing the query output as a file one can convert it into N-Triples with the following bash script:
+
+```
+#! /bin/bash
+
+echo "Removing excess whitespace.."
+sed 's/\s\s*/ /g' ProfilesRNS.rpt > ProfilesRNS.tmp
+
+echo "Removing report header and footer.."
+sed -i '2d' ProfilesRNS.tmp
+head -n -5 ProfilesRNS.tmp > ProfilesRNS.nt
+
+echo "Done."
+rm ProfilesRNS.tmp
+```
+
+### Thursday, 10th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Jour Fix meeting with Antonella Succoro at 10am
+  - Status of issue #36
+  - Dicussing feedback regarding the frontpage design
+  - Server needs updates again
