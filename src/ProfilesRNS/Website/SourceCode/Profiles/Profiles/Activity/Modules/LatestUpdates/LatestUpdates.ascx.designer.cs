@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.Activity.Modules.LatestUpdates {
-    
-    
-    public partial class LatestUpdates {
-        
+namespace Profiles.Activity.Modules.LatestUpdates
+{
+
+
+    public partial class LatestUpdates
+    {
+
         /// <summary>
         /// Statistics control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Profiles.Activity.Modules.LatestUpdates {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Profiles.Activity.Modules.Statistics.Statistics Statistics;
-        
+
         /// <summary>
         /// ActivityHistory control.
         /// </summary>
@@ -29,5 +31,14 @@ namespace Profiles.Activity.Modules.LatestUpdates {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Profiles.Activity.Modules.ActivityHistory.ActivityHistory ActivityHistory;
+
+        /// <summary>
+        /// Activity1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UserControl Activity1;
     }
 }

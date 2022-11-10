@@ -35,7 +35,6 @@ namespace Profiles.Activity
 
         private void LoadAssets()
         {
-
         }
 
         public void LoadPresentationXML()
@@ -46,9 +45,10 @@ namespace Profiles.Activity
             
             this.PresentationXML = new XmlDocument();
             this.PresentationXML.LoadXml(presentationxml);
-            Framework.Utilities.DebugLogging.Log(presentationxml);
 
+            Framework.Utilities.DebugLogging.Log(presentationxml);
         }
+
         public XmlDocument PresentationXML { get; set; }
 
         [System.Web.Services.WebMethod]

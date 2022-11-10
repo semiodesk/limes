@@ -157,15 +157,12 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     <!--</form>-->
     <div class="container">
       <div class="footer">
-        <div class="d-flex flex-column align-items-center flex-md-row">
-          <div>
-            <b><a href="/about/default.aspx?tab=imprint">Impressum</a></b> |
-            <b><a href="/about/default.aspx?tab=privacy">Privacy</a></b>
-          </div>
-
+        <div class="text-center">
           <a href="https://ngs-kn.de/" target="_blank" class="ml-md-auto">
-            © 2021 Next Generation Sequencing Competence Network <span class="text-nowrap">(NGS-CN)</span>
-          </a>
+            © 2022 Next Generation Sequencing Competence Network <span class="text-nowrap">(NGS-CN)</span>
+          </a> |
+          <b><a href="/about/default.aspx?tab=imprint">Impressum</a></b> |
+          <b><a href="/about/default.aspx?tab=privacy">Privacy</a></b>
         </div>
 
         <div class="logo-container d-flex flex-column flex-md-row justify-content-center align-items-center">

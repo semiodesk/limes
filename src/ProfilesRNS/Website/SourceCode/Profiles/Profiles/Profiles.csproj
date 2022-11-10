@@ -156,6 +156,7 @@
     <Content Include="Framework\Images\Orcid_Logo_rgb.png" />
     <Content Include="Framework\Images\Orcid_symbol_rgb.png" />
     <Content Include="Framework\Modules\MainMenu\default.aspx" />
+    <Content Include="Activity\Modules\TwitterTimeline\TwitterTimeline.ascx" />
     <Content Include="Framework\Modules\MainMenu\MyActiveNetwork.ascx" />
     <Content Include="Framework\Modules\MainMenu\MyLists.ascx" />
     <Content Include="Global.asax" />
@@ -370,6 +371,8 @@
     <Content Include="Profile\XSLT\NetworkTableGroup.xslt" />
     <Content Include="Profile\XSLT\Website.xslt" />
     <Content Include="RobotsTxt.aspx" />
+    <Content Include="Activity\Modules\SearchStatistics\SearchStatistics.aspx" />
+    <Content Include="Activity\PresentationXML\SearchStatistics.xml" />
     <Content Include="SiteMap.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -562,6 +565,13 @@
     </Compile>
     <Compile Include="Framework\Modules\MainMenu\default.aspx.designer.cs">
       <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Modules\TwitterTimeline\TwitterTimeline.ascx.cs">
+      <DependentUpon>TwitterTimeline.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\Modules\TwitterTimeline\TwitterTimeline.ascx.designer.cs">
+      <DependentUpon>TwitterTimeline.ascx</DependentUpon>
     </Compile>
     <Compile Include="Framework\Modules\MainMenu\History.ascx.cs">
       <DependentUpon>History.ascx</DependentUpon>
@@ -1638,6 +1648,13 @@
     </Compile>
     <Compile Include="Search\Modules\SearchResults\SearchResults.ascx.designer.cs">
       <DependentUpon>SearchResults.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Modules\SearchStatistics\SearchStatistics.aspx.cs">
+      <DependentUpon>SearchStatistics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\Modules\SearchStatistics\SearchStatistics.aspx.designer.cs">
+      <DependentUpon>SearchStatistics.aspx</DependentUpon>
     </Compile>
     <Compile Include="Search\Modules\TopSearchPhrase\TopSearchPhrase.ascx.cs">
       <DependentUpon>TopSearchPhrase.ascx</DependentUpon>

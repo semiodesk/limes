@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.Activity.Modules.Statistics {
-    
-    
-    public partial class Statistics {
-        
+namespace Profiles.Activity.Modules.Statistics
+{
+
+
+    public partial class Statistics
+    {
+
+        /// <summary>
+        /// linkSeeMore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink linkSeeMore;
+
         /// <summary>
         /// publicationsCount control.
         /// </summary>
@@ -20,7 +31,7 @@ namespace Profiles.Activity.Modules.Statistics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal publicationsCount;
-        
+
         /// <summary>
         /// totalProfilesCount control.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Profiles.Activity.Modules.Statistics {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal totalProfilesCount;
-        
+
         /// <summary>
         /// editedProfilesCount control.
         /// </summary>

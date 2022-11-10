@@ -97,10 +97,14 @@ namespace Profiles.Search
         public void LoadPresentationXML(string type)
         {
             string presentationxml = string.Empty;
+
             switch (type.ToLower())
             {
                 case "searchform":
                     presentationxml = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Search/PresentationXML/SearchFormPresentation.xml");
+                    break;
+                case "searchstats":
+                    presentationxml = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Search/PresentationXML/SearchStatisticsPresentation.xml");
                     break;
                 case "everything":
                     presentationxml = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/Search/PresentationXML/SearchResultsEverythingPresentation.xml");

@@ -275,7 +275,7 @@ SELECT ?s ?p ?o
 WHERE
 {
   ?s ?p ?o .
-  FILTER(?s = <http://localhost:55956/profile/39877>)
+  FILTER(?s = <http://localhost:55956/profile/282083>)
 }
 ```
 
@@ -391,7 +391,13 @@ rm ProfilesRNS.tmp
 
 ### Thursday, 10th November
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
-- Jour Fix meeting with Antonella Succoro at 10am
+- Jour Fix meeting with Antonella Succoro at 11am
   - Status of issue #36
+    - Antonella will write e-mail to Nicholas about other imporvements to the disambiguation engine
   - Dicussing feedback regarding the frontpage design
+    - Choosing the microscope icon
   - Server needs updates again
+    - Antonella will upgrade VM on Friday
+  - ~~Change default search type to 'everything'~~
+  - ~~Change the label of default search~~
+  - ~~Add Twitter to frontpage~~

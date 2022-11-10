@@ -10,8 +10,8 @@
                 <form class="search-container" id="minisearch" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
                     <i class="fa fa-search"></i>
                     <label class="d-none" for="menu-search">Search</label>
-                    <input type="text" name="searchfor" placeholder="Find people by name.." aria-label="Enter your search here." required/>
-                    <input type="hidden" name="searchtype" value="people" />
+                    <input type="text" name="searchfor" placeholder="Find people or research by keyword.." aria-label="Enter your search here." required/>
+                    <input type="hidden" name="searchtype" value="everything" />
                     <input type="hidden" name="classuri" value="http://xmlns.com/foaf/0.1/Person" />
                 </form>
             </li>

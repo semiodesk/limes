@@ -1,14 +1,14 @@
 ﻿<Presentation PresentationClass="network">
   <PageOptions Columns="2"/>
-  <WindowName>Profiles Activity</WindowName>
-  <PageTitle>Profiles Activity</PageTitle>
+  <WindowName>Search Statistics</WindowName>
+  <PageTitle>Search Statistics</PageTitle>
   <PageBackLinkName></PageBackLinkName>
   <PageBackLinkURL></PageBackLinkURL>
   <PageSubTitle></PageSubTitle>
   <PageDescription>    
   </PageDescription>
   <PanelList>
-    <Panel type="header"  />
+    <Panel type="header" />
     <Panel type="page" />
     <Panel Type="active">
       <Module ID="MiniSearch" />
@@ -16,7 +16,18 @@
       </Module>
     </Panel>
     <Panel Type="main" TabType="Default" TabSort="0">
-
+		<Module ID="TopSearchPhrase">
+			<ParamList>
+				<Param Name="Description">Most viewed (today)</Param>
+				<Param Name="TimePeriod">d</Param>
+			</ParamList>
+		</Module>
+		<Module ID="TopSearchPhrase">
+			<ParamList>
+				<Param Name="Description">Most viewed (month)</Param>
+				<Param Name="TimePeriod">m</Param>
+			</ParamList>
+		</Module>
     </Panel>    
     <Panel type="footer" />
   </PanelList>

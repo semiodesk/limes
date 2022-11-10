@@ -1,0 +1,1 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Framework/Template.Master" AutoEventWireup="True" CodeBehind="SearchStatistics.aspx.cs" Inherits="Profiles.Activity.SearchStatistics" %>

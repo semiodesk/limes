@@ -14,4 +14,5 @@ For details, see: LICENSE.txt
   <Module ModulePath="Modules" NameSpace="Statistics" FileName="Statistics.ascx" Enabled="true"/>
   <Module ModulePath="Modules" NameSpace="ActivityHistory" FileName="ActivityHistory.ascx" Enabled="true"/>
   <Module ModulePath="Modules" NameSpace="LatestUpdates" FileName="LatestUpdates.ascx" Enabled="true"/>
+  <Module ModulePath="Modules" NameSpace="TwitterTimeline" FileName="TwitterTimeline.ascx" Enabled="true"/>
 </ModuleList>

@@ -20,19 +20,19 @@
       </Module>
     </Panel>
     <Panel Type="left">
-      <Module ID="LatestUpdates">
-        <ParamList>
-          <Param Name="Show">5</Param>
-          <Param Name="SeeMore">True</Param>
-        </ParamList>
-      </Module>
     </Panel>
     <Panel Alias="people" Type="main">
 		<Module ID="SearchEverything" />
-		<Module ID="SearchPerson">
-		</Module> 
+		<Module ID="SearchPerson" />
     </Panel>
     <Panel Type="passive" >
+	    <Module ID="LatestUpdates">
+		    <ParamList>
+			    <Param Name="Show">5</Param>
+			    <Param Name="SeeMore">True</Param>
+		    </ParamList>
+	    </Module>
+		<!--
       <Module ID="TopSearchPhrase">
         <ParamList>
           <Param Name="Description">Most viewed (today)</Param>
@@ -45,6 +45,7 @@
           <Param Name="TimePeriod">m</Param>
         </ParamList>
       </Module>
+	  -->
     </Panel>
     <Panel type="footer" />
   </PanelList>
