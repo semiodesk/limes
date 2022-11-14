@@ -261,7 +261,7 @@ JOIN
 JOIN
 	[ProfilesRNS].[Profile.Cache].[Person] p ON p.[EmailAddr]=n.[Value]
 WHERE
-	p.Closeness=0
+	p.NumPublications=0
 ORDER BY
 	p.InstitutionName, p.DepartmentName, p.NumPublications, p.Closeness
 ```
@@ -310,25 +310,6 @@ SELECT DISTINCT ?s ?type
 WHERE
 {
   ?s a ?type;
-  
-
-```
-SELECT
-	CONCAT('https://www.profiles-ngs-cn.uni-bonn.de/display/', t.[Subject]),
-	p.[FirstName],
-	p.[LastName],
-	p.[InstitutionName],
-	p.[DepartmentName],
-	p.[NumPublications]
-FROM
-	[profiles-ngs-cn].[RDF.].[Node] n
-JOIN
-	[profiles-ngs-cn].[RDF.].[Triple] t ON t.[Object]=n.[NodeID]
-JOIN
-	[profiles-ngs-cn].[Profile.Cache].[Person] p ON p.[EmailAddr]=n.[Value]
-ORDER BY
-	p.[NumPublications]
-```
   {
     ?s ?p0 <http://localhost:55956/profile/39927>;
     ?p1 <http://localhost:55956/profile/39926> ;
@@ -401,3 +382,18 @@ rm ProfilesRNS.tmp
   - ~~Change default search type to 'everything'~~
   - ~~Change the label of default search~~
   - ~~Add Twitter to frontpage~~
+
+### Friday, 11th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Adapting ActivityHistory SQL data source to include more details about publications
+- Support call with Antonella Succoro
+  - Investigating Twitter timeline not appearing on website
+  - Cause: Ad-Blocker
+
+### Monday, 14th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Adapting ActivityHistory control to display new data
+- Jour Fix meeting with Antonella Succoro at 10:30am
+  - Introducing Motomo
+    - Scheuled log file parsing
+    - Stats, Goals, User Engagement
