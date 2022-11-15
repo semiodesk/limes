@@ -1,11 +1,4 @@
-@media (min-width: 992px)
-{
-    .w-lg-50 {
-        width: 50% !important;
-    }
-}
-
-/* Metrics & Activity Stream */
+﻿/* Metrics & Activity Stream */
 section {
     padding-bottom: 2em;
 }
@@ -24,7 +17,6 @@ section {
 .metrics .literal {
   font-weight: 600;
   font-size: 1.3em;
-  color: #183c55;
 }
 
 .metrics .label {
@@ -35,72 +27,61 @@ section {
     width: 4.5em;
     height: 4.5em;
     line-height: 4.5em;
-    border: 1px solid #eee;
+    border: 2px solid #eee;
     border-radius: 50%;
 }
 
-.activities {
-  max-width: 600px;
-  padding-bottom: 0;
-  margin-bottom: 0;
+.act-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 6px;
 }
 
-.act {
-  margin-bottom: 10px;
-  padding: 0 0 8px;
-  clear: left;
-  min-height: 48px;
+.act-list-item {
+    display: flex;
+    flex-direction: row;
 }
 
-.act-body {
-  display: flex;
-  flex-direction: row;
+.act-list-item .fa {
+    font-size: .9em;
 }
 
-.act-userdate .date {
-  color: #506380;
-  font-size: 12px;
-  overflow: hidden;
+.act-list-item .act-date,
+.act-list-item .act-body {
+    font-size: .9em;
 }
 
-.act-image {
-  display: block;
-  min-width: 32px;
-  max-width: 32px;
-  min-height: 32px;
-  max-height: 32px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: 5px 10px;
-  background-image: url("/Profile/Images/person-default.svg");
-  background-size: contain;
-  position: relative;
-  padding: 0;
+.act-list-item .act-title a {
+    display: block;
+    color: #007BBE;
+    margin: .1rem 0;
+    line-height: 1.3em;
+    font-weight: 500;
 }
 
-.act-image a {
-  display: block;
-  width: 100%;
-  height: 100%;
+.act-list-item span {
+    display: inline;
+    color: #2F528F;
 }
 
-.act-image img {
-  width: 32px;
-  height: 32px;
-  position: relative;
-  top: -2px;
-  left: -2px;
+.act-list-item-header {
+    min-width: 3px;
+    max-width: 3px;
+    background: #e0e0e0;
 }
 
-.panelMain .activities {
-  margin-top: 30px;
+.act-list-item-header .dot {
+    background: white;
+    border: 2px solid #e0e0e0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: relative;
+    top: 5px;
+    left: -6px;
 }
 
-.panelMain .act-heading {
-  display: none;
-}
-
-.act-heading-live-updates {
-  font-weight: 600;
-  margin-bottom: 10px;
+.act-list-item-body {
+    padding-left: 1em;
+    padding-bottom: 1.5em;
 }

@@ -14,7 +14,7 @@
 #prns-nav .prns-main.primary,
 #prns-nav .prns-main.secondary {
   background: transparent;
-  font-weight: 600;
+  font-weight: 500;
   overflow: visible;
   border-bottom: 2px solid #eee;
 }
@@ -35,7 +35,7 @@
 
 #prns-nav .prns-main .badge {
   font-size: .8em;
-  background: #0071ae;
+  background: #007BBE;
   color: white;
   border-radius: 50%;
   margin: 5px;
@@ -46,16 +46,16 @@
 }
 
 #prns-nav .prns-main li a {
-  color: #183c55;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  font-size: 14px;
-  height: 48px;
-  min-width: 48px;
-  line-height: 48px;
-  padding: 0 1em;
-  border: 2px solid transparent;
+    color: #2F528F;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 14px;
+    height: 48px;
+    min-width: 48px;
+    line-height: 48px;
+    padding: 0 1em;
+    border: 2px solid transparent;
 }
 
 #prns-nav .prns-main.prns-main.primary:hover {
@@ -70,7 +70,12 @@
 
 #prns-nav .prns-main.prns-main.primary:focus-within .fa,
 #prns-nav .prns-main.prns-main.primary:hover .fa {
-  color: #36A4DE;
+  color: black;
+}
+
+#prns-nav .prns-main.prns-main.primary li > a {
+  border-radius: 30px;
+  color: #666;
 }
 
 #prns-nav .prns-main.primary {
@@ -78,6 +83,7 @@
   background-color: #eee;
   border: 2px solid #eee;
   color: #666;
+  border-radius: 30px;
 }
 
 #prns-nav .prns-main > li a {
@@ -90,12 +96,13 @@
 }
 
 #prns-nav ul.prns-main li.landed > a {
-  border-bottom: 2px solid #0071ae;
-  color: #0071ae;
+  border-bottom: 2px solid #007BBE;
+  color: #007BBE;
 }
 
 #prns-nav ul.prns-main > li a:hover {
-  border: 2px solid #ccc;
+    border-radius: 5px;
+    border: 2px solid #ccc;
 }
 
 #prns-nav ul.prns-main li.icon {
@@ -130,11 +137,11 @@
   border-bottom: 0;
   border-left: 2px solid #36A4DE;
   color: white;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #prns-nav ul.menu-drop li a {
-  background: #183c55;
+  background: #0056b3;
   color: white;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -146,7 +153,7 @@
 
 #prns-nav ul.menu-drop li a:hover,
 #prns-nav ul.menu-drop li a:focus {
-  background: #0071ae;
+  background: #007BBE;
 }
 
 #prns-nav ul.menu-drop li a:focus {
@@ -159,7 +166,7 @@
 }
 
 #search-drop ul.menu-drop li a {
-  background: #183c55;
+  background: #0056b3;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -168,7 +175,7 @@
 li#search-drop a:hover,
 #search-drop ul.menu-drop li:hover,
 #prns-nav ul.menu-drop li a:hover {
-  background: #0071ae;
+  background: #007BBE;
   color: white;
 }
 

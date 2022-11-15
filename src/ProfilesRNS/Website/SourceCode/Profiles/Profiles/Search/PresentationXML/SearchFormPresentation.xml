@@ -22,8 +22,15 @@
     <Panel Type="left">
     </Panel>
     <Panel Alias="people" Type="main">
+		<!--
 		<Module ID="SearchEverything" />
 		<Module ID="SearchPerson" />
+		-->
+		<Module ID="ActivityHistory">
+			<ParamList>
+				<Param Name="Show">20</Param>
+			</ParamList>
+		</Module>
     </Panel>
     <Panel Type="passive" >
 	    <Module ID="LatestUpdates">

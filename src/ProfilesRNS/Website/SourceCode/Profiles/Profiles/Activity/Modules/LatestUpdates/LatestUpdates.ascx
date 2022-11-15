@@ -9,7 +9,6 @@ Inherits="Profiles.Activity.Modules.LatestUpdates.LatestUpdates" %>
     <div class="activeSection">
       <div class="activeSectionBody">
         <Statistics:Statistics runat="server" ID="Statistics" Visible="true" />
-        <ActivityHistory:Activity runat="server" ID="ActivityHistory" Visible="true" />
         <TwitterTimeline:TwitterTimeline runat="server" ID="Activity1" Visible="true" />
       </div>
     </div>

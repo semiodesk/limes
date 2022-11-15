@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.Activity.Modules.ActivityHistory {
-    
-    
-    public partial class ActivityHistory {
-        
+namespace Profiles.Activity.Modules.ActivityHistory
+{
+
+
+    public partial class ActivityHistory
+    {
+
         /// <summary>
         /// pnlActivities control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Profiles.Activity.Modules.ActivityHistory {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlActivities;
-        
+
         /// <summary>
         /// rptActivityHistory control.
         /// </summary>
@@ -29,14 +31,5 @@ namespace Profiles.Activity.Modules.ActivityHistory {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptActivityHistory;
-        
-        /// <summary>
-        /// linkSeeMore control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink linkSeeMore;
     }
 }

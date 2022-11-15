@@ -1,162 +1,67 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ActivityHistory.ascx.cs"
-Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ActivityHistory.ascx.cs" Inherits="Profiles.Activity.Modules.ActivityHistory.ActivityHistory" %>
 
-<script type="text/javascript">
-  var activitySize;
-
-  $(document).ready(function () {
-    if ("<%=FixedSize()%>") {
-      $(".activities").css({ overflow: "hidden" });
-    }
-    setInterval(function () {
-      GetRecords(true);
-    }, 30000);
-  });
-
-  function ScrollAlert() {
-    var scrolltop = $(".clsScroll").attr("scrollTop");
-    var scrollheight = $(".clsScroll").attr("scrollHeight");
-    var windowheight = $(".clsScroll").attr("clientHeight");
-    var scrolloffset = 20;
-    if (scrolltop >= scrollheight - (windowheight + scrolloffset)) {
-      GetRecords(false);
-    }
-  }
-
-  function GetRecords(newActivities) {
-    var referenceActivityId = newActivities ? $(".act-id").first().text() : $(".act-id").last().text();
-    // only set this the first time
-    activitySize = activitySize || $(".act-id").length;
-
-    // do not call the backend with invalid parameters
-    if (referenceActivityId && activitySize > 0) {
-      $.ajax({
-        type: "POST",
-        url: "<%=GetURLDomain()%>/Activity/Modules/ActivityHistory/ActivityDetails.aspx/GetActivities",
-        data:
-          '{"referenceActivityId": "' +
-          referenceActivityId +
-          '", "count": "' +
-          activitySize +
-          '", "newActivities": "' +
-          newActivities +
-          '"}',
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: OnSuccess,
-        failure: function (response) {
-          console.error(response.d);
-        },
-        error: function (response) {
-          console.error(response.d);
-        },
-      });
-    }
-  }
-
-  function OnSuccess(response) {
-    var activities = JSON.parse(response.d);
-    // if we don't have any activities, bail now
-    if (!activities.length) {
-      // uncomment to test push from above during periods of no activity
-      //$(".activities").height($(".activities").height());
-      //$(".actTemplate").first().before('<div class="actTemplate" style="display:none">' + $(".actTemplate").last().html() + '</div>');
-      //$(".actTemplate").first().slideDown("slow", function () {
-      //    // now allow the height to go back to automatic
-      //    $(".actTemplate").last().remove();
-      //    $(".activities").height("auto");
-      //});
-      return;
-    }
-    $("#divStatus").show();
-    var addToBottom = activities.length && activities[0].Id < $(".act-id").first().text();
-    if (addToBottom) {
-      // we want to invert the array so that we add the most recent one last
-      activities.reverse();
-    }
-    $.each(activities, function (index, newActivity) {
-      var activityTemplate = addToBottom ? $(".actTemplate").last().clone(true) : $(".actTemplate").first().clone(true);
-      // bail if it is for the same person. Can only happen on a new fetch being stitched into the existing one
-      // because each fetch is already declumped against itself
-      if (activityTemplate.find("a").first().attr("href") == newActivity.Profile.URL) {
-        return true;
-      }
-      activityTemplate.find("a").attr("href", newActivity.Profile.URL);
-      activityTemplate.find(".act-image").find("img").attr("src", newActivity.Profile.Thumbnail);
-      activityTemplate.find(".act-user").find("a").html(newActivity.Profile.Name);
-      activityTemplate.find(".act-date").html(newActivity.Date);
-      activityTemplate.find(".act-msg").html(newActivity.Message);
-      activityTemplate.find(".act-id").text(newActivity.Id);
-      if (addToBottom) {
-        // add to the bottom
-        $(".actTemplate")
-          .last()
-          .after('<div class="actTemplate">' + activityTemplate.html() + "</div>");
-      } else {
-        // if it is a fixed size, remove the last one to make room
-        if ("<%=FixedSize()%>") {
-          // temporarily freeze the height so that things are less jarring
-          $(".activities").height($(".activities").height());
-        }
-        // prepend to the top and slide down
-        $(".actTemplate")
-          .first()
-          .before('<div class="actTemplate" style="display:none">' + activityTemplate.html() + "</div>");
-        $(".actTemplate")
-          .first()
-          .slideDown("slow", function () {
-            if ("<%=FixedSize()%>") {
-              $(".actTemplate").last().remove();
-              // now allow the height to go back to automatic
-              $(".activities").height("auto");
-            }
-          });
-      }
-    });
-    $("#divStatus").hide();
-  }
-</script>
 <section class="activities">
   <div class="sidepanel-header">
-    <h4 class="act-heading-live-updates">Recent Updates</h4>
-    <asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/ActivityHistory/ActivityDetails.aspx">
-      More
-    </asp:HyperLink>
+    <h3 class="act-heading-live-updates">Recent Activity</h3>
   </div>
-  <asp:Panel runat="server" ID="pnlActivities" CssClass="clsScroll">
+    
+  <asp:Panel runat="server" ID="pnlActivities" CssClass="act-list">
     <asp:Repeater runat="server" ID="rptActivityHistory" OnItemDataBound="rptActivityHistory_OnItemDataBound">
       <ItemTemplate>
-        <div class="actTemplate">
-          <div class="act">
-            <div class="act-body">
-              <div class="act-image">
-                <asp:HyperLink runat="server" ID="linkThumbnail"></asp:HyperLink>
-              </div>
-              <div>
-                <div class="act-msg">
-                  <asp:HyperLink runat="server" ID="linkProfileURL"></asp:HyperLink>
-                  <asp:Literal runat="server" ID="litMessage"></asp:Literal>
-                </div>
-                <div class="act-userdate">
-                  <div class="date">
-                    <asp:Literal runat="server" ID="litDate"></asp:Literal>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="act-id" style="display: none">
-              <asp:Literal runat="server" ID="litId"></asp:Literal>
-            </div>
-          </div>
-        </div>
+        <asp:Literal Mode="PassThrough" runat="server" ID="body"></asp:Literal>
       </ItemTemplate>
     </asp:Repeater>
   </asp:Panel>
-</section>
-<div id="divStatus" style="display: none">
-  <div class="loader">
-    <span>
-      <img alt="Loading..." id="loader" src="<%=GetURLDomain()%>/Edit/Images/loader.gif" width="400" height="213" />
-    </span>
+
+  <div class="d-flex flex-column align-items-center">
+    <div id="progress-spinner" style="display: none">
+        <div class="d-flex flex-row align-items-center">
+            <div class="spinner mr-2"></div><span>Loading..</span>
+        </div>
+    </div>
+
+    <button id="btn-load-next" class="btn btn-primary justify-self-center mt-2" onclick="loadNext()">View more</button>
   </div>
-</div>
+</section>
+
+<script type="text/javascript">
+    var pageSize = 20;
+
+    function loadNext() {
+        var itemsCount = $('.act-list-item').length;
+
+        $('#btn-load-next').hide();
+        $("#progress-spinner").show();
+
+        $.ajax({
+            url: "<%=GetURLDomain()%>/Activity/Modules/ActivityHistory/ActivityDetails.aspx/GetRecentActivities",
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify({
+                offset: itemsCount,
+                limit: pageSize
+            }),
+            success: (response) => {
+                $("#progress-spinner").hide();
+
+                if (response.d.length > 0) {
+                    $('.act-list').append(response.d);
+                    $('#btn-load-next').show();
+                }
+            },
+            failure: (response) => {
+                $("#progress-spinner").hide();
+                $('#btn-load-next').show();
+
+                console.error(response.d);
+            },
+            error: (response) => {
+                $("#progress-spinner").hide();
+                $('#btn-load-next').show();
+
+                console.error(response.d);
+            },
+        });
+    }
+</script>

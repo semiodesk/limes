@@ -17,16 +17,13 @@ using System.Web.UI.WebControls;
 using System.Xml;
 using Profiles.Framework.Utilities;
 using System.Web.UI.HtmlControls;
+using System.Text;
+using Profiles.Activity.Utilities;
 
 namespace Profiles.Activity.Modules.ActivityHistory
 {
     public partial class ActivityHistory : BaseModule
     {
-        
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
         public ActivityHistory() { }
 
         public ActivityHistory(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
@@ -43,46 +40,26 @@ namespace Profiles.Activity.Modules.ActivityHistory
         public void DrawProfilesModule()
         {
             LoadAssets();
-            int count = Convert.ToInt32(base.GetModuleParamString("Show"));
-            linkSeeMore.Visible = "True".Equals(base.GetModuleParamString("SeeMore"));
-            if ("True".Equals(base.GetModuleParamString("Scrolling"))) 
-            {
-                pnlActivities.ScrollBars = ScrollBars.Vertical;
-                pnlActivities.Height = 7 * count;
-                pnlActivities.Attributes.Add("onscroll", "ScrollAlert()");
-            }
-            else 
-            {
-                pnlActivities.ScrollBars = ScrollBars.None;
-            }
+
+            //int count = Convert.ToInt32(base.GetModuleParamString("Show"));
+            //linkSeeMore.Visible = "True".Equals(base.GetModuleParamString("SeeMore"));
 
             // grab a bunch of activities from the Database
-            Profiles.Activity.Utilities.DataIO data = new Profiles.Activity.Utilities.DataIO();
-            List<Profiles.Activity.Utilities.Activity> activities = data.GetActivity(-1, count, true);
+            Utilities.DataIO data = new Utilities.DataIO();
+
+            var activities = data.RenderRecentActivities(20);
             rptActivityHistory.DataSource = activities;
             rptActivityHistory.DataBind();
         }
 
         public void rptActivityHistory_OnItemDataBound(object sender, RepeaterItemEventArgs e)
         {
-            Profiles.Activity.Utilities.Activity activity = (Profiles.Activity.Utilities.Activity)e.Item.DataItem;
-            if (activity != null)
+            var html = (string)e.Item.DataItem;
+
+            if (html != null)
             {
-                HyperLink linkThumbnail = (HyperLink)e.Item.FindControl("linkThumbnail");
-                HyperLink linkProfileURL = (HyperLink)e.Item.FindControl("linkProfileURL");
-                Literal litDate = (Literal)e.Item.FindControl("litDate");
-                Literal litMessage = (Literal)e.Item.FindControl("litMessage");
-                Literal litId = (Literal)e.Item.FindControl("litId");
-
-                linkThumbnail.ImageUrl = activity.Profile.Thumbnail;
-                linkThumbnail.NavigateUrl = activity.Profile.URL;
-                linkThumbnail.Text = activity.Profile.Name;
-                linkProfileURL.NavigateUrl = activity.Profile.URL;
-                linkProfileURL.Text = activity.Profile.Name;
-
-                litDate.Text = activity.Date;
-                litMessage.Text = activity.Message;
-                litId.Text = "" + activity.Id;
+                var body = (Literal)e.Item.FindControl("body");
+                body.Text = html;
             }
         }
 

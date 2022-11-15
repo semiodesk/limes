@@ -1,12 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Statistics.ascx.cs"
 Inherits="Profiles.Activity.Modules.Statistics.Statistics" %>
 <section>
-  <div class="sidepanel-header">
-    <h4 class="act-heading">Profiles Stats</h4>
-    <asp:HyperLink ID="linkSeeMore" runat="server" NavigateUrl="~/Activity/Modules/SearchStatistics/SearchStatistics.aspx">
-      More
-    </asp:HyperLink>
-  </div>
   <div class="metrics flex-row p-0">
     <div class="text-center w-50">
       <div class="literal">

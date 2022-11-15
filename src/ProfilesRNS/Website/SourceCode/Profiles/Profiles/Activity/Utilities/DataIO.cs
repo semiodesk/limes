@@ -16,6 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using Profiles.Framework.Utilities;
+using System.Linq;
 
 namespace Profiles.Activity.Utilities
 {
@@ -169,6 +170,7 @@ namespace Profiles.Activity.Utilities
                             "where p.IsActive=1 and (np.ViewSecurityGroup = -1 or (i.privacyCode = -1 and np.ViewSecurityGroup is null) or (i.privacyCode is null and np.ViewSecurityGroup is null))" +
                             (lastActivityLogID != -1 ? (" and i.activityLogID " + (older ? "< " : "> ") + lastActivityLogID) : "") +
                             "order by i.activityLogID desc";
+
             using (SqlDataReader reader = GetQueryOutputReader(sql))
             {
                 while (reader.Read())
@@ -183,27 +185,31 @@ namespace Profiles.Activity.Utilities
                     string firstname = reader["firstname"].ToString();
                     string lastname = reader["lastname"].ToString();
                     string methodName = reader["methodName"].ToString();
-
                     string journalTitle = "";
                     string url = "";
                     string queryTitle = "";
                     string title = "";
                     string body = "";
+
                     if (param1 == "PMID" || param1 == "Add PMID")
                     {
                         url = "http://www.ncbi.nlm.nih.gov/pubmed/" + param2;
                         queryTitle = "SELECT JournalTitle FROM [Profile.Data].[Publication.PubMed.General] with(nolock) " +
                                         "WHERE PMID = cast(" + param2 + " as int)";
+
                         journalTitle = GetStringValue(queryTitle, "JournalTitle");
                     }
+
                     if (property == "http://vivoweb.org/ontology/core#ResearcherRole")
                     {
                         queryTitle = "select AgreementLabel from [Profile.Data].[Funding.Role] r " +
                                         "join [Profile.Data].[Funding.Agreement] a " +
                                         "on r.FundingAgreementID = a.FundingAgreementID " +
                                         " and r.FundingRoleID = '" + param1 + "'";
+
                         journalTitle = GetStringValue(queryTitle, "AgreementLabel");
                     }
+
                     if (methodName.CompareTo("Profiles.Edit.Utilities.DataIO.AddPublication") == 0)
                     {
                         title = "added a PubMed publication";
@@ -241,6 +247,7 @@ namespace Profiles.Activity.Utilities
                     else if (methodName.IndexOf("Profiles.Edit.Utilities.DataIO.Add") == 0)
                     {
                         title = "added an item";
+
                         if (param1.Length != 0)
                         {
                             body = body = "added \"" + param1 + "\" into " + propertyLabel + " section";
@@ -249,11 +256,11 @@ namespace Profiles.Activity.Utilities
                         {
                             body = "added \"" + propertyLabel + "\" section";
                         }
-
                     }
                     else if (methodName.IndexOf("Profiles.Edit.Utilities.DataIO.Update") == 0)
                     {
                         title = "updated an item";
+
                         if (param1.Length != 0)
                         {
                             body = "updated \"" + param1 + "\" in " + propertyLabel + " section";
@@ -302,6 +309,222 @@ namespace Profiles.Activity.Utilities
                 }
             }
             return activities;
+        }
+
+        public List<ActivityLogItem> GetRecentActivities(int pageSize, int offset = 0)
+        {
+            if(pageSize <= 0)
+            {
+                return new List<ActivityLogItem>();
+            }
+
+            string sql = $@"
+                SELECT DISTINCT
+                    i.activityLogID,
+                    i.createdDT as activityDate,
+	                CASE
+		                WHEN (pm.ArticleYear IS NOT NULL) THEN PARSE(TRIM(CONCAT(pm.ArticleYear, ' ', COALESCE(pm.ArticleMonth, '01'), ' ', COALESCE(pm.ArticleDay, '01'))) AS DATETIME)
+		                WHEN (pm.JournalYear IS NOT NULL) THEN PARSE(TRIM(CONCAT(pm.JournalYear, ' ', COALESCE(pm.JournalMonth, '01'), ' ', COALESCE(pm.JournalDay, '01'))) AS DATETIME)
+		                WHEN (fa.StartDate IS NOT NULL) THEN fa.StartDate
+	                END AS [contentDate],
+	                i.methodName,
+                    i.param1,
+                    i.param2,
+                    n.nodeid as personNodeID,
+                    p.firstname as firstName,
+                    p.lastname as lastName,
+                    i.property,
+                    cp._PropertyLabel as propertyLabel,
+	                pm.journalTitle,
+	                pm.articleTitle,
+	                pmt.[Subject] AS articleNodeID,
+	                pm.PMID AS pubMedID,
+	                fa.agreementLabel
+                FROM [Framework.].[Log.Activity] i
+                LEFT JOIN [Profile.Data].[Person] p ON i.personId = p.personID
+                LEFT JOIN [RDF.Stage].[internalnodemap] n on n.internalid = p.personId and n.[class] = 'http://xmlns.com/foaf/0.1/Person'
+                LEFT JOIN [Ontology.].[ClassProperty] cp ON cp.Property = i.property  and cp.[Class] = 'http://xmlns.com/foaf/0.1/Person'
+                LEFT JOIN [RDF.].[Node] rn ON [RDF.].fnValueHash(null, null, i.property) = rn.ValueHash
+                LEFT JOIN [RDF.Security].[NodeProperty] np ON n.NodeID = np.NodeID and rn.NodeID = np.Property
+                LEFT JOIN [Profile.Data].[Publication.PubMed.General] pm ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pm.PMID = i.param2
+                LEFT JOIN [RDF.].[Node] pmo ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pmo.[Value] = i.param2
+                LEFT JOIN [RDF.].[Triple] pmt ON pmt.[Object] = pmo.NodeID
+                LEFT JOIN [Profile.Data].[Funding.Role] fr ON (i.property = 'http://vivoweb.org/ontology/core#ResearcherRole' AND fr.FundingRoleID = i.param1)
+                LEFT JOIN [Profile.Data].[Funding.Agreement] fa ON fr.FundingAgreementID = fa.FundingAgreementID
+                WHERE
+                    p.IsActive=1
+                    AND (
+                        np.ViewSecurityGroup = -1
+                        OR (i.privacyCode = -1 AND np.ViewSecurityGroup IS NULL)
+                        OR (i.privacyCode IS NULL AND np.ViewSecurityGroup IS NULL)
+                    )
+                ORDER BY contentDate DESC
+                OFFSET {offset} ROWS
+                FETCH NEXT {pageSize} ROWS ONLY
+                ";
+
+            using (SqlDataReader reader = GetQueryOutputReader(sql))
+            {
+                var result = new List<ActivityLogItem>();
+
+                while (reader.Read())
+                {
+                    try
+                    {
+                        var profile = new Profile
+                        {
+                            NodeID = Convert.ToInt64(reader["personNodeID"]),
+                            Name = $"{reader["firstName"]} {reader["lastName"]}",
+                            URL = $"{Root.Domain}/profile/{reader["personNodeID"]}",
+                            Thumbnail = $"{Root.Domain}/profile/Modules/CustomViewPersonGeneralInfo/PhotoHandler.ashx?NodeID={reader["personNodeID"]}&Thumbnail=True&Width=45"
+                        };
+
+                        var source = new ActivityLogItemSource()
+                        {
+                            Property = reader["property"].ToString(),
+                            PropertyLabel = reader["propertyLabel"].ToString(),
+                            Method = reader["methodName"].ToString(),
+                            Param1 = reader["param1"].ToString(),
+                            Param2 = reader["param2"].ToString()
+                        };
+
+                        var content = new Asset();
+                        content.DatePublished = Convert.ToDateTime(reader["contentDate"]);
+
+                        var activity = new ActivityLogItem();
+                        activity.Id = Convert.ToInt64(reader["activityLogID"]);
+                        activity.DateCreated = Convert.ToDateTime(reader["activityDate"]);
+                        activity.Source = source;
+                        activity.Content = content;
+                        activity.Profile = profile;
+
+                        var journalTitle = reader["journalTitle"];
+                        var articleTitle = reader["articleTitle"];
+                        var agreementTitle = reader["agreementLabel"];
+
+                        switch (source.Method)
+                        {
+                            case "[Profile.Import].[LoadProfilesData]":
+                                {
+                                    if (source.Param1 == "Person Insert")
+                                    {
+                                        activity.Type = ActivityTypes.CreateProfileActivity;
+                                    }
+                                    else if (source.Param1 == "Person Update")
+                                    {
+                                        activity.Type = ActivityTypes.UpdateProfileActivity;
+                                    }
+                                    else
+                                    {
+                                        activity.Type = ActivityTypes.DeleteProfileActivity;
+                                    }
+
+                                    break;
+                                }
+                            case "Profiles.Edit.Utilities.DataIO.AddPublication":
+                            case "Profiles.Edit.Utilities.DataIO.AddCustomPublication":
+                            case "[Profile.Data].[Publication.Pubmed.LoadDisambiguationResults]":
+                                {
+                                    activity.Type = ActivityTypes.AddContentActivity;
+
+                                    content.Type = AssetTypes.Publication;
+                                    content.Title = articleTitle?.ToString() ?? source.Param1;
+                                    content.Channel = journalTitle?.ToString() ?? source.PropertyLabel;
+                                    content.URL = $"{Root.Domain}/profile/{reader["articleNodeID"]}";
+
+                                    break;
+                                }
+                            case "Profiles.Edit.Utilities.DataIO.AddUpdateFunding":
+                            case "[Profile.Data].[Funding.LoadDisambiguationResults]":
+                                {
+                                    activity.Type = ActivityTypes.AddContentActivity;
+
+                                    content.Type = AssetTypes.Funding;
+                                    content.Title = articleTitle?.ToString() ?? agreementTitle?.ToString();
+                                    content.Channel = journalTitle?.ToString() ?? source.PropertyLabel;
+
+                                    break;
+                                }
+                            case "Profiles.Edit.Utilities.DataIO.Add":
+                                {
+                                    activity.Type = ActivityTypes.AddContentActivity;
+
+                                    content.Type = AssetTypes.Generic;
+                                    content.Title = source.Param1;
+                                    content.Channel = source.PropertyLabel;
+
+                                    break;
+                                }
+                            case "Profiles.Edit.Utilities.DataIO.Update":
+                                {
+                                    activity.Type = ActivityTypes.UpdateContentActivity;
+
+                                    content.Type = AssetTypes.Generic;
+                                    content.Title = source.Param1;
+                                    content.Channel = source.PropertyLabel;
+
+                                    break;
+                                }
+                            default:
+                                {
+                                    continue;
+                                }
+                        }
+
+                        result.Add(activity);
+                    }
+                    catch { }
+                }
+
+                return result;
+            }
+        }
+
+        public List<string> RenderRecentActivities(int limit, int offset = 0)
+        {
+            return GetRecentActivities(limit, offset).Select(a => RenderActivity(a)).ToList();
+        }
+
+        private string RenderActivity(Utilities.ActivityLogItem item)
+        {
+            switch (item.Type)
+            {
+                case ActivityTypes.AddContentActivity:
+                    {
+                        return $@"
+<div class='act-list-item'>
+    <div class='act-list-item-header'>
+        <div class='dot'></div>
+    </div>
+    <div class='act-list-item-body'>
+        <div class='act-title'>
+            <b><a href='{item.Content.URL}'>{item.Content.Title}</a></b>
+        </div>
+        <div class='act-body'>
+            On {item.Content.DatePublished:d MMMM yyyy} by <a href='{item.Profile.URL}'><i class='fa fa-user'></i> {item.Profile.Name}</a> in <span>{item.Content.Channel}</span>
+        </div>
+    </div>
+</div>
+";
+                    }
+                case ActivityTypes.CreateProfileActivity:
+                    {
+                        return $@"
+<div class='act-list-item'>
+    <div class='act-list-item-header'>
+        <div class='dot'></div>
+    </div>
+    <div class='act-list-item-body'>
+        <div class='act-body'>
+            On {item.DateCreated:d MMMM yyyy} <i class='fa fa-user'></i> {item.Profile.Name}</a> added a profile.
+        </div>
+    </div>
+</div>
+";
+                    }
+            }
+
+            return "";
         }
 
         public int GetEditedCount()

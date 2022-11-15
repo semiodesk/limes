@@ -13,19 +13,19 @@
                     <input type="text" name="searchfor" placeholder="Find people or research by keyword.." aria-label="Enter your search here." required/>
                     <input type="hidden" name="searchtype" value="everything" />
                     <input type="hidden" name="classuri" value="http://xmlns.com/foaf/0.1/Person" />
+                    <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
                 </form>
             </li>
         </ul>
         <ul class="prns-main secondary">
             <li class="main-nav">
                 <a href="<%=ResolveUrl("~/search")%>" title="Go to the search homepage." aria-label="Home">
-                    <i class="fa fa-home"></i><span class="d-none">Search</span>
+                    <i class="fa-solid fa-house"></i><span class="d-none">Search</span>
                 </a>
             </li>
-            <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
             <li class="main-nav" style="margin-left: auto;">
                 <a class="menu-toggle" data-drop="help-menu-drop" tabindex="0" title="Toggle the help menu." aria-label="Activate to access help pages and other documentation.">
-                    <i class="fa fa-question-circle"></i><span class="d-none">About</span>
+                    Help
                 </a>
                 <ul id="help-menu-drop" class="menu-drop align-right">
                     <li>

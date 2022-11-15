@@ -47,8 +47,6 @@ namespace Profiles.Activity.Modules.LatestUpdates
             XmlNode seemoreNode = seemoreDoc.DocumentElement;
             mp.Add(new ModuleParams(seemoreNode));
 
-            ActivityHistory.setModuleParams(mp);
-            ActivityHistory.DrawProfilesModule();
             //Profiles.Framework.Utilities.Module module;
             //module = new Profiles.Framework.Utilities.Module("~/About/Modules/Statistics/Statistics.ascx", "Statistics", null, "");
             //PlaceHolder placeholder = null;

@@ -23,7 +23,7 @@ namespace Profiles.Framework.Modules.MainMenu
                 {
                     DrawProfilesModule();
                 }
-                else { lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history is empty.'><i class='fa fa-history'></i> <span class='badge d-none'>0</span></a><ul id='history-menu-drop' class='menu-drop'><li><a>No items in history</a></li></ul></li>"; }
+                else { lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history is empty.'><i class='fa-solid fa-clock-rotate-left'></i> <span class='badge d-none'>0</span></a><ul id='history-menu-drop' class='menu-drop'><li><a>No items in history</a></li></ul></li>"; }
             }
         }
         
@@ -32,7 +32,7 @@ namespace Profiles.Framework.Modules.MainMenu
             int count = 0;
             int total = uh.GetItems().Count;
 
-            lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history contains " + total.ToString() + " page(s).'><i class='fa fa-history'></i> <span class='badge'>" + total.ToString() + "</span></a><ul id='history-menu-drop' class='menu-drop'>";
+            lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history contains " + total.ToString() + " page(s).'><i class='fa-solid fa-clock-rotate-left'></i> <span class='badge'>" + total.ToString() + "</span></a><ul id='history-menu-drop' class='menu-drop'>";
 
             foreach (HistoryItem h in uh.GetItems(5))
             {                

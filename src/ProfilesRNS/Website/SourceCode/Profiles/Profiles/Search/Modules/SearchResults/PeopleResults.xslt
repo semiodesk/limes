@@ -410,7 +410,7 @@
                 <xsl:choose>
                   <xsl:when test="$page&lt;$totalpages">
                     <a href="JavaScript:GotoLastPage();" class="listTablePaginationFL listTablePaginationA" title="Go to last page">
-                      <span class="fa fa-angle-double-right"></span>
+                      <span class="fa fa-angles-right"></span>
                     </a>
                     <a href="javascript:GotoNextPage();" class="listTablePaginationPN listTablePaginationN listTablePaginationA" title="Go to next page">
                       <span class="fa fa-angle-right"></span>
@@ -418,7 +418,7 @@
                   </xsl:when>
                   <xsl:otherwise>
                     <div class="listTablePaginationFL">
-                      <span class="fa fa-angle-double-right"></span>
+                      <span class="fa fa-angles-right"></span>
                     </div>
                     <div class="listTablePaginationPN listTablePaginationN">
                       <span class="fa fa-angle-right"></span>
@@ -431,7 +431,7 @@
                       <span class="fa fa-angle-left"></span>
                     </a>
                     <a href="JavaScript:GotoFirstPage();" class="listTablePaginationFL listTablePaginationA" title="Go to first page">
-                      <span class="fa fa-angle-double-left"></span>
+                      <span class="fa fa-angles-left"></span>
                     </a>
                   </xsl:when>
                   <xsl:otherwise>
@@ -439,7 +439,7 @@
                       <span class="fa fa-angle-left"></span>
                     </div>
                     <div class="listTablePaginationFL">
-                      <span class="fa fa-angle-double-left"></span>
+                      <span class="fa fa-angles-left"></span>
                     </div>
                   </xsl:otherwise>
                 </xsl:choose>
