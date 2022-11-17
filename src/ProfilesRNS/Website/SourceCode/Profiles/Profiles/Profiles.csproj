@@ -2194,6 +2194,7 @@
     <Content Include="Framework\Assets\images\logo-ccga.png" />
     <Content Include="Framework\Assets\images\logo-dresden-concept-gc.png" />
     <Content Include="Framework\Assets\images\logo-ncct.png" />
+    <Content Include="Framework\Assets\images\logo-ngscn.svg" />
     <Content Include="Framework\Assets\images\logo-west-german-gc.png" />
     <Content Include="Framework\CSS\hms-catalyst.css" />
     <Content Include="Framework\CSS\prns-theme-menus-top.css" />

@@ -22,13 +22,13 @@ namespace Profiles.Search.Modules.SearchPerson
 {
     public partial class SearchPerson : BaseModule
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-        }
-
         public SearchPerson() { }
 
         public SearchPerson(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
+        {
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
         {
             if (Convert.ToBoolean(ConfigurationSettings.AppSettings["ShowInstitutions"]) == true)
             {

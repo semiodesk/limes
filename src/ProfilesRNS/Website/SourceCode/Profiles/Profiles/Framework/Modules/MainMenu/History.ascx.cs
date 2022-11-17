@@ -16,14 +16,26 @@ namespace Profiles.Framework.Modules.MainMenu
             if (this.RDFData != null)
             {
                 uh = new UserHistory();
+
                 if (this.RDFData.InnerXml != "")
+                {
                     RecordHistory();
+                }
 
                 if (uh.GetItems() != null)
                 {
                     DrawProfilesModule();
                 }
-                else { lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history is empty.'><i class='fa-solid fa-clock-rotate-left'></i> <span class='badge d-none'>0</span></a><ul id='history-menu-drop' class='menu-drop'><li><a>No items in history</a></li></ul></li>"; }
+                else
+                {
+                    lblHistoryItems.Text = @"
+<a href='#' class='dropdown-toggle dropdown-no-indicator' data-toggle='dropdown' role='button' aria-expanded='false' title='Navigation history is empty.'>
+    <i class='fa-solid fa-clock-rotate-left'></i> <span class='badge d-none'>0</span>
+</a>
+<ul id='dropdown-menu-history' class='dropdown-menu dropdown-menu-right'>
+    <li><a class='dropdown-item'>No items in history</a></li>
+</ul>";
+                }
             }
         }
         
@@ -32,22 +44,28 @@ namespace Profiles.Framework.Modules.MainMenu
             int count = 0;
             int total = uh.GetItems().Count;
 
-            lblHistoryItems.Text = "<li class='main-nav'><a class='menu-toggle' data-drop='history-menu-drop' title='Navigation history contains " + total.ToString() + " page(s).'><i class='fa-solid fa-clock-rotate-left'></i> <span class='badge'>" + total.ToString() + "</span></a><ul id='history-menu-drop' class='menu-drop'>";
+            lblHistoryItems.Text = $@"
+<a href='#' class='dropdown-toggle dropdown-no-indicator' data-toggle='dropdown' role='button' aria-expanded='false' title='Navigation history contains {total} page(s).'>
+    <i class='fa-solid fa-clock-rotate-left'></i> <span class='badge'>{total}</span>
+</a>
+<ul id='dropdown-menu-history' class='dropdown-menu dropdown-menu-right'>";
 
             foreach (HistoryItem h in uh.GetItems(5))
             {                
-                lblHistoryItems.Text += "<li><a href='" + h.URI + "'>" + h.ItemLabel + "</a></li>";                
+                lblHistoryItems.Text += "<li><a class='dropdown-item' href='" + h.URI + "'>" + h.ItemLabel + "</a></li>";                
                 count++;
             }
 
             if (total > 1)
             {
-                lblHistoryItems.Text += "<li><a href='" + Root.Domain + "/history'>See All " + total.ToString() + " Pages</a></li></ul></li>";
+                lblHistoryItems.Text += "<li><a class='dropdown-item' href='" + Root.Domain + "/history'>See All " + total.ToString() + " Pages</a></li>";
             }
             else if (total == 1)
             {
-                lblHistoryItems.Text += "<li><a href='" + Root.Domain + "/history'>See All Pages</a></li></ul></li>";
+                lblHistoryItems.Text += "<li><a class='dropdown-item' href='" + Root.Domain + "/history'>See All Pages</a></li>";
             }
+
+            lblHistoryItems.Text += "</ul></li>";
         }
 
         private void RecordHistory()

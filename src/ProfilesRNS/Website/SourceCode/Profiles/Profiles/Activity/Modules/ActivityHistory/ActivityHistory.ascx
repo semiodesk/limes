@@ -13,14 +13,16 @@
     </asp:Repeater>
   </asp:Panel>
 
-  <div class="d-flex flex-column align-items-center">
-    <div id="progress-spinner" style="display: none">
+  <div class="act-list-footer">
+    <div id="progress-spinner" class="btn btn-primary mt-2 px-5" style="display: none">
         <div class="d-flex flex-row align-items-center">
-            <div class="spinner mr-2"></div><span>Loading..</span>
+            <div class="spinner spinner-s mr-2"></div><span>Loading..</span>
         </div>
     </div>
 
-    <button id="btn-load-next" class="btn btn-primary justify-self-center mt-2" onclick="loadNext()">View more</button>
+    <button id="btn-load-next" class="btn btn-primary mt-2 px-5" onclick="loadNext()">
+        View more
+    </button>
   </div>
 </section>
 

@@ -49,19 +49,37 @@ section {
 .act-list-item .act-date,
 .act-list-item .act-body {
     font-size: .9em;
+    color: #666;
 }
 
 .act-list-item .act-title a {
     display: block;
-    color: #007BBE;
+    color: #2593cd;
     margin: .1rem 0;
     line-height: 1.3em;
     font-weight: 500;
+    border: none;
+    font-size: 1.1em;
+}
+
+.act-list-item .act-title a:hover {
+    border: none;
+}
+
+.act-list-item a {
+    display: inline;
+    color: #2F528F;
+    border-bottom: 1px dashed #ccc;
+}
+
+.act-list-item a:hover {
+    border-bottom: 1px solid #333;
+    text-decoration: none;
 }
 
 .act-list-item span {
     display: inline;
-    color: #2F528F;
+    color: #333;
 }
 
 .act-list-item-header {
@@ -83,5 +101,23 @@ section {
 
 .act-list-item-body {
     padding-left: 1em;
-    padding-bottom: 1.5em;
+    padding-bottom: 1.8em;
+}
+
+.act-list-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #eee;
+}
+
+.btn.btn-primary:focus {
+    background-color: #2593cd;
+    border-color: #2593cd;
+    box-shadow: 0 0 0 2px #2593cd;
+}
+
+h3 i.fa-solid {
+    color: #ccc;
+    margin-right: 5px;
 }

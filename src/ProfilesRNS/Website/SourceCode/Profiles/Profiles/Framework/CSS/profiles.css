@@ -2,17 +2,17 @@
 
 body {
   font-family: "Roboto", "Helvetica", sans-serif;
-  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.4em;
 }
 
 a {
-  color: #2F528F;
+  color: #2f528f;
   border-bottom: 1px solid transparent;
 }
 
 a:focus {
-    outline: none;
-    border-bottom: 1px solid #2F528F;
+  outline: 1px dotted;
 }
 
 b {
@@ -37,41 +37,35 @@ h2 {
 }
 
 h3 {
-    font-size: 1.4rem;
-    font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 h4 {
-    font-size: 1.1rem;
-    font-weight: 500;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
-.btn {  
-    border-radius: 30px;
-    font-size: .9em;
+.btn {
+  border-radius: 30px;
+  font-size: 0.9em;
 }
 
 .btn:focus {
-    box-shadow: 0 0 0 2px #36A4DE;
+  box-shadow: 0 0 0 2px #2f528f;
 }
 
 .btn.btn-primary {
-    background-color: #36A4DE;
-    border-color: #36A4DE;
-    font-weight: 500;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+  background-color: #2f528f;
+  border-color: #2f528f;
+  font-weight: 500;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 .btn.btn-primary:hover {
-    background-color: #2593cd;
-    border-color: #2593cd;
-}
-
-label {
-  color: #2F528F;
-  font-weight: 600;
-  margin-bottom: 0;
+  background-color: #2593cd;
+  border-color: #2593cd;
 }
 
 .text-right {
@@ -92,45 +86,9 @@ label {
   justify-self: flex-end;
 }
 
-/*Dont touch this container as it provides spacing on top of CSS search button*/
-.searchForm .search-button {
-  transition: all ease-in-out 0.2s;
-  display: inline-block;
-  color: #ffffff;
-  padding: 0.6em 1em;
-  background-color: #0071ae;
-  border: 2px solid #0071ae;
-  line-height: 16px;
-  border-radius: 20px;
-  cursor: pointer;
-  outline: none;
-}
-
-.searchForm .search-button .fa {
-  font-size: 16px;
-  margin: 0 0.5em 0 0;
-}
-
-.searchForm .search-button:focus {
-  text-decoration: none;
-  border: 2px solid #36a4de;
-}
-
-.searchForm .search-button:hover {
-  text-decoration: none;
-  border: 2px solid #ccc;
-}
-
-.searchForm .search-button[disabled] {
-  border: 2px solid #0071ae;
-  background: transparent;
-  color: #0071ae;
-  cursor: not-allowed;
-}
-
 .header-container {
   padding-top: 1em;
-  padding-bottom: 0;
+  padding-bottom: 1em;
 }
 
 .header-container h1 {
@@ -138,20 +96,25 @@ label {
 }
 
 .header-container h1 a {
-    color: #007BBE;
-    padding: 0;
+  color: #2f528f;
+  padding: 0;
 }
 
-.header-container h1 a span {
+.header-container h1 a span.color-black {
   color: black;
 }
 
 .header-container h1 a:hover {
   text-decoration: none;
+  color: #36a4de;
 }
 
 .pageTitle {
   text-align: left;
+}
+
+.profilesPage {
+  margin: 2em 0 0 0;
 }
 
 .panelMain table {
@@ -162,6 +125,10 @@ label {
   .float-sm-right {
     float: right;
   }
+}
+
+.form-check-input {
+  margin-top: .2rem;
 }
 
 /*Replacing inline styles for the form headings in the main app*/
@@ -309,8 +276,8 @@ div#catalyst-footer {
   top: 0;
   right: 15px;
   z-index: 99;
-  background-color: #0071a1;
-  border: 2px solid #0071ae;
+  background-color: #2f528f;
+  border: 2px solid #2f528f;
   color: white;
   cursor: pointer;
 }
@@ -320,7 +287,7 @@ div#catalyst-footer {
 }
 
 #rtnBtn:focus {
-  border-color: #36a4de;
+  border-color: #2593cd;
 }
 
 .tog {
@@ -338,7 +305,7 @@ div#catalyst-footer {
   text-transform: capitalize;
   cursor: pointer;
   border: none;
-  color: #2F528F;
+  color: #2f528f;
 }
 
 .PropertyGroup {
@@ -374,7 +341,7 @@ div#catalyst-footer {
   padding: 0 1em;
   text-align: left;
   margin-bottom: 1em;
-  color: #2F528F;
+  color: #2f528f;
 }
 
 .institutionHeader h1 span {
@@ -1178,6 +1145,10 @@ table tbody .height25 {
   margin-bottom: 0.5em;
 }
 
+.vcard .itemprop label {
+  font-weight: 500;
+}
+
 @media (min-width: 576px) {
   .footer {
     text-align: left;
@@ -1194,41 +1165,41 @@ table tbody .height25 {
   }
 }
 
-@media (min-width: 768px) {
-  .header-container {
-    padding-bottom: 1em;
-  }
-}
-
 .spinner {
-    width: 40px;
-    height: 40px;
-    background-color: #2593cd;
-    border-radius: 100%;
-    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
-    animation: sk-scaleout 1.0s infinite ease-in-out;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
 }
 
-@-webkit-keyframes sk-scaleout {
-    0% {
-        -webkit-transform: scale(0)
-    }
-
-    100% {
-        -webkit-transform: scale(1.0);
-        opacity: 0;
-    }
+.spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
 }
 
-@keyframes sk-scaleout {
-    0% {
-        -webkit-transform: scale(0);
-        transform: scale(0);
-    }
+.spinner.spinner-s {
+  width: 24px;
+  height: 24px;
+}
 
-    100% {
-        -webkit-transform: scale(1.0);
-        transform: scale(1.0);
-        opacity: 0;
-    }
+.spinner.spinner-s:after {
+  width: 16px;
+  height: 16px;
+  margin: 4px;
+  border-width: 2px;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

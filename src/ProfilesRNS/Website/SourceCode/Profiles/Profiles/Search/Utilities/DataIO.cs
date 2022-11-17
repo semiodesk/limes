@@ -72,6 +72,7 @@ namespace Profiles.Search.Utilities
                 search.Append(classgroupuri);
                 search.Append("</ClassGroupURI>");
             }
+
             if (classuri != string.Empty)
             {
                 search.Append("<ClassURI>");
@@ -108,11 +109,12 @@ namespace Profiles.Search.Utilities
             string isexclude = "0";
 
             if (searchrequest != string.Empty)
-                xmlrequest.LoadXml(this.DecryptRequest(searchrequest));
-            else
             {
-                if (searchstring == null)
-                    searchstring = string.Empty;
+                xmlrequest.LoadXml(this.DecryptRequest(searchrequest));
+            }
+            else if (searchstring == null)
+            {
+                searchstring = string.Empty;
             }
 
             if (fname.IsNullOrEmpty())

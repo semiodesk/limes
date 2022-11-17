@@ -70,14 +70,14 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
       </script>
     -->
       <div class="container header-container">
-        <h1 class="d-none d-sm-block">
-          <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/">Next Generation Sequencing <span>Competence Network</span></a>
-        </h1>
-        <h1 class="d-block d-sm-none">
-          <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/">NGS-<span>Competence Network</span></a>
-        </h1>
+        <div class="d-flex flex-row align-items-center justify-content-center justify-content-sm-start">
+            <img src="/Framework/Assets/images/logo-ngscn.svg" width="90" alt="Next Generation Sequencing Competence Network" />
+            <h1 class="d-none d-sm-block m-0 ml-3">
+                <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/"><span class="d-block d-lg-inline">Next Generation Sequencing</span> <span class="color-black">Competence Network</span></a>
+            </h1>
+        </div>
       </div>
-      <div class="container py-2">
+      <div class="container pb-2">
         <div class="profilesHeader" runat="server" id="divProfilesHeader">
           <div class="panelHeader">
             <asp:ContentPlaceHolder ID="ContentHeader" runat="server">
@@ -167,7 +167,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
           <a href="https://ngs-kn.de/" target="_blank" class="ml-md-auto">
             © 2022 Next Generation Sequencing Competence Network <span class="text-nowrap">(NGS-CN)</span>
           </a> |
-          <b><a href="/about/default.aspx?tab=imprint">Impressum</a></b> |
+          <b><a href="/about/default.aspx?tab=imprint">Imprint</a></b> |
           <b><a href="/about/default.aspx?tab=privacy">Privacy</a></b>
         </div>
 

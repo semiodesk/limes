@@ -41,7 +41,7 @@ namespace Profiles.Search.Utilities
                     output += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
             }
 
-            return "<select title=\"" + type + "\" name=\"" + type + "\" id=\"" + type + "\">" + output + "</select>";
+            return $"<select title=\"{type}\" name=\"{type}\" id=\"{type}\" class=\"form-control\">{output}</select>";
         }
     }
 }

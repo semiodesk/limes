@@ -171,67 +171,6 @@ h3 .bi {
   padding-bottom: 0;
 }
 
-.searchForm {
-  background-color: #e9f1f7;
-  padding: 1.5em;
-  margin-bottom: 1em;
-}
-
-.searchForm a {
-  text-decoration: none;
-  border: 0;
-}
-
-.searchForm .form-control-subline {
-  margin-top: 0.5em;
-  text-align: right;
-}
-
-.searchForm .form-control-subline label {
-  font-weight: normal;
-  color: inherit;
-}
-
-.searchForm input[type="text"],
-.searchForm select {
-  width: 100% !important;
-  height: 1.7em;
-  line-height: 1.7em;
-}
-
-.searchForm input[type="checkbox"] {
-  margin-right: 0.5em;
-}
-
-.input-padding {
-  margin-bottom: 9px !important;
-  padding-left: 5px;
-}
-
-.fileOptions span {
-  font-weight: normal;
-  padding-right: 5px;
-}
-
-.searchForm .inputButton {
-  width: 70px;
-  margin: 0px 20px 0px 0px;
-}
-
-.searchForm .spacerRow {
-  height: 16px;
-  overflow: hidden;
-}
-
-.searchForm .spacerRowSmall {
-  height: 8px;
-  overflow: hidden;
-}
-
-.searchForm .submitTable {
-  background-color: #fff;
-}
-
 .listTablePagination {
   margin: 10px 0 0 0;
   display: flex;

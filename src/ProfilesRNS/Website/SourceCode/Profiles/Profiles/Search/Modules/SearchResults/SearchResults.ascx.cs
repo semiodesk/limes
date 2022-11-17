@@ -26,27 +26,25 @@ namespace Profiles.Search.Modules.SearchResults
 {
     public partial class SearchResults : BaseModule
     {
+        public XmlDocument SearchData { get; set; }
+
+        public SearchResults() { }
+
+        public SearchResults(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
+            : base(pagedata, moduleparams, pagenamespaces)
+        {
+            SearchData = pagedata;
+        }
+
         protected void Page_Init(object sender, EventArgs e)
         {
             DrawProfilesModule();
         }
-        public SearchResults() { }
-        public SearchResults(XmlDocument pagedata, List<ModuleParams> moduleparams, XmlNamespaceManager pagenamespaces)
-            : base(pagedata, moduleparams, pagenamespaces)
-        {
-            Utilities.DataIO data = new Profiles.Search.Utilities.DataIO();
-
-           
-            this.SearchData = pagedata;
-        }
-
-        public XmlDocument SearchData { get; set; }
-
 
         private void DrawProfilesModule()
         {
-
             XsltArgumentList args = new XsltArgumentList();
+
             long offset = 0;
             long perpage = 0;
             long totalcount = 0;
@@ -66,6 +64,7 @@ namespace Profiles.Search.Modules.SearchResults
             string sort = "";
             string sortdirection = "";
             string searchrequest = "";
+
             XmlDocument xmlsearchrequest;
             xmlsearchrequest = new XmlDocument();
             
@@ -76,7 +75,6 @@ namespace Profiles.Search.Modules.SearchResults
             string departmentallexcept = string.Empty;
             string divisionallexcept = string.Empty;
             bool exactphrase = false; // UCSF default value to allow old Mini Search to work
-
 
             string searchtype = "";
 
