@@ -8,7 +8,7 @@ namespace Profiles.Search.Utilities
     {
 
 
-        public static string BuildDropdown(string type, string width, string defaultitem)
+        public static string BuildDropdown(string type, string width, string defaultitem, string placeholder = null)
         {
             Utilities.DataIO data = new Profiles.Search.Utilities.DataIO();
             string output = string.Empty;
@@ -29,9 +29,14 @@ namespace Profiles.Search.Utilities
                     break;
             }
 
-            //if (defaultitem.IsNullOrEmpty())
+            if (!string.IsNullOrEmpty(placeholder))
+            {
+                output += $"<option value=\"\" disabled selected>{placeholder}</option>";
+            }
+            else if(string.IsNullOrEmpty(defaultitem))
+            {
                 output += "<option value=\"\"></option>";
-
+            }
 
             foreach (GenericListItem item in list)
             {

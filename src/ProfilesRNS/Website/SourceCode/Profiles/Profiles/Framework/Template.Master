@@ -71,9 +71,11 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     -->
       <div class="container header-container">
         <div class="d-flex flex-row align-items-center justify-content-center justify-content-sm-start">
-            <img src="/Framework/Assets/images/logo-ngscn.svg" width="90" alt="Next Generation Sequencing Competence Network" />
+            <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/">
+              <img src="/Framework/Assets/images/logo-ngscn.svg" width="90" alt="Next Generation Sequencing Competence Network" />
+            </a>
             <h1 class="d-none d-sm-block m-0 ml-3">
-                <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/"><span class="d-block d-lg-inline">Next Generation Sequencing</span> <span class="color-black">Competence Network</span></a>
+                <a title="Go to Next Generation Sequencing Competence Network frontpage" href="/"><span class="d-block d-lg-inline">Next Generation Sequencing</span> Competence Network</a>
             </h1>
         </div>
       </div>

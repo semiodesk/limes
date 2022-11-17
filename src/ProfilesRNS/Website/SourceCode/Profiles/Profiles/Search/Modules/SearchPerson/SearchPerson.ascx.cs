@@ -32,7 +32,9 @@ namespace Profiles.Search.Modules.SearchPerson
         {
             if (Convert.ToBoolean(ConfigurationSettings.AppSettings["ShowInstitutions"]) == true)
             {
-                litInstitution.Text = SearchDropDowns.BuildDropdown("institution", "249", "");
+                string placeholder = "Choose a research institute or university";
+
+                litInstitution.Text = SearchDropDowns.BuildDropdown("institution", "249", "", placeholder);
             }
             else
             {
@@ -41,7 +43,9 @@ namespace Profiles.Search.Modules.SearchPerson
 
             if (Convert.ToBoolean(ConfigurationSettings.AppSettings["ShowDivisions"]) == true)
             {
-                litDivision.Text = SearchDropDowns.BuildDropdown("division", "249", "");
+                string placeholder = "Choose a competence center, i.e. 'CCGA'";
+
+                litDivision.Text = SearchDropDowns.BuildDropdown("division", "249", "", placeholder);
             }
             else
             {

@@ -267,6 +267,14 @@
   max-width: 800px;
 }
 
+#advanced-search-content .tab-pane form label {
+  font-weight: 500;
+}
+
+#advanced-search-content .tab-pane form label.form-check-label {
+  font-weight: 400;
+}
+
 #advanced-search-content .tab-pane form a {
   text-decoration: none;
   border: 0;
@@ -280,6 +288,10 @@
 #advanced-search-content .tab-pane form .form-control-subline label {
   font-weight: normal;
   color: inherit;
+}
+
+#advanced-search-content .tab-pane form input[type="text"]{
+  padding-left: .5em;
 }
 
 #advanced-search-content .tab-pane form input[type="text"],
