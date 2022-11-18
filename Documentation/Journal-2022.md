@@ -394,6 +394,45 @@ rm ProfilesRNS.tmp
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
 - Adapting ActivityHistory control to display new data
 - Jour Fix meeting with Antonella Succoro at 10:30am
-  - Introducing Motomo
+  - Introduced Matomo
     - Scheuled log file parsing
     - Stats, Goals, User Engagement
+
+### Tuesday, 15th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Adapting ActivityHistory control to display new data
+- Moved ActivityHistory control to frontpage
+- Altered page layout of frontpage
+  
+### Wednesday, 16th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Fixed issue #43
+  - Caused by Profiles RNS storing the last query in a session variable and preferring this value over the query parameters of the URL
+  - Made search parser ignore the session variable and prefer the HTML query parameters instead
+  
+### Thursday, 17th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Fixed issue #39
+  - SVG logo needed reworking of the embedded PNG file and converting the font to a path
+- Fixed issue #43
+  - Caused by Profiles RNS storing the last query in a session variable and preferring this value over the query parameters of the URL
+  - Added hidden input field with 'new' search parameter to force Profiles RNS to parse the search results
+- Fixed issue #44
+- Fixed issue #45
+  - Caused by preferring the HTML query parameters over the search string session variable
+  - Reverted old patches to fix #43 and added hidden input parameter to search form
+  - This way the search form submit forces new parameters to be parsed while the page navigation can still use the cached search
+
+### Friday, 17th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Worked on issue #40
+  - Managed to enable matching Umlauts by their base character (i.e. 'kohrer' matches 'köhrer')
+  - Tried to enable matching of alternative spellings such as 'ae' instead of 'ä'
+    - Best possible implmentation given the CONTAINSTABLE full text search method of SQL server was to rewrite alternative spellings to 'koe*' instead of 'koehrer*'
+    - However, this descreases the precision of the 'everything' search significantly *AND*
+    - It poses a problem with names that are not meant to be shortened such as 'Michael'
+    - Concluded not to enable this option.
+  - Tried to list alternative searches on the Search results page
+    - However, the search results are rendered using XSLT which does not allow for interaction
+    - Implementing the feature would require a significant refactoring of the search results component.
+- Added preliminary word cloud to the site

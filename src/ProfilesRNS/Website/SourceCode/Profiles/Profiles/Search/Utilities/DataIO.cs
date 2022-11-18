@@ -148,7 +148,6 @@ namespace Profiles.Search.Utilities
             if (searchstring != string.Empty)
             {
                 search.Append("<SearchString ExactMatch=\"" + exactphrase + "\">");
-
                 search.Append(searchstring);
                 search.Append("</SearchString>");
             }

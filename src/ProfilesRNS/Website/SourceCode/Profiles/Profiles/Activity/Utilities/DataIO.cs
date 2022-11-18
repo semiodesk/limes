@@ -494,14 +494,14 @@ namespace Profiles.Activity.Utilities
                         return $@"
 <div class='act-list-item'>
     <div class='act-list-item-header'>
-        <div class='dot'></div>
+        <div class='dot'><i class='fa-solid fa-file'></i></div>
     </div>
     <div class='act-list-item-body'>
         <div class='act-title'>
             <b><a href='{item.Content.URL}'>{item.Content.Title}</a></b>
         </div>
         <div class='act-body'>
-            On {item.Content.DatePublished:d MMMM yyyy} by <a href='{item.Profile.URL}'><i class='fa fa-user'></i> {item.Profile.Name}</a> in <span>{item.Content.Channel}</span>
+            {item.Content.DatePublished:d MMMM yyyy} by <a href='{item.Profile.URL}'><i class='fa fa-user'></i> {item.Profile.Name}</a> in <span>'{item.Content.Channel}'</span>
         </div>
     </div>
 </div>
@@ -512,11 +512,11 @@ namespace Profiles.Activity.Utilities
                         return $@"
 <div class='act-list-item'>
     <div class='act-list-item-header'>
-        <div class='dot'></div>
+        <div class='dot'><i class='fa-solid fa-user-plus'></i></div>
     </div>
     <div class='act-list-item-body'>
         <div class='act-body'>
-            On {item.DateCreated:d MMMM yyyy} <i class='fa fa-user'></i> {item.Profile.Name}</a> added a profile.
+            {item.DateCreated:d MMMM yyyy} a profile for <i class='fa fa-user'></i> {item.Profile.Name}</a> was added.
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@
                         $('#searchfor').attr('placeholder', "Find published articles about a topic, i.e. 'neural stem cells'");
                         break;
                     case 'type-concepts':
-                        $('#searchfor').attr('placeholder', "Find term definitions and trends, i.e. 'neural stem cells'");
+                        $('#searchfor').attr('placeholder', "Find definitions and trends, i.e. 'neural stem cells'");
                         break;
                 }
             }
@@ -29,7 +29,7 @@
 
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="classgroupuri" id="type-concepts" onchange="updatePlaceholder(this)" value="http://profiles.catalyst.harvard.edu/ontology/prns#ClassGroupConcepts">
-            <label class="form-check-label" for="type-concepts">Concepts</label>
+            <label class="form-check-label" for="type-concepts">Subject Areas</label>
         </div>
     </div>
 

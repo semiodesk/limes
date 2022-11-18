@@ -17,7 +17,7 @@
     </div>
 
     <div runat="server" id="trInstitution" class="form-group">
-        <label for="institution">Institution</label>
+        <label for="institution">University or Institute</label>
         <asp:Literal runat="server" ID="litInstitution"></asp:Literal>
 
         <div class="form-control-subline">
@@ -27,7 +27,7 @@
     </div>
 
     <div runat="server" id="trDivision" class="form-group">
-        <label for="division">Competence Center</label>
+        <label for="division">Competence Center</label><small class="text-muted ml-2">i.e. CCGA</small>
         <asp:Literal runat="server" ID="litDivision"></asp:Literal>
 
         <div class="form-control-subline">

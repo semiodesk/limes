@@ -8,6 +8,7 @@ Inherits="Profiles.Activity.Modules.LatestUpdates.LatestUpdates" %>
   <div class="activeContainerCenter">
     <div class="activeSection">
       <div class="activeSectionBody">
+        <img src="/Framework/Assets/images/wordcloud.png" class="wordcloud" width="315" height="174" />
         <Statistics:Statistics runat="server" ID="Statistics" Visible="true" />
         <TwitterTimeline:TwitterTimeline runat="server" ID="Activity1" Visible="true" />
       </div>

@@ -3,6 +3,14 @@ section {
     padding-bottom: 2em;
 }
 
+.wordcloud {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
 .panelActive {
   padding: 0 0 0 1em;
 }
@@ -40,10 +48,11 @@ section {
 .act-list-item {
     display: flex;
     flex-direction: row;
+    margin-left: 10px;
 }
 
 .act-list-item .fa {
-    font-size: .9em;
+    font-size: 1em;
 }
 
 .act-list-item .act-date,
@@ -54,9 +63,9 @@ section {
 
 .act-list-item .act-title a {
     display: block;
-    color: #2593cd;
+    color: #0e5fa7;
     margin: .1rem 0;
-    line-height: 1.3em;
+    line-height: 1.4em;
     font-weight: 500;
     border: none;
     font-size: 1.1em;
@@ -89,18 +98,21 @@ section {
 }
 
 .act-list-item-header .dot {
+    color: #2F528F;
     background: white;
     border: 2px solid #e0e0e0;
-    width: 15px;
-    height: 15px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     position: relative;
-    top: 5px;
-    left: -6px;
+    top: 0;
+    left: -13px;
+    text-align: center;
+    line-height: 27px;
 }
 
 .act-list-item-body {
-    padding-left: 1em;
+    padding-left: 1.5em;
     padding-bottom: 1.8em;
 }
 

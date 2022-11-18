@@ -5,17 +5,17 @@
 <%@ Register TagName="SearchEverything" TagPrefix="prns" Src="~/Search/Modules/SearchEverything/SearchEverything.ascx" %>
 
 <nav id="prns-nav">
-    <a href="<%=ResolveUrl("~/search")%>" title="Go to the search homepage." aria-label="Home">
-        <i class="fa-solid fa-house"></i><span class="d-none">Search</span>
-    </a>
-
-    <form id="prns-minisearch" class="search-container mr-auto" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
+    <form id="prns-minisearch" class="search-container" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
         <i class="fa fa-search"></i>
         <label class="d-none" for="menu-search">Search</label>
         <input type="text" name="searchfor" placeholder="Find people or research by keyword.." aria-label="Enter your search here." required/>
         <input type="hidden" name="searchtype" value="everything" />
         <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
     </form>
+
+    <a href="<%=ResolveUrl("~/search")%>" class="mr-auto" title="Go to the search homepage." aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+    </a>
 
     <!-- USER LOGIN MSG / USER FUNCTION MENU -->
     <div id="prns-usrnav" class="pub" class-help="class should be [pub|user]">
