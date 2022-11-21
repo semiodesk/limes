@@ -98,8 +98,6 @@ $(function () {
 });
 
 function setNavigation() {
-    console.warn("setNavigation");
-
     var path = $(location).attr('href');
     path = path.replace(/\/$/, "");
     path = decodeURIComponent(path);
