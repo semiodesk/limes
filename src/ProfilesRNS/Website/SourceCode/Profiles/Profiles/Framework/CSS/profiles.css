@@ -311,6 +311,10 @@ div#catalyst-footer {
 .PropertyGroup {
   font-size: 1.7em;
   outline: none;
+  line-height: 1.8em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .PropertyGroup img,
@@ -1146,7 +1150,7 @@ table tbody .height25 {
 }
 
 .vcard .itemprop label {
-  font-weight: 500;
+  font-weight: 700;
 }
 
 @media (min-width: 576px) {

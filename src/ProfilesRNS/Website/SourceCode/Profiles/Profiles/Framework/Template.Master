@@ -14,10 +14,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     <link rel="stylesheet" href="/Framework/Assets/fontawesome-6.2.0/css/fontawesome.min.css" />
     <link rel="stylesheet" href="/Framework/Assets/fontawesome-6.2.0/css/regular.min.css" />
     <link rel="stylesheet" href="/Framework/Assets/fontawesome-6.2.0/css/solid.min.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Framework/Assets/roboto/css/roboto.css" />
     
     <script type="text/javascript" src="/Framework/Assets/boostrap-4.0/js/jquery-3.3.1.min.js"></script>
 
