@@ -319,54 +319,59 @@ namespace Profiles.Activity.Utilities
             }
 
             string sql = $@"
-                SELECT DISTINCT
-                    i.activityLogID,
-                    i.createdDT as activityDate,
-	                CASE i.methodName
-		                WHEN '[Profile.Data].[Publication.Pubmed.LoadDisambiguationResults]' THEN
-			                CASE WHEN (pm.ArticleYear IS NOT NULL) THEN
-				                PARSE(TRIM(CONCAT(pm.ArticleYear, ' ', COALESCE(pm.ArticleMonth, '01'), ' ', COALESCE(pm.ArticleDay, '01'))) AS DATETIME)
-			                WHEN (pm.ArticleYear IS NULL AND pm.JournalYear IS NOT NULL) THEN
-				                PARSE(TRIM(CONCAT(pm.JournalYear, ' ', COALESCE(pm.JournalMonth, '01'), ' ', COALESCE(pm.JournalDay, '01'))) AS DATETIME)
-			                ELSE
-				                fa.StartDate
-			                END
-	                ELSE
-		                i.[createdDT]
-	                END AS [contentDate],
-	                i.methodName,
-                    i.param1,
-                    i.param2,
-                    n.nodeid as personNodeID,
-                    p.firstname as firstName,
-                    p.lastname as lastName,
-                    i.property,
-                    cp._PropertyLabel as propertyLabel,
-	                pm.journalTitle,
-	                pm.articleTitle,
-	                pmt.[Subject] AS articleNodeID,
-	                pm.PMID AS pubMedID,
-	                fa.agreementLabel
-                FROM [Framework.].[Log.Activity] i
-                LEFT JOIN [Profile.Data].[Person] p ON i.personId = p.personID
-                LEFT JOIN [RDF.Stage].[internalnodemap] n on n.internalid = p.personId and n.[class] = 'http://xmlns.com/foaf/0.1/Person'
-                LEFT JOIN [Ontology.].[ClassProperty] cp ON cp.Property = i.property  and cp.[Class] = 'http://xmlns.com/foaf/0.1/Person'
-                LEFT JOIN [RDF.].[Node] rn ON [RDF.].fnValueHash(null, null, i.property) = rn.ValueHash
-                LEFT JOIN [RDF.Security].[NodeProperty] np ON n.NodeID = np.NodeID and rn.NodeID = np.Property
-                LEFT JOIN [Profile.Data].[Publication.PubMed.General] pm ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pm.PMID = i.param2
-                LEFT JOIN [RDF.].[Node] pmo ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pmo.[Value] = i.param2
-                LEFT JOIN [RDF.].[Triple] pmt ON pmt.[Object] = pmo.NodeID
-                LEFT JOIN [Profile.Data].[Funding.Role] fr ON (i.property = 'http://vivoweb.org/ontology/core#ResearcherRole' AND fr.FundingRoleID = i.param1)
-                LEFT JOIN [Profile.Data].[Funding.Agreement] fa ON fr.FundingAgreementID = fa.FundingAgreementID
-                WHERE
-                    p.IsActive=1
-                    AND (
-                        np.ViewSecurityGroup = -1
-                        OR (i.privacyCode = -1 AND np.ViewSecurityGroup IS NULL)
-                        OR (i.privacyCode IS NULL AND np.ViewSecurityGroup IS NULL)
-                    )
-	                AND i.param1 != 'Person Update'
-                ORDER BY contentDate DESC
+            SELECT DISTINCT
+                i.activityLogID,
+                i.createdDT as activityDate,
+	            CASE i.methodName
+		            WHEN '[Profile.Data].[Publication.Pubmed.LoadDisambiguationResults]' THEN
+			            CASE
+			            WHEN (pm.ArticleYear IS NOT NULL) THEN
+				            PARSE(TRIM(CONCAT(pm.ArticleYear, ' ', COALESCE(pm.ArticleMonth, '01'), ' ', COALESCE(pm.ArticleDay, '01'))) AS DATETIME)
+			            WHEN (pm.JournalYear IS NOT NULL) THEN
+				            PARSE(TRIM(CONCAT(pm.JournalYear, ' ', COALESCE(pm.JournalMonth, '01'), ' ', COALESCE(pm.JournalDay, '01'))) AS DATETIME)
+			            WHEN (fa.StartDate IS NOT NULL) THEN
+				            fa.[StartDate]
+			            END
+	            ELSE
+		            i.[createdDT]
+	            END AS [contentDate],
+	            i.methodName,
+                i.param1,
+                i.param2,
+                n.nodeid as personNodeID,
+                p.firstname as firstName,
+                p.lastname as lastName,
+                i.property,
+                cp._PropertyLabel as propertyLabel,
+	            pm.ArticleYear,
+	            pm.ArticleMonth,
+	            pm.JournalYear,
+	            pm.JournalMonth,
+	            pm.journalTitle,
+	            pm.articleTitle,
+	            pmt.[Subject] AS articleNodeID,
+	            pm.PMID AS pubMedID,
+	            fa.agreementLabel
+            FROM [Framework.].[Log.Activity] i
+            LEFT JOIN [Profile.Data].[Person] p ON i.personId = p.personID
+            LEFT JOIN [RDF.Stage].[internalnodemap] n on n.internalid = p.personId and n.[class] = 'http://xmlns.com/foaf/0.1/Person'
+            LEFT JOIN [Ontology.].[ClassProperty] cp ON cp.Property = i.property  and cp.[Class] = 'http://xmlns.com/foaf/0.1/Person'
+            LEFT JOIN [RDF.].[Node] rn ON [RDF.].fnValueHash(null, null, i.property) = rn.ValueHash
+            LEFT JOIN [RDF.Security].[NodeProperty] np ON n.NodeID = np.NodeID and rn.NodeID = np.Property
+            LEFT JOIN [Profile.Data].[Publication.PubMed.General] pm ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pm.PMID = i.param2
+            LEFT JOIN [RDF.].[Node] pmo ON (i.param1 = 'PMID' OR i.param1 = 'Add PMID') AND pmo.[Value] = i.param2
+            LEFT JOIN [RDF.].[Triple] pmt ON pmt.[Object] = pmo.NodeID
+            LEFT JOIN [Profile.Data].[Funding.Role] fr ON (i.property = 'http://vivoweb.org/ontology/core#ResearcherRole' AND fr.FundingRoleID = i.param1)
+            LEFT JOIN [Profile.Data].[Funding.Agreement] fa ON fr.FundingAgreementID = fa.FundingAgreementID
+            WHERE
+                p.IsActive=1
+                AND (
+                    np.ViewSecurityGroup = -1
+                    OR (i.privacyCode = -1 AND np.ViewSecurityGroup IS NULL)
+                    OR (i.privacyCode IS NULL AND np.ViewSecurityGroup IS NULL)
+                )
+	            AND i.param1 != 'Person Update'
+            ORDER BY contentDate DESC
                 OFFSET {offset} ROWS
                 FETCH NEXT {pageSize} ROWS ONLY
                 ";
