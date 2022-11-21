@@ -370,7 +370,7 @@ namespace Profiles.Activity.Utilities
                     OR (i.privacyCode = -1 AND np.ViewSecurityGroup IS NULL)
                     OR (i.privacyCode IS NULL AND np.ViewSecurityGroup IS NULL)
                 )
-	            AND i.param1 != 'Person Update'
+	            AND i.param1 NOT LIKE 'Person%'
             ORDER BY contentDate DESC
                 OFFSET {offset} ROWS
                 FETCH NEXT {pageSize} ROWS ONLY
