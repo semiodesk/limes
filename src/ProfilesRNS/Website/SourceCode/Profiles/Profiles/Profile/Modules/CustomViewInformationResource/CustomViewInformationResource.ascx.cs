@@ -71,16 +71,15 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource
 
 
             if (base.BaseData.SelectSingleNode("rdf:RDF/rdf:Description/bibo:pmid", base.Namespaces) != null)
-                litPublication.Text = "<a href=\"http://www.ncbi.nlm.nih.gov/pubmed/" + base.BaseData.SelectSingleNode("rdf:RDF/rdf:Description/bibo:pmid", base.Namespaces).InnerText + "\"target=\"_blank\">PubMed</a>";
+            {
+                litPublication.Text = "<a href=\"http://www.ncbi.nlm.nih.gov/pubmed/" + base.BaseData.SelectSingleNode("rdf:RDF/rdf:Description/bibo:pmid", base.Namespaces).InnerText + "\"target=\"_blank\" class=\"btn btn-primary\"><i class=\"fa-solid fa-book-open mr-1\"></i> PubMed</a>";
+            }
             else
+            {
                 divViewIn.Visible = false;
-
+            }
 
             litinformationResourceReference.Text = base.BaseData.SelectSingleNode("rdf:RDF/rdf:Description/prns:informationResourceReference", base.Namespaces).InnerText;
-
-
-
-
         }
 
         protected void rptSubjectAreas_OnItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -118,7 +117,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource
                 authors = (Literal)e.Item.FindControl("litAuthor");
 
             if (gl != null && authors != null)
-                authors.Text = "<a href='" + gl.Value + "'>" + gl.Text + "</a>";
+                authors.Text = "<a href='" + gl.Value + "'><i class=\"fa-solid fa-user mr-1\"></i>" + gl.Text + "</a>";
 
 
 

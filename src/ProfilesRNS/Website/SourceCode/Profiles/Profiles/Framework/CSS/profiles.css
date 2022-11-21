@@ -1124,10 +1124,10 @@ table tbody .height25 {
 }
 
 .hint {
-  font-style: italic;
   color: #666;
   padding: 1em;
-  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
 }
 
 .profile-image {
@@ -1206,4 +1206,17 @@ table tbody .height25 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.prns-subject-container {
+  background: #f0f0f0;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+.prns-subject-container label {
+  display: block;
+  font-weight: 500;
 }

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.Profile.Modules.CustomViewInformationResource {
-    
-    
-    public partial class CustomViewInformationResource {
-        
+namespace Profiles.Profile.Modules.CustomViewInformationResource
+{
+
+
+    public partial class CustomViewInformationResource
+    {
+
         /// <summary>
         /// litinformationResourceReference control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litinformationResourceReference;
-        
+
         /// <summary>
         /// divViewIn control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divViewIn;
-        
+
         /// <summary>
         /// litPublication control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litPublication;
-        
+
         /// <summary>
         /// pnlSubjectAreas control.
         /// </summary>
@@ -47,16 +49,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSubjectAreas;
-        
-        /// <summary>
-        /// imgSubjectArea control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgSubjectArea;
-        
+
         /// <summary>
         /// rptSubjectAreas control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptSubjectAreas;
-        
+
         /// <summary>
         /// pnlAuthors control.
         /// </summary>
@@ -74,16 +67,7 @@ namespace Profiles.Profile.Modules.CustomViewInformationResource {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlAuthors;
-        
-        /// <summary>
-        /// imgAuthor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage imgAuthor;
-        
+
         /// <summary>
         /// rptAuthors control.
         /// </summary>

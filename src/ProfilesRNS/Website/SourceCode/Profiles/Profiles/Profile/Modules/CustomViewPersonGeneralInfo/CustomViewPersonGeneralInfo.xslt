@@ -139,8 +139,8 @@
       </xsl:when>
     </xsl:choose>
 
-    <a href="{$root}/profile/modules/CustomViewPersonGeneralInfo/vcard.aspx?subject={$nodeid}" class="mt-2">
-      Download vCard
+    <a href="{$root}/profile/modules/CustomViewPersonGeneralInfo/vcard.aspx?subject={$nodeid}" class='btn btn-primary mt-2'>
+		Download vCard
     </a>
   </xsl:template>
 </xsl:stylesheet>

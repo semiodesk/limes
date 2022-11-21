@@ -1,11 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CustomViewPersonGeneralInfo.ascx.cs"
     Inherits="Profiles.Profile.Modules.CustomViewPersonGeneralInfo.CustomViewPersonGeneralInfo" %>
 
-<div class="d-flex flex-column align-items-center flex-sm-row align-items-sm-start text-center text-sm-left mt-3">
-    <div class="profile-image">
-        <asp:Image itemprop="image" runat="server" ID="imgPhoto" />
+<div class="prns-subject-container">
+    <div class="d-flex flex-column align-items-center flex-sm-row align-items-sm-start text-center text-sm-left mt-3">
+        <div class="profile-image">
+            <asp:Image itemprop="image" runat="server" ID="imgPhoto" />
+        </div>
+        <asp:Literal runat="server" ID="litPersonalInfo"></asp:Literal>
     </div>
-    <asp:Literal runat="server" ID="litPersonalInfo"></asp:Literal>
 </div>
 
 <div id="toc"><ul></ul><div style="clear:both;"></div></div>

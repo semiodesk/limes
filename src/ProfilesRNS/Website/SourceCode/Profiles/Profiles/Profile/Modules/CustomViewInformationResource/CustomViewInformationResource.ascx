@@ -1,14 +1,15 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CustomViewInformationResource.ascx.cs"
     Inherits="Profiles.Profile.Modules.CustomViewInformationResource.CustomViewInformationResource" %>
-<div style="margin-top:12px;">
-    <asp:Literal runat="server" ID="litinformationResourceReference"></asp:Literal>
+<div class="prns-subject-container">
+    <div style="margin-top:12px;">
+        <asp:Literal runat="server" ID="litinformationResourceReference"></asp:Literal>
+    </div>
+    <br />
+    <div class="viewIn" runat="server" id="divViewIn">
+        <label class="viewInLabel d-block">Find more details (i.e. abstract, co-authors, figures) here:</label>
+        <asp:Literal runat="server" ID="litPublication"></asp:Literal>
+    </div>
 </div>
-<br />
-<div class="viewIn" runat="server" id="divViewIn">
-    <span class="viewInLabel">View in: </span>
-    <asp:Literal runat="server" ID="litPublication"></asp:Literal>
-</div>
-<br />
 <asp:Panel runat="server" ID="pnlSubjectAreas" Visible="true">
     <div class="PropertyGroupItem">
         <div class="PropertyItemHeader">
