@@ -445,3 +445,29 @@ rm ProfilesRNS.tmp
 - Jour Fix meeting with Antonella Succoro at 10:00am
   - Demonstrate current state of development
   - Discuss issue #40 (alternative spelling of Umlauts)
+  - OK to go live today
+  - Antonella needs CSV of number of publications in concept categories for WordCloud
+
+##### Number of publications in subject areas of categories 'Procedures', 'Devices' and 'Concept & Ideas'
+```
+SELECT TOP (1000)
+	md.[DescriptorUI],
+    md.[DescriptorName],
+	mg.SemanticGroupName,
+	mc.NumPublications,
+	CASE
+		WHEN [SemanticGroupUI] = 'PROC' THEN 10
+		WHEN [SemanticGroupUI] = 'DEVI' THEN 5
+		WHEN [SemanticGroupUI] = 'CONC' THEN 1
+	END AS GroupWeight
+FROM
+	[ProfilesRNS].[Profile.Data].[Concept.Mesh.Descriptor] md
+JOIN
+	[ProfilesRNS].[Profile.Data].[Concept.Mesh.SemanticGroup] mg ON md.DescriptorUI = mg.DescriptorUI
+JOIN
+	[ProfilesRNS].[Profile.Cache].[Concept.Mesh.Count] mc ON md.DescriptorName = mc.MeshHeader
+WHERE
+	[SemanticGroupName] IN ('Procedures', 'Devices', 'Concepts & Ideas')
+ORDER BY
+	GroupWeight DESC, NumPublications DESC, DescriptorName
+```

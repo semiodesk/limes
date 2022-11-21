@@ -81,6 +81,8 @@ namespace Profiles.Activity
         [System.Web.Services.WebMethod]
         public static string GetRecentActivities(int limit = 20, int offset = 0)
         {
+            limit = Math.Max(limit, 50);
+
             Utilities.DataIO data = new Utilities.DataIO();
 
             return string.Join("", data.RenderRecentActivities(limit, offset));
