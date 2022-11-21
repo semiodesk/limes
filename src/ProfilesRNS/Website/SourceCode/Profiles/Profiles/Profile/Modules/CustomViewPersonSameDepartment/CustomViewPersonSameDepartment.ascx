@@ -6,7 +6,7 @@
             <h4>         
                 Same Department
             </h4>
-            <asp:HyperLink runat="server" ID="moreurl" Text="Explore" Title="People who are also in this person's primary department."></asp:HyperLink>
+            <asp:HyperLink runat="server" ID="moreurl" Text="Explore" Title="People who are also in this person's primary department." CssClass="prns-explore-btn"></asp:HyperLink>
         </div>
         <div class="passiveSectionBody">
             <ul>
