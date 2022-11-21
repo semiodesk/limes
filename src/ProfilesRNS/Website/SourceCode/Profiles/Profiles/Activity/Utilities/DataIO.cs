@@ -511,7 +511,7 @@ namespace Profiles.Activity.Utilities
     </div>
     <div class='act-list-item-body'>
         <div class='act-title'>
-            <b><a href='{item.Content.URL}'>{item.Content.Title}</a></b>
+            <a href='{item.Content.URL}'>{item.Content.Title}</a>
         </div>
         <div class='act-body'>
             {item.Content.DatePublished:d MMMM yyyy} by <a href='{item.Profile.URL}'><i class='fa fa-user'></i> {item.Profile.Name}</a> in <span>'{item.Content.Channel}'</span>

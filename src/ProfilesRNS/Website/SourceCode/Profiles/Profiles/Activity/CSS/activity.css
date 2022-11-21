@@ -66,9 +66,9 @@ section {
     color: #0e5fa7;
     margin: .1rem 0;
     line-height: 1.4em;
-    font-weight: 500;
     border: none;
     font-size: 1.1em;
+    font-weight: 500;
 }
 
 .act-list-item .act-title a:hover {
@@ -88,7 +88,6 @@ section {
 
 .act-list-item span {
     display: inline;
-    color: #333;
 }
 
 .act-list-item-header {
