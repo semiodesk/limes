@@ -322,10 +322,17 @@ namespace Profiles.Activity.Utilities
                 SELECT DISTINCT
                     i.activityLogID,
                     i.createdDT as activityDate,
-	                CASE
-		                WHEN (pm.ArticleYear IS NOT NULL) THEN PARSE(TRIM(CONCAT(pm.ArticleYear, ' ', COALESCE(pm.ArticleMonth, '01'), ' ', COALESCE(pm.ArticleDay, '01'))) AS DATETIME)
-		                WHEN (pm.JournalYear IS NOT NULL) THEN PARSE(TRIM(CONCAT(pm.JournalYear, ' ', COALESCE(pm.JournalMonth, '01'), ' ', COALESCE(pm.JournalDay, '01'))) AS DATETIME)
-		                WHEN (fa.StartDate IS NOT NULL) THEN fa.StartDate
+	                CASE i.methodName
+		                WHEN '[Profile.Data].[Publication.Pubmed.LoadDisambiguationResults]' THEN
+			                CASE WHEN (pm.ArticleYear IS NOT NULL) THEN
+				                PARSE(TRIM(CONCAT(pm.ArticleYear, ' ', COALESCE(pm.ArticleMonth, '01'), ' ', COALESCE(pm.ArticleDay, '01'))) AS DATETIME)
+			                WHEN (pm.ArticleYear IS NULL AND pm.JournalYear IS NOT NULL) THEN
+				                PARSE(TRIM(CONCAT(pm.JournalYear, ' ', COALESCE(pm.JournalMonth, '01'), ' ', COALESCE(pm.JournalDay, '01'))) AS DATETIME)
+			                ELSE
+				                fa.StartDate
+			                END
+	                ELSE
+		                i.[createdDT]
 	                END AS [contentDate],
 	                i.methodName,
                     i.param1,
@@ -358,6 +365,7 @@ namespace Profiles.Activity.Utilities
                         OR (i.privacyCode = -1 AND np.ViewSecurityGroup IS NULL)
                         OR (i.privacyCode IS NULL AND np.ViewSecurityGroup IS NULL)
                     )
+	                AND i.param1 != 'Person Update'
                 ORDER BY contentDate DESC
                 OFFSET {offset} ROWS
                 FETCH NEXT {pageSize} ROWS ONLY
@@ -512,11 +520,11 @@ namespace Profiles.Activity.Utilities
                         return $@"
 <div class='act-list-item'>
     <div class='act-list-item-header'>
-        <div class='dot'><i class='fa-solid fa-user-plus'></i></div>
+        <div class='dot color-blue'><i class='fa-solid fa-user-plus'></i></div>
     </div>
     <div class='act-list-item-body'>
         <div class='act-body'>
-            {item.DateCreated:d MMMM yyyy} a profile for <i class='fa fa-user'></i> {item.Profile.Name}</a> was added.
+            {item.DateCreated:d MMMM yyyy} <a href='{item.Profile.URL}'><i class='fa fa-user'></i> {item.Profile.Name}</a> was added.
         </div>
     </div>
 </div>

@@ -133,3 +133,11 @@ h3 i.fa-solid {
     color: #ccc;
     margin-right: 5px;
 }
+
+.color-purple {
+    color: #9a5aa2 !important;
+}
+
+.color-blue {
+    color: #36A4DE !important;
+}

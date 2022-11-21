@@ -412,6 +412,9 @@ rm ProfilesRNS.tmp
   
 ### Thursday, 17th November
 [Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Jour Fix meeting with Antonella Succoro and colleagues at 10:00am
+  - Demonstrated current state of development
+  - Discussed feedback and wishes of Antonella's colleagues
 - Fixed issue #39
   - SVG logo needed reworking of the embedded PNG file and converting the font to a path
 - Fixed issue #43
@@ -436,3 +439,9 @@ rm ProfilesRNS.tmp
     - However, the search results are rendered using XSLT which does not allow for interaction
     - Implementing the feature would require a significant refactoring of the search results component.
 - Added preliminary word cloud to the site
+
+### Monday, 21th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Jour Fix meeting with Antonella Succoro at 10:00am
+  - Demonstrate current state of development
+  - Discuss issue #40 (alternative spelling of Umlauts)
