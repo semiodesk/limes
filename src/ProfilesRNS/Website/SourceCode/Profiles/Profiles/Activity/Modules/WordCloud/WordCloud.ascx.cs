@@ -36,36 +36,33 @@ namespace Profiles.Activity.Modules.WordCloud
 
             var random = new Random();
 
-            var stats = data.GetConceptStats("PROC", 9, 5, 20).Select(x => new object[] { x.Label, random.Next(5,10) }).ToList();
+            var stats = data.GetConceptStats("PROC", 9, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }).ToList();
             stats.AddRange(data.GetConceptStats("DEVI", 9, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }));
             stats.AddRange(data.GetConceptStats("CONC", 8, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }));
 
             var script = (Literal)FindControl("script");
             script.Text = $@"
-<script type='text/javascript'>
-var canvas = $('#wordcloud-canvas');
-var options = {{
-  list: {JsonConvert.SerializeObject(stats)},
-  fontFamily: 'Mina, Roboto, Arial, Helvetica, sans-serif',
-  color: function (word, weight) {{
-    console.warn(word, weight);
-    if(weight >= 9) return '#9A5AA2';
-    if(weight >= 7) return '#9ACD67';
-    if(weight >= 6) return '#36A4DE';
-    return '#53555A';
-  }},
-  weightFactor: (size) => Math.pow(size, 2.1) * canvas.width() / 1024,
-  gridSize: Math.round(16 * canvas.width() / 1024),
-  rotateRatio: 0.5,
-  rotationSteps: 2,
-  shrinkToFit: true,
-  drawOutOfBound: true
-}};
+            <script type='text/javascript'>
+            var canvas = $('#wordcloud-canvas');
+            var options = {{
+              list: {JsonConvert.SerializeObject(stats)},
+              fontFamily: 'Mina, Roboto, Arial, Helvetica, sans-serif',
+              color: function (word, weight) {{
+                if(weight >= 9) return '#9A5AA2';
+                if(weight >= 7) return '#9ACD67';
+                if(weight >= 6) return '#36A4DE';
+                return '#53555A';
+              }},
+              weightFactor: (size) => Math.pow(size, 2.1) * canvas.width() / 1024,
+              gridSize: Math.round(16 * canvas.width() / 1024),
+              rotateRatio: 0.5,
+              rotationSteps: 2,
+              shrinkToFit: true,
+              drawOutOfBound: true
+            }};
 
-console.warn(options.list);
-
-WordCloud($('#wordcloud-canvas')[0] , options);
-</script>";
+            WordCloud($('#wordcloud-canvas')[0] , options);
+            </script>";
         }
     }
 }
