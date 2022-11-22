@@ -10,10 +10,10 @@
             if (control && control.checked) {
                 switch (control.id) {
                     case 'type-research':
-                        $('#searchfor').attr('placeholder', "Find published articles about a topic, i.e. 'neural stem cells'");
+                        $('#searchfor').attr('placeholder', "Find published articles about a topic, e.g. 'neural stem cells'");
                         break;
                     case 'type-concepts':
-                        $('#searchfor').attr('placeholder', "Find definitions and trends, i.e. 'neural stem cells'");
+                        $('#searchfor').attr('placeholder', "Find definitions and trends, e.g. 'neural stem cells'");
                         break;
                 }
             }
