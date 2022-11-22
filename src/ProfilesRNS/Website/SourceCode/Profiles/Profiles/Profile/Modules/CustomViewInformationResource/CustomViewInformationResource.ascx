@@ -14,7 +14,7 @@
     <div class="PropertyGroupItem">
         <div class="PropertyItemHeader">
             <a onClick="javascript:toggleBlock('subjectAreaItems'); return false;">
-                subject areas</a>
+                Research Topics</a>
         </div>
         <div class="PropertyGroupData">
             <div id="subjectAreaItems" style="padding-top: 8px;">

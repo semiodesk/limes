@@ -484,9 +484,9 @@ FETCH NEXT {pageSize} ROWS ONLY
             }
         }
 
-        public List<string> RenderRecentActivities(int limit, int offset = 0)
+        public List<string> RenderRecentActivities(int pageSize, int offset = 0)
         {
-            return GetRecentActivities(limit, offset).Select(a => RenderActivity(a)).ToList();
+            return GetRecentActivities(pageSize, offset).Select(a => RenderActivity(a)).ToList();
         }
 
         private string RenderActivity(Utilities.ActivityLogItem item)
@@ -498,7 +498,7 @@ FETCH NEXT {pageSize} ROWS ONLY
                         return $@"
 <div class='act-list-item'>
     <div class='act-list-item-header'>
-        <div class='dot'><i class='fa-solid fa-file'></i></div>
+        <div class='dot'><i class='fa-regular fa-file'></i></div>
     </div>
     <div class='act-list-item-body'>
         <div class='act-title'>
@@ -529,6 +529,56 @@ FETCH NEXT {pageSize} ROWS ONLY
             }
 
             return "";
+        }
+
+        public IEnumerable<ConceptStats> GetConceptStats(string groupId, int maxFontSize, int minFontSize, int pageSize)
+        {
+            if (pageSize <= 0)
+            {
+                yield break;
+            }
+
+            string query = $@"
+SELECT TOP ({pageSize})
+    md.[DescriptorName] AS label,
+	mg.SemanticGroupName AS groupLabel,
+	mc.NumPublications AS publicationCount
+FROM
+	[ProfilesRNS].[Profile.Data].[Concept.Mesh.Descriptor] md
+JOIN
+	[ProfilesRNS].[Profile.Data].[Concept.Mesh.SemanticGroup] mg ON md.DescriptorUI = mg.DescriptorUI
+JOIN
+	[ProfilesRNS].[Profile.Cache].[Concept.Mesh.Count] mc ON md.DescriptorName = mc.MeshHeader
+WHERE
+	[SemanticGroupUI] = '{groupId}'
+ORDER BY
+	NumPublications DESC
+";
+
+            using (SqlDataReader reader = GetQueryOutputReader(query))
+            {
+                var result = new List<ConceptStats>();
+
+                var maxCount = -1;
+
+                while (reader.Read())
+                {
+                    var n = Convert.ToInt32(reader["publicationCount"]);
+
+                    if(n > maxCount)
+                    {
+                        maxCount = n;
+                    }
+
+                    var stats = new ConceptStats();
+                    stats.Label = reader["label"].ToString();
+                    stats.GroupLabel = reader["groupLabel"].ToString();
+                    stats.PublicationsCount = n;
+                    stats.FontSize = Convert.ToInt32(Math.Max(Math.Ceiling(maxFontSize * ((decimal)(n) / maxCount)), minFontSize));
+
+                    yield return stats;
+                }
+            }
         }
 
         public int GetEditedCount()

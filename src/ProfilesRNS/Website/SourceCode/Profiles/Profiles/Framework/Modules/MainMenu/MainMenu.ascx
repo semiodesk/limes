@@ -5,63 +5,65 @@
 <%@ Register TagName="SearchEverything" TagPrefix="prns" Src="~/Search/Modules/SearchEverything/SearchEverything.ascx" %>
 
 <nav id="prns-nav">
+    <div id="prns-nav-menu">
+        <a href="<%=ResolveUrl("~/search")%>" class="mr-auto" title="Go to the search homepage." aria-label="Home">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <!-- USER LOGIN MSG / USER FUNCTION MENU -->
+        <div id="prns-usrnav" class="pub" class-help="class should be [pub|user]">
+            <div class="loginbar">
+                <asp:Literal runat="server" ID="litLogin"></asp:Literal>
+            </div>
+            <!-- SUB NAVIGATION MENU (logged on) -->
+            <ul class="usermenu">
+                <asp:Literal runat="server" ID="litViewMyProfile"></asp:Literal>
+                <li style="margin-top: 0px !important;">
+                    <div class="divider"></div>
+                </li>
+                <asp:Literal runat="server" ID="litEditThisProfile"></asp:Literal>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <asp:Literal runat="server" ID="litProxy"></asp:Literal>               
+                <li id="ListDivider">
+                    <div class="divider"></div>
+                </li>
+                <li id="navMyLists">
+                    <a href="#">My Person List (<span id="list-count">0</span>)</a>
+                    <MyLists:Lists runat="server" ID="MyLists" Visible="false" />
+                </li>
+                    <li>
+                    <div class="divider"></div>
+                </li>
+                <asp:Literal runat="server" ID="litGroups"></asp:Literal>
+                <li id="groupListDivider" visible="false" runat="server">
+                    <div class="divider"></div>
+                </li>
+                <asp:Literal runat="server" ID="litLogOut"></asp:Literal>
+            </ul>
+        </div>
+
+        <div id="prns-help">
+            <a class="dropdown-toggle" href="#" tabindex="0" title="Toggle the help menu." data-toggle="dropdown" role="button" aria-label="Activate to access help pages and other documentation." aria-expanded="false">
+                Help
+            </a>
+            <ul id="dropdown-menu-help" class="dropdown-menu dropdown-menu-right">
+                <li><a class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=faq")%>">Help</a></li>
+                <li><a id="data" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=data")%>">Sharing Data</a></li>
+                <li><a id="orcid" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=orcid")%>">ORCID</a></li>
+                <li><a id="about" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">About</a></li>
+            </ul>
+        </div>
+    </div>
+
     <form id="prns-minisearch" class="search-container" method="get" action="<%=ResolveUrl("~/search/default.aspx")%>">
         <i class="fa fa-search"></i>
         <label class="d-none" for="menu-search">Search</label>
-        <input type="text" name="searchfor" placeholder="Find people or research by keyword.." aria-label="Enter your search here." required/>
+        <input type="text" name="searchfor" placeholder="Find people or research by keyword" aria-label="Enter your search here." required/>
         <input type="hidden" name="searchtype" value="everything" />
         <HistoryItem:History runat="server" ID="ProfileHistory" Visible="true" />
     </form>
-
-    <a href="<%=ResolveUrl("~/search")%>" class="mr-auto" title="Go to the search homepage." aria-label="Home">
-        <i class="fa-solid fa-house"></i>
-    </a>
-
-    <!-- USER LOGIN MSG / USER FUNCTION MENU -->
-    <div id="prns-usrnav" class="pub" class-help="class should be [pub|user]">
-        <div class="loginbar">
-            <asp:Literal runat="server" ID="litLogin"></asp:Literal>
-        </div>
-        <!-- SUB NAVIGATION MENU (logged on) -->
-        <ul class="usermenu">
-            <asp:Literal runat="server" ID="litViewMyProfile"></asp:Literal>
-            <li style="margin-top: 0px !important;">
-                <div class="divider"></div>
-            </li>
-            <asp:Literal runat="server" ID="litEditThisProfile"></asp:Literal>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <asp:Literal runat="server" ID="litProxy"></asp:Literal>               
-            <li id="ListDivider">
-                <div class="divider"></div>
-            </li>
-            <li id="navMyLists">
-                <a href="#">My Person List (<span id="list-count">0</span>)</a>
-                <MyLists:Lists runat="server" ID="MyLists" Visible="false" />
-            </li>
-                <li>
-                <div class="divider"></div>
-            </li>
-            <asp:Literal runat="server" ID="litGroups"></asp:Literal>
-            <li id="groupListDivider" visible="false" runat="server">
-                <div class="divider"></div>
-            </li>
-            <asp:Literal runat="server" ID="litLogOut"></asp:Literal>
-        </ul>
-    </div>
-
-    <div id="prns-help">
-        <a class="dropdown-toggle" href="#" tabindex="0" title="Toggle the help menu." data-toggle="dropdown" role="button" aria-label="Activate to access help pages and other documentation." aria-expanded="false">
-            Help
-        </a>
-        <ul id="dropdown-menu-help" class="dropdown-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=faq")%>">Help</a></li>
-            <li><a id="data" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=data")%>">Sharing Data</a></li>
-            <li><a id="orcid" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=orcid")%>">ORCID</a></li>
-            <li><a id="about" class="dropdown-item" href="<%=ResolveUrl("~/about/default.aspx?tab=overview")%>">About</a></li>
-        </ul>
-    </div>
 </nav>
 
 <div id="prns-search-advanced">
@@ -119,10 +121,12 @@ $(document).ready(function () {
     $('.nav-item.nav-tabs-toggle button').on('click', (e) => {
         e.preventDefault();
 
-        var tab = $(e.target);
+        var tab = $(e.currentTarget);
+
+        console.warn(tab[0].dataset, tab.hasClass('active'));
 
         if (tab.hasClass('active')) {
-            var content = $(e.target.dataset.target);
+            var content = $(tab[0].dataset.target);
 
             window.setTimeout(() => {
                 tab.removeClass('active');

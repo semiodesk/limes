@@ -19,7 +19,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
     <script type="text/javascript" src="/Framework/Assets/boostrap-4.0/js/jquery-3.3.1.min.js"></script>
 
     <!-- GDPR Cookie Banner -->
-	  <link rel="stylesheet" href="/Framework/Assets/cookie-banner/cookie-banner.css">
+	<link rel="stylesheet" href="/Framework/Assets/cookie-banner/cookie-banner.css">
 
     <asp:ContentPlaceHolder ID="head" runat="server"> </asp:ContentPlaceHolder>
   </head>
@@ -108,7 +108,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
             <i class="fa fa-arrow-up"></i>
           </a>
           <div id="profilesMainRow" class="row">
-            <div id="divProfilesContentMain" class="col-md-8" runat="server">
+            <div id="divProfilesContentMain" class="col-md-7 col-lg-8" runat="server">
               <div id="divTopMainRow" style="width: 100%" runat="server">
                 <asp:Literal runat="server" ID="litPageTitle"></asp:Literal>
               </div>
@@ -134,7 +134,7 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
                 </asp:ContentPlaceHolder>
               </div>
             </div>
-            <div class="profilesContentPassive col-md-4">
+            <div class="profilesContentPassive col-md-5 col-lg-4">
               <div id="divContentLeft" runat="server" class="mb-3">
                 <asp:ContentPlaceHolder ID="Contentleft" runat="server">
                   <asp:Repeater runat="server" ID="rptLeft" OnItemDataBound="DrawModule">

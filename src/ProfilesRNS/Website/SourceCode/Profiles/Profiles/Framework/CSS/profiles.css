@@ -72,13 +72,22 @@ h4 {
   text-align: right !important;
 }
 
+@media(max-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .sidepanel-header {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px solid #dee2e6;
+    margin-bottom: 1em;
 }
 
 .sidepanel-header a {
@@ -1124,7 +1133,7 @@ table tbody .height25 {
 }
 
 .hint {
-  color: #666;
+  color: #53555A;
   padding: 1em;
   border-radius: 5px;
   border: 1px solid #dee2e6;

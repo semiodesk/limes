@@ -206,23 +206,23 @@ div#catalyst-footer {
 }
 
     .PropertyItemHeader a {
-        color: #666 !important;
+        color: #53555A !important;
         text-decoration: none !important;
     }
 
         .PropertyItemHeader a:hover {
-            color: #666 !important;
+            color: #53555A !important;
             text-decoration: none !important;
         }
 
 .PropertyGroup a:hover {
-    color: #666 !important;
+    color: #53555A !important;
     text-decoration: none !important;
 }
 
 .PropertyGroupItem {
     font-weight: normal;
-    color: #666;
+    color: #53555A;
     font-size: 14px;
     text-align: left;
     border: 1px solid #ccc !important;
@@ -377,7 +377,7 @@ div#catalyst-footer {
 
 /* pageSubTitle */
 .profiles .profilesContentMain .pageSubTitle {
-    color: #666666;
+    color: #53555A666;
     font-weight: 600;
     text-align: left;
     float: left;
@@ -386,7 +386,7 @@ div#catalyst-footer {
 
     .profiles .profilesContentMain .pageSubTitle h3 {
         padding: 0px;
-        color: #666666;
+        color: #53555A666;
         font-weight: 600;
         text-align: left;
     }
@@ -741,7 +741,7 @@ div#catalyst-footer {
 /********************************************/
 .anchor-tab {
     margin: 10px 0 4px 0;
-    color: #666;
+    color: #53555A;
 }
 
     .anchor-tab a.selected {
@@ -802,7 +802,7 @@ div#catalyst-footer {
 
 .grantanchor-tab {
     margin: 10px 0 4px 0;
-    color: #666;
+    color: #53555A;
 }
 
     .grantanchor-tab a.selected {
@@ -1076,7 +1076,7 @@ table tbody .height25
 {
 	background-color: #EEEBE5;
 	font-weight: 600;
-	color: #666;
+	color: #53555A;
 	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;
@@ -1085,7 +1085,7 @@ table tbody .height25
 {
 	background-color: #EEEBE5;
 	font-weight: 600;
-	color: #666;
+	color: #53555A;
 	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;
@@ -1094,7 +1094,7 @@ table tbody .height25
 .EditMenuTopRow
 {
 	background-color: #EEEBE5;
-	color: #666;
+	color: #53555A;
 	font-size: 14px;
 	height: 24px;
 	padding-left: 6px;

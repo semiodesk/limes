@@ -25,9 +25,9 @@
 
         <div>
             <div style="border-top: 1px dotted #999; font-size: 12px; line-height: 16px; padding-top: 12px; margin-top: 8px; text-align: left;">
-                <span style="font-weight: 600; color: #666;">Click and drag</span> the name of any author to adjust the clusters. 
-			    <span style="font-weight: 600; color: #666;">Shift-click and drag</span> the name of any author to move them and pin it to a fixed location. Click again to unlock the position.
-			    <span style="font-weight: 600; color: #666;">Alt-click</span> a name to view that person's full profile. Please note that it 
+                <span style="font-weight: 600; color: #53555A;">Click and drag</span> the name of any author to adjust the clusters. 
+			    <span style="font-weight: 600; color: #53555A;">Shift-click and drag</span> the name of any author to move them and pin it to a fixed location. Click again to unlock the position.
+			    <span style="font-weight: 600; color: #53555A;">Alt-click</span> a name to view that person's full profile. Please note that it 
 			    might take several minutes for the clusters in this graph to form, and each time you view the page the graph might look slightly different.	
             </div>
         </div>

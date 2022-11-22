@@ -15,6 +15,15 @@ namespace Profiles.Activity.Modules.LatestUpdates
     {
 
         /// <summary>
+        /// WordCloud control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Profiles.Activity.Modules.WordCloud.WordCloud WordCloud;
+
+        /// <summary>
         /// Statistics control.
         /// </summary>
         /// <remarks>

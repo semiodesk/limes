@@ -20,11 +20,11 @@
 				&nbsp; | &nbsp; 
 				<a id='detailsLink' runat='server' rel="#meshDetails" href='javascript:void(0)'>Details</a> 
 				&nbsp; | &nbsp; 
-				<a id='generalConceptLink' runat='server' rel="#meshGeneralConcepts" href='javascript:void(0)'>More General Concepts</a> 
+				<a id='generalConceptLink' runat='server' rel="#meshGeneralConcepts" href='javascript:void(0)'>More General Topics</a> 
 				&nbsp; | &nbsp; 
-				<a id='relatedConceptLink' runat='server' rel="#meshRelatedConcepts" href='javascript:void(0)'>Related Concepts</a> 	
+				<a id='relatedConceptLink' runat='server' rel="#meshRelatedConcepts" href='javascript:void(0)'>Related Topics</a> 	
 				&nbsp; | &nbsp; 
-				<a id='specificConceptLink' runat='server' rel="#meshSpecificConcepts" href='javascript:void(0)'>More Specific Concepts</a> 	
+				<a id='specificConceptLink' runat='server' rel="#meshSpecificConcepts" href='javascript:void(0)'>More Specific Topics</a> 	
 			</div>
 
 			<div id="meshDefinition" class='toggle-vis'>

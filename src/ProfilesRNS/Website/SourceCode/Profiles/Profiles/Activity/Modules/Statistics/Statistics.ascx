@@ -1,5 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Statistics.ascx.cs"
-Inherits="Profiles.Activity.Modules.Statistics.Statistics" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Statistics.ascx.cs" Inherits="Profiles.Activity.Modules.Statistics.Statistics" %>
 <section>
   <div class="metrics flex-row p-0">
     <div class="text-center w-50">

@@ -1,4 +1,4 @@
-﻿/* Metrics & Activity Stream */
+/* Metrics & Activity Stream */
 section {
     padding-bottom: 2em;
 }
@@ -35,7 +35,7 @@ section {
     width: 4.5em;
     height: 4.5em;
     line-height: 4.5em;
-    border: 2px solid #eee;
+    border: 2px solid #dee2e6;
     border-radius: 50%;
 }
 
@@ -58,7 +58,7 @@ section {
 .act-list-item .act-date,
 .act-list-item .act-body {
     font-size: .9em;
-    color: #666;
+    color: #53555A;
 }
 
 .act-list-item .act-title a {
@@ -91,15 +91,15 @@ section {
 }
 
 .act-list-item-header {
-    min-width: 3px;
-    max-width: 3px;
-    background: #e0e0e0;
+    min-width: 2px;
+    max-width: 2px;
+    background: #dee2e6;
 }
 
 .act-list-item-header .dot {
-    color: #2F528F;
-    background: white;
-    border: 2px solid #e0e0e0;
+    color: #53555A;
+    background: #EFF0F2;
+    border: 2px solid #dee2e6;
     width: 30px;
     height: 30px;
     border-radius: 50%;

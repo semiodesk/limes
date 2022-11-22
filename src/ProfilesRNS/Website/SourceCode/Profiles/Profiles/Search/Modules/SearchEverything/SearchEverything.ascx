@@ -29,7 +29,7 @@
 
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="classgroupuri" id="type-concepts" onchange="updatePlaceholder(this)" value="http://profiles.catalyst.harvard.edu/ontology/prns#ClassGroupConcepts">
-            <label class="form-check-label" for="type-concepts">Concepts</label>
+            <label class="form-check-label" for="type-concepts">Research Topics</label>
         </div>
     </div>
 

@@ -2208,6 +2208,8 @@
     <Content Include="Framework\Images\orcid_16x16%281%29.gif" />
     <Content Include="Framework\Images\Orcid_Logo_rgb.png" />
     <Content Include="Framework\Images\Orcid_symbol_rgb.png" />
+    <Content Include="Activity\Modules\WordCloud\WordCloud.ascx" />
+    <Content Include="Framework\JavaScript\wordcloud2.js" />
     <Content Include="Framework\Modules\MainMenu\default.aspx" />
     <Content Include="Activity\Modules\TwitterTimeline\TwitterTimeline.ascx" />
     <Content Include="Framework\Modules\MainMenu\MyActiveNetwork.ascx" />
@@ -2612,6 +2614,13 @@
     <Compile Include="Edit\Utilities\FundingState.cs" />
     <Compile Include="Edit\Utilities\GroupMemberState.cs" />
     <Compile Include="Edit\Utilities\LiteralListState.cs" />
+    <Compile Include="Activity\Modules\WordCloud\WordCloud.ascx.cs">
+      <DependentUpon>WordCloud.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Activity\Modules\WordCloud\WordCloud.ascx.designer.cs">
+      <DependentUpon>WordCloud.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Framework\Modules\MainMenu\default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -4022,7 +4031,9 @@
     <Content Include="Profile\Modules\CustomViewPersonSameDepartment\CustomViewPersonSameDepartment.ascx" />
     <Content Include="Profile\Profile.aspx" />
     <Content Include="Profile\XSLT\Awards.xslt" />
-    <Content Include="Profile\Modules\CustomViewPersonGeneralInfo\CustomViewPersonGeneralInfo.xslt" />
+    <Content Include="Profile\Modules\CustomViewPersonGeneralInfo\CustomViewPersonGeneralInfo.xslt">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Profile\XSLT\CoAuthorDetail.xslt" />
     <Content Include="Profile\XSLT\ConceptDetail.xslt" />
     <Content Include="Profile\XSLT\Narrative.xslt" />

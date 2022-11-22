@@ -137,7 +137,7 @@ tr.website-table > td {
         }
 
         .profiles .profilesContentMain .publications li .viewInLabel {
-            color: #666;
+            color: #53555A;
             font-weight: 600;
         }
 
@@ -147,7 +147,7 @@ tr.website-table > td {
 }
 
 .SupportText {
-    border-top: 1px solid #666;
+    border-top: 1px solid #53555A;
     font-size: 12px;
     margin: 12px 0 16px 0;
     padding: 16px 0 0 0;

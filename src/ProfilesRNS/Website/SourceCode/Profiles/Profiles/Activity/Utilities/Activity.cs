@@ -143,4 +143,15 @@ namespace Profiles.Activity.Utilities
         /// </summary>
         public string URL { get; set; }
     }
+
+    public class ConceptStats
+    {
+        public string Label { get; set; }
+
+        public string GroupLabel { get; set; }
+
+        public int PublicationsCount { get; set; }
+
+        public int FontSize { get; set; }
+    }
 }

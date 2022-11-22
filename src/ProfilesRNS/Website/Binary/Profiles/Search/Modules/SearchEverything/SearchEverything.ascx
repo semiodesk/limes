@@ -35,7 +35,7 @@ Inherits="Profiles.Search.Modules.SearchEverything.SearchEverything" %>
         <tr>
           <td colspan="3">
             <%-- Replaced inline styles with class below --%>
-            <div class="headings">Find publications, research, concepts and more</div>
+            <div class="headings">Find publications, research, topics and more</div>
           </td>
         </tr>
         <tr>

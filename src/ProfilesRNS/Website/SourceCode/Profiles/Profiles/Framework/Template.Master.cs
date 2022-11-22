@@ -382,7 +382,7 @@ namespace Profiles.Framework
             // Window Title
             buffer = GetStringFromPresentationXML("Presentation/WindowName");
 
-            Page.Header.Title = buffer + " | Profiles RNS";
+            Page.Header.Title = "NGS-CN | " + buffer;
             litJS.Text += js;
 
         }
