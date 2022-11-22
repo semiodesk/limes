@@ -544,11 +544,11 @@ SELECT TOP ({pageSize})
 	mg.SemanticGroupName AS groupLabel,
 	mc.NumPublications AS publicationCount
 FROM
-	[ProfilesRNS].[Profile.Data].[Concept.Mesh.Descriptor] md
+	[Profile.Data].[Concept.Mesh.Descriptor] md
 JOIN
-	[ProfilesRNS].[Profile.Data].[Concept.Mesh.SemanticGroup] mg ON md.DescriptorUI = mg.DescriptorUI
+	[Profile.Data].[Concept.Mesh.SemanticGroup] mg ON md.DescriptorUI = mg.DescriptorUI
 JOIN
-	[ProfilesRNS].[Profile.Cache].[Concept.Mesh.Count] mc ON md.DescriptorName = mc.MeshHeader
+	[Profile.Cache].[Concept.Mesh.Count] mc ON md.DescriptorName = mc.MeshHeader
 WHERE
 	[SemanticGroupUI] = '{groupId}'
 ORDER BY
@@ -571,8 +571,8 @@ ORDER BY
                     }
 
                     var stats = new ConceptStats();
-                    stats.Label = reader["label"].ToString();
-                    stats.GroupLabel = reader["groupLabel"].ToString();
+                    stats.Label = reader["label"]?.ToString();
+                    stats.GroupLabel = reader["groupLabel"]?.ToString();
                     stats.PublicationsCount = n;
                     stats.FontSize = Convert.ToInt32(Math.Max(Math.Ceiling(maxFontSize * ((decimal)(n) / maxCount)), minFontSize));
 
