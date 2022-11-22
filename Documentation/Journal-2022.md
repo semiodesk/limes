@@ -471,3 +471,17 @@ WHERE
 ORDER BY
 	GroupWeight DESC, NumPublications DESC, DescriptorName
 ```
+
+### Tuesday, 22th November
+[Sebastian Faubel](mailto:sebastian@semiodesk.com)
+- Fixed issue #53
+- Fixed issue #52
+- Implemented web control for generating a WordCloud from database concepts
+  - Based on this JavaScript Library: https://wordcloud2-js.timdream.org/#love
+  - Top 15 Concepts are loaded from Categories 'Procedures', 'Devices', 'Concepts & Ideas'
+- Published to production
+  - Fixed crashing SQL query on production server
+- Fixing issue #51
+  - Renaming the 'Similar Concepts' requires fiddeling with the database
+  - Crashed my local ProfilesRNS instance while trying to update InstallData
+  - Setup new development ProfilesRNS instance

@@ -27,7 +27,7 @@
     </div>
 
     <div runat="server" id="trDivision" class="form-group">
-        <label for="division">Competence Center</label><small class="text-muted ml-2">i.e. CCGA</small>
+        <label for="division">Competence Center</label><small class="text-muted ml-2">e.g. CCGA</small>
         <asp:Literal runat="server" ID="litDivision"></asp:Literal>
 
         <div class="form-control-subline">
