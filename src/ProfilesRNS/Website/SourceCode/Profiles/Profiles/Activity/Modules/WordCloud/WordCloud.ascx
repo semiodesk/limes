@@ -3,11 +3,11 @@
 <style type="text/css">
 #wordcloud-canvas {
     overflow: hidden;
-    border: 2px solid #dee2e6;
-    margin-left: auto;
-    margin-right: auto;
+    border: 1px solid #dee2e6;
     margin-bottom: 15px;
-    border-radius: 175px;
+    border-radius: 15px;
+    width: 100% !important;
+    height: 300px !important;
 }
 
 @media(min-width:768px) {
@@ -19,13 +19,13 @@
 
 @media(min-width:992px) {
     #wordcloud-canvas {
-        width: 300px !important;
+        width: 348px !important;
         height: 300px !important;
     }
 }
 </style>
 
-<div id="wordcloud-canvas" style="width: 300px; height: 300px;"></div>
+<div id="wordcloud-canvas" style="width: 348px; height: 300px;"></div>
 
 <script type="text/javascript" src="/Framework/JavaScript/wordcloud2.js"></script>
 <asp:Literal Mode="PassThrough" runat="server" ID="script"></asp:Literal>

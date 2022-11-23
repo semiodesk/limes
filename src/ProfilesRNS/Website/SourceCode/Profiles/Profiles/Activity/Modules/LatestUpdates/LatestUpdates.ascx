@@ -10,8 +10,8 @@ Inherits="Profiles.Activity.Modules.LatestUpdates.LatestUpdates" %>
     <div class="activeSection">
       <div class="activeSectionBody">
         <div class="d-flex flex-column my-4 my-lg-0">
-          <prns:WordCloud runat="server" ID="WordCloud" Visible="True" />
           <prns:Statistics runat="server" ID="Statistics" Visible="true" />
+          <prns:WordCloud runat="server" ID="WordCloud" Visible="True" />
         </div>
         <prns:TwitterTimeline runat="server" ID="Activity1" Visible="true" />
       </div>
