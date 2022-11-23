@@ -4,10 +4,11 @@
 #wordcloud-canvas {
     overflow: hidden;
     border: 1px solid #dee2e6;
-    margin-bottom: 15px;
-    border-radius: 15px;
+    margin-bottom: 25px;
     width: 100% !important;
     height: 300px !important;
+    transition: border-radius .4s ease-out;
+    border-radius: 15px;
 }
 
 @media(min-width:768px) {
@@ -25,7 +26,7 @@
 }
 </style>
 
-<div id="wordcloud-canvas" style="width: 348px; height: 300px;"></div>
+<div id="wordcloud-canvas" style="width: 348px; height: 348px;"></div>
 
 <script type="text/javascript" src="/Framework/JavaScript/wordcloud2.js"></script>
 <asp:Literal Mode="PassThrough" runat="server" ID="script"></asp:Literal>

@@ -36,9 +36,9 @@ namespace Profiles.Activity.Modules.WordCloud
 
             var random = new Random();
 
-            var stats = data.GetConceptStats("PROC", 9, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }).ToList();
-            stats.AddRange(data.GetConceptStats("DEVI", 9, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }));
-            stats.AddRange(data.GetConceptStats("CONC", 8, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10) }));
+            var stats = data.GetConceptStats("PROC", 10, 5, 20).Select(x => new object[] { x.Label, x.FontSize }).ToList();
+            stats.AddRange(data.GetConceptStats("DEVI", 8, 4, 20).Select(x => new object[] { x.Label, x.FontSize }));
+            stats.AddRange(data.GetConceptStats("CONC", 6, 4, 20).Select(x => new object[] { x.Label, x.FontSize }));
 
             var script = (Literal)FindControl("script");
             script.Text = $@"
@@ -48,17 +48,17 @@ namespace Profiles.Activity.Modules.WordCloud
               list: {JsonConvert.SerializeObject(stats)},
               fontFamily: 'Mina, Roboto, Arial, Helvetica, sans-serif',
               color: function (word, weight) {{
-                if(weight >= 9) return '#9A5AA2';
-                if(weight >= 7) return '#9ACD67';
+                console.warn(word, weight);
                 if(weight >= 6) return '#36A4DE';
-                return '#53555A';
+                if(weight >= 5) return '#2f528f';
+                return '#70767D';
               }},
-              weightFactor: (size) => Math.pow(size, 2.1) * canvas.width() / 1024,
+              weightFactor: (size) => 1.9 * size,
               gridSize: Math.round(16 * canvas.width() / 1024),
               rotateRatio: 0.5,
               rotationSteps: 2,
               shrinkToFit: true,
-              drawOutOfBound: true
+              drawOutOfBound: false
             }};
 
             WordCloud($('#wordcloud-canvas')[0] , options);
