@@ -7,6 +7,8 @@ EnableViewState='true' %> <%@ Register Assembly="AjaxControlToolkit" Namespace="
 
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="NGS-CN Profiles showcases excellent scientific research in genomics and next generation sequencing in Germany's DFG funded NGS competence centers." />
+    <meta name="keywords" content="Science, Research, Experts, Epigenomics, Bioinformatics, Computational Biology, Drug Design, Genomics, Medical Oncology, Precision Medicine, Proteomics, Transcriptomics, RNA, DNA, Systems medicine, Diagnostics, Metagenome, Microbiome, Microbes, Immunogenomics, Single-cell sequencing, Spatial transcriptomics, Human health, Plant science, Long-reads sequencing, Whole genome sequencing, Short-reads sequencing, Gene expression analysis, Gene expression regulation, Phenotyping, Illumina, Oxford nanopore, PacBio, Genome Wide Association Analysis, GWAS, Next Generation Sequencing Competence Network, Deutsche Forschungsgemeinschaft, DFG, NGS Competence Centers, West German Genome Center, WGGC, University of Cologne, University of Bonnl, University of Düsseldorf, HHU, University of Duiburg/Essen, RWTH Aachen, University of Saarland, MPI-PZ, DZNE, NGS Competence Center Tübingen, NCCT, University of Tübingen, Dresden-Concept Genome Center, DcGC, Technical University Dresden, Competence Center for Genomic Analysis Kiel, CCGA, University of Kiel" />
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="/Framework/Assets/boostrap-4.0/css/bootstrap.min.css" />
