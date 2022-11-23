@@ -2,7 +2,7 @@
 Inherits="Profiles.Profile.Modules.CustomViewConceptSimilarMesh" %>
 
 <div class="sidepanel-header">
-  <h4 id="sectionTitle" runat="server">Similar Topcis</h4>
+  <h4 id="sectionTitle" runat="server">Similar Topics</h4>
 </div>
 <div class="passiveSectionBody">
   <ul>
