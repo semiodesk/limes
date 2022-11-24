@@ -6,7 +6,7 @@
     </div>
     <br />
     <div class="viewIn" runat="server" id="divViewIn">
-        <label class="viewInLabel d-block">Find more details (i.e. abstract, co-authors, figures) here:</label>
+        <label class="viewInLabel d-block">Find more details (e.g. abstract, co-authors, figures) here:</label>
         <asp:Literal runat="server" ID="litPublication"></asp:Literal>
     </div>
 </div>
