@@ -36,9 +36,9 @@ namespace Profiles.Activity.Modules.WordCloud
 
             var random = new Random();
 
-            var stats = data.GetConceptStats("PROC", 10, 5, 20).Select(x => new object[] { x.Label, x.FontSize }).ToList();
-            stats.AddRange(data.GetConceptStats("DEVI", 8, 4, 20).Select(x => new object[] { x.Label, x.FontSize }));
-            stats.AddRange(data.GetConceptStats("CONC", 6, 4, 20).Select(x => new object[] { x.Label, x.FontSize }));
+            var stats = data.GetConceptStats("PROC", 10, 5, 20).Select(x => new object[] { x.Label, random.Next(5, 10), x.Id }).ToList();
+            stats.AddRange(data.GetConceptStats("DEVI", 8, 4, 20).Select(x => new object[] { x.Label, random.Next(5, 8), x.Id }));
+            stats.AddRange(data.GetConceptStats("CONC", 6, 4, 20).Select(x => new object[] { x.Label, random.Next(5, 6), x.Id }));
 
             var script = (Literal)FindControl("script");
             script.Text = $@"
@@ -48,17 +48,18 @@ namespace Profiles.Activity.Modules.WordCloud
               list: {JsonConvert.SerializeObject(stats)},
               fontFamily: 'Mina, Roboto, Arial, Helvetica, sans-serif',
               color: function (word, weight) {{
-                console.warn(word, weight);
-                if(weight >= 6) return '#36A4DE';
-                if(weight >= 5) return '#2f528f';
-                return '#70767D';
+                if(weight >= 9) return '#9ACD67';
+                if(weight >= 7) return '#9A5AA2';
+                return '#2f528f';
               }},
-              weightFactor: (size) => 1.9 * size,
+              weightFactor: (size) => {{ return size > 4 ? 1.9 * size : 0; }},
               gridSize: Math.round(16 * canvas.width() / 1024),
               rotateRatio: 0.5,
               rotationSteps: 2,
               shrinkToFit: true,
-              drawOutOfBound: false
+              drawOutOfBound: false,
+              shape: 'square',
+              click: (item, dimension, event) => {{ window.location.href = '/profile/' + item[2]; }}
             }};
 
             WordCloud($('#wordcloud-canvas')[0] , options);

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Profiles.About.Modules.About {
-    
-    
-    public partial class About {
-        
+namespace Profiles.About.Modules.About
+{
+
+
+    public partial class About
+    {
+
         /// <summary>
         /// pnlOverview control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlOverview;
-        
+
         /// <summary>
         /// imgProfilesIcon control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgProfilesIcon;
-        
+
         /// <summary>
         /// imgNetworkIcon control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgNetworkIcon;
-        
+
         /// <summary>
         /// imgConnectionIcon control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgConnectionIcon;
-        
+
         /// <summary>
         /// imgVis control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image imgVis;
-        
+
         /// <summary>
         /// pnlFAQ control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlFAQ;
-        
+
         /// <summary>
         /// pnlData control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Profiles.About.Modules.About {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlData;
-        
+
         /// <summary>
         /// pnlORCID control.
         /// </summary>
@@ -85,7 +87,7 @@ namespace Profiles.About.Modules.About {
         protected global::System.Web.UI.WebControls.Panel pnlORCID;
 
         /// <summary>
-        /// pnlORCID control.
+        /// pnlImprint control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -94,7 +96,7 @@ namespace Profiles.About.Modules.About {
         protected global::System.Web.UI.WebControls.Panel pnlImprint;
 
         /// <summary>
-        /// pnlORCID control.
+        /// pnlPrivacy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.

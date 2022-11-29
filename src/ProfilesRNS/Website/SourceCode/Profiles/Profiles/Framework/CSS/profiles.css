@@ -289,10 +289,12 @@ div#catalyst-footer {
   border: 2px solid #2f528f;
   color: white;
   cursor: pointer;
+  border-radius: 0 0 4px 4px;
 }
 
 #rtnBtn:hover {
-  border-color: #eee;
+    background-color: #2593cd;
+    border-color: #2593cd;
 }
 
 #rtnBtn:focus {

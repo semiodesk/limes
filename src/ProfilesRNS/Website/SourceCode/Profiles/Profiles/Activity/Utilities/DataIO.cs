@@ -542,13 +542,16 @@ FETCH NEXT {pageSize} ROWS ONLY
 SELECT TOP ({pageSize})
     md.[DescriptorName] AS label,
 	mg.SemanticGroupName AS groupLabel,
-	mc.NumPublications AS publicationCount
+	mc.NumPublications AS publicationCount,
+	nm.[NodeID] as nodeID
 FROM
 	[Profile.Data].[Concept.Mesh.Descriptor] md
 JOIN
 	[Profile.Data].[Concept.Mesh.SemanticGroup] mg ON md.DescriptorUI = mg.DescriptorUI
 JOIN
 	[Profile.Cache].[Concept.Mesh.Count] mc ON md.DescriptorName = mc.MeshHeader
+JOIN
+	[RDF.Stage].[InternalNodeMap] nm ON nm.[InternalID] = md.[DescriptorUI]
 WHERE
 	[SemanticGroupUI] = '{groupId}'
 ORDER BY
@@ -571,6 +574,7 @@ ORDER BY
                     }
 
                     var stats = new ConceptStats();
+                    stats.Id = reader["nodeID"]?.ToString();
                     stats.Label = reader["label"]?.ToString();
                     stats.GroupLabel = reader["groupLabel"]?.ToString();
                     stats.PublicationsCount = n;

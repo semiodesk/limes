@@ -11,6 +11,11 @@
     border-radius: 15px;
 }
 
+#wordcloud-canvas > span:hover {
+    cursor: pointer;
+    color: #B51700 !important;
+}
+
 @media(min-width:768px) {
     #wordcloud-canvas {
         width: 210px !important;

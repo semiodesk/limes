@@ -146,6 +146,8 @@ namespace Profiles.Activity.Utilities
 
     public class ConceptStats
     {
+        public string Id { get; set; }
+
         public string Label { get; set; }
 
         public string GroupLabel { get; set; }

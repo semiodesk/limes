@@ -423,136 +423,155 @@
 
         <p>Cookies are stored on the user’s computer and transmitted to our site. Therefore, you as a user also have full control over the use of cookies. You can deactivate or restrict the transmission of cookies by changing the settings in your internet browser. Cookies that have already been saved can be deleted at any time. This can also be done automatically. If cookies are deactivated for our website, it may no longer be possible to use all functions of the website in full.<br><br>You can always select which cookies to allow by opening the Privacy &amp; Cookies Policy label at the bottom of the page.</p>
 
-        <h3 class="mt-4">6. Newsletter</h3>
+        <h3 class="mt-4">6. Integration of Twitter</h3>
+When you view Twitter content such as embedded Tweets, buttons, or timelines integrated into other websites using Twitter for Websites, Twitter may receive information including the web page you visited, your IP address, browser type, operating system, and cookie information. Learn more about the information Twitter receives and how they use it in their <a href="https://twitter.com/en/privacy" target="_blank">Privacy Policy</a> and <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies.html">Cookie Policy</a>.
 
-        <h4 class="mt-4">6.1 Description and scope of data processing</h4>
-        Our website gives you the option to subscribe to a free newsletter. When registering for the newsletter, all data from the registration form is transmitted to us.<br>In addition, the following data are collected at registration:</p>
+<h3 class="mt-4">7. Use of Google Maps</h3>
+The website contains geographical information for contact and direction purposes. The maps are based on the Google Maps API provided by Google Inc, 1700 Amphitheatre Parkway, Mountain View, CA 94043, USA. By accessing the map service, Google can determine your IP address and the language of the system, as well as various browser-specific information.
 
-        <ul><li>IP address of the accessing computer</li><li>Date and time of access</li></ul>
+The requested geographical positions are transferred directly to the service. When accessing the page with a GPS-enabled device, the location position can also be transmitted. Other personal data will not be passed on to Google.
 
-        <p>During the registration process, your consent is obtained for the processing of the data and reference is made to the Privacy Policy.<br>No data are passed on to third parties in connection with data processing for the sending of newsletters. The data will be used exclusively for sending the newsletter.</p>
+Google uses cookies. The data processing procedures as well as the purposes of the processing can be requested and viewed directly at Google.
 
-        <h4 class="mt-4">6.2 Legal basis for data processing</h4>
-        The legal basis for the processing of the data after registration for the newsletter by the user is Art. 6 (1) lit. a GDPR.
+If you access the integrated maps, you will be asked for your consent to use the map service under these conditions. You can revoke this consent at any time.
 
-        <h4 class="mt-4">6.3 Purpose of data processing</h4>
-        The user’s email address is collected to send the newsletter.<br>The collection of other personal data as part of the registration process serves to prevent misuse of the services or the email address used.</p>
+The use of Google Maps is in the interest of a fast findability of the institutions represented on the website.
 
-        <h4 class="mt-4">6.4 Duration of storage</h4>
-        The data will be erased as soon as they are no longer necessary to achieve the purpose for which they were collected. The user’s email address is stored for as long as the subscription to the newsletter is active.</p>
+<h3 class="mt-4">8. Other external websites</h3>
+External websites (e.g. Pubmed) are linked in the website and information is retrieved from them (e.g. publications). Privacy policies of the individual external websites apply.
 
-        <h4 class="mt-4">6.5 Possibility of objection and erasure</h4>
-        The subscription to the newsletter can be cancelled by the affected user at any time. There is a corresponding link in every newsletter for this purpose.<br>This also makes it possible to revoke your consent to the storage of personal data collected during the registration process.</p>
+<h3 class="mt-4">9. Web analysis with Matomo (formerly PIWIK)</h3>
+<h4 class="mt-4">9.1 Scope of processing of personal data</h4>
+On our website we use the open source software tool Matomo (formerly PIWIK) to analyze the surfing behavior of our users. The software places a cookie on the user’s computer (see above on cookies). If individual pages of our website are accessed, the following data are stored:
 
-        <h3 class="mt-4">7. Special registration forms</h3>
-        On our website we use case-specific registration forms to subscribe to specific events (e.g. conferences) or services (e.g. Profiles Web Portal). General rules as listed in the following point (“<strong>8. Contact form and email contact</strong>“) apply, but each form will link to specifications on how the data entered there will be used.</p>
+<ul class="mt-3">
+<li>Two bytes of the IP address of the user’s accessing system</li>
+<li>The accessed web page</li>
+<li>The website from which the user has accessed the accessed website (referrer)</li>
+<li>The subpages that are accessed from the accessed website</li>
+<li>Duration of stay on the website</li>
+<li>The frequency of accessing the website</li>
+</ul>
 
-        <h3 class="mt-4">8. Contact form and email contact</h3>
-        <h4 class="mt-4">8.1 Description and scope of data processing</h4>
-        Our website has a contact form which can be used for electronic contact. If a user takes advantage of this option, the data entered in the form will be transmitted to us and stored. These data are:</p>
+The software runs exclusively on the servers of our website. The personal data of users are only stored there. The data are not passed on to third parties.The software is set so that the IP addresses are not stored completely and that two bytes of the IP address are masked (e.g.: 192.168.xxx.xxx). In this way it is no longer possible to assign the shortened IP address to the accessing computer.You can opt out from automated data collection by unchecking the box here or in the “Privacy & Cookies Policy” tab.
 
-        <ul><li>Name, surname and title</li><li>Institution or Company</li><li>Professional role</li></ul>
+<h4 class="mt-4">9.2 Purpose of data processing</h4>
+The processing of users’ personal data enables us to analyze the surfing behavior of our users. We are able to compile information about the use of the individual components of our website by evaluating the data obtained. This helps us to continuously improve our website and its user-friendliness. By anonymizing the IP address, users’ interest in protecting their personal data is taken into account.
 
-        <p>At the time of sending the message, the following data are also stored:</p>
+<h4 class="mt-4">9.3 Duration of storage</h4>
+ The data will be erased as soon as they are no longer needed for our recording purposes.
+In our case, this is the case after 360 days.
 
-        <ul><li>The user’s IP address</li><li>Date and time of access</li></ul>
+<h4 class="mt-4">9.4 Possibility of objection and erasure</h4>
+Cookies are stored on the user’s computer and transmitted to our site. Therefore, you as a user also have full control over the use of cookies. You can deactivate or restrict the transmission of cookies by changing the settings in your internet browser. Cookies that have already been saved can be deleted at any time. This can also be done automatically. If cookies are deactivated for our website, it may no longer be possible to use all functions of the website in full.
 
-        <p>During the collection process, your consent is obtained for the processing of the data and reference is made to the Privacy Policy.<br>Alternatively, you can contact us via the email address provided. In this case, the user’s personal data transmitted by email will be stored.<br>The data will not be passed on to third parties in this context. The data will be used exclusively for processing the conversation.</p>
+On our website we offer our users the option to opt out from the analysis procedure. To do this, you must follow the corresponding link. Another cookie is then placed on your system, which signals to our system not to store the user’s data. If the user deletes the corresponding cookie from his own system in the meantime, he must set the opt-out cookie again.
 
-        <h4 class="mt-4">8.2 Legal basis for data processing</h4>
-        The legal basis for the processing of the data, if consent by the user has been provided, is Art. 6 (1) lit. a GDPR.<br>If the aim of the email contact is the conclusion of a contract, then additional legal basis for the processing is Art. 6 (1) lit. b GDPR.</p>
+More information about the privacy settings of the Matomo software can be found at the following link: https://matomo.org/docs/privacy/.
 
-        <h4 class="mt-4">8.3 Purpose of data processing</h4>
-        We only process the personal data from the form to handle contact being made.<br>The other personal data collected serves to prevent misuse of the contact form and to ensure the security of our information technology systems.</p>
+<h3 class="mt-4">10. Rights of the data subject</h3>
+If your personal data are processed, you as the data subject have the following rights pursuant to the GDPR towards the controller: 
 
-        <h4 class="mt-4">8.4 Duration of storage</h4>
-        The data will be erased as soon as they are no longer necessary to achieve the purpose for which they were collected. For the personal data from the input mask of the contact form and those data that were sent by email, this is the case when the respective conversation with the user is finished. The conversation is finished when it can be inferred from the circumstances that the facts in question have been conclusively clarified.</p>
+<h4 class="mt-4">10.1 Right to information</h4>
+You can ask the controller to confirm whether personal data concerning you are being processed.
 
-        <h4 class="mt-4">8.5 Possibility of objection and erasure</h4>
-        The user has the possibility to revoke his consent to the processing of personal data at any time. If the user only contacts us by email, he can also object to the storage of his personal data here at any time; in such a case, however, the conversation cannot be continued.<br>In order to revoke consent to data processing, &lt;a href=”http://wggc.de/?page_id=53″&gt;this form has to be used&lt;/a&gt;.<br>All personal data stored in the course of contacting us will be erased in the event of revocation.</p>
+If such processing takes place, you can request the following information from the controller:the purposes for which the personal data are processed;
+<ul class="mt-3">
+<li>the categories of personal data being processed;</li>
+<li>the recipients or categories of recipients to whom the personal data concerning you have been or are still being disclosed;</li>
+<li>the planned duration of the storage of the personal data concerning you or, if specific information on this is not possible, criteria for determining the storage period;</li>
+<li>the existence of a right to correction or erasure of the personal data concerning you, a right to restriction of processing by the controller or a right to object to such processing;</li>
+<li>the existence of a right to lodge a complaint with a supervisory authority;</li>
+<li>all available information on the origin of the data, if the personal data are not collected from the data subject;</li>
+<li>the existence of automated decision-making including profiling in accordance with Art. 22 (1) and (4) GDPR and, at least in these cases, meaningful information on the logic involved and the scope and intended effects of such processing on the data subject.</li>
+</ul>
 
-        <h3 class="mt-4">9. Web analysis with Matomo (formerly PIWIK)</h3>
-        <h4 class="mt-4">9.1 Scope of processing of personal data</h4>
-        On our website we use the open source software tool Matomo (formerly PIWIK) to analyze the surfing behavior of our users. The software places a cookie on the user’s computer (see above on cookies). If individual pages of our website are accessed, the following data are stored:</p>
+You have the right to request information as to whether the personal data concerning you are transmitted to a third country or to an international organization. In this context, you may request to be informed of the appropriate guarantees pursuant to Art. 46 GDPR in connection with the transmission.Where data are processed for scientific, historical or statistical research purposes, the right of access may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.
 
-        <ul><li>Two bytes of the IP address of the user’s accessing system</li><li>The accessed web page</li><li>The website from which the user has accessed the accessed website (referrer)</li><li>The subpages that are accessed from the accessed website</li><li>Duration of stay on the website</li><li>The frequency of accessing the website</li></ul>
+<h4 class="mt-4">10.2 Right to correction</h4>
+You have the right to correct and/or complete your data towards the controller if the personal data processed concerning you are incorrect or incomplete. The controller must make the correction without delay.
+Where data are processed for scientific, historical or statistical research purposes, the right of correction may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.
 
-        <p>The software runs exclusively on the servers of our website. The personal data of users are only stored there. The data are not passed on to third parties.<br>The software is set so that the IP addresses are not stored completely and that two bytes of the IP address are masked (e.g.: 192.168.xxx.xxx). In this way it is no longer possible to assign the shortened IP address to the accessing computer.<br><br>You can opt out from automated data collection by unchecking the box here or in the “Privacy &amp; Cookies Policy” tab.<br><br><br></p>
+<h4 class="mt-4">10.3 Right to restriction of processing</h4>
+You may request that the processing of personal data concerning you be restricted under the following conditions:
+<ul class="mt-3">
+<li>if you dispute the accuracy of the personal data concerning you for a period of time that enables the controller to verify the accuracy of the personal data;</li>
+<li>the processing is unlawful, you reject the erasure the personal data and instead demand the restriction of the use of personal data;</li>
+<li>the controller no longer needs the personal data for the purposes of processing, but you require them for the assertion of or to exercise or defend legal claims, or if you have filed an objection to the processing pursuant to Art. 21 (1) GDPR and it has not yet been determined whether the legitimate reasons of the controller outweigh your reasons.</li>
+</ul>
 
-        <h4 class="mt-4">9.2 Purpose of data processing</h4>
-        The processing of users’ personal data enables us to analyze the surfing behavior of our users. We are able to compile information about the use of the individual components of our website by evaluating the data obtained. This helps us to continuously improve our website and its user-friendliness. By anonymizing the IP address, users’ interest in protecting their personal data is taken into account.</p>
+If the processing of personal data concerning you has been restricted, such data may only be processed – except for being stored – with your consent or for the purpose of asserting, exercising or defending rights or protecting the rights of another natural or legal person or on grounds of an important public interest of the Union or a Member State. If processing has been restricted according to the above conditions, you will be informed by the controller before the restriction is lifted.Where data are processed for scientific, historical or statistical research purposes, the right of limitation of processing may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.
 
-        <h4 class="mt-4">9.3 Duration of storage</h4>
-        The data will be erased as soon as they are no longer needed for our recording purposes.<br>In our case, this is the case after 360 days.</p>
+<h4 class="mt-4">10.4 Right of erasure</h4>
+<h5>Erasure obligation</h5>
+You can demand that the controller erases the personal data concerning you immediately. The controller is obliged to erase these data immediately if one of the following reasons applies:
+<ul class="mt-3">
+<li>The personal data concerning you are no longer necessary for the purposes for which they were collected or otherwise processed.</li>
+<li>You withdraw your consent on which the processing was based in accordance with Art. 6 (1) lit. a GDPR or Art. 9 (2) lit. a GDPR and there is no other legal basis for processing.</li>
+<li>You object to processing in accordance with Art. 21 (1) GDPR and there are no overriding legitimate reasons for processing, or you object to processing in accordance with Art. 21 (2) GDPR.</li>
+<li>Your personal data were processed unlawfully.</li>
+<li>The erasure of your personal data is necessary to fulfil a legal obligation under Union or Member State law which the controller is subject to.</li>
+<li>The personal data concerning you were collected in relation to information society services offered pursuant to Art. 8 (1) GDPR.</li>
+<li>Information to third parties</li>
+</ul>
 
-        <h4 class="mt-4">9.4 Possibility of objection and erasure</h4>
-        Cookies are stored on the user’s computer and transmitted to our site. Therefore, you as a user also have full control over the use of cookies. You can deactivate or restrict the transmission of cookies by changing the settings in your internet browser. Cookies that have already been saved can be deleted at any time. This can also be done automatically. If cookies are deactivated for our website, it may no longer be possible to use all functions of the website in full.<br>On our website we offer our users the option to opt out from the analysis procedure. To do this, you must follow the corresponding link. Another cookie is then placed on your system, which signals to our system not to store the user’s data. If the user deletes the corresponding cookie from his own system in the meantime, he must set the opt-out cookie again.<br>More information about the privacy settings of the Matomo software can be found at the following link:&nbsp;<a href="https://matomo.org/docs/privacy/">https://matomo.org/docs/privacy/</a>.</p>
+If the controller has made the personal data concerning you public and is obliged to erase it pursuant to Art. 17 (1) GDPR, he shall take appropriate measures, including technical measures, taking into account the available technology and the implementation costs, to inform data processors who process the personal data that you as the data subject have requested the erasure of all links to these personal data or of copies or replications of these personal data.
 
-        <h3 class="mt-4">10. Use of Google Maps</h3>
-        The website of the WGGC of the contains geographical information for contact and direction purposes. The maps are based on the Google Maps API provided by Google Inc, 1700 Amphitheatre Parkway, Mountain View, CA 94043, USA. By accessing the map service, Google can determine your IP address and the language of the system, as well as various browser-specific information.<br>The requested geographical positions are transferred directly to the service. When accessing the page with a GPS-enabled device, the location position can also be transmitted. Other personal data will not be passed on to Google.<br>Google uses cookies. The data processing procedures as well as the purposes of the processing can be requested and viewed directly at Google.<br>If you access the integrated maps, you will be asked for your consent to use the map service under these conditions. You can revoke this consent at any time.<br>The use of Google Maps is in the interest of a fast findability of the institutions represented on the web pages of the WGGC.</p>
+<h5 class="mt-4">Exceptions</h5>
+The right to erasure does not exist insofar as the processing is necessary
+<ul class="mt-3">
+<li>to exercise the right to freedom of expression and information;</li>
+<li>for the performance of a legal obligation required for processing under the law of the Union or of the Member States to which the controller is subject or for the performance of a task in the public interest or in the exercise of official authority conferred on the controller;</li>
+<li>for reasons of public interest in the field of public health pursuant to Art. 9 (2) lit. h and i and Art. 9 (3) GDPR;</li>
+<li>for archiving purposes in the public interest, scientific or historical research purposes or for statistical purposes pursuant to Art. 89 (1) GDPR, insofar as the law referred to under section a) is likely to render impossible or seriously impair the attainment of the objectives of such processing, or</li>
+<li>to assert, exercise or defend legal claims.</li>
+</ul>
 
-        <h3 class="mt-4">11. Integration of YouTube</h3>
-        The website of the WGGC uses plugins from the YouTube site, which is operated by Google. The operator of the pages is YouTube, LLC, 901 Cherry Ave., San Bruno, CA 94066, USA.<br>When you visit one of our YouTube plugin-enabled pages, you will be connected to the servers of YouTube. This tells the YouTube server which of our web pages you have visited.<br>If you are logged into your YouTube account, you enable YouTube to associate your surfing behavior directly with your personal profile. You can prevent this by logging out of your YouTube account.<br>The use of YouTube is in the interest of ensuring an attractive presentation of our online offers.<br>For more information on how user data are handled, please see YouTube’s privacy policy:&nbsp;<a href="https://www.google.de/intl/de/policies/privacy">https://www.google.de/intl/de/policies/privacy</a></p>
+<h4 class="mt-4">10.5 Right to information</h4>
+If you have exercised your right to have the controller correct, erase or limit the processing, the controller is obliged to inform all recipients to whom the personal data concerning you have been disclosed of this correction or erasure of the data or the restriction on processing, unless this proves impossible or involves a disproportionate effort.
 
-        <h3 class="mt-4">12. Rights of the data subject</h3>
+You have the right to be informed of such recipients by the controller.
 
-        <p>If your personal data are processed, you as the data subject have the following rights pursuant to the GDPR towards the controller:
-        
-        <h4 class="mt-4">12.1 Right to information</h4>
-        You can ask the controller to confirm whether personal data concerning you are being processed.<br>If such processing takes place, you can request the following information from the controller:the purposes for which the personal data are processed;</p>
+<h4 class="mt-4">10.6 Right to data portability</h4>
+You have the right to receive the personal data concerning you that you have provided to the controller in a structured, common and machine-readable format. In addition, you have the right to pass these data on to another controller without obstruction by the controller to whom the personal data was provided, provided that
 
-        <ul><li>the categories of personal data being processed;</li><li>the recipients or categories of recipients to whom the personal data concerning you have been or are still being disclosed;</li><li>the planned duration of the storage of the personal data concerning you or, if specific information on this is not possible, criteria for determining the storage period;</li><li>the existence of a right to correction or erasure of the personal data concerning you, a right to restriction of processing by the controller or a right to object to such processing;</li><li>the existence of a right to lodge a complaint with a supervisory authority;</li><li>all available information on the origin of the data, if the personal data are not collected from the data subject;</li><li>the existence of automated decision-making including profiling in accordance with Art. 22 (1) and (4) GDPR and, at least in these cases, meaningful information on the logic involved and the scope and intended effects of such processing on the data subject.</li></ul>
+<ul class="mt-3">
+<li>processing is based on consent pursuant to Art. 6 (1) lit. a GDPR or Art. 9 (2) lit. a GDPR or on a contract pursuant to Art. 6 (1) lit. b GDPR and</li>
+<li>processing is carried out using automated methods.</li>
+</ul>
 
-        <p>You have the right to request information as to whether the personal data concerning you are transmitted to a third country or to an international organization. In this context, you may request to be informed of the appropriate guarantees pursuant to Art. 46 GDPR in connection with the transmission.<br>Where data are processed for scientific, historical or statistical research purposes, the right of access may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.</p>
+In exercising this right, you further also have the right to request that the personal data concerning you be transferred directly from one controller to another controller, insofar as this is technically feasible. The freedoms and rights of other persons must not be affected by this.The right to data portability shall not apply to the processing of personal data necessary for the performance of a task in the public interest or in the exercise of official authority conferred on the controller.
 
-        <h4 class="mt-4">12.2 Right to correction</h4>
-        You have the right to correct and/or complete your data towards the controller if the personal data processed concerning you are incorrect or incomplete. The controller must make the correction without delay.<br>Where data are processed for scientific, historical or statistical research purposes, the right of correction may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.</p>
+<h4 class="mt-4">10.7 Right of objection</h4>
+You have the right to object at any time, for reasons arising from your particular situation, to the processing of personal data concerning you under Art. 6 (1) lit. e GDPR; this also applies to any profiling based on these provisions.
+In the event of an objection, the controller will no longer process the personal data concerning you unless the controller can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms or if the processing is required for the establishment, exercise or defense of legal claims.
+In the case of data processing for scientific, historical or statistical research purposes pursuant to Art. 89 (1) GDPR, you also have the right to object to the processing of personal data concerning you for reasons arising from your particular situation, unless the processing is necessary to fulfil a task in the public interest.
 
-        <h4 class="mt-4">12.3 Right to restriction of processing</h4>
-        You may request that the processing of personal data concerning you be restricted under the following conditions:</p>
+<h4 class="mt-4">10.8 Right to revoke the data protection consent</h4>
+You have the right to revoke your data protection consent at any time. The revocation of consent shall not affect the legality of the processing carried out on the basis of the consent until revocation.
 
-        <ul><li>if you dispute the accuracy of the personal data concerning you for a period of time that enables the controller to verify the accuracy of the personal data;</li><li>the processing is unlawful, you reject the erasure the personal data and instead demand the restriction of the use of personal data;</li><li>the controller no longer needs the personal data for the purposes of processing, but you require them for the assertion of or to exercise or defend legal claims, or if you have filed an objection to the processing pursuant to Art. 21 (1) GDPR and it has not yet been determined whether the legitimate reasons of the controller outweigh your reasons.</li></ul>
+<h4 class="mt-4">10.9 Automated decision in individual cases including profiling</h4>
+You have the right to not be subject to a decision based exclusively on automated processing – including profiling – that has legal effect against you or significantly impairs you in a similar manner.
 
-        <p>If the processing of personal data concerning you has been restricted, such data may only be processed – except for being stored – with your consent or for the purpose of asserting, exercising or defending rights or protecting the rights of another natural or legal person or on grounds of an important public interest of the Union or a Member State.<br>If processing has been restricted according to the above conditions, you will be informed by the controller before the restriction is lifted.<br>Where data are processed for scientific, historical or statistical research purposes, the right of limitation of processing may be limited to the extent that it is likely to render impossible or be seriously prejudicial to the realization of the research or statistical purposes and the limitation is necessary for the fulfilment of the research or statistical purposes.</p>
+This does not apply if the decision
+<ul class="mt-3">
+<li>is necessary for the conclusion or performance of a contract between you and the controller,</li>
+<li>is admissible by law of the Union or of the Member States to which the controller is subject and that law contains appropriate measures to safeguard your rights, freedoms and legitimate interests, or</li>
+<li>is made with your express consent.</li>
+</ul>
 
-        <h4 class="mt-4">12.4 Right of erasure</h4>
+However, these decisions may not be based on special categories of personal data pursuant to Art. 9 (1) GDPR, unless Art. 9 (2) lit. a or g GDPR applies and appropriate measures have been taken to protect your rights and freedoms and your legitimate interests.In the cases referred to in (1) and (3), the controller shall take reasonable measures to safeguard your rights, freedoms and legitimate interests, including at least the right to obtain the intervention of a person by the controller, the right to state one’s own position and to challenge the decision.
 
-        <h4 class="mt-4"><em>Erasure obligation</em></h4>
-        You can demand that the controller erases the personal data concerning you immediately. The controller is obliged to erase these data immediately if one of the following reasons applies:</p>
+<h4 class="mt-4">10.10 Right to lodge a complaint with a supervisory authorityy</h4> Without prejudice to any other administrative or judicial remedy, you have the right to lodge a complaint with a supervisory authority, in particular in the Member State where you are staying, working or suspected of infringing, if you believe that the processing of personal data concerning you is in breach of the EU General Data Protection Regulation.
 
-        <ul><li>The personal data concerning you are no longer necessary for the purposes for which they were collected or otherwise processed.</li><li>You withdraw your consent on which the processing was based in accordance with Art. 6 (1) lit. a GDPR or Art. 9 (2) lit. a GDPR and there is no other legal basis for processing.</li><li>You object to processing in accordance with Art. 21 (1) GDPR and there are no overriding legitimate reasons for processing, or you object to processing in accordance with Art. 21 (2) GDPR.</li><li>Your personal data were processed unlawfully.</li><li>The erasure of your personal data is necessary to fulfil a legal obligation under Union or Member State law which the controller is subject to.</li><li>The personal data concerning you were collected in relation to information society services offered pursuant to Art. 8 (1) GDPR.</li><li>Information to third parties</li></ul>
+The supervisory authority with which the complaint has been lodged shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy under Art. 78 GDPR.
 
-        <p>If the controller has made the personal data concerning you public and is obliged to erase it pursuant to Art. 17 (1) GDPR, he shall take appropriate measures, including technical measures, taking into account the available technology and the implementation costs, to inform data processors who process the personal data that you as the data subject have requested the erasure of all links to these personal data or of copies or replications of these personal data.</p>
+<p>The competent supervisory authority is:
 
-        <h4 class="mt-4"><em>Exceptions</em></h4>
-        The right to erasure does not exist insofar as the processing is necessary</p>
-
-        <ul><li>to exercise the right to freedom of expression and information;</li><li>for the performance of a legal obligation required for processing under the law of the Union or of the Member States to which the controller is subject or for the performance of a task in the public interest or in the exercise of official authority conferred on the controller;</li><li>for reasons of public interest in the field of public health pursuant to Art. 9 (2) lit. h and i and Art. 9 (3) GDPR;</li><li>for archiving purposes in the public interest, scientific or historical research purposes or for statistical purposes pursuant to Art. 89 (1) GDPR, insofar as the law referred to under section a) is likely to render impossible or seriously impair the attainment of the objectives of such processing, or</li><li>to assert, exercise or defend legal claims.</li></ul>
-
-        <h4 class="mt-4">12.5 Right to information</h4>
-        If you have exercised your right to have the controller correct, erase or limit the processing, the controller is obliged to inform all recipients to whom the personal data concerning you have been disclosed of this correction or erasure of the data or the restriction on processing, unless this proves impossible or involves a disproportionate effort.<br>You have the right to be informed of such recipients by the controller.</p>
-
-        <h4 class="mt-4">12.6 Right to data portability</h4>
-        You have the right to receive the personal data concerning you that you have provided to the controller in a structured, common and machine-readable format. In addition, you have the right to pass these data on to another controller without obstruction by the controller to whom the personal data was provided, provided that</p>
-
-        <ul><li>processing is based on consent pursuant to Art. 6 (1) lit. a GDPR or Art. 9 (2) lit. a GDPR or on a contract pursuant to Art. 6 (1) lit. b GDPR and</li><li>processing is carried out using automated methods.</li></ul>
-
-        <p>In exercising this right, you further also have the right to request that the personal data concerning you be transferred directly from one controller to another controller, insofar as this is technically feasible. The freedoms and rights of other persons must not be affected by this.<br>The right to data portability shall not apply to the processing of personal data necessary for the performance of a task in the public interest or in the exercise of official authority conferred on the controller.</p>
-
-        <h4 class="mt-4">12.7 Right of objection</h4>
-        You have the right to object at any time, for reasons arising from your particular situation, to the processing of personal data concerning you under Art. 6 (1) lit. e GDPR; this also applies to any profiling based on these provisions.<br>In the event of an objection, the controller will no longer process the personal data concerning you unless the controller can demonstrate compelling legitimate grounds for the processing which override your interests, rights and freedoms or if the processing is required for the establishment, exercise or defense of legal claims.<br>In the case of data processing for scientific, historical or statistical research purposes pursuant to Art. 89 (1) GDPR, you also have the right to object to the processing of personal data concerning you for reasons arising from your particular situation, unless the processing is necessary to fulfil a task in the public interest.</p>
-
-        <h4 class="mt-4">12.8 Right to revoke the data protection consent</h4>
-        You have the right to revoke your data protection consent at any time. The revocation of consent shall not affect the legality of the processing carried out on the basis of the consent until revocation.</p>
-
-        <h4 class="mt-4">12.9 Automated decision in individual cases including profiling</h4>
-        You have the right to not be subject to a decision based exclusively on automated processing – including profiling – that has legal effect against you or significantly impairs you in a similar manner.<br>This does not apply if the decision</p>
-
-        <ul><li>is necessary for the conclusion or performance of a contract between you and the controller,</li><li>is admissible by law of the Union or of the Member States to which the controller is subject and that law contains appropriate measures to safeguard your rights, freedoms and legitimate interests, or</li><li>is made with your express consent.</li></ul>
-
-        <p>However, these decisions may not be based on special categories of personal data pursuant to Art. 9 (1) GDPR, unless Art. 9 (2) lit. a or g GDPR applies and appropriate measures have been taken to protect your rights and freedoms and your legitimate interests.<br>In the cases referred to in (1) and (3), the controller shall take reasonable measures to safeguard your rights, freedoms and legitimate interests, including at least the right to obtain the intervention of a person by the controller, the right to state one’s own position and to challenge the decision.</p>
-
-        <h4 class="mt-4">12.10 Right to lodge a complaint with a supervisory authority</h4>
-        Without prejudice to any other administrative or judicial remedy, you have the right to lodge a complaint with a supervisory authority, in particular in the Member State where you are staying, working or suspected of infringing, if you believe that the processing of personal data concerning you is in breach of the EU General Data Protection Regulation.<br>The supervisory authority with which the complaint has been lodged shall inform the complainant of the status and results of the complaint, including the possibility of a judicial remedy under Art. 78 GDPR.<br>The competent supervisory authority is: Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, PO Box 20 04 44, D-40102 Düsseldorf.
+<pre>
+Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen,
+PO Box 20 04 44
+D-40102 Düsseldorf
+</pre> 
     </asp:Panel>
 </div>

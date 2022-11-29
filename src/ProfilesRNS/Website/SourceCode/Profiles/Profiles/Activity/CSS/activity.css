@@ -3,14 +3,6 @@ section {
     padding-bottom: 2em;
 }
 
-.wordcloud {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    width: 90%;
-}
-
 .panelActive {
   padding: 0 0 0 1em;
 }
