@@ -34,19 +34,19 @@ python csv-clean.py \
 
 # NGS-CN merged rounds full form
 python csv-clean.py \
-    -i input/ngscn2023_full_forms.csv \
-    -o tmp/ngscn2023_full_forms.clean.csv \
+    -i input/ngscn2022_full_forms.csv \
+    -o tmp/ngscn2022_full_forms.clean.csv \
     -k confirm-or-change-email-address \
     -c profiles-rns \
-    2> tmp/ngscn2023_full_forms.dups.csv
+    2> tmp/ngscn2022_full_forms.dups.csv
 
 # NGS-CN merged rounds reduced form (cross checked with WGGC forms)
 python csv-clean.py \
-    -i input/ngscn2023_reduced_forms.csv \
-    -o tmp/ngscn2023_reduced_forms.clean.csv \
+    -i input/ngscn2022_reduced_forms.csv \
+    -o tmp/ngscn2022_reduced_forms.clean.csv \
     -k confirm-or-change-email-address \
     -c profiles-rns \
-    2> tmp/ngscn2023_reduced_forms.dups.csv
+    2> tmp/ngscn2022_reduced_forms.dups.csv
 
 # Merge the input data files..
 python csv-merge.py \
@@ -68,8 +68,8 @@ python csv-filter.py \
     -k confirm-or-change-email-address
 
 python csv-merge.py \
-    -ia tmp/ngscn2023_full_forms.clean.csv \
-    -ib tmp/ngscn2023_reduced_forms.clean.csv \
+    -ia tmp/ngscn2022_full_forms.clean.csv \
+    -ib tmp/ngscn2022_reduced_forms.clean.csv \
     -o tmp/ngscnNEW.merge.csv \
     -k confirm-or-change-email-address \
     -d ngs-cc-affiliation:'wggc' \
